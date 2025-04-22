@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "IRANYekan300";
+  src: url("../_fonts/IRANYekanLight.eot");
+  src: url("../_fonts/IRANYekanLight.eot?#iefix") format("embedded-opentype"),
+    url("../_fonts/IRANYekanLight.woff") format("woff"),
+    url("../_fonts/IRANYekanLight.woff2") format("woff2"),
+    url("../_fonts/IRANYekanLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-IRANYekan300: "IRANYekan300" !important;
+ 
+  --color-main: #FFCB08;
+  --color-gray-50: #FAFAFA;
+  --color-gray-400: #A1A1AA;
+  --color-gray-300: #D4D4D8;
+  --color-gray-600: #52525B;
+  --color-gray-700: #3F3F46;
+  --color-gray-800: #27272A;
+  --color-back-gray: #171717;
+
+  --spacing-90p: 90%;
+  --spacing-80p: 80%;
+}
