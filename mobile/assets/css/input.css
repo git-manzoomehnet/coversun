@@ -1,1 +1,110 @@
 @import "tailwindcss";
+
+
+@font-face {
+  font-family: "IRANYekan800";
+  src: url("../fonts/iranyekanwebblack.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANYekan700";
+  src: url("../fonts/iranyekanwebbold.eot") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANYekan600";
+  src: url("../fonts/IRANYekanX-DemiBold.woff") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANYekan500";
+  src: url("../fonts/iranyekanwebmedium.eot") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANYekan400";
+  src: url("../fonts/iranyekanwebregular.eot") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANYekanr300";
+  src: url("../fonts/iranyekanweblight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANYekan200";
+  src: url("./../fonts/IRANYekanX-UltraLight.woff") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANYekan100";
+  src: url("./../fonts/iranyekanwebthin.eot") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PxGrotesk400";
+  src: url("./../fonts/Px-Grotesk-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-IRANYekan800: "IRANYekan800" !important;
+  --font-IRANYekan700: "IRANYekan700" !important;
+  --font-IRANYekan600: "IRANYekan600" !important;
+  --font-IRANYekan500: "IRANYekan500" !important;
+  --font-IRANYekan400: "IRANYekan400" !important;
+  --font-IRANYekan300: "IRANYekan300" !important;
+  --font-IRANYekan200: "IRANYekan200" !important;
+  --font-IRANYekan100: "IRANYekan100" !important;
+  --font-PxGrotesk400: "PxGrotesk400" !important;
+
+  --color-main: #FFCB08;
+  --color-gray-50: #FAFAFA;
+  --color-gray-400: #A1A1AA;
+  --color-gray-300: #D4D4D8;
+  --color-gray-600: #52525B;
+  --color-gray-700: #3F3F46;
+  --color-gray-800: #27272A;
+  --color-back-gray: #171717;
+  --text-main: #FFCB08;
+  --text-gray-50: #FAFAFA;
+  --text-gray-400: #A1A1AA;
+  --text-gray-300: #D4D4D8;
+  --text-gray-600: #52525B;
+  --text-gray-700: #3F3F46;
+  --text-gray-800: #27272A;
+  --text-back-gray: #171717;
+
+  --spacing-90p: 90%;
+  --spacing-80p: 80%;
+}
+
+* {
+  direction: rtl;
+}
