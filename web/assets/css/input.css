@@ -7,23 +7,122 @@
     url("../_fonts/IRANYekanLight.woff") format("woff"),
     url("../_fonts/IRANYekanLight.woff2") format("woff2"),
     url("../_fonts/IRANYekanLight.ttf") format("truetype");
-  font-weight: 200;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANYekan500";
+  src: url("../_fonts/iranyekanwebmedium.eot");
+  src: url("../_fonts/iranyekanwebmedium.eot?#iefix") format("embedded-opentype"),
+    url("../_fonts/iranyekanwebmedium.woff") format("woff"),
+    url("../_fonts/iranyekanwebmedium.woff2") format("woff2"),
+    url("../_fonts/iranyekanwebmedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PxGrotesk300";
+  src: 
+    url("../fonts/Px-Grotesk-Light.woff") format("woff"),
+    url("../fonts/Px-Grotesk-Light.woff2") format("woff2"),
+    url("../fonts/Px-Grotesk-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PxGrotesk400";
+  src: 
+    url("../fonts/Px-Grotesk-Regular.woff") format("woff"),
+    url("../fonts/Px-Grotesk-Regular.woff2") format("woff2"),
+    url("../fonts/Px-Grotesk-Regular.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @theme {
   --font-IRANYekan300: "IRANYekan300" !important;
+  --font-IRANYekan500: "IRANYekan500" !important;
+  --font-PxGrotesk300: "PxGrotesk300" !important;
+  --font-PxGrotesk400: "PxGrotesk400" !important;
  
   --color-main: #FFCB08;
-  --color-gray-50: #FAFAFA;
-  --color-gray-400: #A1A1AA;
-  --color-gray-300: #D4D4D8;
-  --color-gray-600: #52525B;
-  --color-gray-700: #3F3F46;
-  --color-gray-800: #27272A;
+  --color-gray50: #FAFAFA;
+  --color-gray400: #A1A1AA;
+  --color-gray300: #D4D4D8;
+  --color-gray600: #52525B;
+  --color-gray700: #3F3F46;
+  --color-gray800: #27272A;
   --color-back-gray: #171717;
 
   --spacing-90p: 90%;
   --spacing-80p: 80%;
+}
+
+.w-90p{
+  max-width: 1440px;
+}
+
+
+@media (min-width: 1600px) {
+  .megaMenu .leftSec,.megaMenu .bgHmenu , .blogShow .gallerySlider,.blogShow .relatedBlog,.blogShow .relatedProduct{
+padding-left:calc(((100% - 1440px)/2)) ;
+}
+.blogShow .gallerySlider,.blogShow .relatedBlog ,.blogShow .relatedProduct{
+  padding-right:calc(((100% - 1440px)/2)) ;
+
+}
+.closeForm {
+   margin-left:calc(((100% - 1440px)/2)) ;
+
+ }
+}
+@media (max-width: 1599px) {
+  .megaMenu .leftSec ,.megaMenu .bgHmenu , .blogShow .gallerySlider ,.blogShow .relatedBlog,.blogShow .relatedProduct {
+    padding-left: 5%;
+  }
+  .blogShow .gallerySlider,.blogShow .relatedBlog,.blogShow .relatedProduct{
+    padding-right: 5%;
+    
+  }
+  .closeForm {
+     margin-right:5% ;
+  
+   }
+}
+
+
+
+
+
+.accordion {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.accordion__intro {
+  position: relative;
+  padding: 12px 23px;
+  cursor: pointer;
+}
+.accordion__content {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  will-change: max-height;
+  transition: all 0.25s ease-out;
+  opacity: 0;
+}
+
+
+.accordion__active .accordion__content {
+  padding: 0 20px 20px;
+  opacity: 1;
+}
+
+.accordion__active .arrow{
+  transform: rotate(45deg);
 }

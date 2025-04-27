@@ -1,59 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../assets/css/outputDesk.css">
 </head>
+
 <body>
-    <header class="w-full z-[1000000000] fixed top-0 h-[156px] flex items-center" dir="rtl">
+    <header class="w-full group/header flex-col justify-center z-[1000000001] fixed top-0 h-[156px] flex " dir="rtl">
         <div class="flex w-90p mx-auto justify-between">
-            <div class="rightS flex gap-x-5">
-                <div class="btns  flex flex-col items-center gap-y-4">
-                    <div class="menuBar cursor-pointer relative flex items-center justify-center">
-                        <div class="bar">
+            <div class="rightS items-center  flex gap-x-5">
+                <div class="menuBar group/menuBar cursor-pointer flex items-center justify-center">
+                    <div class="bar group-[&.activeMenuBar]/menuBar:opacity-0 duration-500">
 
-                            <svg width="37" height="28" viewBox="0 0 37 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <line x1="1.31134e-07" y1="2" x2="37" y2="2" stroke="black" stroke-width="3"/>
-                                <line x1="1.31134e-07" y1="14" x2="37" y2="14" stroke="black" stroke-width="3"/>
-                                <line x1="1.31134e-07" y1="26" x2="37" y2="26" stroke="black" stroke-width="3"/>
-                                </svg>
-                        </div>
-                            <div class="close opacity-0 -z-1 cursor-pointer absolute">
-                                <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M28 2.29414L26.2059 0.5L14 12.7059L1.79375 0.5L0 2.29414L12.2063 14.5L0 26.7059L1.79375 28.5L14 16.2941L26.2059 28.5L28 26.7059L15.7944 14.5L28 2.29414Z" fill="black"/>
-                                    </svg>
-                                    
-                            </div>
+                        <svg width="37" height="28" viewBox="0 0 37 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="1.31134e-07" y1="2" x2="37" y2="2" stroke="black" stroke-width="3" />
+                            <line x1="1.31134e-07" y1="14" x2="37" y2="14" stroke="black" stroke-width="3" />
+                            <line x1="1.31134e-07" y1="26" x2="37" y2="26" stroke="black" stroke-width="3" />
+                        </svg>
                     </div>
+                    <div
+                        class="close opacity-0 -z-1 cursor-pointer absolute duration-500 group-[&.activeMenuBar]/menuBar:opacity-100">
+                        <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M28 2.29414L26.2059 0.5L14 12.7059L1.79375 0.5L0 2.29414L12.2063 14.5L0 26.7059L1.79375 28.5L14 16.2941L26.2059 28.5L28 26.7059L15.7944 14.5L28 2.29414Z"
+                                fill="black" />
+                        </svg>
 
-                    <a href="#" class="uppercase font-IRANYekan300 text-sm">
-                        eN
-                    </a>
-                    <a href="/search.bc" title="search" class="cursor-pointer">
-                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_1726_1129)">
-                            <path d="M7.19271 0.100586C3.23542 0.100586 0.0146484 3.45809 0.0146484 7.58338C0.0146484 11.7087 3.23542 15.0662 7.19271 15.0662C11.15 15.0662 14.3708 11.7087 14.3708 7.58338C14.3708 3.45555 11.15 0.100586 7.19271 0.100586ZM7.19271 14.05C3.77019 14.05 0.986956 11.1487 0.986956 7.58084C0.986956 4.01302 3.77019 1.11164 7.19271 1.11164C10.6152 1.11164 13.3985 4.01302 13.3985 7.58084C13.3985 11.1487 10.6128 14.05 7.19271 14.05Z" fill="black"/>
-                            <path d="M13.8406 13.9255C13.6534 13.7253 13.3447 13.7228 13.1527 13.9179C12.9607 14.113 12.9582 14.4348 13.1454 14.635L15.1216 16.7433C15.2164 16.8446 15.3428 16.8953 15.4692 16.8953C15.5908 16.8953 15.7147 16.8472 15.8095 16.7509C16.0016 16.5558 16.004 16.2339 15.8168 16.0338L13.8406 13.9255Z" fill="black"/>
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_1726_1129">
-                            <rect width="16" height="17" fill="white"/>
-                            </clipPath>
-                            </defs>
-                            </svg>
-                            
-                    </a>
+                    </div>
                 </div>
 
-                <div class="logo-landing">
+
+                <div class="logo-landing group-[&.activeMenuHeader]/header:opacity-0 duration-500">
                     <a href="">
                         <img src="../assets/images/Mask group (4).png" alt="landing">
                     </a>
                 </div>
 
-                <div class="formHeaderBtn cursor-pointer">
+                <div class="formHeaderBtn group-[&.activeMenuHeader]/header:opacity-0 duration-500 cursor-pointer">
                     <span class="font-IRANYekan300 text-sm">
                         ثبت سفارش
                     </span>
@@ -64,17 +50,195 @@
                     <img src="../assets/images/Coversun---Yellow-&-Black 3.png" alt="">
                 </a>
             </div>
+
+        </div>
+        <div
+            class="btns group-[&.activeMenuHeader]/header:opacity-0 duration-500 pr-2.5 w-90p mx-auto items-start flex flex-col  gap-y-4">
+
+            <a href="#" class="uppercase font-IRANYekan300 text-sm">
+                eN
+            </a>
+            <a href="/search.bc" title="search" class="cursor-pointer">
+                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1726_1129)">
+                        <path
+                            d="M7.19271 0.100586C3.23542 0.100586 0.0146484 3.45809 0.0146484 7.58338C0.0146484 11.7087 3.23542 15.0662 7.19271 15.0662C11.15 15.0662 14.3708 11.7087 14.3708 7.58338C14.3708 3.45555 11.15 0.100586 7.19271 0.100586ZM7.19271 14.05C3.77019 14.05 0.986956 11.1487 0.986956 7.58084C0.986956 4.01302 3.77019 1.11164 7.19271 1.11164C10.6152 1.11164 13.3985 4.01302 13.3985 7.58084C13.3985 11.1487 10.6128 14.05 7.19271 14.05Z"
+                            fill="black" />
+                        <path
+                            d="M13.8406 13.9255C13.6534 13.7253 13.3447 13.7228 13.1527 13.9179C12.9607 14.113 12.9582 14.4348 13.1454 14.635L15.1216 16.7433C15.2164 16.8446 15.3428 16.8953 15.4692 16.8953C15.5908 16.8953 15.7147 16.8472 15.8095 16.7509C16.0016 16.5558 16.004 16.2339 15.8168 16.0338L13.8406 13.9255Z"
+                            fill="black" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_1726_1129">
+                            <rect width="16" height="17" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+
+            </a>
         </div>
     </header>
 
 
-    <div class="megaMenu bg-main flex fixed inset-0 w-svw h-svh z-[1000000001]" dir="rtl">
-        <div class="rightSec bg-white">
-
+    <div class="megaMenu translate-x-[100%] overflow-hidden flex fixed inset-0 w-svw h-svh z-[1000000000]" dir="rtl">
+        <div class="rightSec flex flex-col justify-between duration-500 z-10 translate-x-[100%] bg-white min-w-[160px] w-[calc(((100%-1280px)/2)+200px)]">
+            <div class="langs mt-[156px] relative z-10">
+                <ul>
+                    <li class="mb-2.5 overflow-hidden text-center">
+                        <a href="" class="block font-IRANYekan300  text-sm uppercase">
+                            PERSIAN
+                        </a>
+                    </li>
+                    <li class="mb-2.5 overflow-hidden text-center">
+                        <a href=""
+                            class="block font-IRANYekan300 text-sm text-gray300 duration-500 hover:text-black  uppercase">
+                            ENGLISH
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="phoen pb-12 flex justify-center items-center gap-x-2.5">
+                <span class="font-PxGrotesk300 text-2xl">
+                    1736
+                </span>
+                <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.993306 9.64337C0.354194 8.5918 0.0877332 7.35746 0.23475 6.13639C0.381767 4.91533 0.934107 3.77902 1.80395 2.90908L3.59879 1.11526C3.88671 0.82632 4.28589 0.674207 4.69325 0.697677C5.10061 0.720138 5.47938 0.916162 5.73361 1.23572L8.85559 5.15617H8.85662C9.33543 5.75752 9.25478 6.63042 8.67285 7.13376L6.9352 8.63762H6.93622C6.40533 9.09704 6.28485 9.874 6.6524 10.4723C8.24714 13.0685 10.4309 15.2523 13.0273 16.8472C13.6256 17.2147 14.4025 17.0942 14.862 16.5634L16.3658 14.8257V14.8267C16.8692 14.2448 17.741 14.1641 18.3434 14.643L22.2639 17.765V17.766C22.5834 18.0202 22.7795 18.399 22.8019 18.8063C22.8254 19.2137 22.6733 19.6129 22.3843 19.9008L20.5905 21.6956C19.7207 22.5655 18.5843 23.1178 17.3632 23.2648C16.142 23.4118 14.9078 23.1454 13.8562 22.5063C8.59731 19.3148 4.18482 14.9023 0.993306 9.64337Z" fill="black"/>
+                    </svg>
+                    
+            </div>
         </div>
-        <div class="leftSec pr-36">
+        <div
+            class="leftSec duration-500  bg-main translate-x-[120%] pt-11 justify-end  flex flex-col w-full gap-y-14 relative pr-36 ">
+            <div class="bgHmenu pb-12 pt-11 absolute pr-16 z-0 inset-0">
+                <div class="imgS w-full h-full relative after:absolute after:z-1 after:inset-0 after:bg-main/[0.85]">
+                    <img src="../assets/images/4bed3f9964b0477c72da5d5fdde1c1bd52f3e484.png"
+                        class="w-full h-full object-cover absolute duration-500 opacity-0 [&.activeImgHeader]:z-1 [&.activeImgHeader]:opacity-100"
+                        alt="">
+                    <img src="../assets/images/edd277d4c767c9141a6af3cdce47af6ca65320d1.jpg"
+                        class="w-full h-full object-cover absolute duration-500 opacity-0 [&.activeImgHeader]:z-1 [&.activeImgHeader]:opacity-100"
+                        alt="">
 
+
+                </div>
+            </div>
+            <ul class="flex menuItems mt-[110px] flex-col relative z-1 justify-between max-h-[533px] h-[60vh]">
+                <li class="duration-500">
+                    <a href="/" title="صفحه نخست ">
+                        صفحه نخست
+                    </a>
+                </li>
+                <li class="duration-500">
+                    <a href="" title="کاورسان پلاس">
+                        کاورسان پلاس
+                    </a>
+                </li>
+                <li class="duration-500">
+                    <a href="" title="درباره ما">
+                        درباره ما
+                    </a>
+                </li>
+                <li class="duration-500">
+                    <a href="" title="محصولات">
+                        محصولات
+                    </a>
+                </li>
+                <li class="duration-500">
+                    <a href="" title="پروژه ها">
+                        پروژه ها
+                    </a>
+                </li>
+                <li class="duration-500">
+                    <a href="" title="مقالات">
+                        مقالات
+                    </a>
+                </li>
+                <li class="duration-500">
+                    <a href="" title="تماس با ما">
+                        تماس با ما
+                    </a>
+                </li>
+            </ul>
+
+            <div class="btn flex pb-12 justify-between items-center w-full">
+                <div class="socials ">
+                    <ul class="flex items-center gap-x-4">
+                        <li>
+                            <a href="" title="linkdin" class="opacity-50 duration-500 hover:opacity-100">
+                                <img src="../assets/images/linkdinHeader.svg" alt="linkdin">
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" title="instagram" class="opacity-50 duration-500 hover:opacity-100">
+                                <img src="../assets/images/instagramHeader.svg" alt="instagram">
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" title="whatsapp" class="opacity-50 duration-500 hover:opacity-100">
+                                <img src="../assets/images/whatsappHeader.svg" alt="whatsapp">
+
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="" target="_blank" class="relative flex items-center justify-center">
+                    <svg width="191" height="66" viewBox="0 0 191 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M161 1H1V28" stroke="black" stroke-width="0.75" />
+                        <path d="M42.5 65H190.5V22" stroke="black" stroke-width="0.75" />
+                    </svg>
+                    <span
+                        class="w-[173px] font-IRANYekan500 text-sm text-back-gray h-[48px] absolute border border-black/[0.8] flex items-center justify-center">
+                        کاتالوگ دیجیتال
+                    </span>
+                </a>
+            </div>
         </div>
     </div>
+
+
+    <div dir="rtl" class="formPop scale-0 duration-1000 fixed inset-0 w-svw h-svh z-[10000000011]">
+        <div class="closeBg fixed inset-0 bg-black/[0.9]">
+        </div>
+        <div class="closeForm relative z-1 w-80p  w-fit mt-12 mb-6 cursor-pointer">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M28 1.79414L26.2059 0L14 12.2059L1.79375 0L0 1.79414L12.2063 14L0 26.2059L1.79375 28L14 15.7941L26.2059 28L28 26.2059L15.7944 14L28 1.79414Z"
+                    fill="#D4D4D8" />
+            </svg>
+
+        </div>
+        <div class="innerForm relative z-10  w-80p mx-auto max-w-[1185px]">
+            <div class=" bg-gray50">
+                <div class="logo bg-white pt-1 pb-4 flex items-center justify-center">
+                    <a href="/">
+                        <img src="../assets/images/megaFlag.png" alt="form logo">
+                    </a>
+                </div>
+                <div class="formContainer pt-16 pr-14 pl-24 pb-10">
+
+                    <h3 class="font-IRANYekan500 mb-7 text-2xl text-back-gray">
+                        فرم ثبت سفارش
+                    </h3>
+                    <div class="para font-IRANYekan300 text-sm text-justify text-back-gray mb-7">
+                        <p>
+                            با سلام خدمت مشتری گرامی لطفا پس از مشخص شدن نوع درخواست خود فرم را تکمیل نمایید تا
+                            کارشناسان مربوطه ما در اسرع وقت با شما تماس بگیرند. علاوه بر این، لازم است عکس ها و فیلم
+                            های پروژه را برای بررسی از طریق گزینه آپلود فایل آپلود کنید. متشکرم
+                        </p>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/header.js"></script>
 </body>
+
 </html>
