@@ -13,12 +13,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        YekanBakh400: ["YekanBakh400"],
-        YekanBakh500: ["YekanBakh500"],
-        YekanBakh700: ["YekanBakh700"],
-        IRANSans400: ["IRANSans400"],
-        IRANSans500: ["IRANSans500"],
-        IRANSans700: ["IRANSans700"],
+        IRANYekan300: ["IRANYekan300"],
+        IRANYekan400: ["IRANYekan400"],
+        IRANYekan500: ["IRANYekan500"],
+        PxGrotesk300: ["PxGrotesk300"],
+        PxGrotesk400: ["PxGrotesk400"],
+ 
       },
     },
   },

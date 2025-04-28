@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/outputDesk.css">
+</head>
+
+<body>
+    <main class="projectShow" dir="rtl">
+        <section class="section1 h-svh ">
+            <div class="flex gap-x-16">
+                <div class="rSide">
+                    <div class="breadCrumb mb-5 pt-1 pb-3 w-full z-1 mt-[156px]">
+                            <ul class="flex items-center gap-x-1.5">
+                                <li>
+                                    <a href="/" class="font-IRANYekan300 text-sm text-black" title="home">
+                                        صفحه نخست
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <span class="font-IRANYekan300 text-sm text-black">
+                                        .
+                                    </span>
+                                </li>
+                                <li>
+                                    <a href="/project-list.bc" class="font-IRANYekan300 text-sm text-black" title="home">
+                                        پروژه
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <span class="font-IRANYekan300 text-sm text-black">
+                                        .
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="font-IRANYekan300 text-sm text-black">
+                                        مقالات
+                                    </span>
+                                </li>
+                            </ul>
+
+
+                
+                    </div>
+                    <h1 class="font-IRANYekan500 text-2xl mb-20">
+                        پروژه ی نمای پارک
+                    </h1>
+
+                    <div class="schemas mb-18">
+                        <ul>
+                            <li class="mb-5">
+                                <span class="font-PxGrotesk400 text-sm text-gray400 inline">
+                                    کارفرما:
+                                </span>
+                                <p class="font-PxGrotesk400 text-sm inline">
+                                    آقای فرهمند
+                                </p>
+                            </li>
+                            <li class="mb-5">
+                                <span class="font-PxGrotesk400 text-sm text-gray400 inline">
+                                    کارفرما:
+                                </span>
+                                <p class="font-PxGrotesk400 text-sm inline">
+                                    آقای فرهمند
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="desc mb-5">
+                        <span class="font-PxGrotesk400 text-sm block  text-gray600">
+                            توضیحات:
+                        </span>
+                        <div class="para font-IRANYekan300 text-sm text-justify" >
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد،
+                        </div>
+                    </div>
+
+
+                    <div class="overflow-hidden flex flex-col items-center h-fit">
+
+                        <span class="font-PxGrotesk400 mb-2 text-sm text-gray400 lowercase">
+                            sCROLL DOWN 
+                        </span>
+                        <div class="scrollBtm overflow-hidden  h-[58px] w-px bg-gray600">
+                            <div class="line h-[58px] w-px bg-main">
+                            </div>
+        
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="imgS shrink-0">
+                    <img src="../assets/images/cover-3-1-scaled-e1710675490519-2011x2048 1.png" class="h-svh" alt="@name">
+                </div>
+            </div>
+        </section>
+        <section class="section2 mb-20">
+            <video src="" class="w-full object-cover" muted autoplay playsinline></video>
+        </section>  
+        <basis core="print" datamembername="db.image-article">
+            <layout>
+                <section class="section5 mb-28">
+                    <h3 class="w-90p mx-auto mb-6 font-IRANYekan500 text-2xl">
+                        گالری تصاویر
+                    </h3>
+
+                    <div class="swiper gallerySlider">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+
+                            @child
+                        </div>
+
+                    </div>
+
+                </section>
+            </layout>
+
+            <face filter="ord=1000">
+                <div class="swiper-slide !w-fit">
+                    <div class="imgS">
+                        <img src="[##cms.cms.cdn##]/@largeIMG" alt="gallery">
+                    </div>
+                </div>
+
+            </face>
+        </basis>
+        <basis core="print" datamembername="basisName.related-blog">
+            <layout>
+                <section class="section7 mb-10">
+                    <h3 class="font-IRANYekan500 text-2xl mb-6 w-90p mx-auto text-gray700">
+                        مقالات مرتبط
+                    </h3>
+
+                    <div class="swiper relatedBlog">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+
+                            @child
+                        </div>
+
+                    </div>
+                </section>
+            </layout>
+
+            <face>
+
+                <div class="swiper-slide !w-[480px]">
+                    <div class="blogBox group/blogBox">
+                        <a href="/@link" title="@title">
+                            <div class="imgS overflow-hidden">
+                                <img src="[##cms.cms.cdn##]/@00400X00300prp"
+                                    class="w-full group-hover/blogBox:scale-125 duration-500" alt="@title">
+                            </div>
+                            <div class="date my-2.5">
+                                <span class=" font-PxGrotesk400 text-sm text-gray600">
+                                    @prp_7249
+                                </span>
+                            </div>
+                            <h3 class="font-IRANYekan500 mb-2.5 text-justify text-base text-gray700">
+                                @title
+                            </h3>
+                            <div class="para font-IRANYekan300 text-justify text-sm text-gray700 line-clamp-2">
+                                <p>
+                                    @prp_7244
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </face>
+        </basis>
+
+        <basis core="print" datamembername="basisName.related-product">
+            <layout>
+                <section class="section8 mb-10">
+                    <h3 class="font-IRANYekan500 text-2xl mb-6 w-90p mx-auto text-gray700">
+                        محصولات مرتبط
+                    </h3>
+                    <div class="swiper relatedProduct">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+
+                            @child
+                        </div>
+
+                    </div>
+
+
+
+                </section>
+            </layout>
+
+            <face>
+                <div class="swiper-slide !w-[309px]">
+                    <div class="productBox group/productBox">
+                        <a href="/@link" title="@title">
+                            <div class="imgS overflow-hidden">
+                                <img src="[##cms.cms.cdn##]/@00300X00400prp"
+                                    class="w-full group-hover/blogBox:scale-125 duration-500" alt="@title">
+                            </div>
+
+                            <h4 class="font-IRANYekan500  mt-3 text-justify text-base text-gray600">
+                                @title
+                            </h4>
+
+                            <h5
+                                class="font-IRANYekan400 text-base text-gray600 opacity-0 duration-500 group-hover/productBox:opacity-100 group-hover/productBox:translate-y-0 -translate-y-[30px]">
+                                ساخت کشور @prp_10000792
+                            </h5>
+
+                        </a>
+                    </div>
+                </div>
+            </face>
+        </basis>
+
+        <basis core="print" datamembername="basisName.related-project">
+            <layout>
+                <section class="section9 mb-10 overflow-hidden">
+                    <h3 class="font-IRANYekan700 text-2xl mb-6 w-90p mx-auto text-gray700">
+                        پروژه های مرتبط
+                    </h3>
+
+                    <div class="grid grid-cols-4">
+                        @child
+
+                    </div>
+                </section>
+            </layout>
+
+            <face>
+                <div class="projectBox group/projectBox overflow-hidden">
+                    <a href="/@link" class="w-full h-full flex items-center justify-center relative" title="@title">
+
+                        <div class="imgS overflow-hidden">
+                            <img src="[##cms.cms.cdn##]/@00400X00800prp"
+                                class="h-full object-cover grayscale-100 group-hover/projectBox:grayscale-0 duration-500"
+                                alt="@title">
+
+                        </div>
+
+                        <div
+                            class="title scale-75 opacity-0 -right-1 group-hover/projectBox:opacity-100 group-hover/projectBox:scale-100 duration-500 -translate-y-[75px] w-[130px] absolute bg-white rounded-full h-[130px] flex items-center justify-center">
+                            <span class="font-IRANYekan500 text-base text-gray800">
+                                @title
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+            </face>
+        </basis>
+
+
+    </main>
+
+
+    <script src="../assets/js/project.js"></script>
+</body>
+
+</html>

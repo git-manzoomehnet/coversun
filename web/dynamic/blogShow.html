@@ -9,16 +9,28 @@
 </basis>
 
 
-<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376632">
-    <member name="article" type="view"/> 
-    <member name="article250" postsql="select * from [db.article250] where TypeID = 250" type="view"/> 
-   </basis>
-   <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376632"> <member name="image-article" type="list" format="4"/> </basis>
-   <basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="1" usedforid="2376632"> <member type="list" name="related-project" link="project.bc" size="400x800" blgid="1611" /> </basis>
-   <basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="1" usedforid="2376632"> <member type="list" name="related-blog" propertyid="7244,7249" link="article.bc" size="400x300" blgid="222" /> </basis>	
-   <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376639"> <member name="faq" type="view"/ > </basis>	
-   <basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="1" usedforid="2376632"> <member type="list" name="related-product" propertyid="10000792" size="300x400" blgid="221" /> </basis>	
-
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]">
+    <member name="article" type="view" />
+    <member name="article250" postsql="select * from [db.article250] where TypeID = 250" type="view" />
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="[##cms.query.id##]">
+    <member name="image-article" type="list" format="4" />
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="1" usedforid="[##cms.query.id##]">
+    <member type="list" name="related-project" link="project.bc" size="400x800" blgid="1611" />
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="1" usedforid="[##cms.query.id##]">
+    <member type="list" name="related-blog" propertyid="7244,7249" link="article.bc" size="400x300" blgid="222" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376639">
+    <member name="faq" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="1" usedforid="[##cms.query.id##]">
+    <member type="list" name="related-product" propertyid="10000792" size="300x400" blgid="221" />
+</basis>
+<basis core="dbsource" source="userbehavior" name="db" lid="1" userid="100005" usedforid="[##cms.query.id##]">
+    <member request="listcomment" type="list" name="commentlist" link="event.bc" />
+</basis>
 <!DOCTYPE html>
 <html lang="fa">
 
@@ -351,7 +363,7 @@
                                     ایمیل یا شماره همراه
                                 </label>
                                 <input type="email" name="email"
-                                    class="w-full outline-0 h-12 mb-3 text-right font-IRANYekan300 text-sm  placeholder:font-IRANYekan300 " />
+                                    class="w-full outline-0 h-12 mb-3 text-right font-IRANYekan300 text-sm bg-gray50  placeholder:font-IRANYekan300 " />
                             </div>
 
                         </div>
@@ -362,54 +374,65 @@
                                     پیام
                                 </label>
                                 <textarea
-                                    class="w-full outline-0 mb-3 text-right font-IRANYekan300 text-sm h-[137px]  placeholder:font-IRANYekan300 "
+                                    class="w-full outline-0 mb-3 text-right font-IRANYekan300 text-sm h-[137px] bg-gray50  placeholder:font-IRANYekan300 "
                                     name="message" id="message" placeholder="">
                                 </textarea>
                             </div>
                         </div>
 
-                        <div style="column-gap: 12px;" class="btnsContainer gap-x-2.5 flex justify-between  mt-6">
-                            <basis core="dbsource" source="trust_login" name="captcha1" triggers="cms.reload1"
+                        <div class="btnsContainer mt-6">
+                            <div class="gap-x-2.5 flex justify-between items-end">
+                                
+                                <basis core="dbsource" source="trust_login" name="captcha1" triggers="cms.reload1"
                                 run="atclient">
                                 <member name="code1" type="scalar" request="captcha"></member>
                             </basis>
                             <basis datamembername="captcha1.code1" core="print" run="atclient">
                                 <face>
                                     <script type="text/template">
-                                <div style="column-gap: 6px;" class="captchaContain border w-full flex items-center gap-x-3 py-2 flex-row-reverse">
-                    <span class="captcha-sefaresh shrink-0" style="flex-shrink: 0;">
-                        <img src="/@captcha@" width="88" height="44" class="captcha-sefaresh"
-                            alt="captcha" title="captcha" />
-                        <input type="hidden" name="captchaid" value="@captcha@" />
-                    </span>
+                                        <div class="">
+                                            <label style="margin-bottom: 6px;" for="captcha"
+                                            class="font-IRANYekan300 text-back-gray block text-sm ">
+                                            کد امنیتی را وارد نمایید
+                                        </label>
+                                        <div style="column-gap: 6px;" class="captchaContain px-4 py-1 bg-gray50 w-full flex items-center gap-x-3 flex-row-reverse">
+    
+                          <span class="captcha-sefaresh shrink-0" style="flex-shrink: 0;">
+                              <img src="/@captcha@" width="88" height="44" class="captcha-sefaresh"
+                                  alt="captcha" title="captcha" />
+                              <input type="hidden" name="captchaid" value="@captcha@" />
+                          </span>
+      
+                      <img src="[##cms.cms.cdn##]/images/cached.png" class="refressh refressh1 cursor-pointer" run="atclient" bc-triggers="click" bc-name="cms.reload1" />
+             
+      
+                  
+                  <input type="text" class="codeinputm w-full  font-IRANYekan300 text-sm placeholder:font-IRANYekan300 "
+                  name="captcha" />
+         
+                      </div>
 
-                <img src="[##cms.cms.cdn##]/images/cached.png" class="refressh refressh1 cursor-pointer" run="atclient" bc-triggers="click" bc-name="cms.reload1" />
-                <label style="margin-bottom: 6px;" for="captcha"
-                class="font-IRANYekan300 text-back-gray block text-sm ">
-                کد امنیتی را وارد نمایید
-                </label>
-                    <input type="text" class="codeinputm w-full  font-IRANSansWebFANUM300 text-sm placeholder:font-IRANSansWebFANUM300 "
-                    name="captcha" />
-                </div>
-              </script>
-                                </face>
-                            </basis>
+                                        </div>
+                </script>
+                                    </face>
+                                </basis>
 
-                            <button class="relative submitComment cursor-pointer flex items-center justify-center">
-                                <svg width="191" height="66" viewBox="0 0 191 66" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M161 1H1V28" stroke="black" stroke-width="0.75" />
-                                    <path d="M42.5 65H190.5V22" stroke="black" stroke-width="0.75" />
-                                </svg>
-                                <span
-                                    class="w-[173px] font-IRANYekan500 text-sm text-back-gray h-[48px] absolute border border-black/[0.8] flex items-center justify-center">
-                                    ثبت
-                                </span>
-                            </button>
+                                <button class="relative submitComment cursor-pointer flex items-center justify-center">
+                                    <svg width="191" height="66" viewBox="0 0 191 66" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M161 1H1V28" stroke="black" stroke-width="0.75" />
+                                        <path d="M42.5 65H190.5V22" stroke="black" stroke-width="0.75" />
+                                    </svg>
+                                    <span
+                                        class="w-[173px] font-IRANYekan500 text-sm text-back-gray h-[48px] absolute border border-black/[0.8] flex items-center justify-center">
+                                        ثبت
+                                    </span>
+                                </button>
+                            </div>
 
                         </div>
 
-                        <div class="messageSend font-IRANSansWebFANUM400 text-StarDust600 text-sm absolute"
+                        <div class="messageSend font-IRANYekan500 text-StarDust600 text-sm absolute"
                             style="bottom: -30px;">
                             <p></p>
                         </div>
@@ -422,7 +445,7 @@
 
                     <div class=" flex items-center bg-gray50">
                         <!-- Slider main container -->
-                        <div class="swiper commentListSlider w-full">
+                        <div class="swiper commentListSlider w-full relative">
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
@@ -431,7 +454,7 @@
                                     <else-layout>
 
                                         <div style="min-height: 347px;min-width: 100%;"
-                                            class="swiper-slide px-14 text-center  flex flex-col justify-center items-center font-IRANSansWebFaNum400 text-base text-StarDust950">
+                                            class="swiper-slide px-14 text-center  !flex flex-col justify-center items-center font-IRANYekan500 text-base text-StarDust950">
                                             هنوز کامنتی ثبت نشده است.
                                             <br>
                                             شما اولین نفر باشید
@@ -439,7 +462,7 @@
                                     </else-layout>
                                     <face>
                                         <div style="min-height: 347px;min-width: 100%;"
-                                            class="swiper-slide flex flex-col justify-center items-center  px-14">
+                                            class="swiper-slide !flex flex-col justify-center items-center  px-14">
                                             <span class="font-IRANYekan500 mb-3 text-lg block">
                                                 @username
                                             </span>
@@ -455,22 +478,23 @@
                                 </basis>
                             </div>
 
-                            <div class="btn flex translate-y-[45px] items-center justify-center gap-x-5">
+                            <div
+                                class="btn flex absolute bottom-0 left-0 right-0 z-10 items-center justify-center gap-x-5">
                                 <div class="nextComment group/nextBtn cursor-pointer">
-                                    <svg width="62" height="54" viewBox="0 0 62 54" fill="none"
+                                    <svg width="62" heig ht="54" viewBox="0 0 62 54" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <rect class="group-hover/nextBtn:fill-main duration-500" width="62" height="54"
                                             fill="white" />
-                                        <path d="M38 15L25 27.5L38 40" stroke="black" />
+                                        <path d="M25 15L38 27.5L25 40" stroke="black" />
                                     </svg>
 
                                 </div>
                                 <div class="prevComment group/prevBtn cursor-pointer">
-                                    <svg width="62" heig ht="54" viewBox="0 0 62 54" fill="none"
+                                    <svg width="62" height="54" viewBox="0 0 62 54" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <rect class="group-hover/Btn:fill-main duration-500" width="62" height="54"
+                                        <rect class="group-hover/prevBtn:fill-main duration-500" width="62" height="54"
                                             fill="white" />
-                                        <path d="M25 15L38 27.5L25 40" stroke="black" />
+                                        <path d="M38 15L25 27.5L38 40" stroke="black" />
                                     </svg>
                                 </div>
                             </div>
@@ -488,24 +512,24 @@
         <basis core="print" datamembername="basisName.related-blog">
             <layout>
                 <section class="section7 mb-10">
-                    <h3 class="font-IRANYekan500 mb-6 w-90p mx-auto text-gray700">
+                    <h3 class="font-IRANYekan500 text-2xl mb-6 w-90p mx-auto text-gray700">
                         مقالات مرتبط
                     </h3>
-        
+
                     <div class="swiper relatedBlog">
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <!-- Slides -->
-                            
+
                             @child
                         </div>
-                        
+
                     </div>
                 </section>
             </layout>
-            
+
             <face>
-                
+
                 <div class="swiper-slide !w-[480px]">
                     <div class="blogBox group/blogBox">
                         <a href="/@link" title="@title">
@@ -534,25 +558,25 @@
 
         <basis core="print" datamembername="basisName.related-product">
             <layout>
-                <section class="section8">
-                    <h3 class="font-IRANYekan500 mb-6 w-90p mx-auto text-gray700">
+                <section class="section8 mb-10">
+                    <h3 class="font-IRANYekan500 text-2xl mb-6 w-90p mx-auto text-gray700">
                         محصولات مرتبط
                     </h3>
                     <div class="swiper relatedProduct">
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <!-- Slides -->
-                            
+
                             @child
                         </div>
-                        
+
                     </div>
-                    
-                    
-                    
+
+
+
                 </section>
             </layout>
-            
+
             <face>
                 <div class="swiper-slide !w-[309px]">
                     <div class="productBox group/productBox">
@@ -561,16 +585,16 @@
                                 <img src="[##cms.cms.cdn##]/@00300X00400prp"
                                     class="w-full group-hover/blogBox:scale-125 duration-500" alt="@title">
                             </div>
-    
+
                             <h4 class="font-IRANYekan500  mt-3 text-justify text-base text-gray600">
-                               @title
+                                @title
                             </h4>
-    
+
                             <h5
                                 class="font-IRANYekan400 text-base text-gray600 opacity-0 duration-500 group-hover/productBox:opacity-100 group-hover/productBox:translate-y-0 -translate-y-[30px]">
-                              ساخت کشور @prp_10000792
+                                ساخت کشور @prp_10000792
                             </h5>
-    
+
                         </a>
                     </div>
                 </div>
@@ -580,70 +604,83 @@
         <basis core="print" datamembername="basisName.related-project">
             <layout>
                 <section class="section9 mb-10 overflow-hidden">
-                    <h3 class="font-IRANYekan700 mb-6 w-90p mx-auto text-gray700">
+                    <h3 class="font-IRANYekan700 text-2xl mb-6 w-90p mx-auto text-gray700">
                         پروژه های مرتبط
                     </h3>
-        
+
                     <div class="grid grid-cols-4">
                         @child
-                        
+
                     </div>
                 </section>
             </layout>
-            
-            <face >
+
+            <face>
                 <div class="projectBox group/projectBox overflow-hidden">
                     <a href="/@link" class="w-full h-full flex items-center justify-center relative" title="@title">
-    
-                        <div class="imgS overflow-hidden">"
-                            <video
+
+                        <div class="imgS overflow-hidden">
+                            <img src="[##cms.cms.cdn##]/@00400X00800prp"
                                 class="h-full object-cover grayscale-100 group-hover/projectBox:grayscale-0 duration-500"
-                                src="" poster="[##cms.cms.cdn##]/@00400X00800prp"></video>
+                                alt="@title">
+
                         </div>
-    
+
                         <div
                             class="title scale-75 opacity-0 -right-1 group-hover/projectBox:opacity-100 group-hover/projectBox:scale-100 duration-500 -translate-y-[75px] w-[130px] absolute bg-white rounded-full h-[130px] flex items-center justify-center">
                             <span class="font-IRANYekan500 text-base text-gray800">
-                                پارک نما
+                                @title
                             </span>
                         </div>
                     </a>
                 </div>
-                
+
             </face>
         </basis>
-        <section class="section10 mb-16 w-90p mx-auto">
 
 
-            <h4 class="font-IRANYekan500 mb-6 text-gray700">
-                سوالات متداول
-            </h4>
+        <basis core="print" datamembername="db.faq">
+            <layout>
+                <section class="section10 mb-16 w-90p mx-auto">
 
-            <div class="accordion  group/accordion w-full bg-gray50 mb-3 border-b border-b-main">
-                <div class="accordion__intro cursor-pointer flex justify-between items-center">
-                    <h4 class="font-IRANYekan500 text-base text-back-gray">Accordion title</h4>
 
-                    <div class="arrow duration-500 group-[&.accordion__active]/accordion:rotate-45">
-                        <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M21.1603 10.6221H11.8397V0.877863C11.8397 0.351145 11.5038 0 11 0C10.4962 0 10.1603 0.351145 10.1603 0.877863V10.6221H0.839695C0.335878 10.6221 0 10.9733 0 11.5C0 12.0267 0.335878 12.3779 0.839695 12.3779H10.1603V22.1221C10.1603 22.6489 10.4962 23 11 23C11.5038 23 11.8397 22.6489 11.8397 22.1221V12.3779H21.1603C21.6641 12.3779 22 12.0267 22 11.5C22 10.9733 21.6641 10.6221 21.1603 10.6221Z"
-                                fill="black" />
-                        </svg>
+                    <h4 class="font-IRANYekan500 text-2xl mb-6 text-gray700">
+                        سوالات متداول
+                    </h4>
 
+
+                    @child
+
+                </section>
+            </layout>
+
+            <face filter="TypeID=250">
+                <div class="accordion  group/accordion w-full bg-gray50 mb-3 border-b border-b-main">
+                    <div class="accordion__intro cursor-pointer flex justify-between items-center">
+                        <h4 class="font-IRANYekan500 text-base text-back-gray">
+                            @text
+                        </h4>
+
+                        <div class="arrow duration-500 group-[&.accordion__active]/accordion:rotate-45">
+                            <svg width="22" height="23" viewBox="0 0 22 23" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M21.1603 10.6221H11.8397V0.877863C11.8397 0.351145 11.5038 0 11 0C10.4962 0 10.1603 0.351145 10.1603 0.877863V10.6221H0.839695C0.335878 10.6221 0 10.9733 0 11.5C0 12.0267 0.335878 12.3779 0.839695 12.3779H10.1603V22.1221C10.1603 22.6489 10.4962 23 11 23C11.5038 23 11.8397 22.6489 11.8397 22.1221V12.3779H21.1603C21.6641 12.3779 22 12.0267 22 11.5C22 10.9733 21.6641 10.6221 21.1603 10.6221Z"
+                                    fill="black" />
+                            </svg>
+
+                        </div>
+                    </div>
+                    <div class="accordion__content font-IRANYekan300 text-sm text-justify text-back-gray">
+                        <p>
+                            @largetext
+                        </p>
                     </div>
                 </div>
-                <div class="accordion__content font-IRANYekan300 text-sm text-justify text-back-gray">
-                    <p>
-                        صنعت نماسازی همزمان با رشد فناوری. دست به ساخت مصالحی جدید که تا پیش از این وجود خارجی نداشته
-                        اند زده است که یکی از متداول ترین آنها قطعاتی ترکیبی از جنس آلومینیوم و ...
-                    </p>
-                </div>
-            </div>
 
+            </face>
+        </basis>
 
-        </section>
-
-        <basis core="call" file="footer.inc" />
 
     </main>
 

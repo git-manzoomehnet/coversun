@@ -11,6 +11,18 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "IRANYekan400";
+  src: url("../_fonts/iranyekanwebregular.eot");
+  src: url("../_fonts/iranyekanwebregular.eot?#iefix") format("embedded-opentype"),
+    url("../_fonts/iranyekanwebregular.woff") format("woff"),
+    url("../_fonts/iranyekanwebregular.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: "IRANYekan500";
   src: url("../_fonts/iranyekanwebmedium.eot");
@@ -22,9 +34,10 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "PxGrotesk300";
-  src: 
+  src:
     url("../fonts/Px-Grotesk-Light.woff") format("woff"),
     url("../fonts/Px-Grotesk-Light.woff2") format("woff2"),
     url("../fonts/Px-Grotesk-Light.ttf") format("truetype");
@@ -32,9 +45,10 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "PxGrotesk400";
-  src: 
+  src:
     url("../fonts/Px-Grotesk-Regular.woff") format("woff"),
     url("../fonts/Px-Grotesk-Regular.woff2") format("woff2"),
     url("../fonts/Px-Grotesk-Regular.ttf") format("truetype");
@@ -45,10 +59,11 @@
 
 @theme {
   --font-IRANYekan300: "IRANYekan300" !important;
+  --font-IRANYekan400: "IRANYekan400" !important;
   --font-IRANYekan500: "IRANYekan500" !important;
   --font-PxGrotesk300: "PxGrotesk300" !important;
   --font-PxGrotesk400: "PxGrotesk400" !important;
- 
+
   --color-main: #FFCB08;
   --color-gray50: #FAFAFA;
   --color-gray400: #A1A1AA;
@@ -62,36 +77,74 @@
   --spacing-80p: 80%;
 }
 
-.w-90p{
+.w-90p {
   max-width: 1440px;
 }
 
 
 @media (min-width: 1600px) {
-  .megaMenu .leftSec,.megaMenu .bgHmenu , .blogShow .gallerySlider,.blogShow .relatedBlog,.blogShow .relatedProduct{
-padding-left:calc(((100% - 1440px)/2)) ;
-}
-.blogShow .gallerySlider,.blogShow .relatedBlog ,.blogShow .relatedProduct{
-  padding-right:calc(((100% - 1440px)/2)) ;
 
-}
-.closeForm {
-   margin-left:calc(((100% - 1440px)/2)) ;
+  .megaMenu .leftSec,
+  .megaMenu .bgHmenu,
+  .blogShow .gallerySlider,
+  .blogShow .relatedBlog,
+  .blogShow .relatedProduct,
+  .projectShow .gallerySlider,
+  .projectShow .relatedBlog,
+  .projectShow .relatedProduct,
+  .productShow .section2 .btm {
+    padding-left: calc(((100% - 1440px)/2));
+  }
 
- }
+  .blogShow .gallerySlider,
+  .blogShow .relatedBlog,
+  .blogShow .relatedProduct,
+  .projectShow .section1 .rSide,
+  .projectShow .gallerySlider,
+  .projectShow .relatedBlog,
+  .projectShow .relatedProduct,
+  .productShow .section2 .top {
+    padding-right: calc(((100% - 1440px)/2));
+
+  }
+
+  .closeForm {
+    margin-left: calc(((100% - 1440px)/2));
+
+  }
 }
+
 @media (max-width: 1599px) {
-  .megaMenu .leftSec ,.megaMenu .bgHmenu , .blogShow .gallerySlider ,.blogShow .relatedBlog,.blogShow .relatedProduct {
+
+  .megaMenu .leftSec,
+  .megaMenu .bgHmenu,
+  .blogShow .gallerySlider,
+  .blogShow .relatedBlog,
+  .blogShow .relatedProduct,
+  .projectShow .gallerySlider,
+  .projectShow .relatedBlog,
+  .projectShow .relatedProduct,
+  .productShow .section2 .btm {
     padding-left: 5%;
   }
-  .blogShow .gallerySlider,.blogShow .relatedBlog,.blogShow .relatedProduct{
+
+  .blogShow .gallerySlider,
+  .blogShow .relatedBlog,
+  .blogShow .relatedProduct,
+  .projectShow .section1 .rSide,
+
+  .projectShow .gallerySlider,
+  .projectShow .relatedBlog,
+  .projectShow .relatedProduct,
+  .productShow .section2 .top {
     padding-right: 5%;
-    
+
   }
+
   .closeForm {
-     margin-right:5% ;
-  
-   }
+    margin-right: 5%;
+
+  }
 }
 
 
@@ -103,11 +156,13 @@ padding-left:calc(((100% - 1440px)/2)) ;
   overflow: hidden;
   margin-top: 20px;
 }
+
 .accordion__intro {
   position: relative;
   padding: 12px 23px;
   cursor: pointer;
 }
+
 .accordion__content {
   padding: 0 20px;
   max-height: 0;
@@ -123,6 +178,27 @@ padding-left:calc(((100% - 1440px)/2)) ;
   opacity: 1;
 }
 
-.accordion__active .arrow{
+.blogShow .accordion__active .arrow {
   transform: rotate(45deg);
+}
+.productShow .accordion__active .arrow {
+  transform: rotate(180deg);
+}
+
+.scrollBtm .line {
+  animation: animTraitlinear infinite 3s;
+}
+
+@keyframes animTraitlinear {
+  0% {
+    transform: translate(0, -100%);
+  }
+
+  50% {
+    height: 180px;
+  }
+
+  100% {
+    transform: translate(0, 150px);
+  }
 }
