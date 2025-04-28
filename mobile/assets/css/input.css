@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: "IRANYekan800";
-  src: url("../fonts/iranyekanwebblack.ttf") format("truetype");
+  src: url("../fonts/iranyekanwebblack.ttf") format("ttf");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -11,7 +11,7 @@
 
 @font-face {
   font-family: "IRANYekan700";
-  src: url("../fonts/iranyekanwebbold.eot") format("truetype");
+  src: url("../fonts/iranyekanwebbold.eot") format("eot");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: "IRANYekan600";
-  src: url("../fonts/IRANYekanX-DemiBold.woff") format("truetype");
+  src: url("../fonts/IRANYekanX-DemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -27,7 +27,7 @@
 
 @font-face {
   font-family: "IRANYekan500";
-  src: url("../fonts/iranyekanwebmedium.eot") format("truetype");
+  src: url("../fonts/iranyekanwebmedium.eot") format("eot");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -35,7 +35,7 @@
 
 @font-face {
   font-family: "IRANYekan400";
-  src: url("../fonts/iranyekanwebregular.eot") format("truetype");
+  src: url("../fonts/iranyekanwebregular.eot") format("eot");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -43,7 +43,7 @@
 
 @font-face {
   font-family: "IRANYekanr300";
-  src: url("../fonts/iranyekanweblight.ttf") format("truetype");
+  src: url("../fonts/iranyekanweblight.ttf") format("ttf");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -51,7 +51,7 @@
 
 @font-face {
   font-family: "IRANYekan200";
-  src: url("./../fonts/IRANYekanX-UltraLight.woff") format("truetype");
+  src: url("./../fonts/IRANYekanX-UltraLight.woff") format("woff");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -59,7 +59,7 @@
 
 @font-face {
   font-family: "IRANYekan100";
-  src: url("./../fonts/iranyekanwebthin.eot") format("truetype");
+  src: url("./../fonts/iranyekanwebthin.eot") format("eot");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -67,7 +67,7 @@
 
 @font-face {
   font-family: "PxGrotesk400";
-  src: url("./../fonts/Px-Grotesk-Regular.ttf") format("truetype");
+  src: url("./../fonts/Px-Grotesk-Regular.ttf") format("ttf");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
