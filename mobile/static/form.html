@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../assets/css/outputMobile.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div
+        class="relative z-50 p-5 top-0 flex flex-col justify-baseline items-center bottom-0 left-0 right-0 bg-[#000000E5] pupUp ">
+        <div class="w-full flex flex-row justify-between icon h-[55px]">
+            <button id="closepopup">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M13 0.832996L12.167 0L6.5 5.667L0.832812 0L0 0.832996L5.66719 6.5L0 12.167L0.832812 13L6.5 7.333L12.167 13L13 12.167L7.33314 6.5L13 0.832996Z"
+                        fill="#FAFAFA" />
+                </svg>
+            </button>
+            <a href="">
+                <img src="./../assets/images/icon/logocoversunpopup.png" alt="">
+
+            </a>
+
+        </div>
+        <div class="w-full  my-auto pt-[46px] mt-16 bg-gray-50 pb-9 px-2.5 h-[100%]">
+            <div class="flex flex-col gap-2.5">
+                <h4 class="text-[18px] text-back-gray font-IRANYekan500">فرم درخواست</h4>
+                <p class="text-[14px] text-justify text-back-gray font-IRANYekan300">با سلام خدمت مشتری گرامی لطفا پس از
+                    مشخص شدن نوع
+                    درخواست خود فرم را تکمیل نمایید تا کارشناسان مربوطه ما در اسرع وقت با شما تماس بگیرند. علاوه بر این،
+                    لازم است عکس ها و فیلم های پروژه را برای بررسی از طریق گزینه آپلود فایل آپلود کنید. متشکرم</p>
+            </div>
+            <form class="flex flex-col gap-3.5 mt-[23px]">
+                <input type="text" placeholder="نام و نام خانوادگی *"
+                    class="w-full h-[50px] border border-gray-700 p-2 text-[14px] font-IRANYekan300 text-gray-700" />
+
+                <select class="w-full h-[50px] border border-gray-700 p-2 text-[14px] font-IRANYekan300 text-gray-700">
+                    <option>نوع درخواست</option>
+                </select>
+
+                <input type="text" placeholder="شماره تماس *"
+                    class="w-full border border-gray-700 h-[50px] p-2 text-[14px] font-IRANYekan300 text-gray-700" />
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-[14px] text-gray-700 font-IRANYekan300 mt-2.5 mr-2.5" for="">تاریخ
+                        درخواست</label>
+                    <div class="flex flex-row gap-2">
+                        <select
+                            class="flex-1 border border-gray-700 h-[50px] p-2 text-[14px] font-IRANYekan300 text-gray-700">
+                            <option>سال</option>
+                        </select>
+                        <select
+                            class="flex-1 border border-gray-700 h-[50px] p-2 text-[14px] font-IRANYekan300 text-gray-700">
+                            <option>ماه</option>
+                        </select>
+                        <select
+                            class="flex-1 border border-gray-700 h-[50px] p-2 text-[14px] font-IRANYekan300 text-gray-700">
+                            <option>روز</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <input type="text" placeholder="آدرس *"
+                    class="w-full h-[50px] border border-gray-700 p-2 text-[14px] font-IRANYekan300 text-gray-700" />
+
+                <input type="text" placeholder="نام پروژه و جزئیات"
+                    class="w-full h-[50px] border border-gray-700 p-2 text-[14px] font-IRANYekan300 text-gray-700" />
+
+                <textarea rows="4" placeholder="توضیحات"
+                    class="w-full border border-gray-700 p-2 text-[14px] font-IRANYekan300 text-gray-700"></textarea>
+
+                <input type="file"
+                    class="w-full border border-gray-700 h-[50px] p-2 text-[14px] font-IRANYekan300 text-gray-700" />
+
+                <div class="flex items-center gap-2 justify-between">
+                    <input type="text" placeholder="کد امنیتی را وارد نمایید"
+                        class="flex-1 border border-gray-700 p-2 text-[14px] font-IRANYekan300 text-gray-700" />
+                    <img src="captcha-placeholder.png" alt="captcha" class="h-10 border border-gray-700 p-1" />
+                    <button type="button" class="text-xl">↻</button>
+                </div>
+
+                <button type="submit" class="w-[173px] h-[48px] text-black border border-black ">ثبت</button>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    const closeBtn = document.getElementById('closepopup');
+    const popup = document.querySelector('.pupUp');    
+</script>
+
+</html>

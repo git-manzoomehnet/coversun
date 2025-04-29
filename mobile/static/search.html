@@ -1,0 +1,68 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../assets/css/outputMobile.css">
+    <title>Document</title>
+</head>
+
+<body class="bg-[]">
+    <div
+        class="absolute h-[100vh] z-50 p-5 top-0 flex flex-col justify-baseline items-center bottom-0 left-0 right-0 bg-[#000000E5] pupUp ">
+        <div class="w-full flex flex-row justify-between icon h-[55px]">
+            <button id="closepopup">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M13 0.832996L12.167 0L6.5 5.667L0.832812 0L0 0.832996L5.66719 6.5L0 12.167L0.832812 13L6.5 7.333L12.167 13L13 12.167L7.33314 6.5L13 0.832996Z"
+                        fill="#FAFAFA" />
+                </svg>
+            </button>
+            <a href="">
+                <img src="./../assets/images/icon/logocoversunpopup.png" alt="">
+
+            </a>
+
+        </div>
+        <div class="w-full h-auto my-auto">
+            <div class="relative">
+                <button id="buttonSearch" class="absolute top-[17px] left-[14px]">
+                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7.64231 0.0996094C3.43769 0.0996094 0.015625 3.45711 0.015625 7.5824C0.015625 11.7077 3.43769 15.0652 7.64231 15.0652C11.8469 15.0652 15.269 11.7077 15.269 7.5824C15.269 3.45458 11.8469 0.0996094 7.64231 0.0996094ZM7.64231 14.0491C4.00588 14.0491 1.0487 11.1477 1.0487 7.57987C1.0487 4.01205 4.00588 1.11066 7.64231 1.11066C11.2787 1.11066 14.2359 4.01205 14.2359 7.57987C14.2359 11.1477 11.2762 14.0491 7.64231 14.0491Z"
+                            fill="#A1A1AA" />
+                        <path
+                            d="M14.7062 13.9255C14.5073 13.7253 14.1793 13.7228 13.9753 13.9179C13.7713 14.113 13.7687 14.4348 13.9675 14.635L16.0673 16.7433C16.168 16.8446 16.3023 16.8953 16.4366 16.8953C16.5657 16.8953 16.6975 16.8472 16.7982 16.7509C17.0022 16.5558 17.0048 16.2339 16.8059 16.0338L14.7062 13.9255Z"
+                            fill="#A1A1AA" />
+                    </svg>
+
+                </button>
+                <input id="inputSerch" class="w-full h-[54px] outline-none text-gray-400 p-3.5 border border-gray-50"
+                    placeholder="جستجو کنید..." type="text">
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    const closeBtn = document.getElementById('closepopup');
+    const popup = document.querySelector('.pupUp');
+    const inputSerch = document.querySelector("#inputSerch")
+    inputSerch.addEventListener("keydown", (e) => {
+        if (e.keyCode == 13 && e.value != '') {
+            searchResult(e.value)
+        }
+    })
+    const buttonSearch = document.querySelector("#buttonSearch")
+    buttonSearch.addEventListener("click", () => {
+        if (inputSerch.value != "") {
+            searchResult(inputSerch.value)
+        }
+    })
+    function searchResult(value) {
+        window.location.href = `/searchresult.html?q=${value}`
+    }
+</script>
+
+</html>

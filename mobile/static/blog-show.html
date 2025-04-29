@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <div class="absolute z-50 w-full h-[70px] bg-[red] mb-2.5">
+        <div class="absolute z-50 w-full h-[70px] mb-2.5">
         </div>
     </header>
     <main>
@@ -34,7 +34,7 @@
                     خارجی</h2>
                 <div class="w-full flex flex-row justify-between items-center my-6">
                     <h3 class="text-[14px] font-PxGrotesk400 text-gray-600">1402 - 10 - 16</h3>
-                    <button id="shareBtn">
+                    <button id="shareBtn" class="cursor-pointer">
                         <svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_325_2802)">
                                 <path
@@ -209,7 +209,7 @@
                 <div class="swiper scrollProjectList-3 !h-[342px] relative">
                     <div class="swiper-wrapper w-full">
 
-                        <div class="swiper-slide w-full h-auto bg-[red]">
+                        <div class="swiper-slide w-full h-auto">
                             <div class="w-full h-[197px]">
                                 <img class="w-full h-[197px]" src="./../assets/images/blog.png" alt="">
                             </div>
@@ -422,11 +422,11 @@
 
 
     </main>
-    <footer class="h-[100px] w-full bg-red-500">
+    <footer class="h-[100px] w-full ">
 
     </footer>
     <div
-        class="absolute h-[100vh] z-50 p-5 top-0 flex flex-col justify-baseline items-center bottom-0 left-0 right-0 bg-[#000000E5] pupUp ">
+        class="absolute h-[100vh] opacity-0 z-50 p-5 top-0 hidden flex-col justify-baseline items-center bottom-0 left-0 right-0 bg-[#000000E5] pupUp ">
         <div class="w-full flex flex-row justify-between icon h-[55px]">
             <button id="closepopup">
                 <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -527,11 +527,12 @@
                 }
             });
         });
+        const shareBtn = document.querySelector("#shareBtn")
         const closeBtn = document.getElementById('closepopup');
         const popup = document.querySelector('.pupUp');
-
-        closeBtn.addEventListener('click', function () {
-            popup.classList.add('hidden-popup');
+        shareBtn.addEventListener("click", () => { popup.classList.add("hidden-popup") })
+        closeBtn.addEventListener('click', () => {
+            popup.classList.remove("hidden-popup")
         });
     });
 
