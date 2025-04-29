@@ -1,5 +1,4 @@
 const gallerySlider = new Swiper('.gallerySlider', {
-  
     loop: true,
  speed:1000,
     // Navigation arrows
@@ -207,12 +206,14 @@ const gallerySlider = new Swiper('.gallerySlider', {
 
 
 let viduBox = document.querySelectorAll(".viduBox")
+
 viduBox?.forEach(element => {
     element.addEventListener("mouseenter" , function (params) {
-        element.play();
+        
+        element.querySelector("video").play();
     })
     element.addEventListener("mouseout" , function (params) {
-        element.pause();
+        element.querySelector("video").pause();
     })
 });
     

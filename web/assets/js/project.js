@@ -21,3 +21,6 @@ const gallerySlider = new Swiper('.gallerySlider', {
     document.querySelector(".dessc").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 
    })
+
+
+   

@@ -1,0 +1,252 @@
+<basis core="dbsource" request="seo" source="basiscore" name="db" lid="1">
+    <member name="seolist" type="list" request="cat" id="[##cms.query.catid##]"></member>
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20">
+    <member request="cat" type="tree" name="productCat" parentid="214297" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" catid="214301">
+    <member name="list-product" size="400x500" propertyid="10000792" type="list" />
+</basis>
+
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <basis core="print" datamembername="db.seolist">
+        <face>
+            <title>[##cms.seo.title|db.seolist.title##]</title>
+            <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
+        </face>
+    </basis>
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
+    <basis core="call" file="styles.inc" />
+</head>
+
+<body>
+    <main class="productList" dir="rtl">
+        <basis core="call" file="header.inc" />
+
+        <div class="breadCrumb absolute w-90p mx-auto z-2 right-0 left-0 top-[156px]">
+            <ul class="flex items-center gap-x-1.5">
+                <li>
+                    <a href="/" class="font-IRANYekan300 text-sm text-black" title="home">
+                        صفحه نخست
+                    </a>
+                </li>
+
+                <li>
+                    <span class="font-IRANYekan300 text-sm text-black">
+                        .
+                    </span>
+                </li>
+                <li>
+                    <a href="/product-cat.bc" class="font-IRANYekan300 text-sm text-black" title="home">
+                        محصولات
+                    </a>
+                </li>
+                <basis core="print" datamembername="basisName.productCat">
+
+                    <face filter="catid='[##cms.query.catid##]'">
+
+                        <li>
+                            <span class="font-IRANYekan300 text-sm text-black">
+                                .
+                            </span>
+                        </li>
+                        <li>
+                            <span class="font-IRANYekan300 text-sm text-black">
+                                @title
+                            </span>
+                        </li>
+
+                    </face>
+                </basis>
+            </ul>
+        </div>
+
+
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide !h-svh !w-fit">
+                    <div class="flex h-full items-center relative">
+                        <basis core="print" datamembername="basisName.productCat">
+
+                            <face filter="catid='[##cms.query.catid##]'">
+                                <div class="imgS h-full relative after:absolute after:inset-0 after:bg-black/[0.45]">
+                                    <img class="h-full" src="[##cms.cms.cdn##]/@image" alt="@title">
+                                </div>
+
+
+
+
+
+                                <div class="absolute cattitle z-1">
+                                    <img src="[##cms.cms.cdn##]/images/icone-Def-@catid.png" class="mb-5" alt="@title">
+                                    <h2 class="font-IRANYekan500 text-2xl text-white">
+                                        @title
+
+                                    </h2>
+                                    <span class="font-PxGrotesk400 text-sm text-white lowercase">
+                                        @urltitle
+
+                                    </span>
+                                </div>
+                            </face>
+                        </basis>
+                    </div>
+                </div>
+
+                <basis core="print" datamembername="db.list-product">
+                    <layout>
+                        @child
+                    </layout>
+                    <else-layout>
+                        <div class="swiper-slide  !flex items-center !h-svh !w-fit pr-[109px] pl-[27px]">
+                            <div class="para font-IRANYekan400 text-base text-gray600">
+                                <p>
+                                    متاسفانه محصولی موجود نیست
+                                </p>
+                            </div>
+
+                        </div>
+                    </else-layout>
+                    <face>
+                        <div class="swiper-slide  !flex items-center !h-svh !w-fit pr-[109px] pl-[27px]">
+                            <div
+                                class="productBox scale-110 opacity-0 duration-700 [&.activeSlideEffect]:opacity-100 [&.activeSlideEffect]:scale-100  productSlide group/productBox">
+                                <a href="/@link" title="@title">
+                                    <div class="imgS overflow-hidden">
+                                        <img src="[##cms.cms.cdn##]/@00400X00500prp"
+                                            class="w-full group-hover/blogBox:scale-125 duration-500" alt="@title">
+                                    </div>
+
+                                    <h4 class="font-IRANYekan500  mt-3 text-justify text-base text-gray600">
+                                    @title
+                                    </h4>
+
+                                    <h5
+                                        class="font-IRANYekan400 text-base text-gray600 opacity-0 duration-500 group-hover/productBox:opacity-100 group-hover/productBox:translate-y-0 -translate-y-[30px]">
+                                         ساخت کشور @prp_10000792
+                                    </h5>
+
+                                </a>
+                            </div>
+
+
+
+                        </div>
+
+                    </face>
+                </basis>
+
+
+                <div class="swiper-slide !h-svh !w-fit bg-black ">
+                    <div class="pt-[90px] h-full flex flex-col justify-between px-[103px]">
+                        <a href="/" title="home" aria-label="home">
+                            <img src="[##cms.cms.cdn##]/images/footer.png" alt="logo">
+
+                        </a>
+                        <div class="footerLine my-5 w-px h-full bg-white"></div>
+
+                        <div class="phone flex  items-center gap-x-2.5 ">
+                            <p class="font-IRANYekan300 text-sm text-white">
+                                شماره تماس :
+                            </p>
+
+                            <span class="font-PxGrotesk300 text-white text-2xl"> 1736 </span>
+                        </div>
+
+                        <div class="footerLine my-5 w-px h-full bg-white"></div>
+                        <div class="btm">
+                            <div class="socials mb-8">
+                                <ul class="flex items-center gap-x-4">
+
+                                    <basis core="print" datamembername="db.contactus">
+
+                                        <face filter="text='لینکدین'">
+                                            <li>
+                                                <a href="@largetext" title="linkdin"
+                                                    class="opacity-50 duration-500 hover:opacity-100">
+                                                    <img src="[##cms.cms.cdn##]/images/linkdinFooter.svg" alt="linkdin">
+
+                                                </a>
+                                            </li>
+
+                                        </face>
+                                    </basis>
+                                    <basis core="print" datamembername="db.contactus">
+
+                                        <face filter="text='واتس اپ'">
+                                            <li>
+                                                <a href="@largetext" title="whatsapp"
+                                                    class="opacity-50 duration-500 hover:opacity-100">
+                                                    <img src="[##cms.cms.cdn##]/images/whatsappFooter.svg"
+                                                        alt="whatsapp">
+
+                                                </a>
+                                            </li>
+                                        </face>
+                                    </basis>
+
+                                    <basis core="print" datamembername="db.contactus">
+
+                                        <face filter="TypeID=242">
+                                            <li>
+                                                <a href="mailto:@Answer" title="email"
+                                                    class="opacity-50 duration-500 hover:opacity-100">
+                                                    <img src="[##cms.cms.cdn##]/images/emailFooter.svg" alt="email">
+
+                                                </a>
+                                            </li>
+                                        </face>
+                                    </basis>
+
+                                    <basis core="print" datamembername="db.contactus">
+
+                                        <face filter="text='اینستاگرام'">
+                                            <li>
+                                                <a href="@largetext" title="instagram"
+                                                    class="opacity-50 duration-500 hover:opacity-100">
+                                                    <img src="[##cms.cms.cdn##]/images/instagramFooter.svg"
+                                                        alt="instagram">
+
+
+                                                </a>
+                                            </li>
+                                        </face>
+                                    </basis>
+
+                                </ul>
+                            </div>
+
+                            <div class="pb-7 -mr-4 flex items-center gap-x-2.5">
+                                <p class="font-IRANYekan300 text-sm text-white">
+                                    طراحی سایت و بهینه‌سازی سایت
+                                </p>
+                                <a href="https://namasite.ir">
+                                    <img src="[##cms.cms.cdn##]/images/namasite.png" alt="namasite">
+                                </a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </main>
+    <basis core="call" file="scripts.inc" />
+
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle11.0.6.min.js"></script>
+    <script src="[##cms.cms.cdn##]/js/productList.js"></script>
+</body>
+
+</html>

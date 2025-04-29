@@ -93,9 +93,10 @@
   .projectShow .relatedBlog,
   .projectShow .relatedProduct,
   .productShow .section2 .btm {
-    padding-left: calc(((100% - 1440px)/2));
+    padding-left: calc(((100vw - 1440px)/2));
   }
 
+  .productList .cattitle,
   .blogShow .gallerySlider,
   .blogShow .relatedBlog,
   .blogShow .relatedProduct,
@@ -122,6 +123,8 @@
   .blogShow .relatedBlog,
   .blogShow .relatedProduct,
   .projectShow .gallerySlider,
+  .productShow .relatedBlog,
+  .productShow .relatedProduct,
   .projectShow .relatedBlog,
   .projectShow .relatedProduct,
   .productShow .section2 .btm {
@@ -132,13 +135,15 @@
   .blogShow .relatedBlog,
   .blogShow .relatedProduct,
   .projectShow .section1 .rSide,
-
   .projectShow .gallerySlider,
   .projectShow .relatedBlog,
   .projectShow .relatedProduct,
   .productShow .section2 .top {
     padding-right: 5%;
 
+  }
+  .productList .cattitle{
+    padding-right: 5vw;
   }
 
   .closeForm {
@@ -201,4 +206,22 @@
   100% {
     transform: translate(0, 150px);
   }
+}
+
+.hide-breadcrumb {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+
+.scrollTop {
+  opacity: 0;
+  transform: translateY(150px);
+  transition: all 0.8s ease;
+}
+
+.scrollTop.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

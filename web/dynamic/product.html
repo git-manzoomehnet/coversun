@@ -12,13 +12,13 @@
 
 
 
-<basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" usedforid="2376602"> <member name="product" type="view"/> </basis>
-<basis core="dbsource" name="db" source="media" lid="1" sourcemid="20" usedforid="2376602"> <member name="image-product" type="list" format="4"/> </basis>
-<basis core="dbsource" name="db" source="media" lid="1" sourcemid="20" usedforid="2376602"> <member name="pdf-product" type="list" format="9"/> </basis>
-<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" usedforid="2376602"> <member type="list" name="related-Product" size="300x400" blgid="18" /> </basis>
-<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" usedforid="2376602"> <member type="list" name="related-blog" size="400x300" blgid="218" /> </basis>	
-<basis core="dbsource" name="db" source="media" lid="1" sourcemid="20" usedforid="2376602"> <member name="video-product" type="list" format="3"/> </basis>
-     <basis core="dbsource" source="basiscore" name="db" lid="1" mid="20" usedforid="2376602" > <member request="navigationcat" type="tree" name="nav" postsql="select * from [db.nav] where Parentcatid= Catid"  /> </basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" usedforid="[##cms.query.id##]"> <member name="product" type="view"/> </basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="20" usedforid="[##cms.query.id##]"> <member name="image-product" type="list" format="4"/> </basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="20" usedforid="[##cms.query.id##]"> <member name="pdf-product" type="list" format="9"/> </basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" usedforid="[##cms.query.id##]"> <member type="list" name="related-Product" propertyid="10000792" size="300x400" blgid="18" /> </basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" usedforid="[##cms.query.id##]"> <member type="list" name="related-blog" propertyid="7244,7249" size="400x300" blgid="218" /> </basis>	
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="20" usedforid="[##cms.query.id##]"> <member name="video-product" type="list" format="3"/> </basis>
+     <basis core="dbsource" source="basiscore" name="db" lid="1" mid="20" usedforid="[##cms.query.id##]" > <member request="navigationcat" type="tree" name="nav" postsql="select * from [db.nav] where Parentcatid= Catid"  /> </basis>
 <basis core="dbsource" source="basiscore" name="db" lid="1" mid="20" > <member request="cat" type="tree" name="parent" parentid="[##db.nav.Parentcatid##]" size="452x452"></member> </basis>
 
 
@@ -110,7 +110,7 @@
                 <face filter="RowNumber=1">
 
                     <div class="absolute w-90p mx-auto left-0 right-0">
-                        <img src="[##cms.cms.cdn##]/images/icone-Def-@catid" class="mb-5" alt="@title">
+                        <img src="[##cms.cms.cdn##]/images/icone-Def-@catid.png" class="mb-5" alt="@title">
                         <h2 class="font-IRANYekan500 text-2xl text-white">
                             @title
 
@@ -424,10 +424,10 @@
                                     class="font-IRANYekan300 text-back-gray block text-sm ">
                                     پیام
                                 </label>
-                                <textarea
+                                <_textarea
                                     class="w-full outline-0 mb-3 text-right font-IRANYekan300 text-sm h-[137px] bg-gray50  placeholder:font-IRANYekan300 "
                                     name="message" id="message" placeholder="">
-                                </textarea>
+                                </_textarea>
                             </div>
                         </div>
 
@@ -652,13 +652,13 @@
             </face>
         </basis>
 
-        <section class="section9 flex">
+        <section class="section9 grid grid-cols-2">
             <basis core="print" datamembername="db.video-product">
               
                 <face filter="format=3">
                     
                     <div class="viduBox group/viduBox overflow-hidden">
-                        <video src="[##cms.cms.cdn##]/@largeIMG" class="h-full object-cover grayscale-100 group-hover/viduBox:grayscale-0 duration-500">
+                        <video src="[##cms.cms.cdn##]/@largeIMG" muted loop class="h-full object-cover grayscale-100 group-hover/viduBox:grayscale-0 duration-500">
         
                         </video>
                     </div>
