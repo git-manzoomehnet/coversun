@@ -1,8 +1,19 @@
 <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376503" run="atclient">
-    <member name="image" type="list" format="4" preview="true"/>
+    <member name="image" type="list" format="4" />
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" run="atclient">
+    <member request="cat" type="tree" name="productCat" parentid="214297" preview="true" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376503" run="atclient">
+    <member name="aboutus" type="view" />
+</basis>
+<basis core="dbsource" source="media" name="db" lid="1" catid="2389" run="atclient">
+    <member type="list" name="projectVideo" perpage="10" pageno="1" preview="true" />
 </basis>
 
+
 <html lang="en">
+<!-- http://J110Xu.UnderTest.ir/cat992412000001 -->
 
 <head>
     <meta charset="UTF-8">
@@ -12,80 +23,58 @@
     <title>Document</title>
 </head>
 <script src="./../basis-loader.js"></script>
+
 <body>
-    <basis core="print" datamembername="db.image" run="atclient">                
-        <face filter="ord=50">
-            <div>@name@</div>
-            <script type="text/template">                                
-                <img class="h-[170px] w-[350px]" src="[##cms.cms.cdn##]/@largeIMG@" alt="" />
-                
-                
-            </script>
-
-            
-            
-        </face>
-    </basis>
-
-    
     <header>
         <div class="absolute z-50 w-full h-[70px] mb-2.5 bg-[red]">
         </div>
     </header>
     <main>
-        <div class="relative w-full h-[750px] flex flex-col justify-between items-center overflow-hidden">
-            <div class="w-full bg-cover bg-no-repeat h-full relative z-10 bg-[#00000033] text-white text-3xl justify-center items-cejustify-center"
-                style="background-image: url(./../assets/images/landing.png);">
-                <div class="w-full h-full flex flex-col justify-end items-start p-6">
 
-                    <div class="flex flex-col justify-start items-center w-full">
-                        <h4 class="font-PxGrotesk400 text-[14px] text-gray-300 mb-">scroll down</h4>
-                        <span class="flex w-[1px] h-[30px] bg-gray-700 mt-[8px]"></span>
+        <div class="relative w-full h-[844px] flex flex-col justify-between items-center overflow-hidden">
+            <basis core="print" datamembername="db.image" run="atclient">
+                <face filter="ord=50">
+                    <div>@name@</div>
+                    <!-- <script type="text/template"> -->
+                    <div class="w-full bg-cover bg-center bg-no-repeat h-full relative z-10 bg-[#00000033] text-white text-3xl justify-center items-cejustify-center"
+                        style="background-image: url([##cms.cms.cdn##]/@largeIMG@);">
+                        <div class="w-full h-full flex flex-col justify-end items-start p-6">
+
+                            <div class="flex flex-col justify-start gap-2 items-center w-full">
+                                <h4 class="font-PxGrotesk400 text-[14px] text-gray-50 mb-">scroll down</h4>
+                                <div class="c-scrolldown">
+                                    <div class="c-line"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
+                    <!-- </script> -->
+                </face>
+            </basis>
 
-                </div>
-
-            </div>
 
         </div>
         <section>
-            <div class="w-full h-auto  flex flex-col justify-center items-start py-[68px]">
-                <div class="w-full h-[150px] flex flex-row justify-center items-start grayscale p-5 bg-center bg-cover bg-no-repeat"
-                    style="background-image: url('./../assets/images/productList/img2.png');">
-                    <div class="w-[40%] h-full flex items-center justify-start ">
-                        <img src="./../assets/images/landingCat1.svg" alt="">
-                    </div>
-                    <div class="w-[60%] h-full flex items-center justify-start">
-                        <h4 class="text-[16px] text-white font-IRANYekan500 scrollTop">سقف قابل جابجایی </h4>
-                    </div>
-                </div>
-                <div class="w-full h-[150px] flex flex-row justify-center items-start grayscale p-5 bg-center bg-cover bg-no-repeat"
-                    style="background-image: url('./../assets/images/productList/img3.png');">
-                    <div class="w-[40%] h-full flex items-center justify-start ">
-                        <img src="./../assets/images/landingCat2.svg" alt="">
-                    </div>
-                    <div class="w-[60%] h-full flex items-center justify-start">
-                        <h4 class="text-[16px] text-white font-IRANYekan500 scrollTop">پرده‌های رول‌آپ</h4>
-                    </div>
-                </div>
-                <div class="w-full h-[150px] flex flex-row justify-center items-start grayscale p-5 bg-center bg-cover bg-no-repeat"
-                    style="background-image: url('./../assets/images/productList/img4.png');">
-                    <div class="w-[40%] h-full flex items-center justify-start ">
-                        <img src="./../assets/images/landingCat3.svg" alt="">
-                    </div>
-                    <div class="w-[60%] h-full flex items-center justify-start">
-                        <h4 class="text-[16px] text-white font-IRANYekan500 scrollTop">پرده های آلومینیومی</h4>
-                    </div>
-                </div>
-                <div class="w-full h-[150px] flex flex-row justify-center items-start grayscale p-5 bg-center bg-cover bg-no-repeat"
-                    style="background-image: url('./../assets/images/productList/img5.png');">
-                    <div class="w-[40%] h-full flex items-center justify-start ">
-                        <img src="./../assets/images/landingCat4.svg" alt="">
-                    </div>
-                    <div class="w-[60%] h-full flex items-center justify-start">
-                        <h4 class="text-[16px] text-white font-IRANYekan500 scrollTop">سیستم سایبان</h4>
-                    </div>
-                </div>
+            <div class="w-full h-auto  flex flex-col justify-center items-start pb-[68px]">
+                <basis core="print" datamembername="basisName.productCat" run="atclient">
+                    <face>
+                        <!-- <script type="text/template"> -->
+
+                        <div class="w-full h-[150px] flex flex-row justify-center items-start grayscale p-5 bg-center bg-cover bg-no-repeat"
+                            style="background-image: url([##cms.cms.cdn##]/@image@);">
+                            <div class="w-[40%] h-full flex items-center justify-start ">
+                                <!-- <img src="./../assets/images/landingCat1.svg" alt="" /> -->
+                            </div>
+                            <div class="w-[60%] h-full flex items-center justify-start">
+                                <h4 class="text-[16px] text-white font-IRANYekan500 scrollTop">@title </h4>
+                            </div>
+                        </div>
+                        <!-- </script> -->
+
+                    </face>
+                </basis>
                 <div class="w-full">
                     <a class="w-full h-[73px] text-[14px] text-gray-800 font-IRANYekan300 flex gap-2 justify-center items-center"
                         href="">
@@ -101,39 +90,60 @@
 
         </section>
         <section>
-            <div class="w-full h-[356px] flex flex-col justify-center items-center bg-main">
-                <h2 class="text-[18px]  font-IRANYekan500 text-black scrollTop">about cover sun</h2>
-                <p class="font-PxGrotesk300 text-[14px] text-black text-center mt-[35px] mb-[25px] w-[351px] scrollTop">
-                    Cover Sun
-                    is a specialized manufacturer of modern curtains and electric ceilings that started its activity in
-                    2012 and after two decades of effort and focus on innovation in this field, this company has been
-                    able to improve its quality level</p>
-                <a href=""
-                    class="w-[173px] h-[48px] text-back-gray border border-back-gray flex justify-center items-center icon text-[14px] font-IRANYekan500 scrollTop">
-                    بیشتر بدانید</a>
+
+            <div
+                class="w-full h-[356px] flex flex-col justify-center items-center bg-main [&>p]:font-PxGrotesk300 [&>p]:text-[14px] [&>p]:text-black [&>p]:text-center [&>p]:mt-[35px] [&>p]:mb-[25px] [&>p]:max-w-[351px] [&>p]:w-full px-5">
+                <basis core="print" datamembername="db.aboutus" run="atclient">
+                    <face filter="TypeID=250">
+                        <h2 class="text-[18px]  font-IRANYekan500 text-black ">@text@</h2>
+                        @largetext@
+                    </face>
+                </basis>
+                <div class="relative w-[173px] mt-[25px] h-[48px] mx-auto">
+                    <div class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-black z-0"></div>
+                    <div class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-black z-0">
+                    </div>
+
+                    <a href="#"
+                        class="relative z-10  font-IRANYekan500 text-[14px] w-full h-full flex items-center justify-center border border-black text-black text-lg font-bold no-underline">
+                        بیشتر بدانید
+                    </a>
+                </div>
             </div>
 
         </section>
+
         <section>
             <div class="flex-col justify-start my-11 pr-5 mt-[60px]">
                 <div>
                     <h4 class="text-[18px] font-IRANYekan500 pb-6 text-black">پروژه های کاورسان</h4>
                 </div>
+                <!-- poster="/images/first-video-cover.jpg" -->
                 <div class="">
                     <div class="swiper scrollProjectList-4 relative">
                         <div class="swiper-wrapper w-full !h-[657px]">
-                            <div class="swiper-slide w-full h-full flex flex-col gap-1.5">
-                                <div class="w-full h-[624px]">
-                                    <img class="w-full h-[624px]" src="./../assets/images/productList/slider2.jpg"
-                                        alt="">
-                                </div>
-                                <div class="flex flex-col gap-1.5 py-1.5">
-                                    <h4 class="text-[16px] font-IRANYekan500 text-gray-500"> black out</h4>
-                                </div>
+                            <basis core="list" datamembername="db.projectVideo" run="atclient">
+                                <face>
+                                    <script type="text/template">
+                                    <div class="swiper-slide w-full h-full flex flex-col gap-1.5">
+                                        <div class="w-full h-[624px]">
+                                            <video class="video-background" autoplay="true" loop="" muted="" playsinline="">
+                                                <source src="[##cms.cms.cdn##]/@largeIMG@" type="video/mp4" />
+                                            </video>
+                                            <!-- <img class="w-full h-[624px]" src="./../assets/images/productList/slider2.jpg"
+                                                alt=""> -->
+                                        </div>
+                                        <div class="flex flex-col gap-1.5 py-1.5">
+                                            <h4 class="text-[16px] font-IRANYekan500 text-gray-500"> black out</h4>
+                                        </div>
+                                    </div>
+                                    </script>
+                                </face>
+                            </basis>
 
 
 
-                            </div>
+
                             <div class="swiper-slide w-full h-full flex flex-col gap-1.5">
                                 <div class="w-full h-[624px]">
                                     <img class="w-full h-[624px]" src="./../assets/images/productList/slider2.jpg"
@@ -174,7 +184,7 @@
 </body>
 <script src="http://www.ramand-co.com/_js/swiper.js"></script>
 <script src="http://www.ramand-co.com/_js/lenisScroll.js"></script>
-<script>    
+<script>
     let lastScrollY = window.scrollY;
     let isInitialLoad = true;
 
