@@ -7,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-300: oklch(80.8% 0.114 19.571);
     --color-green-50: oklch(98.2% 0.018 155.826);
     --color-gray-50: #FAFAFA;
     --color-gray-300: #D4D4D8;
@@ -21,14 +22,10 @@
     --container-md: 28rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
-    --text-lg: 1.125rem;
-    --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
-    --font-weight-semibold: 600;
-    --radius-lg: 0.5rem;
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -305,6 +302,9 @@
   .my-\[31px\] {
     margin-block: 31px;
   }
+  .my-\[35px\] {
+    margin-block: 35px;
+  }
   .my-\[42px\] {
     margin-block: 42px;
   }
@@ -353,6 +353,9 @@
   .mt-\[33px\] {
     margin-top: 33px;
   }
+  .mt-\[35px\] {
+    margin-top: 35px;
+  }
   .mt-\[50px\] {
     margin-top: 50px;
   }
@@ -394,6 +397,9 @@
   }
   .mb-\[24px\] {
     margin-bottom: 24px;
+  }
+  .mb-\[25px\] {
+    margin-bottom: 25px;
   }
   .mb-\[33px\] {
     margin-bottom: 33px;
@@ -449,6 +455,9 @@
   .h-\[1px\] {
     height: 1px;
   }
+  .h-\[23px\] {
+    height: 23px;
+  }
   .h-\[27px\] {
     height: 27px;
   }
@@ -460,6 +469,9 @@
   }
   .h-\[30px\] {
     height: 30px;
+  }
+  .h-\[31px\] {
+    height: 31px;
   }
   .h-\[33px\] {
     height: 33px;
@@ -559,6 +571,9 @@
   }
   .h-\[355px\] {
     height: 355px;
+  }
+  .h-\[356px\] {
+    height: 356px;
   }
   .h-\[367px\] {
     height: 367px;
@@ -668,6 +683,9 @@
   .w-\[160px\] {
     width: 160px;
   }
+  .w-\[167px\] {
+    width: 167px;
+  }
   .w-\[173px\] {
     width: 173px;
   }
@@ -682,6 +700,9 @@
   }
   .w-\[350px\] {
     width: 350px;
+  }
+  .w-\[351px\] {
+    width: 351px;
   }
   .w-\[360px\] {
     width: 360px;
@@ -916,6 +937,9 @@
   }
   .bg-main {
     background-color: var(--color-main);
+  }
+  .bg-red-300 {
+    background-color: var(--color-red-300);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -1207,10 +1231,6 @@
   }
   .grayscale {
     --tw-grayscale: grayscale(100%);
-    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
-  }
-  .grayscale-0 {
-    --tw-grayscale: grayscale(0%);
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
   .filter {
