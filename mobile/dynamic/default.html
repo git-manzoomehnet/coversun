@@ -1,3 +1,7 @@
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376503" run="atclient">
+    <member name="image" type="list" format="4" preview="true"/>
+</basis>
+
 <html lang="en">
 
 <head>
@@ -7,8 +11,23 @@
     <link rel="stylesheet" href="http://www.ramand-co.com/css/swiper.css">
     <title>Document</title>
 </head>
-
+<script src="./../basis-loader.js"></script>
 <body>
+    <basis core="print" datamembername="db.image" run="atclient">                
+        <face filter="ord=50">
+            <div>@name@</div>
+            <script type="text/template">                                
+                <img class="h-[170px] w-[350px]" src="[##cms.cms.cdn##]/@largeIMG@" alt="" />
+                
+                
+            </script>
+
+            
+            
+        </face>
+    </basis>
+
+    
     <header>
         <div class="absolute z-50 w-full h-[70px] mb-2.5 bg-[red]">
         </div>

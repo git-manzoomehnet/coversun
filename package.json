@@ -1,14 +1,11 @@
 {
   "dependencies": {
     "@tailwindcss/cli": "^4.1.4",
+    "express": "^5.1.0",
     "tailwindcss": "^4.1.4"
   },
   "scripts": {
-    
-
     "watch:web": "npx @tailwindcss/cli -i ./web/assets/css/input.css -o ./web/assets/css/outputDesk.css --watch",
-    "watch:mobile":"npx @tailwindcss/cli -i ./mobile/assets/css/input.css -o ./mobile/assets/css/outputMobile.css --watch"
-
+    "watch:mobile": "npx @tailwindcss/cli -i ./mobile/assets/css/input.css -o ./mobile/assets/css/outputMobile.css --watch"
   }
-
 }
