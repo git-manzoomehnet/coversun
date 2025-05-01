@@ -1,24 +1,29 @@
 <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376503" run="atclient">
-    <member name="image" type="list" format="4" />
+    <member name="image" type="list" format="4" preview="true" />
 </basis>
 <basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" run="atclient">
     <member request="cat" type="tree" name="productCat" parentid="214297" preview="true" />
 </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376503" run="atclient">
-    <member name="aboutus" type="view" />
+    <member name="aboutus" type="view" preview="true" />
 </basis>
 <basis core="dbsource" source="media" name="db" lid="1" catid="2389" run="atclient">
     <member type="list" name="projectVideo" perpage="10" pageno="1" preview="true" />
 </basis>
-
+<!-- size="305x624" -->
+<!-- <basis core="dbsource" source="basiscore" name="db" lid="1" mid="20" run="atclient">
+    <member request="cat" type="tree" name="parent" parentid="[##db.nav.Parentcatid##]" size="452x452" preview="true"></member>
+</basis> -->
 
 <html lang="en">
 <!-- http://J110Xu.UnderTest.ir/cat992412000001 -->
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../assets/css/outputMobile.css">
+    <link rel="stylesheet" href="http://127.0.0.1:5502/mobile/assets/css/outputMobile.css">
+
     <link rel="stylesheet" href="http://www.ramand-co.com/css/swiper.css">
     <title>Document</title>
 </head>
@@ -60,7 +65,7 @@
             <div class="w-full h-auto  flex flex-col justify-center items-start pb-[68px]">
                 <basis core="print" datamembername="basisName.productCat" run="atclient">
                     <face>
-                        <!-- <script type="text/template"> -->
+                        <script type="text/template">
 
                         <div class="w-full h-[150px] flex flex-row justify-center items-start grayscale p-5 bg-center bg-cover bg-no-repeat"
                             style="background-image: url([##cms.cms.cdn##]/@image@);">
@@ -68,16 +73,16 @@
                                 <!-- <img src="./../assets/images/landingCat1.svg" alt="" /> -->
                             </div>
                             <div class="w-[60%] h-full flex items-center justify-start">
-                                <h4 class="text-[16px] text-white font-IRANYekan500 scrollTop">@title </h4>
+                                <h4 class="text-[16px] text-white font-IRANYekan500">@title </h4>
                             </div>
                         </div>
-                        <!-- </script> -->
+                        </script>
 
                     </face>
                 </basis>
                 <div class="w-full">
                     <a class="w-full h-[73px] text-[14px] text-gray-800 font-IRANYekan300 flex gap-2 justify-center items-center"
-                        href="">
+                        href="/product-cat.bc">
                         محصولات بیشتر
                         <svg width="41" height="22" viewBox="0 0 41 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <line x1="41" y1="11.5" x2="2" y2="11.5" stroke="#27272A" />
@@ -102,9 +107,8 @@
                 <div class="relative w-[173px] mt-[25px] h-[48px] mx-auto">
                     <div class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-black z-0"></div>
                     <div class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-black z-0">
-                    </div>
-
-                    <a href="#"
+                    </div>                                        
+                    <a href="/about-us.bc"
                         class="relative z-10  font-IRANYekan500 text-[14px] w-full h-full flex items-center justify-center border border-black text-black text-lg font-bold no-underline">
                         بیشتر بدانید
                     </a>
@@ -118,7 +122,6 @@
                 <div>
                     <h4 class="text-[18px] font-IRANYekan500 pb-6 text-black">پروژه های کاورسان</h4>
                 </div>
-                <!-- poster="/images/first-video-cover.jpg" -->
                 <div class="">
                     <div class="swiper scrollProjectList-4 relative">
                         <div class="swiper-wrapper w-full !h-[657px]">
@@ -127,51 +130,22 @@
                                     <script type="text/template">
                                     <div class="swiper-slide w-full h-full flex flex-col gap-1.5">
                                         <div class="w-full h-[624px]">
-                                            <video class="video-background" autoplay="true" loop="" muted="" playsinline="">
+                                            <video width="320" height="240" class="video-background w-full h-full" autoplay="true" loop="" muted="" playsinline="">
                                                 <source src="[##cms.cms.cdn##]/@largeIMG@" type="video/mp4" />
                                             </video>
-                                            <!-- <img class="w-full h-[624px]" src="./../assets/images/productList/slider2.jpg"
-                                                alt=""> -->
                                         </div>
                                         <div class="flex flex-col gap-1.5 py-1.5">
-                                            <h4 class="text-[16px] font-IRANYekan500 text-gray-500"> black out</h4>
+                                            <a class="text-[16px] font-IRANYekan500 text-gray-500" href="">@name@</a>
                                         </div>
                                     </div>
                                     </script>
                                 </face>
                             </basis>
 
-
-
-
-                            <div class="swiper-slide w-full h-full flex flex-col gap-1.5">
-                                <div class="w-full h-[624px]">
-                                    <img class="w-full h-[624px]" src="./../assets/images/productList/slider2.jpg"
-                                        alt="">
-                                </div>
-                                <div class="flex flex-col gap-1.5 py-1.5">
-                                    <h4 class="text-[16px] font-IRANYekan500 text-gray-500"> black out</h4>
-                                </div>
-
-
-
-                            </div>
-                            <div class="swiper-slide w-full h-full flex flex-col gap-1.5">
-                                <div class="w-full h-[624px]">
-                                    <img class="w-full h-[624px]" src="./../assets/images/productList/slider2.jpg"
-                                        alt="">
-                                </div>
-                                <div class="flex flex-col gap-1.5 py-1.5">
-                                    <h4 class="text-[16px] font-IRANYekan500 text-gray-500"> black out</h4>
-
-                                </div>
-
-                            </div>
-
                         </div>
 
                     </div>
-                    <a href=""
+                    <a href="project-list.bc"
                         class="w-[173px] h-[48px] text-back-gray border mx-auto my-[35px] border-back-gray flex justify-center items-center icon text-[14px] font-IRANYekan500">
                         پروژ های بیشتر</a>
 
