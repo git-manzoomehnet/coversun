@@ -1,50 +1,48 @@
-<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376503" run="atclient">
-    <member name="image" type="list" format="4" preview="true" />
+<basis core="dbsource" request="seo" source="basiscore" name="db" lid="1">
+    <member name="seolist" type="list" request="product" id="[##cms.query.id##]"></member>
 </basis>
-<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" run="atclient">
-    <member request="cat" type="tree" name="productCat" parentid="214297" preview="true" />
+<basis core="dbsource" source="basiscore" name="json" lid="1" usedforid="[##cms.query.id##]">
+    <member request="json-ld" type="scalar" name="fq" />
 </basis>
-<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376503" run="atclient">
-    <member name="aboutus" type="view" preview="true" />
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376503">
+    <member name="image" type="list" format="4" />
 </basis>
-<basis core="dbsource" source="media" name="db" lid="1" catid="2389" run="atclient">
-    <member type="list" name="projectVideo" perpage="10" pageno="1" preview="true" />
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20">
+    <member request="cat" type="tree" name="productCat" parentid="214297" />
 </basis>
-<!-- size="305x624" -->
-<!-- <basis core="dbsource" source="basiscore" name="db" lid="1" mid="20" run="atclient">
-    <member request="cat" type="tree" name="parent" parentid="[##db.nav.Parentcatid##]" size="452x452" preview="true"></member>
-</basis> -->
-
-<html lang="en">
-<!-- http://J110Xu.UnderTest.ir/cat992412000001 -->
-
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376503">
+    <member name="aboutus" type="view" />
+</basis>
+<basis core="dbsource" source="media" name="db" lid="1" catid="2389">
+    <member type="list" name="projectVideo" size="305x624" perpage="10" pageno="1" />
+</basis>
+<!DOCTYPE html>
+<html lang="fa">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://127.0.0.1:5502/mobile/assets/css/outputMobile.css">
+    <basis core="print" datamembername="db.seolist">
+        <face>
+            <title>[##cms.seo.title|db.seolist.title##]</title>
+            <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
+        </face>
+    </basis>
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
+    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
 
-    <link rel="stylesheet" href="http://www.ramand-co.com/css/swiper.css">
-    <title>Document</title>
+
 </head>
-<script src="./../basis-loader.js"></script>
 
 <body>
-    <header>
-        <div class="absolute z-50 w-full h-[70px] mb-2.5 bg-[red]">
-        </div>
-    </header>
+    <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
     <main>
-
         <div class="relative w-full h-[844px] flex flex-col justify-between items-center overflow-hidden">
-            <basis core="print" datamembername="db.image" run="atclient">
+            <basis core="print" datamembername="db.image">
                 <face filter="ord=50">
-                    <div>@name@</div>
-                    <!-- <script type="text/template"> -->
                     <div class="w-full bg-cover bg-center bg-no-repeat h-full relative z-10 bg-[#00000033] text-white text-3xl justify-center items-cejustify-center"
-                        style="background-image: url([##cms.cms.cdn##]/@largeIMG@);">
+                        style="background-image: url([##cms.cms.cdn##]/@largeIMG);">
                         <div class="w-full h-full flex flex-col justify-end items-start p-6">
-
                             <div class="flex flex-col justify-start gap-2 items-center w-full">
                                 <h4 class="font-PxGrotesk400 text-[14px] text-gray-50 mb-">scroll down</h4>
                                 <div class="c-scrolldown">
@@ -52,32 +50,28 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
-                    <!-- </script> -->
                 </face>
             </basis>
 
 
         </div>
         <section>
-            <div class="w-full h-auto  flex flex-col justify-center items-start pb-[68px]">
-                <basis core="print" datamembername="basisName.productCat" run="atclient">
-                    <face>
-                        <script type="text/template">
+            <div class="w-full h-auto  flex flex-col justify-center items-start">
+                <basis core="list" datamembername="basisName.productCat">
+                    <face filter="parentid=214297">
+                        <a class="w-full h-full" href="[##cms.cms.cdn##]/product-list.bc?catid=@catid">
+                            <div class="w-full h-[150px] flex flex-row justify-center items-start grayscale p-5 bg-center bg-cover bg-no-repeat"
+                                style="background-image: url([##cms.cms.cdn##]/@image);">
+                                <div class="w-[40%] h-full flex items-center justify-start scrollTop  ">
 
-                        <div class="w-full h-[150px] flex flex-row justify-center items-start grayscale p-5 bg-center bg-cover bg-no-repeat"
-                            style="background-image: url([##cms.cms.cdn##]/@image@);">
-                            <div class="w-[40%] h-full flex items-center justify-start ">
-                                <!-- <img src="./../assets/images/landingCat1.svg" alt="" /> -->
+                                    <img src="[##cms.cms.cdn##]/images/icone-Def-@catid.png" alt="" />
+                                </div>
+                                <div class="w-[60%] h-full flex items-center justify-start">
+                                    <h4 class="text-[16px] text-white font-IRANYekan500 scrollTop">@title </h4>
+                                </div>
                             </div>
-                            <div class="w-[60%] h-full flex items-center justify-start">
-                                <h4 class="text-[16px] text-white font-IRANYekan500">@title </h4>
-                            </div>
-                        </div>
-                        </script>
-
+                        </a>
                     </face>
                 </basis>
                 <div class="w-full">
@@ -97,19 +91,22 @@
         <section>
 
             <div
-                class="w-full h-[356px] flex flex-col justify-center items-center bg-main [&>p]:font-PxGrotesk300 [&>p]:text-[14px] [&>p]:text-black [&>p]:text-center [&>p]:mt-[35px] [&>p]:mb-[25px] [&>p]:max-w-[351px] [&>p]:w-full px-5">
-                <basis core="print" datamembername="db.aboutus" run="atclient">
+                class="w-full h-[356px] flex flex-col justify-center items-center bg-main [&>p]:font-PxGrotesk300 [&>p]:text-[14px] [&>p]:text-black [&>p]:text-center [&>p]:max-w-[351px] [&>p]:w-full px-5">
+                <basis core="print" datamembername="db.aboutus">
                     <face filter="TypeID=250">
-                        <h2 class="text-[18px]  font-IRANYekan500 text-black ">@text@</h2>
-                        @largetext@
+                        <h2 class="text-[18px]  font-IRANYekan500 text-black scrollTop mb-[35px]">@text</h2>
+                        <p class="scrollTop ">
+                            @largetext
+                        </p>
+
                     </face>
                 </basis>
-                <div class="relative w-[173px] mt-[25px] h-[48px] mx-auto">
+                <div class="relative w-[173px] mt-[25px] h-[48px] mx-auto scrollTop mb-[25px]">
                     <div class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-black z-0"></div>
                     <div class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-black z-0">
-                    </div>                                        
+                    </div>
                     <a href="/about-us.bc"
-                        class="relative z-10  font-IRANYekan500 text-[14px] w-full h-full flex items-center justify-center border border-black text-black text-lg font-bold no-underline">
+                        class="relative z-10  font-IRANYekan500 text-[14px] w-full   h-full flex items-center justify-center border border-black text-black text-lg font-bold no-underline">
                         بیشتر بدانید
                     </a>
                 </div>
@@ -125,20 +122,19 @@
                 <div class="">
                     <div class="swiper scrollProjectList-4 relative">
                         <div class="swiper-wrapper w-full !h-[657px]">
-                            <basis core="list" datamembername="db.projectVideo" run="atclient">
+                            <basis core="list" datamembername="db.projectVideo">
                                 <face>
-                                    <script type="text/template">
                                     <div class="swiper-slide w-full h-full flex flex-col gap-1.5">
                                         <div class="w-full h-[624px]">
-                                            <video width="320" height="240" class="video-background w-full h-full" autoplay="true" loop="" muted="" playsinline="">
-                                                <source src="[##cms.cms.cdn##]/@largeIMG@" type="video/mp4" />
+                                            <video width="320" height="240" class="video-background w-full h-full"
+                                                autoplay loop muted>
+                                                <source src="[##cms.cms.cdn##]/@largeIMG" type="video/mp4" />
                                             </video>
                                         </div>
                                         <div class="flex flex-col gap-1.5 py-1.5">
-                                            <a class="text-[16px] font-IRANYekan500 text-gray-500" href="">@name@</a>
+                                            <a class="text-[16px] font-IRANYekan500 text-gray-500" href="">@name</a>
                                         </div>
                                     </div>
-                                    </script>
                                 </face>
                             </basis>
 
@@ -153,102 +149,13 @@
             </div>
         </section>
     </main>
-
-
+    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
+    <script src="[##cms.cms.cdn##]/_js/swiper.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
+    <script src="[##cms.cms.cdn##]/js/defaultMobile.js"></script>
+    <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]" />
 </body>
-<script src="http://www.ramand-co.com/_js/swiper.js"></script>
-<script src="http://www.ramand-co.com/_js/lenisScroll.js"></script>
-<script>
-    let lastScrollY = window.scrollY;
-    let isInitialLoad = true;
 
-    const elements = document.querySelectorAll('.scrollTop');
 
-    const observer = new IntersectionObserver((entries) => {
-        const currentScrollY = window.scrollY;
-        const isScrollingDown = currentScrollY > lastScrollY;
-
-        entries.forEach(entry => {
-            const el = entry.target;
-
-            if (entry.isIntersecting) {
-                if (isInitialLoad || isScrollingDown) {
-                    el.classList.add('visible', 'animate');
-                }
-            } else {
-                if (!isScrollingDown) {
-                    el.classList.remove('visible', 'animate');
-                }
-            }
-        });
-
-        lastScrollY = currentScrollY;
-        isInitialLoad = false;
-    }, {
-        threshold: 0.01
-    });
-
-    elements.forEach(el => observer.observe(el));
-    const headers = document.querySelectorAll('.accordion-header');
-
-    headers.forEach(header => {
-        header.addEventListener('click', function () {
-            const body = this.nextElementSibling;
-
-            if (body.style.maxHeight) {
-                body.style.maxHeight = null;
-                this.querySelector('.icon').innerHTML = '<svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.1603 10.6221H11.8397V0.877863C11.8397 0.351145 11.5038 0 11 0C10.4962 0 10.1603 0.351145 10.1603 0.877863V10.6221H0.839695C0.335878 10.6221 0 10.9733 0 11.5C0 12.0267 0.335878 12.3779 0.839695 12.3779H10.1603V22.1221C10.1603 22.6489 10.4962 23 11 23C11.5038 23 11.8397 22.6489 11.8397 22.1221V12.3779H21.1603C21.6641 12.3779 22 12.0267 22 11.5C22 10.9733 21.6641 10.6221 21.1603 10.6221Z" fill="black"/></svg>';
-            } else {
-                document.querySelectorAll('.accordion-body').forEach(b => {
-                    b.style.maxHeight = null;
-                });
-                document.querySelectorAll('.icon').forEach(icon => {
-                    icon.innerHTML = '<svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.1603 10.6221H11.8397V0.877863C11.8397 0.351145 11.5038 0 11 0C10.4962 0 10.1603 0.351145 10.1603 0.877863V10.6221H0.839695C0.335878 10.6221 0 10.9733 0 11.5C0 12.0267 0.335878 12.3779 0.839695 12.3779H10.1603V22.1221C10.1603 22.6489 10.4962 23 11 23C11.5038 23 11.8397 22.6489 11.8397 22.1221V12.3779H21.1603C21.6641 12.3779 22 12.0267 22 11.5C22 10.9733 21.6641 10.6221 21.1603 10.6221Z" fill="black"/></svg>';
-                });
-
-                body.style.maxHeight = body.scrollHeight + 'px';
-                this.querySelector('.icon').innerHTML = '<svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5634 0.694874L8.97276 7.28554L2.08251 0.395299C1.71007 0.0228529 1.22427 0.0120564 0.868019 0.368309C0.511767 0.724561 0.522562 1.21036 0.895008 1.58281L7.78525 8.47305L1.19458 15.0637C0.838332 15.42 0.849127 15.9058 1.22157 16.2782C1.59402 16.6507 2.07982 16.6615 2.43607 16.3052L9.02674 9.71453L15.917 16.6048C16.2894 16.9772 16.7752 16.988 17.1315 16.6318C17.4877 16.2755 17.4769 15.7897 17.1045 15.4173L10.2142 8.52703L16.8049 1.93636C17.1612 1.58011 17.1504 1.09431 16.7779 0.721865C16.4055 0.349419 15.9197 0.338622 15.5634 0.694874Z" fill="black"/></svg>';
-            }
-        });
-    });
-    const swiperConfigs = [
-        {
-            container: '.scrollProjectList-2',
-            pagination: '.swiper-pagination-Project-2',
-            nextEl: '.swiper-button-next-project-2',
-            prevEl: '.swiper-button-prev-project-2',
-            spaceBetween: 10,
-            slidesPerView: 1,
-        },
-        {
-            container: '.scrollProjectList-4',
-            pagination: '.swiper-pagination-Project-4',
-            nextEl: '.swiper-button-next-project-4',
-            prevEl: '.swiper-button-prev-project-4',
-            spaceBetween: 10,
-            slidesPerView: 1.1,
-        }
-    ];
-
-    swiperConfigs.forEach((config, index) => {
-        new Swiper(config.container, {
-            spaceBetween: config.spaceBetween,
-            slidesPerView: config.slidesPerView,
-            pagination: {
-                el: config.pagination,
-            },
-            navigation: {
-                nextEl: config.nextEl,
-                prevEl: config.prevEl
-            },
-            // autoplay: {
-            //     delay: 3000 + (index * 500),
-            //     disableOnInteraction: false
-            // },
-            loop: true,
-            // speed: 800
-        });
-    });
-</script>
 
 </html>

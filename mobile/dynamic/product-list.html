@@ -1,78 +1,114 @@
-<basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" catid="214297">
+<basis core="dbsource" request="seo" source="basiscore" name="db" lid="1">
+    <member name="seolist" type="list" request="cat" id="[##cms.query.catid##]"></member>
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" >
+    <member request="cat" type="tree" name="productCat" parentid="214297" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" catid="[##cms.query.catid##]" >
     <member name="list-product" size="400x500" propertyid="10000792" type="list" />
 </basis>
-
-
 <!DOCTYPE html>
-<html lang="fa">
 
+<!-- 2376573 -->
+
+
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../assets/css/outputMobile.css">
-    <title>Document</title>
+    <basis core="print" datamembername="db.seolist">
+        <face>
+            <title>[##cms.seo.title|db.seolist.title##]</title>
+            <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
+        </face>
+    </basis>
+    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
 </head>
-
 <body>
+    <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
     <main id="productList">
-        <div class="w-full h-[450px] flex flex-col justify-between py-5 items-center bg-main px-5">
+        <basis core="print" datamembername="basisName.productCat">
+            <face filter="catid=[##cms.query.catid##]">
+                <div class="relative w-full h-[750px] pt-[70px] flex flex-col justify-between items-center bg-cover bg-center bg-no-repeat bg-[#00000073] overflow-hidden"
+                    style="background-image: url([##cms.cms.cdn##]/@image);">
+                    <div
+                        class="w-full h-full relative z-10 px-5 text-white text-3xl flex flex-col justify-between items-center py-5">
+                        <div class="w-full text-start text-[12px] font-IRANYekan300">
+                            <ul class="flex flex-row  items-center gap-x-1.5">
+                                <li class="text-[12px] font-IRANYekan300 text-white"><a href="/">صفحه نخست</a></li>
+                                <li class="text-[12px] font-IRANYekan300 text-white"><span href="">.</span></li>
+                                <li><a href="/product-cat.bc" class="text-[12px] font-IRANYekan300 text-white"
+                                        title="home">محصولات</a></li>
+                                <li>
+                                    <span class="text-[12px] font-IRANYekan300 text-white">
+                                        .
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="text-[12px] font-IRANYekan300 text-white">
+                                        @title
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="flex flex-col justify-center items-center">
+                                    <img class="scrollTop" src="[##cms.cms.cdn##]/images/icone-Def-@catid.png" alt="@title" />
 
-            <div class="w-full flex flex-row items-center justify-start text-[12px] text-gray-700 font-IRANYekan300 gap-0.5">
-                <a class="" href="">صفحه نخست</a>
-                <span class="">.</span>
-                <a href="">محصولات</a>
-            </div>
-            <div class="flex flex-col justify-center items-center">
-                <h3 class="text-[25px] text-black font-IRANYekan400">پروژه های کاورسان</h3>
-                <h4 class="text-[24px] text-gray-600 font-PxGrotesk400">cover sun projects</h4>
-            </div>
-            <div class="w-[74px] h-[82px] flex flex-col justify-center items-center gap-[8px] mt-11">
-                <h5 class="font-PxGrotesk400 text-[14px] flex-nowrap text-gray-400">scroll donw </h5>
+                                <h4 class="text-[24px] pt-5 pb-2.5 text-center font-IRANYekan500 text-white scrollTop">@title</h4>
+                                <p class="text-[14px] text-white text-center font-PxGrotesk400 scrollTop">@urltitle</p>                                
 
-                <span class="w-[1px] h-[27px] bg-gray-300"></span>
-
-            </div>
-        </div>
-        <div class="w-full h-auto px-5">
-            <div class="ProductListItem flex flex-col justify-center items-center gap-[62px] my-[42px]">
-                <basis core="list" datamembername="db.list-product">
-                    <face>
-                        <div class="ProductItem w-full h-[500px] flex flex-col justify-between items-center">
-                            <div class="w-full h-[500px]">
-                                <a href="@title">
-                                    <img class="w-[400px] h-[500px]" src="[##cms.cms.cdn##]/@image" alt="@title" />
-                                    
-                                </a>
                             </div>
-                            <div class="w-full h-[28px] flex justify-start items-center">
-                                <a class="text-[16px] text-gray-800 font-IRANYekan500" href="@title">@title</a>
+                            <div class="flex flex-col justify-center items-center mt-10 gap-2">
+                                <h4 class="text-[14px] text-gray-400 font-PxGrotesk400">scroll down</h4>
+                                <div class="c-scrolldown">
+                                    <div class="c-line !bg-main"></div>
+                                </div>
+
                             </div>
-                        </div>                          
-                    </face>
-                  </basis>
+                        </div>
 
 
+                    </div>
 
+                </div>
+            </face>
+
+        </basis>
+        <section class="w-full px-5 h-auto">
+            <div class="">
+                <div class="ProductListItem h-auto flex flex-col justify-center items-center  py-[42px]">
+                    <basis core="print" datamembername="db.list-product">
+                        <layout>
+                            @child
+                        </layout>
+                        <else-layout>
+                            متاسفانه محصولی موجود نیست
+                        </else-layout>
+                        <face>
+                                <div class="ProductItem  w-full h-auto flex flex-col justify-between items-center mb-[55px]">
+                                    <div class="w-full h-[500px] flex justify-center items-center">
+                                        <a href="/@link">
+                                            <img class="w-[400px] h-[500px]" src="[##cms.cms.cdn##]/@image" alt="@title">
+                                        </a>
+                                    </div>
+                                    <div class="w-full h-[28px] flex flex-col justify-start items-start gap-1.5 py-1">
+                                        <h4 class="font-PxGrotesk400 text-[18px] text-gray-600"> @title</h4>
+                                        <h5 class="text-[16px] text-gray-600 font-IRANYekan400">ساخت کشور @prp_10000792</h5>
+                                    </div>                        
+                                </div>
+                            </script>
+                        </face>
+                    </basis>
+
+                </div>
             </div>
-        </div>
+        </section>
     </main>
+    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
+
+
+    <script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
+    <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]" />
 </body>
-<script src="https://basispanel.ir/_js/basiscore-2.30.1.min.js"></script>
-<script>
-    const host = {
-        settings: {
-            "connection.web.trust_login": "https://basispanel.ir/apicms",
-            "connection.web.basiscore": "https://basispanel.ir/apicms",
-            "connection.web.media": "https://basispanel.ir/apicms",
-            "default.dbsource.verb": "post",
-            "connection.web.userbehavior": "https://basispanel.ir/apicms",
-
-            "default.call.verb": "get",
-            "default.viewCommand.groupColumn": "prpid",
-            "default.dmnid": "4947",
-            "default.binding.regex": "\\{##([^#]*)##\\}",
-        },
-    };
-</script>
-
 </html>

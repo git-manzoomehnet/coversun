@@ -180,3 +180,120 @@
       background-position: 0 60px;
   }
 }
+
+#menuBar {
+  transform: translateX(100%);
+  transition: transform 0.7s cubic-bezier(0.2, 0.6, 0.2, 1), opacity 0.7s ease;
+  opacity: 0;
+  display: none;
+}
+
+#menuBar.show {
+  transform: translateX(0);
+  opacity: 1;
+  display: block;
+}
+
+#searchPopup {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#searchPopup.show {
+  display: block;
+  opacity: 1;
+}
+
+#menuBar ul li,
+#menuBar .flex-row,
+#menuBar .mt-\[62px\] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+#menuBar.show ul li,
+#menuBar.show .flex-row,
+#menuBar.show .mt-\[62px\] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#menuBar.show ul li:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+#menuBar.show ul li:nth-child(2) {
+  transition-delay: 0.25s;
+}
+
+#menuBar.show ul li:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+#menuBar.show ul li:nth-child(4) {
+  transition-delay: 0.35s;
+}
+
+#menuBar.show ul li:nth-child(5) {
+  transition-delay: 0.4s;
+}
+
+#menuBar.show ul li:nth-child(6) {
+  transition-delay: 0.45s;
+}
+
+#menuBar.show ul li:nth-child(7) {
+  transition-delay: 0.5s;
+}
+
+#menuBar.show .flex-row {
+  transition-delay: 0.55s;
+}
+
+#menuBar.show .mt-\[62px\] {
+  transition-delay: 0.6s;
+}
+
+/* Reset delays when closing */
+#menuBar:not(.show) ul li,
+#menuBar:not(.show) .flex-row,
+#menuBar:not(.show) .mt-\[62px\] {
+  transition-delay: 0s !important;
+}
+
+[data-bc-title-container],
+[data-bc-section-title] {
+  display: none;
+}
+
+[data-sys-select-option],
+[data-sys-input-text] {
+  width: 100% !important;
+  height: 50px !important;
+  border: 1px solid #3F3F46 !important;
+  padding: 0px 15px !important;
+  border-radius: 0px !important;
+  color: #3F3F46 !important;
+  font-size: 14px !important;
+  font-family: var(--font-IRANYekan300) !important;
+  background-color: transparent !important;
+}
+
+[data-bc-text-input] {
+  width: 100% !important;
+  border: 1px solid #3F3F46 !important;
+  padding: 0px 15px !important;
+  border-radius: 0px !important;
+  color: #3F3F46 !important;
+  font-size: 14px !important;
+  font-family: var(--font-IRANYekan300) !important;
+  background-color: transparent !important;
+}
+
+[data-bc-answer-container],
+[data-bc-part-container],
+[data-bc-btn-container] {
+  width: 100% !important;
+}
