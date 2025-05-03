@@ -1,0 +1,137 @@
+<basis core="dbsource" source="userbehavior" name="db" title="{##db.senduserName.value##}" run="atclient"
+    triggers="db.sendcomment" if="{##db.sendcomment##}" parentid="0" usedforid="[##cms.query.id##]" userid="100005"
+    mid="20" comment="{##db.sendcomment.value##}">
+    <member request="comment" type="scalar" name="comment" preview="true" onRendered="renderCommentFn" />
+</basis>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../assets/css/outputMobile.css">
+</head>
+<script src="./../basis-loader.js"></script>
+
+<body>
+    <form action="" class="commentP flex gap-x-3 ml-[32px] w-[50%] !mb-0">
+        <div class="rSec w-full">
+            <div class="userInfo mb-4 flex flex-col">
+                <div class="nameInput flex flex-col mb-4 text-white">
+                    <label for="userName" class="mb-[12px] text-[12px] font-[400] text-[#fff]">
+                        نام و نام خانوادگی*
+                    </label>
+                    <input name="userName"
+                        class="w-full h-11 userName bg-transparent border border-border-gray text-[#fff] px-3 mb-3"
+                        type="text" />
+                </div>
+                <div class="emailInput flex flex-col mb-4">
+                    <label for="email" class="text-[#fff] mb-[12px] text-[12px] font-[400]">
+                        ایمیل یا شماره تماس*
+                    </label>
+                    <input type="email" name="email"
+                        class="w-full h-11 bg-transparent border border-border-gray text-[#fff] px-3 mb-3" />
+                </div>
+                <div class="msg w-full">
+                    <div class="msgInput flex flex-col h-full ">
+                        <label for="message" class="mb-[12px] text-[12px] text-white font-[400]">
+                            دیدگاه*
+                        </label>
+                        <textarea class="w-full h-[87px] bg-transparent border border-border-gray text-[#fff] p-3"
+                            name="message" id="message"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="messageSend font-Kohinoor400 text-gray-matn text-base">
+                <p class="text-white"></p>
+            </div>
+            <div class="btnsContainer gap-x-2.5 flex justify-between items-center">
+                <basis core="dbsource" source="trust_login" name="captcha1" triggers="cms.reload1" run="atclient">
+                    <member name="code1" type="scalar" request="captcha"></member>
+                </basis>
+                <basis datamembername="captcha1.code1" core="print" run="atclient">
+                    <face>
+                        <script type="text/template">
+
+                        <div class="captchaContain  border border-[#A9A9A9] flex items-center gap-x-2.5 h-[49px] flex-row-reverse w-full">
+                <span class="captcha-sefaresh shrink-0">
+                <img src="[##cms.cms.cdn##]/@captcha@" width="88" height="44" class="captcha-sefaresh"
+                    alt="captcha" title="captcha" />
+                <input type="hidden" name="captchaid" value="@captcha@" />
+                </span>
+
+                <img src="[##cms.cms.cdn##]/images/cached.png" class="refressh refressh1 cursor-pointer" run="atclient" bc-triggers="click" bc-name="cms.reload1" />
+
+                <input type="text" class="codeinputm w-full font-Kohinoor400 text-white bg-transparent outline-none outline-0 self-stretch"
+                name="captcha" />
+            </div>
+      </script>
+                    </face>
+                </basis>
+                <button type="button"
+                    class="submitComment cursor-pointer text-[12px] w-[122px] h-[44px]  text-[#A9A9A9] border border-[#A9A9A9]">
+                    ثبت
+                </button>
+            </div>
+
+        </div>
+    </form>
+
+</body>
+<script>
+    let messageSend = document.querySelector(".messageSend");
+    let commentP = document.querySelector(".commentP");
+
+    function renderCommentFn(e) { }
+
+    document.querySelector(".submitComment").addEventListener("click", (e) => {
+        e.preventDefault();
+
+        let inputs = document.querySelectorAll(".usernIfo input");
+        let _textareas = document.querySelectorAll(".msgInput _textarea");
+
+        let isValid = false;
+
+        inputs.forEach((input) => {
+            if (input.value.trim() !== "") {
+                isValid = true;
+            }
+        });
+
+        _textareas.forEach((_textarea) => {
+            if (_textarea.value.trim() !== "") {
+                isValid = true;
+            }
+        });
+
+        if (isValid) {
+            let commentText = document.querySelector(".msgInput _textarea").value;
+            let userName = document.querySelector(".userName").value;
+
+            $bc.setSource("db.send", true);
+            $bc.setSource("db.senduserName", userName);
+            $bc.setSource("db.sendcomment", commentText);
+            $bc.setSource("db.run", true);
+
+            document.querySelector(".messageSend p").innerHTML = "درخواست شما با موفقیت ثبت شد";
+            commentP.reset();
+            messageSend.style.display = "block";
+
+            setTimeout(() => {
+                messageSend.style.display = "none";
+            }, 3500);
+        } else {
+            document.querySelector(".messageSend p").innerHTML = "فیلدهای الزامی را پر کنید";
+            messageSend.style.display = "block";
+
+
+            setTimeout(() => {
+                messageSend.style.display = "none";
+            }, 3500);
+        }
+    });
+</script>
+
+</html>

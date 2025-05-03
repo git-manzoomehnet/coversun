@@ -1,12 +1,16 @@
-<basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" usedforid="2376573" run="atclient">
-    <member name="product" type="view"  />
-</basis>
-<basis core="dbsource" name="db" source="media" lid="1" sourcemid="20" usedforid="2376573" run="atclient">
-    <member name="image-product" type="list" format="4" />
-</basis>
-<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" usedforid="2376573" run="atclient">
-    <member request="cat" type="tree" name="productCat" preview="true" />
-</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" usedforid="[##cms.query.id##]"><member name="related-product" type="list" size="371x371" /></basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="[##cms.query.id##]"><member name="image" type="list" format="4" /></basis>
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="20" usedforid="[##cms.query.id##]"><member name="en-related-product" type="list" size="371x371" /></basis>
+<basis core="dbsource" source="userbehavior" name="db" lid="1" userid="100005" usedforid="[##cms.query.id##]"><member request="listcomment" type="list" name="commentlist" link="event.bc" /></basis>
+<basis core="inlinesource" name="list"><member name="productJoin" lefttblcol="db.related-product.id" righttblcol="db.en-related-product.id" format="join" jointype="leftjoin" propertyid="17856,10000792" /></basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="20" usedforid="[##cms.query.id##]"> <member name="image-product" type="list" format="4" /></basis>
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="20" usedforid="[##cms.query.id##]"> <member request="navigationcat" type="tree" name="nav" postsql="select * from [db.nav] where Parentcatid not in (211667)" /></basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="20" usedforid="[##cms.query.id##]"> <member name="pdf-product" type="list" format="9" /></basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" usedforid="[##cms.query.id##]"><member name="product" type="view" preview="true" /></basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" usedforid="[##cms.query.id##]"><member name="product" type="view" /></basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" usedforid="[##cms.query.id##]"><member type="list" name="related-Product" propertyid="10000792" size="300x400" blgid="18" /></basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" usedforid="[##cms.query.id##]"><member type="list" name="related-blog" propertyid="7244,7249" size="400x300" blgid="218" /></basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="20" usedforid="[##cms.query.id##]"><member name="video-product" type="list" format="3" /></basis>
 <!-- 2376573 -->
 <!-- 214300 -->
 <!DOCTYPE html>
@@ -15,68 +19,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../assets/css/outputMobile.css">
+    <link rel="stylesheet" href="http://127.0.0.1:5502/mobile/assets/css/outputMobile.css">    
     <link rel="stylesheet" href="http://www.ramand-co.com/css/swiper.css">
+    
     <title>Document</title>
 </head>
 <script src="./../basis-loader.js"></script>
 
 <body>
-    <main id="productList">
-        <div class="relative w-full h-[750px] flex flex-col justify-between bg-cover bg-center bg-no-repeat items-center overflow-hidden"
-        style="background-image: url(./../assets/images/productList/imgt.jpg);">
-            <div class="w-full h-full relative z-10 px-5 text-white text-3xl flex justify-start items-center">
-                <div>
-                    <img src="./../assets/images/productList/iconad.png" alt="">
-                    <h4 class="text-[24px] pt-5 pb-2.5 font-IRANYekan500 text-white">پرده های آلومینیومی</h4>
-                    <p class="text-[14px] text-white font-PxGrotesk400">ALUMINUM VENATION BLINDS</p>
-
-                </div>
-
-            </div>
+    <header>
+        <div
+            class="absolute z-50 w-full flex px-5 bg-[red] pt-2.5 flex-row justify-between items-center h-[70px] mb-2.5">
 
         </div>
+    </header>
+    <main id="productList">
+        <div class="relative">
+            <div class="absolute z-20 top-0 pt-[70px]">
+                <ul class="flex flex-row gap-1.5">
+                    <li class="text-[12px] font-IRANYekan300 text-gray-700"><a href="/">صفحه نخست</a></li>
+                    <basis core="print" datamembername="db.nav">
+                        <face>
+                            <li class="text-[12px] font-IRANYekan300 text-gray-700"><span href="">.</span></li>
+                            <li class="text-[12px] font-IRANYekan300 text-gray-700"><a
+                                    href="/product-list.bc?catid=@parentcatid" title="@title">@title</a></li>
+                        </face>
+                    </basis>
+                </ul>
+            </div>
+            <basis core="list" datamembername="list.productJoin">
+                <face>
+                    <div class="relative w-full h-[750px] flex flex-col justify-between bg-cover bg-center bg-no-repeat items-center overflow-hidden"
+                        style="background-image: url([##cms.cms.cdn##]/@db.related-product.image);">
 
+
+                        <div
+                            class="w-full h-full relative z-10 px-5 text-white text-3xl flex justify-start items-center">
+                            <div>
+                                <img class="scrollTop" src="[##cms.cms.cdn##]/images/icone-@Def-.png" alt="" />
+                                <h4 class="text-[24px] pt-5 pb-2.5 font-IRANYekan500 text-white">@db.related-product.title</h4>
+
+
+
+                                <p class="text-[14px] text-white font-PxGrotesk400">@db.en-related-product.title</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </face>
+            </basis>
+
+        </div>
         <section>
             <div class="w-full h-[557px] flex flex-col justify-start bg-main pt-[14px] px-[20px]">
                 <div class="flex flex-col justify-start items-center">
                     <h4 class="font-PxGrotesk400 text-[14px] text-gray-400 mb-">scroll down</h4>
                     <span class="flex w-[1px] h-[30px] bg-gray-700 mt-[8px]"></span>
                 </div>
-                <div>
-                    <h3 class="font-IRANYekan500 text-black text-[18px] pb-2.5">توضیحات:</h3>
-                    <p class="text-[14px] font-IRANYekan300 text-gray-800 text-justify">لورم ایپسوم متن ساختگی با تولید
-                        سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
-                        در
-                        ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف
-                        بهبود
-                        ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و
-                        متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
-                        خلاقی،
-                        و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در
-                        ارائه
-                        راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و
-                        جوابگوی
-                        سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
-                </div>
-
-
+                <basis core="list" datamembername="list.productJoin">
+                    <face>
+                        <div>
+                            <h3 class="font-IRANYekan500 text-black text-[18px] pb-2.5">توضیحات:</h3>
+                            <p class="text-[14px] font-IRANYekan300 text-gray-800 text-justify">@db.related-product.prp_17856</p>
+                        </div>
+                    </face>
+                </basis>
             </div>
         </section>
 
         <section>
             <div class="swiper scrollProjectList-1 relative">
-                <div class="swiper-wrapper w-full">
-                    <div class="swiper-slide !w-full h-[245px]">
-                        <a href="">
-                            <img class="w-full h-full" src="./../assets/images/productList/slider.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="swiper-slide !w-full h-[245px]">
-                        <a href="">
-                            <img class="w-full h-full" src="./../assets/images/productList/slider.jpg" alt="">
-                        </a>
-                    </div>
+                <div class="swiper-wrapper w-full !h-[245px]">
+
+                    <basis core="print" datamembername="db.image-product">
+                        <face filter="ord=50">
+                                <div class="swiper-slide !w-full !h-[245px]">
+                                    <img class="w-full h-[245px]" src="[##cms.cms.cdn##]/@largeIMG" alt="@title" />
+                                </div>
+                        </face>
+                    </basis>
                 </div>
                 <div class="swiper-buttons absolute bottom-0 left-0 flex gap-0 z-10">
                     <div
@@ -117,45 +139,18 @@
                         </button>
                         <div class="accordion-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                             <div class="grid grid-cols-4 gap-4 mt-5">
-                                <div class="w-full h-28 flex flex-col justify-between items-center">
-                                    <div class="w-full h-20 bg-[#D9D9D9]"></div>
-                                    <div class="w-full flex justify-start items-start">
-                                        <h4 class="w-full text-[12px] text-start font-IRANYekan300 text-black">کد: 1245
-                                        </h4>
-                                    </div>
-                                </div>
-
-                                <div class="w-full h-28 flex flex-col justify-between items-center">
-                                    <div class="w-full h-20 bg-[#979797]"></div>
-                                    <div class="w-full flex justify-start items-start">
-                                        <h4 class="w-full text-[12px] text-start font-IRANYekan300 text-black">کد: 1245
-                                        </h4>
-                                    </div>
-                                </div>
-
-                                <div class="w-full h-28 flex flex-col justify-between items-center">
-                                    <div class="w-full h-20 bg-[#CA7300]"></div>
-                                    <div class="w-full flex justify-start items-start">
-                                        <h4 class="w-full text-[12px] text-start font-IRANYekan300 text-black">کد: 1245
-                                        </h4>
-                                    </div>
-                                </div>
-
-                                <div class="w-full h-28 flex flex-col justify-between items-center">
-                                    <div class="w-full h-20 bg-[#CA7300]"></div>
-                                    <div class="w-full flex justify-start items-start">
-                                        <h4 class="w-full text-[12px] text-start font-IRANYekan300 text-black">کد: 1245
-                                        </h4>
-                                    </div>
-                                </div>
-
-                                <div class="w-full h-28 flex flex-col justify-between items-center">
-                                    <div class="w-full h-20 bg-[#5cb838]"></div>
-                                    <div class="w-full flex justify-start items-start">
-                                        <h4 class="w-full text-[12px] text-start font-IRANYekan300 text-black">کد: 1245
-                                        </h4>
-                                    </div>
-                                </div>
+                                <basis core="print" datamembername="db.image-product">
+                                    <face filter="ord=10">
+                                            <div class="w-full h-28 flex flex-col justify-between items-center">
+                                                <div class="w-full h-20 bg-[#D9D9D9]">
+                                                    <img class="w-full h-20" src="[##cms.cms.cdn##]/@largeIMG" alt="@title" />
+                                                </div>
+                                                <div class="w-full flex justify-start items-start">
+                                                    <h4 class="w-full text-[12px] text-start font-IRANYekan300 text-black">کد: @name</h4>
+                                                </div>
+                                            </div>
+                                    </face>
+                                </basis>
                             </div>
                         </div>
 
@@ -176,6 +171,12 @@
                         </button>
                         <div class="accordion-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                             <div class="flex flex-row justify-center items-center mt-[20px] gap-2.5">
+                                <basis core="list" datamembername="list.productJoin">
+                                    <face>
+                                        <p>@db.related-product.10000792</p>
+
+                                    </face>
+                                </basis>
                             </div>
                         </div>
                     </div>
@@ -194,7 +195,22 @@
                             </span>
                         </button>
                         <div class="accordion-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <div class="flex flex-row justify-center mt-[20px] items-center gap-2.5">
+                            <div class="flex flex-row justify-start mt-[20px] items-start gap-2.5">
+                                <ul class="flex flex-col ">
+                                    <basis core="print" datamembername="db.product">
+                                        <face filter="prpID not in (17826,10000792,54862,17856)">
+
+                                            <li class="py-2.5 flex items-center">
+                                                <span class="font-IRANYekan500 text-base text-gray600">
+                                                    @Question
+                                                </span>
+                                                <p class="font-IRANYekan500 text-base text-black">
+                                                    @Answer
+                                                </p>
+                                            </li>
+                                        </face>
+                                    </basis>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -213,7 +229,14 @@
                             </span>
                         </button>
                         <div class="accordion-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <div class="flex flex-row justify-center items-center mt-[20px] gap-2.5">
+                            <div class="flex flex-col justify-start items-start mt-[20px] gap-2.5">
+                                <basis core="print" datamembername="db.pdf-product">
+                                    <face>
+                                        <a href="[##cms.cms.cdn##]/@largeIMG" download target="_blank">دریافت
+                                            کاتالوگ</a>
+                                    </face>
+
+                                </basis>
                             </div>
                         </div>
                     </div>
@@ -229,28 +252,28 @@
                 </div>
                 <div class="swiper scrollProjectList-2 relative">
                     <div class="swiper-wrapper w-full">
-                        <div class="swiper-slide !w-full h-[367px]">
-                            <div class="w-full flex flex-col justify-center items-start pt-[20px] pb-[100px] px-[15px]">
-                                <h4 class="text-[16px] text-start  text-back-gray font-IRANYekan500 mb-[15px]">علی کریمی
-                                </h4>
-                                <p class="text-[14px] text-justify font-IRANYekan300 text-back-gray">لورم ایپسوم متن
-                                    ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
-                                    چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
-                                    فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
-                                    کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide !w-full h-[367px]">
-                            <div class="w-full flex flex-col justify-center items-start pt-[20px] pb-[100px] px-[15px]">
-                                <h4 class="text-[16px] text-start  text-back-gray font-IRANYekan500 mb-[15px]">علی کریمی
-                                </h4>
-                                <p class="text-[14px] text-justify font-IRANYekan300 text-back-gray">لورم ایپسوم متن
-                                    ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
-                                    چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
-                                    فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
-                                    کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، </p>
-                            </div>
-                        </div>
+                        <basis core="print" datamembername="db.commentlist">
+                            <layout>
+                                @child
+                            </layout>
+                            <else-layout>
+                                هنوز کامنتی ثبت نشده است.
+                                <br>
+                                شما اولین نفر باشید
+                            </else-layout>
+                            <face>
+                                <div class="swiper-slide !w-full h-[367px]">
+                                    <div
+                                        class="w-full flex flex-col justify-center items-start pt-[20px] pb-[100px] px-[15px]">
+                                        <h4 class="text-[16px] text-start  text-back-gray font-IRANYekan500 mb-[15px]">
+                                            @username</h4>
+                                        <p class="text-[14px] text-justify font-IRANYekan300 text-back-gray">@comment
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </face>
+                        </basis>
                     </div>
                     <div
                         class="swiper-buttons absolute bottom-0 flex justify-center items-center gap-0 z-10 mt-[50px] mx-auto left-[25%] right-[25%]">
@@ -280,34 +303,83 @@
                 <div>
                     <h5 class="text-[18px] text-back-gray font-IRANYekan500 mb-[24px]">نظراتتان برای ما ارزشمند هست</h5>
                 </div>
-                <form action="">
+                <basis core="dbsource" source="userbehavior" name="db" title="{##db.senduserName.value##}"
+                    run="atclient" triggers="db.sendcomment" if="{##db.sendcomment##}" parentid="0"
+                    usedforid="[##cms.query.id##]" userid="100005" mid="20" comment="{##db.sendcomment.value##}">
+                    <member request="comment" type="scalar" name="comment" preview="true"
+                        onRendered="renderCommentFn" />
+                </basis>
+
+                <form name="myForm" class="homeForm1" action="" onsubmit="return validateForm()" method="post">
                     <div class="flex flex-col mt-[24px] gap-3">
-                        <div class="flex flex-col justify-start gap-[5px] mb-[12px]">
+
+                        <div class="nameInput flex flex-col justify-start gap-[5px] mb-[12px]">
                             <div class="text-[14px] font-IRANYekan300 text-back-gray">نام و نام خانوادگی</div>
-                            <input class="w-full h-[48px] bg-gray-50" type="text">
+                            <input class="w-full h-[48px] bg-gray-50" name="userName" type="text">
                         </div>
-                        <div class="flex flex-col justify-start gap-[5px] mb-[12px]">
+                        <div class="emailInput flex flex-col justify-start gap-[5px] mb-[12px]">
                             <div class="text-[14px] font-IRANYekan300 text-back-gray">ایمیل</div>
-                            <input class="w-full h-[48px] bg-gray-50" type="text">
+                            <input class="w-full h-[48px] bg-gray-50" type="email" name="email">
                         </div>
-                        <div class="flex flex-col justify-start gap-[5px] mb-[12px]">
-                            <div class="text-[14px] font-IRANYekan300 text-back-gray">پیام</div>
-                            <textarea class="min-h-[137px] w-full bg-gray-50" name="" id=""></textarea>
+                        <div class="msg flex flex-col justify-start gap-[5px] mb-[12px]">
+                            <div class="msgInput flex flex-col">
+                                <div class="text-[14px] font-IRANYekan300 text-back-gray">پیام</div>
+                                <textarea class="min-h-[137px] w-full bg-gray-50" name="message"
+                                    id="message"></textarea>
+
+                            </div>
                         </div>
                         <div class="flex flex-col gap-[5px]">
                             <div class="text-[14px] font-IRANYekan300 text-back-gray">کد امنیتی را وارد نمایید</div>
                             <div class="w-full h-[59px]">
-
+                                <basis core="dbsource" source="trust_login" name="captcha1" triggers="cms.reload1"
+                                    run="atclient">
+                                    <member name="code1" type="scalar" request="captcha"></member>
+                                </basis>
+                                <basis datamembername="captcha1.code1" core="print" run="atclient">
+                                    <face>
+                                        <script type="text/template">
+                                                    <div class="">
+                                                    <div style="column-gap: 6px;" class="captchaContain px-4 py-1 bg-gray50 w-full flex items-center gap-x-3 flex-row-reverse">
+                
+                                      <span class="captcha-sefaresh shrink-0" style="flex-shrink: 0;">
+                                          <img src="[##cms.cms.cdn##]/@captcha@" width="88" height="44" class="captcha-sefaresh"
+                                              alt="captcha" title="captcha" />
+                                          <input type="hidden" name="captchaid" value="@captcha@" />
+                                      </span>
+                  
+                                  <img src="[##cms.cms.cdn##]/images/cached.png" class="refressh refressh1 cursor-pointer" run="atclient" bc-triggers="click" bc-name="cms.reload1" />
+                         
+                  
+                              
+                              <input type="text" class="codeinputm w-full h-10 font-IRANYekan300 text-sm placeholder:font-IRANYekan300 "
+                              name="captcha" placeholder="کد امنیتی را وارد کنید..." />
+                     
+                                  </div>
+                
+                                                    </div>
+                                </script>
+                                    </face>
+                                </basis>
                             </div>
 
                         </div>
                     </div>
-                    <button
-                        class="w-[173px] h-[48px] border border-back-gray text-[14px] font-IRANYekan500 text-back-gray">
-                        ثبت
-                    </button>
-                </form>
+                    <div class="relative  w-[173px] h-[48px] my-2.5">
+                        <div class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-black z-0">
+                        </div>
+                        <div class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-black z-0">
+                        </div>
 
+                        <button
+                            class="relative submitComment z-10 font-IRANYekan500 text-[14px] w-full h-full flex items-center justify-center border border-black text-black text-lg font-bold no-underline">
+                            ثبت
+                        </button>
+                    </div>
+                </form>
+                <div class="messageSend font-IRANYekan500 text-StarDust600 text-sm absolute" style="bottom: -30px;">
+                    <p></p>
+                </div>
             </div>
         </section>
         <section class="mt-[33px] pr-5 h-auto pt-2.5 ">
@@ -318,32 +390,25 @@
                 <div class="">
                     <div class="swiper scrollProjectList-3 relative">
                         <div class="swiper-wrapper w-full">
-                            <div class="swiper-slide !w-[350px] h-[503px] flex flex-col gap-1.5">
-                                <div class="w-full h-full">
-                                    <img class="w-full h-[448px]" src="./../assets/images/productList/slider2.jpg"
-                                        alt="">
-                                </div>
-                                <div class="flex flex-col">
-                                    <h4 class="text-[16px] font-IRANYekan500 text-gray-500"> black out</h4>
-                                    <p class="text-[16px] font-IRANYekan400 leading-[28px] text-gray-500">پرده های ساخت
-                                        کشور اسپانیا</p>
+                            <basis core="list" datamembername="db.related-Product">
+                                <face>
+                                    <a href="/@link">
+                                        <div class="swiper-slide !w-[350px] h-[503px] flex flex-col gap-1.5">
+                                            <div class="w-full h-full">
+                                                <img class="w-full h-[448px]" src="[##cms.cms.cdn##]/@00300X00400prp"
+                                                    alt="">
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <h4 class="text-[16px] font-IRANYekan500 text-gray-500">@title</h4>
+                                                <p class="text-[16px] font-IRANYekan400 leading-[28px] text-gray-500">
+                                                    ساخت کشور @prp_10000792</p>
 
-                                </div>
+                                            </div>
 
-                            </div>
-                            <div class="swiper-slide !w-[350px] h-[503px] flex flex-col gap-1.5">
-                                <div class="w-full h-full">
-                                    <img class="w-full h-[448px]" src="./../assets/images/productList/slider2.jpg"
-                                        alt="">
-                                </div>
-                                <div class="flex flex-col">
-                                    <h4 class="text-[16px] font-IRANYekan500 text-gray-500"> black out</h4>
-                                    <p class="text-[16px] font-IRANYekan400 leading-[28px] text-gray-500">پرده های ساخت
-                                        کشور اسپانیا</p>
-
-                                </div>
-
-                            </div>
+                                        </div>
+                                    </a>
+                                </face>
+                            </basis>
 
                         </div>
 
@@ -354,43 +419,35 @@
         <section class="mt-[33px] pr-5 h-auto pt-2.5 ">
             <div class="flex flex-col justify-start gap-4">
                 <div>
-                    <h4 class="text-[18px] font-IRANYekan500 text-black">محصولات مرتبط</h4>
+                    <h4 class="text-[18px] font-IRANYekan500 text-black">مقالات مرتبط</h4>
                 </div>
                 <div class="">
                     <div class="swiper scrollProjectList-4 relative">
                         <div class="swiper-wrapper w-full">
-                            <div class="swiper-slide w-full h-[389px] flex flex-col gap-1.5">
-                                <div class="w-full h-full">
-                                    <img class="w-[360px] h-[196]" src="./../assets/images/productList/slid3.jpg"
-                                        alt="">
-                                </div>
-                                <div class="flex flex-col gap-2.5">
-                                    <span class="text-[14px] text-gray-600 font-PxGrotesk400">1402 - 10 - 16</span>
-                                    <h4 class="text-[16px] font-IRANYekan500 text-black"> black out</h4>
-                                    <p
-                                        class="text-[14px] font-IRANYekan300 leading-[28px] h-[72px] overflow-hidden text-gray-500">
-                                        قطعاً یکی از بخش های مهم ساختمان درب و پنجره آن است. انتخاب درب و پنجره درست و
-                                        مناسب یکی از مهمترین کارهایی است که باید برای خانه خود انجام دهید. </p>
+                            <basis core="print" datamembername="basisName.related-Product">
+                                <face>
+                                    <div class="swiper-slide w-full h-[389px] flex flex-col gap-1.5">
+                                        <div class="w-full h-full">
+                                            <a href="/@link" title="@title">
+                                                <img class="w-[360px] h-[196px]" src="[##cms.cms.cdn##]/@00400X00300prp"
+                                                    alt="">
+                                            </a>
 
-                                </div>
+                                        </div>
+                                        <div class="flex flex-col gap-2.5">
+                                            <span class="text-[14px] text-gray-600 font-PxGrotesk400">@prp_7249</span>
+                                            <h4 class="text-[16px] font-IRANYekan500 text-black">@title</h4>
+                                            <p
+                                                class="text-[14px] font-IRANYekan300 leading-[28px] h-[72px] overflow-hidden text-gray-500">
+                                                @prp_7244</p>
 
-                            </div>
-                            <div class="swiper-slide w-full h-[389px] flex flex-col gap-1.5">
-                                <div class="w-full h-full">
-                                    <img class="w-[360px] h-[196]" src="./../assets/images/productList/slid3.jpg"
-                                        alt="">
-                                </div>
-                                <div class="flex flex-col gap-2.5">
-                                    <span class="text-[14px] text-gray-600 font-PxGrotesk400">1402 - 10 - 16</span>
-                                    <h4 class="text-[16px] font-IRANYekan500 text-black"> black out</h4>
-                                    <p
-                                        class="text-[14px] font-IRANYekan300 leading-[28px] h-[72px] overflow-hidden text-gray-500">
-                                        قطعاً یکی از بخش های مهم ساختمان درب و پنجره آن است. انتخاب درب و پنجره درست و
-                                        مناسب یکی از مهمترین کارهایی است که باید برای خانه خود انجام دهید. </p>
+                                        </div>
 
-                                </div>
+                                    </div>
+                                </face>
 
-                            </div>
+                            </basis>
+
                         </div>
 
                     </div>
@@ -402,27 +459,41 @@
                 <div>
                     <h4 class="text-[18px] font-IRANYekan500 text-black">نمونه پروژه های اجرا شده</h4>
                 </div>
-                <div class="">
-                    <div class="swiper scrollProjectList-2 relative">
-                        <div class="swiper-wrapper w-full">
-                            <div class="swiper-slide w-full h-[355px] flex flex-col gap-1.5">
-                                <div class="w-full h-full">
-                                    <img class="w-full h-full" src="./../assets/images/productList/Frame 1000005232.png"
-                                        alt="">
-                                </div>
-
-                            </div>
-                            <div class="swiper-slide w-full h-[355px] flex flex-col gap-1.5">
-                                <div class="w-full h-full">
-                                    <img class="w-full h-full" src="./../assets/images/productList/Frame 1000005235.png"
-                                        alt="">
-                                </div>
-
-                            </div>
+                <div class="flex flex-col justify-center items-center">
+                    <div class=" w-full h-[355px] flex flex-col gap-1.5">
+                        <div class="w-full h-full">
+                            <img class="w-full h-full" src="./../assets/images/productList/Frame 1000005232.png" alt="">
                         </div>
 
                     </div>
                 </div>
+
+
+
+                <basis core="print" datamembername="db.video-product">
+
+                    <face filter="format=3">
+                        <div class="viduBoxM w-full h-[355px] flex flex-col gap-1.5">
+                            <div class="w-full h-full overflow-hidden">
+                                <video src="[##cms.cms.cdn##]/@largeIMG" muted loop
+                                    class="h-full object-cover grayscale-100 group-hover/viduBox:grayscale-0 duration-500">
+
+                                </video>
+                            </div>
+                        </div>
+                    </face>
+                    <face filter="format=4">
+                        <div class="w-full h-[355px] flex flex-col">
+                            <div class="w-full h-full overflow-hidden">
+                                <img src="[##cms.cms.cdn##]/@largeIMG"
+                                    class="h-full object-cover grayscale-100 group-hover/imgBox:grayscale-0 duration-500" />
+                            </div>
+                        </div>
+
+                    </face>
+                </basis>
+
+            </div>
             </div>
         </section>
     </main>
@@ -511,6 +582,20 @@
             });
         });
     });
+
+
+    let viduBox = document.querySelectorAll(".viduBoxM")
+
+    viduBox?.forEach(element => {
+        element.addEventListener("mouseenter", function (params) {
+
+            element.querySelector("video").play();
+        })
+        element.addEventListener("mouseout", function (params) {
+            element.querySelector("video").pause();
+        })
+    });
+
 
 
 

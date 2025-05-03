@@ -1,5 +1,8 @@
-<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" run="atclient">
-    <member request="cat" type="tree" name="productCat" parentid="214297" preview="true" />
+<basis core="dbsource" request="seo" source="basiscore" name="db" lid="1">
+    <member name="seolist" type="list" request="product" id="214297"></member>
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20">
+    <member request="cat" type="tree" name="productCat" parentid="214297" />
 </basis>
 
 
@@ -9,30 +12,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../assets/css/outputMobile.css">
-    <title>Document</title>
+    <basis core="print" datamembername="db.seolist">
+        <face>
+            <title>[##cms.seo.title|db.seolist.title##]</title>
+            <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
+        </face>
+    </basis>
+    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
 </head>
-<script src="./../basis-loader.js"></script>
-
 <body>
-    <header>
-        <div class="absolute z-50 w-full h-[70px] mb-2.5 bg-[red]">
-        </div>
-    </header>
+    <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
     <main id="productList">
         <div class="w-full h-[450px] flex flex-col justify-between items-center bg-main pt-[75px] px-5 pb-5">
             <div
                 class="w-full flex flex-row items-center justify-start text-[12px] text-gray-700 font-IRANYekan300 gap-0.5">
                 <ul class="flex flex-row  items-center gap-x-1.5">
-                    <li class="text-[12px] font-IRANYekan300 text-white"><a href="/">صفحه نخست</a></li>
-                    <li class="text-[12px] font-IRANYekan300 text-white"><span href="">.</span></li>
-                    <li><span class="text-[12px] font-IRANYekan300 text-white">محصولات</span></li>
+                    <li class="text-[12px] font-IRANYekan300 text-gray-700"><a href="/">صفحه نخست</a></li>
+                    <li class="text-[12px] font-IRANYekan300 text-gray-700"><span href="">.</span></li>
+                    <li><span class="text-[12px] font-IRANYekan300 text-gray-700">محصولات</span></li>
                 </ul>
             </div>
-            <div class="flex flex-col justify-center items-center">
-                <h3 class="text-[25px] text-black font-IRANYekan400">محصولات کاورسان</h3>
-                <h4 class="text-[24px] text-gray-600 font-PxGrotesk400">cover sun projects</h4>
-            </div>
+            <basis core="list" datamembername="basisName.productCat">            
+                <face filter="rownumber=1">
+                    <div class="flex flex-col justify-center items-center">
+                        <h3 class="text-[25px] text-black font-IRANYekan400">@title</h3>
+                        <h4 class="text-[24px] text-gray-600 font-PxGrotesk400">@urltitle</h4>
+                    </div>        
+                </face>
+            </basis>
+            
             <div class="w-[74px] h-[82px] flex flex-col justify-center items-center gap-[8px] mt-11">
                 <h5 class="font-PxGrotesk400 text-[14px] flex-nowrap text-gray-400">scroll donw </h5>
                 <div class="c-scrolldown">
@@ -43,33 +51,34 @@
         </div>
         <div class="w-full h-auto">
             <div class="ProductListItem flex flex-col justify-center items-center">
-                <basis core="list" datamembername="basisName.productCat" run="atclient">
+                <basis core="list" datamembername="basisName.productCat">
                     <face filter="parentid=214297">
-                        <script type="text/template">
-                            <a href="/@link@">
+                            <a href="/product-list.bc?catid=@catid">
                                 <div
                             class="ProductItem relative w-full h-[300px] flex grayscale bg-cover bg-no-repeat bg-center flex-col justify-end items-center overflow-hidden"
-                            style="background-image: url([##cms.cms.cdn##]/@image@);">
+                            style="background-image: url([##cms.cms.cdn##]/@image);">
                             
                             
                             <div class="absolute top-0 left-0 w-full h-full bg-black/60 z-10"></div>
 
                             <div class="relative p-[20px] flex flex-col justify-end items-start z-20">
-                                <img class="w-[102px] h-[102px] " src="[##cms.cms.cdn##]/images/icone-Def-@catid@.png" alt="" />
-                                <h4 class="text-[16px] font-PxGrotesk500 text-white py-[15px]">@title@</h4>
+                                <img class="w-[102px] h-[102px]" src="[##cms.cms.cdn##]/images/icone-Def-@catid.png" alt="@title" />
+                                <h4 class="text-[16px] font-PxGrotesk500 text-white py-[15px]">@title</h4>
                                 <p class="text-[12px] font-IRANYekan300 text-white">
-                                    @urldescription@
+                                    @urldescription
                                 </p>
                             </div>
                         </div>
-                            </a>
-                        
-                    </script>
+                            </a>                        
                     </face>
                 </basis>
             </div>
         </div>
     </main>
+    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
 </body>
+
+<script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
+<basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]" />
 
 </html>

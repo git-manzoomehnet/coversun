@@ -1,10 +1,6 @@
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" catid="214308" run="atclient">
-    <member name="list" type="list" size="440x900" preview="true" />
+    <member name="listproject" type="list" size="305x600" preview="true" />
 </basis>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <script src="./../basis-loader.js"></script>
@@ -21,9 +17,9 @@
         <div class="w-full h-[450px] flex flex-col justify-between py-5 items-center bg-main px-5">
             <div
                 class="w-full flex flex-row items-center justify-start text-[12px] text-gray-700 font-IRANYekan300 gap-0.5">
-                <a class="" href="">صفحه نخست</a>
-                <span class="">.</span>
-                <a href="">پروژه ها</a>
+                <li class="text-[12px] font-IRANYekan300 text-gray-700"><a href="/">صفحه نخست</a></li>
+                <span class="text-[12px] font-IRANYekan300 text-gray-700">.</span>
+                <a class="text-[12px] font-IRANYekan300 text-gray-700" href="">پروژه ها</a>
             </div>
             <div class="flex flex-col justify-center items-center">
                 <h3 class="text-[25px] text-black font-IRANYekan400">پروژه های کاورسان</h3>
@@ -31,38 +27,25 @@
             </div>
             <div class="w-[74px] h-[82px] flex flex-col justify-center items-center gap-[8px] mt-11">
                 <h5 class="font-PxGrotesk400 text-[14px] flex-nowrap text-gray-400">scroll donw </h5>
-
-                <span class="w-[1px] h-[27px] bg-gray-300"></span>
+                <div class="c-scrolldown">
+                    <div class="c-line"></div>
+                </div>
 
             </div>
         </div>
-        <div class="w-full h-auto px-5">
-            <div class="ProductListItem flex flex-col justify-center items-center gap-[62px] my-[42px]">
-                <basis core="print" datamembername="db.list" run="atclient">
-                <face>
-                    <div class="ProductItem  w-full h-[500px] flex flex-col justify-between items-center">
-                        <div class="w-full h-[500px] flex justify-center items-center">
-                            <a href="/@link">
-                                    <img class="w-[400px] h-[500px]" src="[##cms.cms.cdn##]/@image" alt="@title" />
-                                </a>
-                            </div>
-                            <div class="w-full h-[28px] flex justify-start items-center">
-                                <a class="text-[16px] text-gray-800 font-IRANYekan500" href="@link">@title</a>
-                            </div>
-        
-                        </div>
-                    </face>
-                </basis>
+        <div class="flex flex-col w-full h-auto px-10">
+            <div class="ProductListItem h-auto flex flex-col justify-center items-center mb-[62px]">
                 <div class="ProductItem  w-full h-[500px] flex flex-col justify-between items-center">
                     <div class="w-full h-[500px] flex justify-center items-center">
-                        <a href="">
-                            <img class="w-[400px] h-[500px]" src="./../assets/images/projectList/img1.png" alt="">
+                        <a href="/@link">
+                            <img class="w-[305px] h-[624px]" src="./../assets/images/productList/img1.png"
+                                alt="@title@" />
                         </a>
                     </div>
                     <div class="w-full h-[28px] flex justify-start items-center">
-                        <a class="text-[16px] text-gray-800 font-IRANYekan500" href="/">پروژه یک</a>
+                        <a class="text-[16px] text-gray-800 font-IRANYekan500" href="@link@">@title@</a>
                     </div>
-
+                </div>
             </div>
         </div>
     </main>
