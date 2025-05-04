@@ -1,0 +1,181 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376647">
+    <member name="about-us" type="view"/>
+</basis>
+
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376647">
+    <member name="image-aboutUs-photos" type="list" format="4" />
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376647">
+    <member name="image-aboutUs-vedio" type="list" format="3" />
+</basis>
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
+    <title>درباره ما</title>
+</head>
+<body>
+    <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
+    <main id="productList">
+        <div class="w-full h-[450px] flex flex-col justify-between py-5 items-center bg-black px-5 pt-[80px]">
+            <ul
+                class="w-full flex flex-row items-center justify-start text-[12px] text-white font-IRANYekan300 gap-0.5">
+                <li class="text-[12px] font-IRANYekan300 text-white"><a href="/">صفحه نخست</a></li>
+                <span class="text-[12px] font-IRANYekan300 text-white">.</span>
+                <a class="text-[12px] font-IRANYekan300 text-white" href="aboutus.bc">درباره ما</a>
+            </ul>
+            <div class="flex flex-col justify-center items-center">
+                <basis core="print" datamembername="db.about-us">
+                    <face filter="rownumber=1"> 
+                        <h3 class="text-[24px] text-white font-PxGrotesk400">@Answer</h3>
+                    </face>
+                </basis>
+                
+
+            </div>
+            <div class="w-[74px] h-[82px] flex flex-col justify-center items-center gap-[8px] mt-11">
+                <h5 class="font-PxGrotesk400 text-[14px] flex-nowrap text-gray-400">Scroll Down </h5>                                                                            
+                <div class="c-scrolldown">
+                    <div class="c-line"></div>
+                </div>
+
+            </div>
+        </div>                
+            <basis core="print" datamembername="db.image-aboutUs-vedio">
+
+                <layout>
+                    <div class="w-full h-[220px]">
+                        @child
+                    </div>
+                </layout>
+                <else-layout>
+                    <img src="[##cms.cms.cdn##]/1049471408662001B" alt="gallery">
+                </else-layout>
+                <face>
+                    <video src="[##cms.cms.cdn##]/@largeIMG" class="w-full object-cover" controls muted playsinline></video>
+                </face>
+                
+            </basis>            
+        <section>
+            <div class="w-full h-auto px-5 flex justify-center items-end flex-col bg-black pt-16 pb-36 relative">
+                <basis core="print" datamembername="db.about-us">                
+                    <face filter="valueID=4138378">
+                        <div class="flex flex-col gap-3 text-left" dir="ltr">                
+                            <p class="text-[48px] text-gray-700 font-PxGrotesk400 scrollTop ">01</p>
+                            <h3 class="text-[24px] text-gray-300 font-IRANYekan500 scrollTop ">@text</h3>
+                            <div class="[&>p]:text-[14px] [&>p]:leading-5 [&>p]:text-gray-300 [&>p]:text-justify text-gray-300 scrollTop  [&>p]:font-PxGrotesk300">
+                                @largetext
+                            </div>                                  
+                        </div>        
+                    </face>
+                </basis>
+                
+                <div class="absolute grayscale top-[600px] left-1/2 -translate-x-1/2 px-5">
+                    <basis core="print" datamembername="db.image-aboutUs-photos">                        
+                        <face filter="ord=52">                            
+                            <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name">                            
+                        </face>
+                    </basis>
+                </div>
+            </div>
+            <div
+                class="h-auto  flex justify-center items-end flex-col mt-[480px] pb-12 mb-8 border-b border-back mx-5">
+                <basis core="print" datamembername="db.about-us">                
+                    <face filter="valueID=4138379">
+                        <div class="flex flex-col gap-3 text-left">                
+                            <p class="text-[48px] text-gray-700 font-PxGrotesk400 scrollTop">02</p>
+                            <h3 class="text-[24px] text-gray-300 font-IRANYekan500 scrollTop">@text</h3>
+                            <div class="[&>p]:text-[14px] [&>p]:leading-5 [&>p]:text-gray-300 [&>p]:text-justify scrollTop [&>p]:font-PxGrotesk300">
+                                @largetext
+                            </div>        
+                        </div>        
+                    </face>
+                </basis>
+            </div>
+            <div class="w-full h-auto px-5 flex justify-center pb-[70px] items-start flex-col">
+                <div class=" w-full flex flex-col gap-3 mb-[40px] pt-[15px] text-right">
+                    <p class="text-[48px] text-gray-700 font-PxGrotesk400 scrollTop">03</p>
+                    <h3 class="text-[24px] text-gray-300 font-IRANYekan500 scrollTop">همکاران ما</h3>
+                </div>
+                <div class="w-full">
+                    <basis core="print" datamembername="db.image-aboutUs-photos">                        
+                        <face filter="ord=3">                            
+                            <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name">                            
+                        </face>
+                    </basis>
+                </div>
+            </div>
+            <div class="h-auto flex justify-center items-start flex-col  pb-12 mb-8 border-b border-back bg-black p-5">
+                <basis core="print" datamembername="db.about-us">                
+                    <face filter="valueID=4138408">
+                        <div class="flex flex-col gap-3 text-right">                
+                            <p class="text-[48px] text-gray-700 font-PxGrotesk400 scrollTop">04</p>
+                            <h3 class="text-[24px] text-gray-300 font-IRANYekan500 scrollTop">@text</h3>
+                            <div class="[&>p]:text-[14px] [&>p]:leading-5 [&>p]:text-justify [&>p]:text-gray-300 scrollTop [&>p]:font-PxGrotesk300">
+                                @largetext
+                            </div>        
+                        </div>        
+                    </face>
+                </basis>
+                <div class="w-full flex flex-col scrollTop">
+                    <div class="w-full grid grid-cols-3 gap-2 mt-2.5" dir="ltr">
+                        <basis core="print" datamembername="db.image-aboutUs-photos">
+                            <face filter="ord=1000">
+                                <a class="w-[73px] h-[73px] flex justify-center items-center" href="/@link">
+                                    <img src="[##cms.cms.cdn##]/@largeIMG" alt="">
+                                </a>        
+                            </face>
+                        </basis>                        
+                    </div>                    
+                </div>
+            </div>
+            <div class="h-auto flex justify-center items-end flex-col pb-12 mb-8 border-b border-back m-5">
+                <basis core="print" datamembername="db.about-us">                
+                    <face filter="valueID=4138408">
+                        <div class="flex flex-col gap-3 text-right">                
+                            <p class="text-[48px] text-gray-700 font-PxGrotesk400 scrollTop">05</p>
+                            <h3 class="text-[24px] text-gray-300  font-IRANYekan500 scrollTop">@text</h3>
+                            <div class="[&>p]:text-[14px] [&>p]:text-justify [&>p]:leading-5 [&>p]:text-gray-300 scrollTop [&>p]:font-PxGrotesk300">
+                                @largetext
+                            </div>        
+                        </div>        
+                    </face>
+                </basis>
+            </div>
+            <div class="h-auto  flex justify-center items-end flex-col pb-12 mb-8 border-b border-back m-5">
+                <basis core="print" datamembername="db.about-us">                
+                    <face filter="valueID=4138422">
+                        <div class="flex flex-col gap-3 text-left">                
+                            <p class="text-[48px] text-gray-700 font-PxGrotesk400 scrollTop">06</p>
+                            <h3 class="text-[24px] text-gray-300 font-IRANYekan500 ltr scrollTop">@text</h3>
+                            <div class="[&>p]:text-[14px] [&>p]:text-justify [&>p]:leading-5 [&>p]:text-gray-300 scrollTop [&>p]:font-PxGrotesk300">
+                                @largetext
+                            </div>        
+                        </div>        
+                    </face>
+                </basis>
+            </div>
+            <div class="h-auto flex justify-center items-start flex-col pb-12 border-b m-5 border-back">
+                <basis core="print" datamembername="db.about-us">                
+                    <face filter="valueID=4138423">
+                        <div class="flex flex-col gap-3 text-left">                
+                            <p class="text-[48px] text-gray-700 font-PxGrotesk400 text-right">:07</p>
+                            <h3 class="text-[24px] text-gray-300 font-IRANYekan500 scrollTop text-right">@text</h3>
+                            <div class="[&>p]:text-[14px] [&>p]:leading-5 [&>p]:text-justify [&>p]:text-gray-300 scrollTop [&>p]:font-PxGrotesk300">
+                                @largetext
+                            </div>        
+                        </div>        
+                    </face>
+                </basis>
+            </div>
+        </section>
+    </main>
+    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
+
+    <script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
+    <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]" />
+</body>
+
+</html>

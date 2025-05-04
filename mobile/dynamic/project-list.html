@@ -1,26 +1,26 @@
-<basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" catid="214308" run="atclient">
-    <member name="listproject" type="list" size="305x600" preview="true" />
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" catid="214308">
+    <member name="listproject" type="list" size="305x600" link="project.bc" />
 </basis>
 <!DOCTYPE html>
-<html lang="en">
-<script src="./../basis-loader.js"></script>
+<html lang="fa">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../assets/css/outputMobile.css">
-    <title>Document</title>
+    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
+    <title>لیست پروژه‌ها</title>
 </head>
 
 <body>
-    <main id="productList">
-        <div class="w-full h-[450px] flex flex-col justify-between py-5 items-center bg-main px-5">
-            <div
+    <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
+    <main id="productList" dir="rtl">
+        <div class="w-full h-[450px] flex flex-col justify-between py-5 items-center bg-main px-5 pt-20">
+            <ul
                 class="w-full flex flex-row items-center justify-start text-[12px] text-gray-700 font-IRANYekan300 gap-0.5">
                 <li class="text-[12px] font-IRANYekan300 text-gray-700"><a href="/">صفحه نخست</a></li>
                 <span class="text-[12px] font-IRANYekan300 text-gray-700">.</span>
                 <a class="text-[12px] font-IRANYekan300 text-gray-700" href="">پروژه ها</a>
-            </div>
+            </ul>
             <div class="flex flex-col justify-center items-center">
                 <h3 class="text-[25px] text-black font-IRANYekan400">پروژه های کاورسان</h3>
                 <h4 class="text-[24px] text-gray-600 font-PxGrotesk400">cover sun projects</h4>
@@ -33,22 +33,30 @@
 
             </div>
         </div>
-        <div class="flex flex-col w-full h-auto px-10">
-            <div class="ProductListItem h-auto flex flex-col justify-center items-center mb-[62px]">
-                <div class="ProductItem  w-full h-[500px] flex flex-col justify-between items-center">
-                    <div class="w-full h-[500px] flex justify-center items-center">
-                        <a href="/@link">
-                            <img class="w-[305px] h-[624px]" src="./../assets/images/productList/img1.png"
-                                alt="@title@" />
-                        </a>
-                    </div>
-                    <div class="w-full h-[28px] flex justify-start items-center">
-                        <a class="text-[16px] text-gray-800 font-IRANYekan500" href="@link@">@title@</a>
-                    </div>
-                </div>
+        <div class="flex flex-col w-full h-[100%] px-10">
+            <div class="ProductListItem h-auto flex flex-col justify-center items-center mb-[62px] py-[42px]">
+                <basis core="list" datamembername="db.listproject">
+                    <face>
+                        <div class="ProductItem  w-full h-[655px] flex flex-col justify-between items-center mb-[28px]">
+                            <div class="w-full h-full flex justify-center items-center">
+                                <a href="/@link">
+                                    <img class="w-[305px] h-[624px]" src="[##cms.cms.cdn##]/@image" alt="@title" />
+                                </a>
+                            </div>
+                            <div class="w-full h-[28px] flex justify-start items-center">
+                                <a class="text-[16px] text-gray-800 font-IRANYekan500" href="@link">@title</a>
+                            </div>
+                        </div>
+                    </face>
+                </basis>
+
             </div>
         </div>
     </main>
+    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
+
+    <script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
+    <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]" />
 </body>
 
 </html>

@@ -1,0 +1,247 @@
+<basis core="dbsource" request="seo" source="basiscore" name="db" lid="1">
+    <member name="seolist" type="list" request="product" id="[##cms.query.id##]"></member>
+</basis>
+<basis core="dbsource" source="basiscore" name="json" lid="1" usedforid="[##cms.query.id##]">
+    <member request="json-ld" type="scalar" name="fq" />
+</basis>
+
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" usedforid="[##cms.query.id##]">
+    <member name="project" type="view" />
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="19" usedforid="[##cms.query.id##]" >
+    <member name="image-project" type="list" format="4" />
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="19" usedforid="[##cms.query.id##]" >
+    <member name="video-project" type="list" format="3" />
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="19" usedforid="[##cms.query.id##]" >
+    <member type="list" name="related-blog" propertyid="7249,7244" size="300x200" blgid="631" link="article.bc"  />
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="19" usedforid="[##cms.query.id##]">
+    <member type="list" name="related-Product" propertyid="10000972" size="300x400" blgid="630" />
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="19" usedforid="[##cms.query.id##]">
+    <member type="list" name="related-project" size="300x600" blgid="629" link="project.bc" />
+    
+</basis>
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <basis core="print" datamembername="db.seolist">
+        <face>
+            <title>[##cms.seo.title|db.seolist.title##]</title>
+            <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
+        </face>
+    </basis>
+    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css">
+    
+</head>
+
+<body>
+    <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
+    <div class="w-full h-auto mx-auto py-5 items-center ">
+        <div class="w-full px-5 pt-[75px]">
+            <div
+                class="w-full flex flex-row items-center justify-start text-[12px] text-gray-700 font-IRANYekan300 gap-0.5">
+                <a class="" href="">صفحه نخست</a>
+                <span class="">.</span>
+                <a href="">پروژه ها</a>
+            </div>
+
+            <div class="w-full flex flex-col justify-start pt-[75px]">
+                <basis core="print" datamembername="db.project">
+
+                    <face filter="TypeID=150">
+                        <h1 class="text-[24px] font-IRANYekan500 text-black mb-[33px]">
+                            پروژه ی @Answer
+                        </h1>
+
+                    </face>
+                </basis>
+
+                <ul class="flex flex-col justify-start gap-5">
+                    <basis core="print" datamembername="db.project">
+                        <layout>
+                            @child
+                        </layout>
+                        <face filter="prpID not in (17862,17877,54863)">
+                            <li class="flex flex-row justify-start items-center gap-1">
+                                <p class="font-PxGrotesk400 text-[14px] text-gray-400">@Question :</p>
+                                <p class="text-[14px] text-back-gray font-PxGrotesk400">@Answer</p>
+                            </li>
+                        </face>
+                    </basis>
+                </ul>
+
+            </div>
+        </div>
+        <div class="mt-10">
+            <basis core="print" datamembername="db.image-project">
+                <face filter="ord=51">
+                    <img class="w-[full] h-[398px]" src="@largeIMG" alt="@name">
+                </face>
+            </basis>
+
+        </div>
+        <div class="w-full h-[82px] flex flex-col justify-center items-center gap-[8px] my-9 ">
+            <h5 class="font-PxGrotesk400 text-[14px] flex-nowrap text-gray-400">scroll donw </h5>
+            <div class="c-scrolldown">
+                <div class="c-line"></div>
+            </div>
+        </div>
+
+        <basis core="print" datamembername="db.video-project">
+            <layout>
+                <div class="w-full h-[219px]">
+                    @child
+                </div>
+            </layout>
+            <face>
+                <video src="[##cms.cms.cdn##]/@largeIMG" class="w-full object-cover" controls muted playsinline></video>
+            </face>
+        </basis>        
+        <basis core="print" datamembername="db.project">
+            <layout>
+                <div class="w-full flex flex-col px-5 gap-4 mt-5">
+                    <h4 class="text-[14px] font-PxGrotesk400 text-gray-800">توضیحات:</h4>
+                    <p class="[&>p]:text-[14px] [&>p]:font-IRANYekan300 [&>p]:text-justify ">
+                        @child
+                    </p>
+                </div>
+            </layout>
+            <face filter="prpID = 17877">
+                @Answer
+            </face>
+        </basis>
+        <basis core="print" datamembername="db.image-project">
+            <layout>
+                <div class="flex flex-col gap-5 my-11 pr-5 mt-[60px]">
+                    <div>
+                        <h4 class="text-[18px] font-IRANYekan500 text-black">گالری تصاویر</h4>
+                    </div>
+                    <div class="w-full h-[373px]">
+                        <div class="swiper scrollProjectList-1 ">
+                            <div class="swiper-wrapper w-full !h-full">
+                                @child
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </layout>
+
+            <face filter="ord=50">
+                <div class="swiper-slide w-full h-full flex flex-col gap-1.5">
+                    <div class="w-full h-[100%]">
+                        <img class="w-full h-[100%]" src="[##cms.cms.cdn##]/@largeIMG" alt="gallery">
+                    </div>
+                </div>
+            </face>
+        </basis>
+        <basis core="print" datamembername="basisName.related-blog">
+            <layout>
+                <div class="flex flex-col gap-5 my-11 pr-5 pt-[60px]">
+                    <div>
+                        <h4 class="text-[18px] font-IRANYekan500 text-black">مقالات مرتبط</h4>
+                    </div>
+                    <div class="w-full h-full">
+                        <div class="swiper scrollProjectList-2 ">
+                            <div class="swiper-wrapper w-full !h-full">
+                                @child
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </layout>
+
+            <face>
+                <div class="swiper-slide w-full h-full">
+                    <div class="w-full h-[196px]">
+                        <a href="/@link" class="w-full h-full">                            
+                            <img class="w-full h-full" src="[##cms.cms.cdn##]/@00300X00200prp" alt="@title">
+                        </a>
+                    </div>                    
+                    <div class="flex flex-col gap-2.5">
+                        <h4 class="text-[12px] text-gray-600 mt-2.5 font-IRANYekan400">@prp_7249</h4>
+                        <h4 class="text-[16px] text-black font-IRANYekan500">@title</h4>
+                        <p class="[&>p]:text-[14px] [&>p]:text-gray-700 [&>p]:font-IRANYekan300 max-h-[70px] overflow-hidden text-ellipsis">@prp_7244</p>
+                        
+
+                    </div>
+                </div>
+            </face>
+        </basis>
+        <basis core="print" datamembername="basisName.related-Product">
+            <layout>
+                <div class="flex h-auto flex-col  my-11 pr-5 mt-[60px]">
+                    <div>
+                        <h4 class="text-[18px] font-IRANYekan500 mb-[26px] text-black">محصولات مرتبط</h4>
+                    </div>
+                    <div class="w-full h-auto">
+                        <div class="swiper scrollProjectList-2 ">
+                            <div class="swiper-wrapper w-full !h-full">
+                                @child
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </layout>
+            <face>
+                <div class="swiper-slide flex flex-col">
+                    <div class="w-full h-[448px] flex flex-col">
+                        <a href="/@link" title="@title" class="w-full h-full">                            
+                            <img class="w-[350px] h-[448px]" src="[##cms.cms.cdn##]/@00300X00400prp" alt="@title">
+                        </a>
+
+                    </div>
+                    <div class="flex-col flex gap-1.5 mt-1.5">
+                        <h4 class="text-[16px] text-gray-600 font-IRANYekan500">@title</h4>
+                        <p class="text-[16px] text-gray-600 font-IRANYekan400 flex flex-row">ساخت کشور <span class="text-[16px] text-gray-600 font-IRANYekan400">@prp_10000972</span></p>
+                        
+                        
+                    </div>
+                </div>
+            </face>
+        </basis>
+        <basis core="print" datamembername="basisName.related-project">
+            <layout>
+                <div class="flex flex-col my-11 pr-5 mt-[60px]">
+                    <div>
+                        <h4 class="text-[18px] mb-[15px] font-IRANYekan500 text-black">پروژه های مرتبط</h4>
+                    </div>
+                    <div class="w-full h-auto">
+                        <div class="swiper scrollProjectList-2 ">
+                            <div class="swiper-wrapper w-full !h-full">
+                                @child
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </layout>
+            <face>
+                <div class="swiper-slide flex flex-col w-full h-[703px] gap-1.5">
+                    <div class="w-full h-[600px]">
+                        <a href="/@link" class="w-full h-full">
+                            <img class="w-full h-[600px]" src="[##cms.cms.cdn##]/@00300X00600prp" alt="@title">
+                        </a>
+
+                    </div>
+                    <div>
+                        <h4 class="text-[16px] text-gray-800 mt-[3px] font-IRANYekan500">@title</h4>
+                    </div>
+
+                </div>
+            </face>
+        </basis>
+
+    </div>
+    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
+    <script src="[##cms.cms.cdn##]/_js/swiper.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
+    <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]" />
+    <script src="[##cms.cms.cdn##]/js/projectShowMobile.js"></script>
+</body>
+</html>
