@@ -199,16 +199,16 @@ const openmenu = document.querySelector('#openmenu');
     const inputSerch = document.querySelector("#inputSerch")
     inputSerch.addEventListener("keydown", (e) => {
         if (e.keyCode == 13 && e.value != '') {
-            searchResult(e.value)
+            searchResult(e.target.value)
         }
     })
     const buttonSearch = document.querySelector("#buttonSearch")
     buttonSearch.addEventListener("click", () => {
         if (inputSerch.value != "") {
-            searchResult(inputSerch.value)
+            searchResult(inputSerch.target.value)
         }
     })
     function searchResult(value) {
-        window.location.href = `/searchresult.bc?q=${value}`
+        window.location.href = `/search.bc?q=${value}`
     }
         

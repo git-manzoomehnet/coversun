@@ -1,0 +1,797 @@
+<basis core="dbsource" request="seo" source="basiscore" name="db" lid="1">
+    <member name="seolist" type="list" request="product" id="[##cms.query.id##]"></member>
+</basis>
+<basis core="dbsource" source="basiscore" name="json" lid="1" usedforid="[##cms.query.id##]">
+    <member request="json-ld" type="scalar" name="fq" />
+</basis>
+<basis core="dbsource" source="basiscore" mid="20" name="db" lid="1" usedforid="[##cms.query.id##]">
+    <member name="list5" type="list" request="groupid"></member>
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376632">
+    <member name="article" type="view" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376632">
+    <member name="article" type="view" />
+    <member name="article250" postsql="select * from [db.article250] where TypeID = 250" type="view" />
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376632">
+    <member name="image-article" type="list" format="4" />
+</basis>
+<basis core="dbsource" source="userbehavior" name="db" lid="1" userid="100005" usedforid="2376632">
+    <member request="listcomment" type="list" name="commentlist" link="event.bc" />
+</basis>
+
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376639">
+    <member name="faq" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="1" usedforid="2376632">
+    <member type="list" name="related-project" link="project.bc" size="400x800" blgid="1611" />
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="1" usedforid="2376632">
+    <member type="list" name="related-product" propertyid="10000792" size="300x400" blgid="221" />
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="1" usedforid="2376632">
+    <member type="list" name="related-blog" propertyid="7244,7249" link="article.bc" size="400x300" blgid="222" />
+</basis>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../assets/css/outputMobile.css">
+    <link rel="stylesheet" href="http://www.ramand-co.com/css/swiper.css">
+    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
+
+    <title>Document</title>
+</head>
+<script src="./../basis-loader.js"></script>
+
+<body>
+    <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
+    <main>
+        <section>
+            <div class="w-full flex flex-col pt-[80px]">
+                <div class="w-full h-9 flex justify-start items-center px-5 bg-gray-50">
+                    <ul
+                        class="w-full flex flex-row items-center justify-start text-[12px] text-black font-IRANYekan300 gap-0.5">
+                        <li class="text-[12px] font-IRANYekan300 text-black"><a href="/">صفحه نخست</a></li>
+                        <li class="text-[12px] font-IRANYekan300 text-black">.</li>
+                        <li class="text-[12px] font-IRANYekan300 text-black"><a class="text-[12px] font-IRANYekan300 text-black" href="aboutus.bc">مقالات</a></li>                        
+                        <basis core="print" datamembername="db.article">
+
+                            <face filter="TypeID=150">
+                                <li>
+                                    <span class="font-IRANYekan300 text-[12px] text-black">
+                                        .
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="font-IRANYekan300 text-[12px] text-black">
+                                        @Answer
+                                    </span>
+                                </li>
+        
+                            </face>
+                        </basis>
+                    </ul>
+                </div>
+                <div class="w-full flex justify-end px-5 mt-8">
+                    <a class="text-[14px] justify-end text-black font-IRANYekan300" href="/blog.bc">بازگشت به مقالات</a>
+                </div>
+
+                
+            </div>
+        </section>
+        <section>
+            <div class="flex flex-col px-5 mt-[17px]">
+                <basis core="print" datamembername="db.article">
+                    <face filter="TypeID=150">
+                        <h2 class="font-IRANYekan500 text-[18px]  text-black">@Answer</h2>
+                    </face>
+                </basis>
+
+                <div class="w-full flex flex-row justify-between items-center my-6">
+                    <basis core="print" datamembername="db.article">
+                        <face filter="TypeID=128">
+                            <h3 class="text-[14px] font-PxGrotesk400 text-gray-600">@Answer</h3>
+                        </face>
+                    </basis>
+
+                    <button id="shareBtn" class="cursor-pointer">
+                        <svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_325_2802)">
+                                <path
+                                    d="M22.7046 19.551C21.3948 19.551 20.2328 20.1431 19.4447 21.0539L8.12341 15.9961C8.41297 15.4284 8.5913 14.7967 8.5913 14.1197C8.5913 13.4428 8.41297 12.811 8.12341 12.2415L19.4447 7.18365C20.2347 8.09636 21.3949 8.68851 22.7046 8.68851C25.0728 8.68851 27 6.7933 27 4.46437C27 2.13545 25.0728 0.240234 22.7046 0.240234C20.3364 0.240234 18.4092 2.13545 18.4092 4.46437C18.4092 5.06782 18.5434 5.63921 18.7754 6.15779L7.41537 11.2326C6.63105 10.4141 5.52652 9.89555 4.29542 9.89555C1.9272 9.89555 0 11.7908 0 14.1197C0 16.4486 1.9272 18.3438 4.29542 18.3438C5.52652 18.3438 6.63105 17.8234 7.41537 17.0049L18.7754 22.0797C18.5415 22.6002 18.4092 23.1716 18.4092 23.775C18.4092 26.1039 20.3364 27.9991 22.7046 27.9991C25.0728 27.9991 27 26.1039 27 23.775C27 21.4461 25.0728 19.551 22.7046 19.551Z"
+                                    fill="black" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_325_2802">
+                                    <rect width="27" height="28" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                    </button>
+                </div>
+                <div class="flex flex-col mb-10">
+                    <basis core="print" datamembername="db.article">
+
+                        <face filter="TypeID=129">
+
+                            <div class="[&>p]:text-[14px] [&>p]:text-justify [&>p]:font-IRANYekan300 [&>p]:text-black">
+                                @Answer
+                            </div>
+                        </face>
+                    </basis>
+
+                    <basis core="print" datamembername="db.image-article">
+
+                        <face filter="ord=51">
+                            <div class="imgS shrink-0">
+                                <img class="w-full my-5 h-[197px]" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                            </div>
+
+                        </face>
+                    </basis>
+                    <basis core="print" datamembername="db.article250">
+                        <layout>
+                            @child
+                        </layout>
+
+                        <face filter="text <> 'نتیجه‌گیری' and RowNumber<4">
+                            <h3
+                                class="[&>p]:text-[14px] [&>p]:text-justify [&>p]:text-black [&>p]:font-IRANYekan300 pb-[5px]">
+
+                                @text
+                            </h3>
+                            <div class="[&>p]:text-[14px] [&>p]:text-justify [&>p]:text-black [&>p]:font-IRANYekan300">
+                                @largetext
+                            </div>
+
+                        </face>
+                    </basis>
+
+                    <basis core="print" datamembername="db.image-article">
+
+                        <face filter="ord=52">
+                            <img class="w-full h-[186px] my-5" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                        </face>
+                    </basis>
+
+                    <basis core="print" datamembername="db.article250">
+                        <layout>
+                            <div class="lSec">
+                                @child
+                            </div>
+                        </layout>
+
+                        <face filter="text <> 'نتیجه‌گیری' and RowNumber between 3 and 6">
+                            <h4 class="text-[14px] text-black font-IRANYekan700">
+                                @text
+
+                            </h4>
+                            <div
+                                class="[&>p]:text-[14px] [&>p]:text-black text-[14px] text-justify text-black font-IRANYekan300">
+                                @largetext
+                            </div>
+
+                        </face>
+                    </basis>
+                    <basis core="print" datamembername="db.article250">
+                        <layout>
+                            <section class="mx-auto mb-8">
+
+                                @child
+                            </section>
+                        </layout>
+                        <face filter="text <> 'نتیجه‌گیری' and RowNumber>6">
+                            <h3 class="text-[14px] text-black font-IRANYekan700 pb-[5px]">
+                                @text
+                            </h3>
+                            <div class="[&>p]:font-IRANYekan300 [&>p]:text-[14px] [&>p]:text-black">
+                                @largetext
+                            </div>
+                        </face>
+                    </basis>
+                </div>
+            </div>
+        </section>
+
+        <basis core="print" datamembername="db.image-article">
+            <layout>
+                <section class="pr-5">
+                    <div>
+                        <h4 class="text-[18px] font-IRANYekan500 pb-6 text-black">گالری تصاویر</h4>
+                    </div>
+                    <div class="swiper scrollProjectList-5 relative">
+                        <div class="swiper-wrapper w-full !h-[300px]">
+                            @child
+                        </div>
+                    </div>
+                </section>
+            </layout>
+            <face filter="ord=50">
+                <div class="swiper-slide w-full !h-[293px]">
+                    <img class="w-full !h-[293px]" src="[##cms.cms.cdn##]/@largeIMG" alt="gallery">
+                </div>
+            </face>
+        </basis>
+
+        <section class="px-5">
+            <div class="flex flex-col justify-center gap-[18px] mt-9">
+                <div id="comment" class="">
+                    <h4 class="text-[18px] font-IRANYekan500 text-black">نظرات ثبت شده</h4>
+                </div>
+                <basis core="print" datamembername="db.commentlist">
+                    <layout>
+                        <div class="swiper scrollProjectList-2 relative bg-gray-50">
+                            <div class="swiper-wrapper w-full">
+                                @child
+                            </div>
+                            <div
+                                class="swiper-buttons absolute bottom-[18px] flex justify-center items-center gap-0 z-10 mt-[50px] mx-auto left-[25%] right-[25%]">
+                                <div
+                                    class="swiper-button-prev-project-2 w-[64px] h-[54px] bg-white flex items-center justify-center cursor-pointer">
+                                    <svg width="15" height="27" viewBox="0 0 15 27" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.501953 1L13.502 13.5L0.501953 26" stroke="black" />
+                                    </svg>
+
+                                </div>
+                                <div
+                                    class="swiper-button-next-project-2 w-[64px] h-[54px] bg-white flex items-center justify-center cursor-pointer">
+                                    <svg width="15" height="27" viewBox="0 0 15 27" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14.502 1L1.50195 13.5L14.502 26" stroke="black" />
+                                    </svg>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </layout>
+                    <else-layout>
+                        <div style="min-height: 347px;min-width: 100%;"
+                            class="swiper-slide px-14 text-center  bg-gray-50 !flex flex-col justify-center items-center font-IRANYekan500 text-base text-StarDust950">
+                            هنوز کامنتی ثبت نشده است.
+                            <br>
+                            شما اولین نفر باشید
+                        </div>
+                    </else-layout>
+                    <face>
+                        <div class="swiper-slide !w-full h-[367px]">
+                            <div class="w-full flex flex-col justify-center items-start pt-[20px] pb-[100px] px-[15px]">
+                                <h4 class="text-[16px] text-start  text-back-gray font-IRANYekan500 mb-[15px]">@username
+                                </h4>
+                                <p class="text-[14px] text-justify font-IRANYekan300 text-back-gray">@comment</p>
+                            </div>
+                        </div>
+                    </face>
+                </basis>
+
+
+            </div>
+        </section>
+        <section class="mt-[33px] px-5 h-auto pt-2.5 ">
+            <basis core="dbsource" source="userbehavior" name="db" title="{##db.senduserName.value##}" run="atclient"
+                triggers="db.sendcomment" if="{##db.sendcomment##}" parentid="0" usedforid="[##cms.query.id##]"
+                userid="100005" mid="1" comment="{##db.sendcomment.value##}">
+                <member request="comment" type="scalar" name="comment" preview="true" onRendered="renderCommentFn" />
+            </basis>
+            <div class="flex flex-col justify-center">
+                <div>
+                    <h5 class="text-[18px] text-back-gray font-IRANYekan500 mb-[24px]">نظراتتان برای ما ارزشمند هست</h5>
+                </div>
+                <form action="" class="commentP relative">
+                    <div class="userInfo mb-4">
+                        <div class="nameInput relative mb-3">
+                            <label style="margin-bottom: 6px;" for="userName"
+                                class="font-IRANYekan300 text-back-gray block text-sm ">
+                                نام و نام خانوادگی
+                            </label>
+                            <input name="userName"
+                                class="w-full h-[48px] bg-gray-50 userName outline-0 mb-3 text-right font-IRANYekan300 text-sm bg-gray50  placeholder:font-IRANYekan300 "
+                                type="text" />
+                        </div>
+                        <div class="emailInput relative" style="margin-bottom: 10px;">
+                            <label style="margin-bottom: 6px;" for="email"
+                                class="font-IRANYekan300 text-back-gray block text-sm ">
+                                ایمیل یا شماره همراه
+                            </label>
+                            <input type="email" name="email"
+                                class="w-full h-[48px] bg-gray-50 outline-0 mb-3 text-right font-IRANYekan300 text-sm bg-gray50  placeholder:font-IRANYekan300 " />
+                        </div>
+
+                    </div>
+                    <div class="msg">
+                        <div class="msgInput relative flex flex-col">
+                            <label style="margin-bottom: 6px;" for="message" class="w-full">
+                                پیام
+                            </label>
+                            <_textarea
+                                class="min-h-[137px] w-full bg-gray-50 outline-0 mb-3 text-right font-IRANYekan300 text-sm h-[137px] bg-gray50  placeholder:font-IRANYekan300 "
+                                name="message" id="message" placeholder="">
+                            </_textarea>
+                        </div>
+                    </div>
+
+                    <div class="btnsContainer mt-6">
+                        <div class="gap-x-2.5 flex justify-start items-start">
+
+                            <basis core="dbsource" source="trust_login" name="captcha1" triggers="cms.reload1"
+                                run="atclient">
+                                <member name="code1" type="scalar" request="captcha"></member>
+                            </basis>
+                            <basis datamembername="captcha1.code1" core="print" run="atclient">
+                                <face>
+                                    <script type="text/template">
+                                    <div class="">
+                                        <label style="margin-bottom: 6px;" for="captcha"
+                                        class="text-[14px] font-IRANYekan300 text-back-gray">
+                                        
+                                        کد امنیتی را وارد نمایید
+                                    </label>
+                                    <div style="column-gap: 6px;" class="captchaContain px-4 py-1 bg-gray50 w-full flex items-center gap-x-3 flex-row-reverse">
+
+                      <span class="captcha-sefaresh shrink-0" style="flex-shrink: 0;">
+                          <img src="/@captcha@" width="88" height="44" class="captcha-sefaresh"
+                              alt="captcha" title="captcha" />
+                          <input type="hidden" name="captchaid" value="@captcha@" />
+                      </span>
+  
+                        <img src="[##cms.cms.cdn##]/images/cached.png" class="refressh refressh1 cursor-pointer" run="atclient" bc-triggers="click" bc-name="cms.reload1" />
+         
+  
+              
+                            <input type="text" class="codeinputm w-full  font-IRANYekan300 text-sm placeholder:font-IRANYekan300 "
+                             name="captcha" />
+     
+                                    </div>
+
+                                    </div>
+                                    </script>
+                                </face>
+                            </basis>
+                            <div class="relative w-[173px] submitComment h-[48px]">
+                                <div
+                                    class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-black z-0">
+                                </div>
+                                <div
+                                    class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-black z-0">
+                                </div>
+
+                                <button
+                                    class="relative z-10 font-IRANYekan500 text-[14px] w-full h-full flex items-center justify-center border border-black text-black text-lg font-bold no-underline">
+                                    ثبت
+                                    </a>
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="messageSend font-IRANYekan500 text-StarDust600 text-sm absolute" style="bottom: -30px;">
+                        <p></p>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </section>
+        <section>
+            <basis core="print" datamembername="basisName.related-blog">
+                <layout>
+                    <div class="flex-col my-11 pr-5 mt-[60px]">
+                        <div>
+                            <h4 class="text-[18px] font-IRANYekan500 pb-6 text-black">مقالات مرتبط</h4>
+                        </div>
+                        <div class="swiper scrollProjectList-3 !h-[342px] relative">
+                            <div class="swiper-wrapper w-full">
+                                @child
+                            </div>
+                        </div>
+                    </div>
+                </layout>
+
+                <face>
+                    <div class="swiper-slide w-full h-auto">
+                        <div class="w-full h-[197px]">
+                            <a href="/@link" title="@title">
+                                <img class="w-full h-[197px]" src="[##cms.cms.cdn##]/@00400X00300prp" alt="@title">
+                            </a>
+                        </div>
+                        <div class="flex flex-col h-auto gap-2.5">
+                            <h4 class="text-[12px] text-gray-600 mt-2.5 font-IRANYekan400">@prp_7249</h4>
+                            <h4 class="text-[16px] text-black font-IRANYekan500">@title</h4>
+                            <p
+                                class="text-[14px] text-gray-700 font-IRANYekan300 overflow-hidden text-ellipsis line-clamp-3 max-h-[72px]">
+                                @prp_7244</p>
+                        </div>
+                    </div>
+                </face>
+            </basis>
+
+
+
+            <basis core="print" datamembername="basisName.related-product">
+                <layout>
+                    <div class="flex-col justify-start my-11 pr-5 mt-[60px]">
+                        <div>
+                            <h4 class="text-[18px] font-IRANYekan500 pb-6 text-black">محصولات مرتبط</h4>
+                        </div>
+                        <div class="">
+                            <div class="swiper scrollProjectList-4 relative">
+                                <div class="swiper-wrapper w-full !h-[550px]">
+                                    @child
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </layout>
+                <face>
+                    <div class="swiper-slide w-full h-[503px] flex flex-col gap-1.5">
+                        <div class="w-full h-[448px]">
+                            <a href="/@link" title="@title" class="w-full h-full">
+                                <img class="w-full h-[448px]" src="[##cms.cms.cdn##]/@00300X00400prp" alt="@title">
+                            </a>
+                        </div>
+                        <div class="flex flex-col gap-1.5 py-1.5">
+                            <h4 class="text-[16px] font-IRANYekan500 text-gray-500">@title</h4>
+                            <p class="text-[16px] font-IRANYekan400 leading-[28px] text-gray-500">ساخت کشور
+                                @prp_10000792</p>
+                        </div>
+                    </div>
+                </face>
+            </basis>
+
+            <!-- ########### -->
+
+            <basis core="print" datamembername="basisName.related-project">
+                <layout>
+                    <div class="flex-col justify-start my-11 pr-5 mt-[60px]">
+                        <div>
+                            <h4 class="text-[18px] font-IRANYekan500 pb-6 text-black">پروژه ها</h4>
+                        </div>
+                        <div class="">
+                            <div class="swiper scrollProjectList-4 relative">
+                                <div class="swiper-wrapper w-full !h-[657px]">
+                                    @child
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </layout>
+                <face>
+                    <div class="swiper-slide w-full h-full flex flex-col gap-1.5">
+                        <div class="w-full h-[624px]">
+                            <a href="/@link" title="@title">
+                                <img class="w-full h-[624px]" src="[##cms.cms.cdn##]/@00400X00800prp" alt="@title">
+                            </a>
+
+                        </div>
+                        <div class="flex flex-col gap-1.5 py-1.5">
+                            <h4 class="text-[16px] font-IRANYekan500 text-gray-500">@title</h4>
+
+
+                        </div>
+
+                    </div>
+                </face>
+
+            </basis>
+
+
+
+        </section>
+        <section class="px-5 pb-16">
+            <basis core="print" datamembername="db.faq">
+                <layout>
+                    <div>
+                        <h4 class="text-[18px] font-IRANYekan500 pb-6 text-black">سوالات متداول</h4>
+                    </div>
+                    <div class="accordion w-full max-w-md mx-auto mt-10">
+                        @child
+                    </div>
+                </layout>
+
+                <face filter="TypeID=250">
+                    <div class="accordion-item border-b border-b-main ">
+                        <button
+                            class="accordion-header w-full text-right py-3 text-[16px] text-black font-IRANYekan500 flex justify-between items-center focus:outline-none">
+                            @text
+                            <span class="icon">
+                                <svg width="22" height="23" viewBox="0 0 22 23" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.1603 10.6221H11.8397V0.877863C11.8397 0.351145 11.5038 0 11 0C10.4962 0 10.1603 0.351145 10.1603 0.877863V10.6221H0.839695C0.335878 10.6221 0 10.9733 0 11.5C0 12.0267 0.335878 12.3779 0.839695 12.3779H10.1603V22.1221C10.1603 22.6489 10.4962 23 11 23C11.5038 23 11.8397 22.6489 11.8397 22.1221V12.3779H21.1603C21.6641 12.3779 22 12.0267 22 11.5C22 10.9733 21.6641 10.6221 21.1603 10.6221Z"
+                                        fill="black" />
+                                </svg>
+
+                            </span>
+                        </button>
+                        <div class="accordion-body max-h-0  overflow-hidden transition-all duration-300 ease-in-out ">
+                            <p class="text-[14px] font-IRANYekan300 pb-6 text-back-gray [&>p]:pb-[5px] ">@largetext</p>
+                        </div>
+                    </div>
+                </face>
+            </basis>
+        </section>
+    </main>
+    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
+    <script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
+    <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]" />
+    <div
+        class="absolute h-[100vh] opacity-0 z-50 p-5 top-0 hidden flex-col justify-baseline items-center bottom-0 left-0 right-0 bg-[#000000E5] pupUp ">
+        <div class="w-full flex flex-row justify-between icon h-[55px]">
+            <button id="closepopup">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M13 0.832996L12.167 0L6.5 5.667L0.832812 0L0 0.832996L5.66719 6.5L0 12.167L0.832812 13L6.5 7.333L12.167 13L13 12.167L7.33314 6.5L13 0.832996Z"
+                        fill="#FAFAFA" />
+                </svg>
+            </button>
+            <a href="">
+                <img src="./../assets/images/icon/logocoversunpopup.png" alt="">
+
+            </a>
+
+        </div>
+        <div class="w-full  h-[80px] bg-white my-auto">
+            <ul class="flex w-full h-full gap-[32px] flex-row justify-center items-center">
+                <li>
+                    <a href="https://www.instagram.com/?url=https://[##cms.request.host##]/[##cms.request.rawurl##]">
+                        <img src="[##cms.cms.cdn##]/images/Instagram.png" alt="">
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://t.me/share/url?url=[##cms.request.host##]/[##db.list5.link##]&text=coversun">
+                        <img src="[##cms.cms.cdn##]/images/Telegram.png" alt="">
+                    </a>
+
+                </li>
+                <li>
+                    <a href="https://api.pp.com/send?text=[##cms.request.host##]/[##db.list5.link##]">
+                        <img src="[##cms.cms.cdn##]/images/Whatapp.png" alt="">
+                    </a>
+                </li>
+                <li class="flex flex-row justify-center items-center gap-1">
+                    <a class="flex flex-row justify-center items-center gap-1.5" href="">
+                        <img src="[##cms.cms.cdn##]/images/Copy.png" alt="">
+                        <p class="text-[14px] text-black font-PxGrotesk400">copy link</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+<script src="http://www.ramand-co.com/_js/swiper.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const swiperConfigs = [
+            {
+                container: '.scrollProjectList-2',
+                pagination: '.swiper-pagination-Project-2',
+                nextEl: '.swiper-button-next-project-2',
+                prevEl: '.swiper-button-prev-project-2',
+                spaceBetween: 15,
+                slidesPerView: 1,
+            },
+            {
+                container: '.scrollProjectList-3',
+                pagination: '.swiper-pagination-Project-3',
+                nextEl: '.swiper-button-next-project-3',
+                prevEl: '.swiper-button-prev-project-3',
+                spaceBetween: 15,
+                slidesPerView: 1.1,
+            },
+            {
+                container: '.scrollProjectList-4',
+                pagination: '.swiper-pagination-Project-4',
+                nextEl: '.swiper-button-next-project-4',
+                prevEl: '.swiper-button-prev-project-4',
+                spaceBetween: 15,
+                slidesPerView: 1.1,
+            },
+            {
+                container: '.scrollProjectList-5',
+                pagination: '.swiper-pagination-Project-4',
+                nextEl: '.swiper-button-next-project-4',
+                prevEl: '.swiper-button-prev-project-4',
+                spaceBetween: 23,
+                slidesPerView: 1.2,
+            }
+        ];
+
+        swiperConfigs.forEach((config, index) => {
+            new Swiper(config.container, {
+                spaceBetween: config.spaceBetween,
+                slidesPerView: config.slidesPerView,
+                pagination: {
+                    el: config.pagination,
+                },
+                navigation: {
+                    nextEl: config.nextEl,
+                    prevEl: config.prevEl
+                },
+                // autoplay: {
+                //     delay: 3000 + (index * 500),
+                //     disableOnInteraction: false
+                // },
+                loop: true,
+                // speed: 800
+            });
+        });
+        const headers = document.querySelectorAll('.accordion-header');
+
+        headers.forEach(header => {
+            header.addEventListener('click', function () {
+                const body = this.nextElementSibling;
+
+                if (body.style.maxHeight) {
+                    body.style.maxHeight = null;
+                    this.querySelector('.icon').innerHTML = '<svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.1603 10.6221H11.8397V0.877863C11.8397 0.351145 11.5038 0 11 0C10.4962 0 10.1603 0.351145 10.1603 0.877863V10.6221H0.839695C0.335878 10.6221 0 10.9733 0 11.5C0 12.0267 0.335878 12.3779 0.839695 12.3779H10.1603V22.1221C10.1603 22.6489 10.4962 23 11 23C11.5038 23 11.8397 22.6489 11.8397 22.1221V12.3779H21.1603C21.6641 12.3779 22 12.0267 22 11.5C22 10.9733 21.6641 10.6221 21.1603 10.6221Z" fill="black"/></svg>';
+                } else {
+                    document.querySelectorAll('.accordion-body').forEach(b => {
+                        b.style.maxHeight = null;
+                    });
+                    document.querySelectorAll('.icon').forEach(icon => {
+                        icon.innerHTML = '<svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.1603 10.6221H11.8397V0.877863C11.8397 0.351145 11.5038 0 11 0C10.4962 0 10.1603 0.351145 10.1603 0.877863V10.6221H0.839695C0.335878 10.6221 0 10.9733 0 11.5C0 12.0267 0.335878 12.3779 0.839695 12.3779H10.1603V22.1221C10.1603 22.6489 10.4962 23 11 23C11.5038 23 11.8397 22.6489 11.8397 22.1221V12.3779H21.1603C21.6641 12.3779 22 12.0267 22 11.5C22 10.9733 21.6641 10.6221 21.1603 10.6221Z" fill="black"/></svg>';
+                    });
+
+                    body.style.maxHeight = body.scrollHeight + 'px';
+                    this.querySelector('.icon').innerHTML = '<svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5634 0.694874L8.97276 7.28554L2.08251 0.395299C1.71007 0.0228529 1.22427 0.0120564 0.868019 0.368309C0.511767 0.724561 0.522562 1.21036 0.895008 1.58281L7.78525 8.47305L1.19458 15.0637C0.838332 15.42 0.849127 15.9058 1.22157 16.2782C1.59402 16.6507 2.07982 16.6615 2.43607 16.3052L9.02674 9.71453L15.917 16.6048C16.2894 16.9772 16.7752 16.988 17.1315 16.6318C17.4877 16.2755 17.4769 15.7897 17.1045 15.4173L10.2142 8.52703L16.8049 1.93636C17.1612 1.58011 17.1504 1.09431 16.7779 0.721865C16.4055 0.349419 15.9197 0.338622 15.5634 0.694874Z" fill="black"/></svg>';
+                }
+            });
+        });
+        const shareBtn = document.querySelector("#shareBtn")
+        const closeBtn = document.getElementById('closepopup');
+        const popup = document.querySelector('.pupUp');
+        shareBtn.addEventListener("click", () => { popup.classList.add("hidden-popup") })
+        closeBtn.addEventListener('click', () => {
+            popup.classList.remove("hidden-popup")
+        });
+    });
+
+
+
+
+    const textareas = document.querySelectorAll("textarea");
+    textareas.forEach(element => {
+        if (element.value.trim() === "") {
+            element.value = "";
+        }
+
+    });
+    // اگر مقدارش خالی نیست، و فقط فاصله یا اینتر هست، پاکش کن
+    let messageSend = document.querySelector(".messageSend")
+    let commentP = document.querySelector(".commentP")
+
+    function renderCommentFn(args) {
+        console.log(args);
+
+    }
+    let submitComment = document.querySelector('.submitComment')
+    submitComment.addEventListener('click', (event) => {
+        //  let input1  = document.querySelector('.namee')
+        event.preventDefault();
+        let inputs = document.querySelectorAll('.commentP input')
+        let textas = document.querySelectorAll('.commentP textarea')
+        let emptyFlag = false;
+        let loaderBtn = document.querySelector(".loaderBtn")
+        loaderBtn.style.display = "block"
+        submitComment.querySelector("span").style.display = "none"
+        submitComment.style.background = "#00A752"
+        inputs.forEach(element => {
+
+            if (element.value == "") {
+                if (element.classList.contains("codeinputm")) {
+
+                    emptyFlag = true;
+                    element.setAttribute("placeholder", "لطفا کد امنیتی را وارد نمایید")
+                    element.parentElement.classList.add("emptyInput")
+                    //    console.log(element.parentElement);
+
+                }
+                else {
+
+                    emptyFlag = true;
+                    element.setAttribute("placeholder", "لطفا این فیلد را پر نمایید")
+                    element.classList.add("emptyInput")
+                }
+
+            }
+        });
+        textas.forEach(element => {
+
+            console.log(element.value.trim() === "");
+            if (element.value.trim() === "") {
+
+
+                emptyFlag = true;
+                element.setAttribute("placeholder", "لطفا این فیلد را پر نمایید")
+                element.classList.add("emptyInput")
+
+
+            }
+        });
+        if (!emptyFlag) {
+            let val = document.querySelector(".commentP textarea").value;
+            let userName = document.querySelector(".commentP .userName").value;
+            console.log("val", val);
+            $bc.setSource('db.send', true)
+            $bc.setSource('db.senduserName', userName)
+            $bc.setSource('db.sendcomment', val)
+            $bc.setSource('db.run', true)
+            let sendbox = document.querySelector('.messageSend')
+            let text = sendbox.querySelector('p')
+            text.innerHTML = 'پیام شما با موفقیت ثبت گردید.'
+            text.style.color = "#00A752"
+            commentP.reset()
+            messageSend.style.display = "block"
+            document.querySelector(".commentP").reset();
+            setTimeout(() => {
+                messageSend.style.display = "none"
+                loaderBtn.style.display = "none"
+                submitComment.querySelector("span").style.display = "block"
+
+            }, 5000)
+        }
+        else {
+            // let sendbox = document.querySelector('.messageSend')
+            // let text = sendbox.querySelector('p')
+            // text.innerHTML = 'فیلدهای الزامی را پر کنید'
+            // messageSend.style.display = "block"
+
+            setTimeout(() => {
+                // messageSend.style.display = "none"
+                loaderBtn.style.display = "none"
+                submitComment.querySelector("span").style.display = "block"
+
+            }, 5000)
+
+        }
+
+        setTimeout(() => {
+            inputs.forEach(element => {
+                if (element.classList.contains("codeinputm")) {
+                    element.classList.remove("emptyInput")
+                    element.setAttribute("placeholder", "کد امنیتی را وارد نمایید")
+                    element.parentElement.classList.remove("emptyInput")
+                    submitComment.style.background = "transparent"
+
+                }
+                else {
+
+
+                    element.classList.remove("emptyInput")
+                    element.setAttribute("placeholder", "")
+                    element.parentElement.classList.remove("emptyInput")
+                    submitComment.style.background = "transparent"
+                }
+
+            })
+            textas.forEach(element => {
+
+                element.classList.remove("emptyInput")
+                element.setAttribute("placeholder", "")
+                submitComment.style.background = "transparent"
+
+            })
+        }, 5000);
+
+
+    })
+
+</script>
+
+
+</html>

@@ -3,9 +3,9 @@
 
 @font-face {
   font-family: "IRANYekan800";
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-ExtraBold.woff") format("woff");
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-ExtraBold.woff2") format("woff2");
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-ExtraBold.ttf") format("ttf");
+  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-ExtraBold.woff") format("woff"),
+   url("https://cdn.basiscore.net/_fonts/IRANYekanX-ExtraBold.woff2") format("woff2"),
+   url("https://cdn.basiscore.net/_fonts/IRANYekanX-ExtraBold.ttf") format("ttf");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -13,9 +13,9 @@
 
 @font-face {
   font-family: "IRANYekan700";
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Bold.woff") format("woff");  
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Bold.woff2") format("woff2");  
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Bold.ttf") format("ttf");  
+  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Bold.woff") format("woff");
+  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Bold.woff2") format("woff2");
+  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Bold.ttf") format("ttf");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -23,9 +23,9 @@
 
 @font-face {
   font-family: "IRANYekan600";
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-DemiBold.ttf") format("ttf");
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-DemiBold.woff") format("woff");
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-DemiBold.woff2") format("woff2");
+  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-DemiBold.ttf") format("ttf"),
+    url("https://cdn.basiscore.net/_fonts/IRANYekanX-DemiBold.woff") format("woff"),
+    url("https://cdn.basiscore.net/_fonts/IRANYekanX-DemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -33,9 +33,9 @@
 
 @font-face {
   font-family: "IRANYekan500";
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Medium.ttf") format("ttf");
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Medium.woff") format("woff");
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Medium.woff2") format("woff2");
+  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Medium.ttf") format("ttf"),
+   url("https://cdn.basiscore.net/_fonts/IRANYekanX-Medium.woff") format("woff"),
+   url("https://cdn.basiscore.net/_fonts/IRANYekanX-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -43,9 +43,9 @@
 
 @font-face {
   font-family: "IRANYekan400";
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Regular.ttf") format("ttf");
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Regular.woff") format("woff");
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Regular.woff2") format("woff2");
+  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Regular.ttf") format("ttf"),
+    url("https://cdn.basiscore.net/_fonts/IRANYekanX-Regular.woff") format("woff"),
+    url("https://cdn.basiscore.net/_fonts/IRANYekanX-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -53,9 +53,9 @@
 
 @font-face {
   font-family: "IRANYekanr300";
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Light.woff") format("woff");
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Light.woff2") format("woff2");
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Light.ttf") format("ttf");
+  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Light.woff") format("woff"),
+    url("https://cdn.basiscore.net/_fonts/IRANYekanX-Light.woff2") format("woff2"),
+    url("https://cdn.basiscore.net/_fonts/IRANYekanX-Light.ttf") format("ttf");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -63,9 +63,9 @@
 
 @font-face {
   font-family: "IRANYekan200";
-  src: url("./https://cdn.basiscore.net/_fonts/IRANYekanX-UltraLight.ttf") format("ttf");
-  src: url("./https://cdn.basiscore.net/_fonts/IRANYekanX-UltraLight.woff") format("woff");
-  src: url("./https://cdn.basiscore.net/_fonts/IRANYekanX-UltraLight.woff2") format("woff2");
+  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-UltraLight.ttf") format("ttf"),
+    url("https://cdn.basiscore.net/_fonts/IRANYekanX-UltraLight.woff") format("woff"),
+    url("https://cdn.basiscore.net/_fonts/IRANYekanX-UltraLight.woff2") format("woff2");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -73,9 +73,9 @@
 
 @font-face {
   font-family: "IRANYekan100";
-  src: url("./https://cdn.basiscore.net/_fonts/IRANYekanX-Thin.woff") format("woff");
-  src: url("./https://cdn.basiscore.net/_fonts/IRANYekanX-Thin.woff2") format("woff2");
-  src: url("./https://cdn.basiscore.net/_fonts/IRANYekanX-Thin.ttf") format("ttf");
+  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Thin.woff") format("woff"),
+  url("https://cdn.basiscore.net/_fonts/IRANYekanX-Thin.woff2") format("woff2"),
+  url("https://cdn.basiscore.net/_fonts/IRANYekanX-Thin.ttf") format("ttf");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -83,7 +83,7 @@
 
 @font-face {
   font-family: "PxGrotesk400";
-  src: url("./https://cdn.basiscore.net/_fonts/Px-Grotesk-Regular.ttf") format("ttf");
+  src: url("https://cdn.basiscore.net/_fonts/Px-Grotesk-Regular.ttf") format("ttf");
   font-weight: 400;
   font-style: normal;
   font-display: swap;

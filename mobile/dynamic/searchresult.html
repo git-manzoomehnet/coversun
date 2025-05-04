@@ -1,0 +1,186 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="214339" q="[##cms.query.q|('')##]">
+    <member name="list-blog" size="300x200" propertyid="7244,7249" type="list" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" catid="214297" q="[##cms.query.q|('')##]">
+    <member name="list-product" size="300x400" propertyid="10000792" type="list" />
+    
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" catid="214308" q="[##cms.query.q|('')##]">
+    <member name="list-project" type="list" size="300x600" />
+</basis>
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css">
+    <title>search</title>
+</head>
+<script src="./../basis-loader.js"></script>
+<body>
+    <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
+    <section class="px-5">
+        <div class="flex flex-col gap-2 pt-[80px]">
+            <ul
+                class="w-full flex flex-row items-center justify-start text-[12px] text-gray-700 font-IRANYekan300 gap-0.5">
+                <li class="text-[12px] font-IRANYekan300 text-gray-700"><a href="/">صفحه نخست</a></li>
+                <span class="text-[12px] font-IRANYekan300 text-gray-700">.</span>
+                <a class="text-[12px] font-IRANYekan300 text-gray-700">500</a>
+            </ul>
+            <div class="relative">
+                <button id="buttonSearcht" class="absolute top-[25px] left-[14px]">
+                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7.64231 0.0996094C3.43769 0.0996094 0.015625 3.45711 0.015625 7.5824C0.015625 11.7077 3.43769 15.0652 7.64231 15.0652C11.8469 15.0652 15.269 11.7077 15.269 7.5824C15.269 3.45458 11.8469 0.0996094 7.64231 0.0996094ZM7.64231 14.0491C4.00588 14.0491 1.0487 11.1477 1.0487 7.57987C1.0487 4.01205 4.00588 1.11066 7.64231 1.11066C11.2787 1.11066 14.2359 4.01205 14.2359 7.57987C14.2359 11.1477 11.2762 14.0491 7.64231 14.0491Z"
+                            fill="#A1A1AA" />
+                        <path
+                            d="M14.7062 13.9255C14.5073 13.7253 14.1793 13.7228 13.9753 13.9179C13.7713 14.113 13.7687 14.4348 13.9675 14.635L16.0673 16.7433C16.168 16.8446 16.3023 16.8953 16.4366 16.8953C16.5657 16.8953 16.6975 16.8472 16.7982 16.7509C17.0022 16.5558 17.0048 16.2339 16.8059 16.0338L14.7062 13.9255Z"
+                            fill="#A1A1AA" />
+                    </svg>
+
+                </button>
+                <input id="inputSercht" class="w-full h-[54px] outline-none text-gray-800 mt-[8px] p-3.5 border border-gray-800"
+                    placeholder="جستجو کنید..." type="text" value="[##cms.query.q##]">
+            </div>
+
+        </div>
+    </section>
+    <section>
+        <div class="flex-col my-11 pr-5 mt-[60px]">
+            <div>
+                <h4 class="text-[18px] font-IRANYekan500 pb-6 text-black">نتیجه جستجو در مقالات</h4>
+            </div>
+            <basis core="print" datamembername="db.list-blog">
+                <layout>
+                    <div class="swiper scrollProjectList-3 relative">
+                        <div class="swiper-wrapper w-full">        
+                            @child                            
+                        </div>
+        
+                    </div>
+                </layout>
+                <else-layout>
+                    مقاله ای یافت نشد
+                </else-layout>
+                <face>
+                    <div class="swiper-slide w-full h-auto">
+                        <div class="w-full h-[197px]">
+                            <a class="w-full h-full" href="@link">
+                                <img class="w-full h-[197px]" src="[##cms.cms.cdn##]/@image" alt="@title">
+                            </a>
+
+                        </div>
+                        <div class="flex flex-col h-auto gap-2.5">
+                            <h4 class="text-[12px] text-gray-600 font-IRANYekan400 pt-[10px]">@date</h4>
+                            <h4 class="text-[16px] text-black font-IRANYekan500">@title</h4>
+                            <p class="text-[14px] text-gray-700 font-IRANYekan300 overflow-hidden text-ellipsis line-clamp-3 max-h-[72px]">@prp_7244</p>
+                        </div>
+                    </div>
+                    
+                </face>
+            </basis>
+            
+        </div>
+        <!-- ############# -->
+        <div class="flex-col justify-start my-11 pr-5 mt-[60px]">
+            <div>
+                <h4 class="text-[18px] font-IRANYekan500 pb-6 text-black">نتیجه جستجو در محصولات</h4>
+            </div>
+            <basis core="print" datamembername="db.list-product">
+                <layout>
+                    <div class="">
+                        <div class="swiper scrollProjectList-4 relative">                        
+                            <div class="swiper-wrapper w-full !h-[550px]">
+                                @child            
+                            </div>
+        
+                        </div>
+                    </div>
+                </layout>
+                <else-layout>
+                    محصولی یافت نشد
+                </else-layout>
+                <face filter="@prp_10000792 not in (null)">
+                    <div class="swiper-slide w-full h-[503px] flex flex-col gap-1.5">
+                        <div class="w-full h-[448px]">
+                            <a class="w-full h-full" href="/@link">
+                                <img class="w-full h-[448px]" src="[##cms.cms.cdn##]/@image" alt="@title">
+                            </a>
+
+                        </div>
+                        <div class="flex flex-col gap-1.5 py-1.5">
+                            <h4 class="text-[16px] font-IRANYekan500 text-gray-500">@title</h4>
+                            <p class="text-[16px] font-IRANYekan400 leading-[28px] text-gray-500">ساخت کشور @prp_10000792</p>
+
+                        </div>
+
+                    </div>
+                </face>
+                <face filter="@prp_10000792 = (null)">
+                    <div class="swiper-slide w-full h-[503px] flex flex-col gap-1.5">
+                        <div class="w-full h-[448px]">
+                            <a class="w-full h-full" href="/@link">
+                                <img class="w-full h-[448px]" src="[##cms.cms.cdn##]/@image" alt="@title">
+                            </a>
+
+                        </div>
+                        <div class="flex flex-col gap-1.5 py-1.5">
+                            <h4 class="text-[16px] font-IRANYekan500 text-gray-500">@title</h4>
+                        </div>
+
+                    </div>
+                    
+                </face>
+                
+            </basis>           
+        </div>
+        <!-- ############ -->
+        <div class="flex-col justify-start my-11 pr-5 mt-[60px]">
+            <div>
+                <h4 class="text-[18px] font-IRANYekan500 pb-6 text-black">نتیجه جستجو در پروژه ها</h4>
+            </div>
+            <basis core="print" datamembername="db.list-project">
+                <layout>
+                    <div class="">
+                        <div class="swiper scrollProjectList-4 relative">
+                            <div class="swiper-wrapper w-full !h-[657px]">
+                                @child                                
+                            </div>
+        
+                        </div>
+                    </div>
+                </layout>
+                <else-layout>
+                    پروژه ای یافت نشد
+                </else-layout>
+                <face>
+                    <div class="swiper-slide w-full h-full flex flex-col gap-1.5">
+                        <div class="w-full h-[624px]">
+                            <a href="/@link">
+                                <img class="w-full h-[624px]" src="[##cms.cms.cdn##]/@image" alt="@title">
+                            </a>
+                        </div>
+                        <div class="flex flex-col gap-1.5 py-1.5">
+                            <h4 class="text-[16px] font-IRANYekan500 text-gray-500">@title</h4>
+
+
+                        </div>
+
+                    </div>
+                    
+                </face>
+            </basis>
+            
+        </div>
+    </section>
+    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
+    <script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
+    <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]" />
+</body>
+<script src="[##cms.cms.cdn##]/_js/swiper.js"></script>
+<script src="[##cms.cms.cdn##]/js/searchresultMobile.js"></script>
+
+
+</html>
