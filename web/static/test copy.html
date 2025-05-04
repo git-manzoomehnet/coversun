@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .svg-wrapper {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    /* path اصلی (کم‌رنگ، ثابت) */
+    .static path {
+      stroke: white;
+      stroke-width: 2;
+      fill: none;
+      opacity: 0.5;
+    }
+
+    /* path دوم (انیمیشنی، مخفی تا شروع) */
+    .animated path {
+      stroke: white;
+      stroke-width: 2;
+      fill: none;
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      opacity: 1;
+      transition: stroke-dashoffset 1.5s ease;
+    }
+
+    /* وقتی draw شروع شد */
+    .draw .animated path {
+      stroke-dashoffset: 0;
+    }
+
+    .draw .static {
+      opacity: 0; /* حذف پیش‌نمایش کم‌رنگ */
+      transition: opacity 0.3s ease;
+    }
+  </style>
+</head>
+<body style="background: black;">
+
+  <div class="svg-wrapper" id="svg-container">
+    <!-- پیش‌نمایش کم‌رنگ -->
+    <svg class="static" width="200" height="200" viewBox="0 0 100 100">
+      <path d="M10 80 C 40 10, 65 10, 95 80" />
+    </svg>
+
+    <!-- نسخه انیمیشنی -->
+    <svg class="animated" width="200" height="200" viewBox="0 0 100 100">
+      <path d="M10 80 C 40 10, 65 10, 95 80" />
+    </svg>
+  </div>
+
+  <button onclick="document.getElementById('svg-container').classList.add('draw')">
+    Draw
+  </button>
+
+</body>
+</html>

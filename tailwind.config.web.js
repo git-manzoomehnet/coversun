@@ -18,8 +18,13 @@ module.exports = {
         IRANYekan500: ["IRANYekan500"],
         PxGrotesk300: ["PxGrotesk300"],
         PxGrotesk400: ["PxGrotesk400"],
+        PxGrotesk700: ["PxGrotesk700"],
  
       },
+      translate: {
+        'full': '100%',
+        '-full': '-100%',
+      }
     },
   },
 };

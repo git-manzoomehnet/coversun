@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../assets/css/outputDesk.css">
+</head>
+
+<body class="bg-white">
+  <main class="gallery" dir="rtl">
+    <div class="cursor w-[116px] flex items-center justify-center h-[116px] rounded-full scale-0 [&.activeCursor]:opacity-100 origin-center [&.activeCursor]:scale-100 duration-300 opacity-0 bg-white">
+
+      <svg width="25" height="28" viewBox="0 0 25 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24.2939 27.5498L8.26559 6.44668" stroke="#A1A1AA"/>
+          <path d="M6.04883 20.0605L7.96384 6.04867L21.9757 7.96368" stroke="#A1A1AA"/>
+          </svg>
+          
+  </div>
+    <div class="title  z-10 absolute right-[25.5vw] overflow-hidden text-white mix-blend-difference top-[calc(27vh-45px)]">
+        <div class="counter-container relative w-fit">
+            <!-- تایتل اول و دوم با mix-blend-mode -->
+            <span data-title-current class="block  transition-transform duration-500 font-PxGrotesk400 text-2xl ease-in-out translate-y-0">
+                01
+            </span>
+            <span data-title-next class="block  absolute top-0 left-0 transition-transform font-PxGrotesk400 text-2xl duration-500 ease-in-out translate-y-full">
+                02
+            </span>
+        </div>
+    </div>
+
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div data-title="70" class="swiper-slide [&.swiper-slide-active]:translate-y-[27vh] [&.swiper-slide-next]:translate-y-[57vh]"
+                style="transition: 0.5s;">
+                <div class="imgS relative">
+                    <!-- پس‌زمینه‌ای برای استفاده از mix-blend-mode -->
+                    <img class="h-svh w-full object-cover" src="../assets/images/Rectangle 27.png" alt="@name">
+                </div>
+            </div>
+            <div data-title="80" class="swiper-slide [&.swiper-slide-active]:translate-y-[27vh] [&.swiper-slide-next]:translate-y-[57vh]"
+                style="transition: 0.5s;">
+                <div class="imgS relative">
+                    <img class="h-svh w-full object-cover" src="https://www.alessandroromagnoliph.it/public/images/projects/3/under-armour-05022025111937.jpg" alt="@name">
+                </div>
+            </div>
+            <div data-title="90" class="swiper-slide [&.swiper-slide-active]:translate-y-[27vh] [&.swiper-slide-next]:translate-y-[57vh]"
+                style="transition: 0.5s;">
+                <div class="imgS relative">
+                    <img class="h-svh w-full object-cover" src="../assets/images/Rectangle 27.png" alt="@name">
+                </div>
+            </div>
+            <div data-title="50" class="swiper-slide [&.swiper-slide-active]:translate-y-[27vh] [&.swiper-slide-next]:translate-y-[57vh]"
+                style="transition: 0.5s;">
+                <div class="imgS relative">
+                    <img class="h-svh w-full object-cover" src="../assets/images/Rectangle 27.png" alt="@name">
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="../assets/js/jquery.2.2.2.min.js"></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
+
+  <script src="../assets/js/swiper-bundle11.0.6.min.js"></script>
+  <script src="../assets/js/gallery.js"></script>
+</body>
+
+</html>

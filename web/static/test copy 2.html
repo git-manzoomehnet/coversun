@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scroll Fixed</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .container {
+            display: flex;
+            position: relative;
+            width: 400vw; /* 4 pages */
+            height: 100vh;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .section {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 5rem;
+            flex-shrink: 0;
+        }
+
+        .section:nth-child(1) { background: #ff9999; }
+        .section:nth-child(2) { background: #99ff99; }
+        .section:nth-child(3) { background: #9999ff; }
+        .section:nth-child(4) { background: #ffff99; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section">صفحه ۱</div>
+        <div class="section">صفحه ۲</div>
+        <div class="section">صفحه ۳</div>
+        <div class="section">صفحه ۴</div>
+    </div>
+
+    <script>
+        const container = document.querySelector('.container');
+        let currentPosition = 0;
+        let touchStartX = 0;
+        let isTouching = false;
+        const maxPosition = -(container.clientWidth - window.innerWidth);
+
+        // Mouse Wheel
+        window.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            const delta = e.deltaY > 0 ? 1 : -1;
+            updatePosition(delta * window.innerWidth);
+        }, { passive: false });
+
+        // Touch Handling
+        container.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            isTouching = true;
+        });
+
+        container.addEventListener('touchmove', (e) => {
+            if (!isTouching) return;
+            const touchCurrentX = e.touches[0].clientX;
+            const delta = touchCurrentX - touchStartX;
+            container.style.transform = `translateX(${currentPosition + delta}px)`;
+        });
+
+        container.addEventListener('touchend', (e) => {
+            if (!isTouching) return;
+            const touchEndX = e.changedTouches[0].clientX;
+            const delta = touchEndX - touchStartX;
+            updatePosition(delta > 0 ? window.innerWidth : -window.innerWidth);
+            isTouching = false;
+        });
+
+        function updatePosition(offset) {
+            const newPosition = currentPosition - offset;
+            
+            // محدودیت حرکتی
+            if (newPosition > 0) currentPosition = 0;
+            else if (newPosition < maxPosition) currentPosition = maxPosition;
+            else currentPosition = newPosition;
+
+            container.style.transform = `translateX(${currentPosition}px)`;
+        }
+    </script>
+</body>
+</html>

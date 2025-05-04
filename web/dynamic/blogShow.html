@@ -108,7 +108,7 @@
                 <basis core="print" datamembername="db.article">
 
                     <face filter="TypeID=150">
-                        <h1 class="font-IRANYekan500 text-2xl">
+                        <h1 class="font-IRANYekan500 scrollTop text-2xl">
                             @Answer
                         </h1>
 
@@ -119,7 +119,7 @@
 
                         <face filter="TypeID=128">
                             <div class="date">
-                                <span class=" font-PxGrotesk400 text-sm text-gray600">
+                                <span class="scrollTop font-PxGrotesk400 text-sm text-gray600">
                                     @Answer
                                 </span>
                             </div>
@@ -212,7 +212,7 @@
 
                     <face filter="TypeID=129">
 
-                        <div class="para font-IRANYekan500 text-sm text-justify mb-6 last:mb-0">
+                        <div class="para scrollTop font-IRANYekan500 text-sm text-justify mb-6 last:mb-0">
                             @Answer
                         </div>
                     </face>
@@ -238,10 +238,10 @@
             </layout>
 
             <face filter="text <> 'نتیجه‌گیری' and RowNumber<4">
-                <h3 class="font-IRANYekan700 text-sm mb-2 leading-6">
+                <h3 class="font-IRANYekan700 text-sm mb-2 leading-6 scrollTop">
                     @text
                 </h3>
-                <div class="para font-IRANYekan300 leading-6 text-sm text-justify mb-3">
+                <div class="para font-IRANYekan300 scrollTop leading-6 text-sm text-justify mb-3">
                     @largetext
                 </div>
 
@@ -265,11 +265,11 @@
                 </layout>
 
                 <face filter="text <> 'نتیجه‌گیری' and RowNumber between 3 and 6">
-                    <h4 class="text-sm mb-6 font-IRANYekan700 ">
+                    <h4 class="text-sm mb-6 font-IRANYekan700 scrollTop ">
                         @text
 
                     </h4>
-                    <div class="para font-IRANYekan300 text-justify text-sm">
+                    <div class="para font-IRANYekan300 scrollTop text-justify text-sm">
                         @largetext
                     </div>
 
@@ -289,10 +289,10 @@
             <face filter="text <> 'نتیجه‌گیری' and RowNumber>6">
 
 
-                <h3 class="font-IRANYekan700 text-sm mb-2 leading-6">
+                <h3 class="font-IRANYekan700 scrollTop text-sm mb-2 leading-6">
                     @text
                 </h3>
-                <div class="para font-IRANYekan300 leading-6 text-sm text-justify mb-3">
+                <div class="para font-IRANYekan300 scrollTop leading-6 text-sm text-justify mb-3">
                     @largetext
                 </div>
             </face>
@@ -301,7 +301,7 @@
         <basis core="print" datamembername="db.image-article">
             <layout>
                 <section class="section5 mb-28">
-                    <h3 class="w-90p mx-auto mb-6 font-IRANYekan500 text-2xl">
+                    <h3 class="w-90p mx-auto mb-6 scrollTop font-IRANYekan500 text-2xl">
                         گالری تصاویر
                     </h3>
 
@@ -330,7 +330,7 @@
 
 
         <section class="section6 w-90p mx-auto px-9 py-10 border border-gray400 mb-12">
-            <h6 class="font-IRANYekan700 text-2xl mb-6 text-gray700">
+            <h6 class="font-IRANYekan700 text-2xl scrollTop mb-6 text-gray700">
                 نظراتتان برای ما ارزشمند هست
             </h6>
 
@@ -373,10 +373,10 @@
                                     class="font-IRANYekan300 text-back-gray block text-sm ">
                                     پیام
                                 </label>
-                                <textarea
+                                <_textarea
                                     class="w-full outline-0 mb-3 text-right font-IRANYekan300 text-sm h-[137px] bg-gray50  placeholder:font-IRANYekan300 "
                                     name="message" id="message" placeholder="">
-                                </textarea>
+                                </_textarea>
                             </div>
                         </div>
 
@@ -417,17 +417,31 @@
                                     </face>
                                 </basis>
 
-                                <button class="relative submitComment cursor-pointer flex items-center justify-center">
-                                    <svg width="191" height="66" viewBox="0 0 191 66" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M161 1H1V28" stroke="black" stroke-width="0.75" />
-                                        <path d="M42.5 65H190.5V22" stroke="black" stroke-width="0.75" />
+                                 
+                                <button
+                                class="relative flex items-center mt-3 justify-center w-fit submitComment group/linkSubBtn">
+                                <svg class="group-hover/linkSubBtn:opacity-0 duration-500" width="191" height="66" viewBox="0 0 191 66" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M161 1H1V28" stroke="black" stroke-width="0.75" />
+                                    <path d="M42.5 65H190.5V22" stroke="black" stroke-width="0.75" />
+                                </svg>
+        
+        
+                                <svg class="absolute group-hover/linkSubBtn:opacity-100 opacity-0 -translate-y-[5px] duration-500" width="191" height="76" viewBox="0 0 191 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M146 11H1V61.5" stroke="#52525B"/>
+                                    <path d="M27 75H190.5V23.5" stroke="#52525B"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M156.49 13.4979L157.003 13.5923L156.768 14.0575L155.439 16.6875L155.205 17.1521L154.824 16.7973L150.68 12.9366L150 12.303L150.914 12.4713L156.49 13.4979ZM151.594 13.1049L156.255 13.9631L155.058 16.3326L151.594 13.1049ZM160.926 9.05803L161.369 9.33158L160.982 9.68012L158.745 11.6927L158.356 12.0427L158.136 11.5679L155.777 6.46976L155.396 5.64762L156.167 6.12319L160.926 9.05803ZM156.548 6.94532L160.538 9.40657L158.525 11.2179L156.548 6.94532ZM166.799 6.62266L167.096 7.05245L166.599 7.21212L163.57 8.18437L163.071 8.34456L163.068 7.82043L163.033 2.05294L163.028 1.16584L163.532 1.89564L166.799 6.62266ZM166.302 6.78233L163.567 7.66024L163.538 2.78273L166.302 6.78233ZM173.109 6.65422L173.236 7.16385L172.712 7.12879L169.509 6.91455L168.991 6.87987L169.165 6.39043L171.143 0.849383L171.446 0L171.665 0.874942L173.109 6.65422ZM171.361 1.72432L172.585 6.61916L169.684 6.42512L171.361 1.72432ZM178.767 9.63153L178.302 9.38852L175.546 7.94888L175.086 7.70854L175.441 7.32996L179.392 3.11813L180.015 2.45411L179.859 3.35114L178.857 9.1144L178.767 9.63153ZM179.236 4.01515L178.392 8.87139L175.901 7.57029L179.236 4.01515ZM183.168 13.4769L182.884 13.9091L182.54 13.5231L180.474 11.2084L180.123 10.8155L180.606 10.6059L185.999 8.26654L186.837 7.90312L186.335 8.66592L183.168 13.4769ZM185.497 9.02933L182.824 13.0909L180.957 10.9988L185.497 9.02933ZM184.941 19.0173H186.114L190.295 15.9966L191 15.4876L190.131 15.4986L184.268 15.5733L183.741 15.58L183.915 16.0778L184.941 19.0173ZM183.533 19.0173C182.664 15.5675 180.502 12.4398 177.235 10.4247C170.578 6.31877 161.852 8.38696 157.746 15.0442C156.966 16.3092 156.409 17.6488 156.064 19.0173H156.58C156.915 17.7396 157.443 16.4893 158.172 15.3066C162.133 8.88447 170.55 6.8893 176.972 10.8503C180.086 12.7704 182.159 15.7377 183.017 19.0173H183.533ZM182.301 19.0173C181.459 15.9733 179.51 13.2273 176.61 11.4386C170.512 7.67793 162.521 9.57219 158.76 15.6695C158.101 16.7382 157.616 17.8652 157.296 19.0173H158.337C158.631 18.0469 159.054 17.0981 159.611 16.1945C163.082 10.5672 170.457 8.81898 176.085 12.2897C178.676 13.8881 180.445 16.3147 181.26 19.0173H182.301ZM185.428 18.8961L184.442 16.0711L189.426 16.0076L185.428 18.8961Z" fill="#52525B"/>
                                     </svg>
-                                    <span
-                                        class="w-[173px] font-IRANYekan500 text-sm text-back-gray h-[48px] absolute border border-black/[0.8] flex items-center justify-center">
-                                        ثبت
-                                    </span>
+                                    
+                                <span
+                                    class="w-[173px] font-IRANYekan500 text-sm text-back-gray h-[48px] absolute border border-black/[0.8] flex items-center justify-center">
+                                    ثبت
+                                </span>
+    
+    
+    
                                 </button>
+                                
                             </div>
 
                         </div>
@@ -512,7 +526,7 @@
         <basis core="print" datamembername="basisName.related-blog">
             <layout>
                 <section class="section7 mb-10">
-                    <h3 class="font-IRANYekan500 text-2xl mb-6 w-90p mx-auto text-gray700">
+                    <h3 class="font-IRANYekan500 scrollTop text-2xl mb-6 w-90p mx-auto text-gray700">
                         مقالات مرتبط
                     </h3>
 
@@ -559,7 +573,7 @@
         <basis core="print" datamembername="basisName.related-product">
             <layout>
                 <section class="section8 mb-10">
-                    <h3 class="font-IRANYekan500 text-2xl mb-6 w-90p mx-auto text-gray700">
+                    <h3 class="font-IRANYekan500 scrollTop text-2xl mb-6 w-90p mx-auto text-gray700">
                         محصولات مرتبط
                     </h3>
                     <div class="swiper relatedProduct">
@@ -604,7 +618,7 @@
         <basis core="print" datamembername="basisName.related-project">
             <layout>
                 <section class="section9 mb-10 overflow-hidden">
-                    <h3 class="font-IRANYekan700 text-2xl mb-6 w-90p mx-auto text-gray700">
+                    <h3 class="font-IRANYekan700 scrollTop text-2xl mb-6 w-90p mx-auto text-gray700">
                         پروژه های مرتبط
                     </h3>
 
@@ -644,7 +658,7 @@
                 <section class="section10 mb-16 w-90p mx-auto">
 
 
-                    <h4 class="font-IRANYekan500 text-2xl mb-6 text-gray700">
+                    <h4 class="font-IRANYekan500 scrollTop text-2xl mb-6 text-gray700">
                         سوالات متداول
                     </h4>
 
@@ -681,11 +695,14 @@
             </face>
         </basis>
 
+        <basis core="call" file="footer.inc" />
 
     </main>
 
 
     <basis core="call" file="scripts.inc" />
+    <script src="[##cms.cms.cdn##]/js/scrollTotop.js"></script>
+
     <script src="[##cms.cms.cdn##]/_js/basiscore-2.30.1.min.js"></script>
     <script src="[##cms.cms.cdn##]/_js/swiper-bundle11.0.5.min.js"></script>
     <script src="[##cms.cms.cdn##]/js/article.js"></script>

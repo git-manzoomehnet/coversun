@@ -1,0 +1,237 @@
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" > <member request="cat" type="tree" name="productCat" parentid="214297"  /> </basis> 
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محصولات</title>
+    <meta name="description" content="محصولات کاورسان">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/locomotive.css">
+    <basis core="call" file="styles.inc" />
+</head>
+
+<body>
+    <main class="productCat">
+        <div class="cursor w-[116px] flex items-center justify-center h-[116px] rounded-full scale-0 [&.activeCursor]:opacity-100 origin-center [&.activeCursor]:scale-100 duration-300 opacity-0 bg-white">
+
+            <svg width="25" height="28" viewBox="0 0 25 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24.2939 27.5498L8.26559 6.44668" stroke="#A1A1AA"/>
+                <path d="M6.04883 20.0605L7.96384 6.04867L21.9757 7.96368" stroke="#A1A1AA"/>
+                </svg>
+                
+        </div>
+        <basis core="call" file="header.inc" />
+
+        <div class="containerHorizontal">
+            <section id="PinSection">
+                <div class="Pin-Wrapp">
+                    <section class="section1 bg-main pl-[118px]">
+                        <div class=" pt-[157px] h-full pb-8 flex flex-col justify-between">
+                            <div class="breadCrumb">
+                                <ul class="flex items-center gap-x-1.5">
+                                    <li>
+                                        <a href="/" class="font-IRANYekan300 whitespace-nowrap text-sm text-black"
+                                            title="home">
+                                            صفحه نخست
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <span class="font-IRANYekan300 text-sm text-black">
+                                            .
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="font-IRANYekan300 whitespace-nowrap text-sm text-black">
+                                            محصولات
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <basis core="print" datamembername="basisName.productCat">
+                              
+                                <face filter="catid=214297">
+                                    <div class="title">
+        
+                                        <h1 class="font-IRANYekan500 mb-2 whitespace-nowrap text-[25px] text-black">
+                                           @title
+                                        </h1>
+        
+                                        <h2 class="font-PxGrotesk400 whitespace-nowrap text-2xl text-gray600">
+                                           @urltitle
+        
+                                        </h2>
+        
+                                    </div>
+                                    
+                                </face>
+                            </basis>
+
+                            <div class="overflow-hidden cursor-pointer scrollBtmBtn flex gap-x-2.5 items-center h-fit">
+
+                                <span class="font-PxGrotesk400 mb-2 text-sm text-gray600 lowercase">
+                                    scroll
+                                </span>
+                                <div
+                                    class="scrollBtm rotate-90 -translate-x-[25px] overflow-hidden h-[58px] w-px bg-gray600">
+                                    <div class="line h-[58px] w-px bg-white">
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </section>
+
+                    <section class="section2 shrink-0 flex">
+
+                        <basis core="print" datamembername="basisName.productCat">
+                          
+                            <face filter="catid<>214297">
+                                <a class="catBox shrink-0 group/catBox relative flex items-center" href="/product-list.bc?catid=@catid">
+                                    <div class="imgS relative after:absolute after:inset-0 after:bg-black/[0.45] after:duration-500 group-hover/catBox:after:bg-black/[0.25]">
+                                        <img src="[##cms.cms.cdn##]/@image" class="h-svh object-cover" alt="@title">
+                                    </div>
+                                    <div class="over px-6 absolute opacity-50 duration-500 group-hover/catBox:opacity-100">
+                                        <div class="img mb-5">
+                                            <img src="[##cms.cms.cdn##]/images/icone-Def-@catid.png" alt="@title  ">
+                                        </div>
+                                        <h3 class="font-IRANYekan500 text-2xl text-white">
+                                           @title
+                                        </h3>
+                                        <span class="font-PxGrotesk400 text-sm text-white lowercase -mt-1 block">
+                                            @urltitle
+        
+                                        </span>
+        
+                                        <div class="para font-IRANYekan300 text-base text-justify text-white">
+                                            <p>
+                                                @urldescription
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                            </face>
+                        </basis>
+                    </section>
+
+                    <section class="section4 bg-black">
+                        <div class="pt-[90px] h-full flex flex-col justify-between px-[103px]">
+                            <a href="/" title="home" aria-label="home">
+                                <img src="[##cms.cms.cdn##]/images/megaFlag.png" alt="logo">
+        
+                            </a>
+                            <div class="footerLine my-5 w-px h-full bg-white"></div>
+        
+                            <div class="phone flex  items-center gap-x-2.5 ">
+                                <p class="font-IRANYekan300 text-sm text-white">
+                                    شماره تماس :
+                                </p>
+                                
+                                <span class="font-PxGrotesk300 text-white text-2xl"> 1736 </span>
+                            </div>
+        
+                            <div class="footerLine my-5 w-px h-full bg-white"></div>
+                            <div class="btm">
+                                <div class="socials mb-8">
+                                    <ul class="flex items-center gap-x-4">
+                
+                                        <basis core="print" datamembername="db.contactus">
+                
+                                            <face filter="text='لینکدین'">
+                                                <li>
+                                                    <a href="@largetext" title="linkdin"
+                                                        class="opacity-50 duration-500 hover:opacity-100">
+                                                        <img src="[##cms.cms.cdn##]/images/linkdinFooter.svg" alt="linkdin">
+                
+                                                    </a>
+                                                </li>
+                
+                                            </face>
+                                        </basis>
+                                        <basis core="print" datamembername="db.contactus">
+                
+                                            <face filter="text='واتس اپ'">
+                                                <li>
+                                                    <a href="@largetext" title="whatsapp"
+                                                        class="opacity-50 duration-500 hover:opacity-100">
+                                                        <img src="[##cms.cms.cdn##]/images/whatsappFooter.svg" alt="whatsapp">
+                
+                                                    </a>
+                                                </li>
+                                            </face>
+                                        </basis>
+                
+                                        <basis core="print" datamembername="db.contactus">
+                
+                                            <face filter="TypeID=242">
+                                                <li>
+                                                    <a href="mailto:@Answer" title="email"
+                                                        class="opacity-50 duration-500 hover:opacity-100">
+                                                        <img src="[##cms.cms.cdn##]/images/emailFooter.svg" alt="email">
+                
+                                                    </a>
+                                                </li>
+                                            </face>
+                                        </basis>
+                
+                                        <basis core="print" datamembername="db.contactus">
+                
+                                            <face filter="text='اینستاگرام'">
+                                                <li>
+                                                    <a href="@largetext" title="instagram"
+                                                        class="opacity-50 duration-500 hover:opacity-100">
+                                                        <img src="[##cms.cms.cdn##]/images/instagramFooter.svg" alt="instagram">
+                
+                
+                                                    </a>
+                                                </li>
+                                            </face>
+                                        </basis>
+                
+                                    </ul>
+                                </div>
+        
+                                <div class="pb-7 -mr-4 flex items-center gap-x-2.5">
+                                    <p class="font-IRANYekan300 text-[10px] whitespace-nowrap text-white">
+                                        طراحی سایت و بهینه‌سازی سایت
+                                    </p>
+                                    <a class="shrink-0" href="https://namasite.ir">
+                                        <img src="[##cms.cms.cdn##]/images/logoNamasite.svg" alt="namasite">
+                                    </a>
+                                </div>
+        
+        
+                            </div>
+                        </div>
+
+
+                    </section>
+
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+
+    
+    <basis core="call" file="scripts.inc" />
+    
+    <script src="[##cms.cms.cdn##]/_js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/imageLoaded.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/gsap.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/ScrollTrigger.min.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/TweenMax.min.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/locoScroll.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/splitType.min.js"></script>
+    <script src="[##cms.cms.cdn##]/js/productCat.js"></script>
+</body>
+
+</html>

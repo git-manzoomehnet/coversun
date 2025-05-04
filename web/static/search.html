@@ -1,0 +1,229 @@
+<basis core="dbsource" name="basisName" source="basiscore" lid="1" mid="19" catid="211666"> <member name="related-project" postsql=" select * from [db.project-list] where title like '%[##cms.query.q##]%'" type="list" name="related-project" link="project.bc" size="400x800" /> </basis>
+	<basis core="dbsource" name="basisName" source="basiscore" lid="1" mid="20" catid="211667"> <member  name="related-product" propertyid="10000792" size="300x400" type="list"  postsql=" select * from [basisName.related-product] where title like '%[##cms.query.q##]%'"/> </basis>	
+
+    <basis core="dbsource" name="basisName" source="basiscore" lid="1" mid="1" catid="211668"> <member postsql=" select * from [db.list-blog] where title like '%[##cms.query.q##]%'" type="list" name="related-blog" propertyid="7244,7249" link="article.bc" size="400x300"/> </basis>
+
+
+
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/outputDesk.css">
+</head>
+<body>
+    <main class="searchPage" dir="rtl">
+        <!-- <div class="formPage w-svw flex items-center justify-center h-svh">
+            <div class="imgS h-full w-full relative after:absolute after:inset-0 after:bg-black/[0.95]">
+                <img src="" alt="search">
+            </div>
+            <form class="w-80p absolute py-3 px-3.5 border border-gray50/[0.5] flex items-center justify-between mx-auto !max-w-[1050px]" role="search"
+            id="searchform" action="/search.bc" method="get">
+            <input type="search" class="w-full font-IRANYekan500 placeholder:font-IRANYekan500 text-base text-gray400 placeholder:text-gray400" name="q" placeholder="جستجو کنید..." />
+
+            <button type="submit" class="cursor-pointer ">
+               
+                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.64231 0.100586C3.43769 0.100586 0.015625 3.45809 0.015625 7.58338C0.015625 11.7087 3.43769 15.0662 7.64231 15.0662C11.8469 15.0662 15.269 11.7087 15.269 7.58338C15.269 3.45555 11.8469 0.100586 7.64231 0.100586ZM7.64231 14.05C4.00588 14.05 1.0487 11.1487 1.0487 7.58084C1.0487 4.01302 4.00588 1.11164 7.64231 1.11164C11.2787 1.11164 14.2359 4.01302 14.2359 7.58084C14.2359 11.1487 11.2762 14.05 7.64231 14.05Z" fill="#A1A1AA"/>
+                    <path d="M14.7062 13.9255C14.5073 13.7253 14.1793 13.7228 13.9753 13.9179C13.7713 14.113 13.7687 14.4348 13.9675 14.635L16.0673 16.7433C16.168 16.8446 16.3023 16.8953 16.4366 16.8953C16.5657 16.8953 16.6975 16.8472 16.7982 16.7509C17.0022 16.5558 17.0048 16.2339 16.8059 16.0338L14.7062 13.9255Z" fill="#A1A1AA"/>
+                    </svg>
+                    
+
+            </button>
+
+
+            </form>
+        </div> -->
+        <!-- <div class="notFoundformPage flex-col w-svw flex items-center justify-center h-svh">
+            <div class="imgS h-full w-full relative after:absolute after:inset-0 after:bg-black/[0.95]">
+                <img src="" alt="search">
+            </div>
+            <div class="absolute w-full">
+
+                <form class="w-80p  py-3 px-3.5 border border-gray50/[0.5] flex items-center justify-between mx-auto !max-w-[1050px]" role="search"
+                id="searchform" action="/search.bc" method="get">
+                <input type="search" class="w-full font-IRANYekan500 placeholder:font-IRANYekan500 text-base text-gray400 placeholder:text-gray400" name="q" placeholder="جستجو کنید..." />
+    
+                <button type="submit" class="cursor-pointer ">
+                   
+                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.64231 0.100586C3.43769 0.100586 0.015625 3.45809 0.015625 7.58338C0.015625 11.7087 3.43769 15.0662 7.64231 15.0662C11.8469 15.0662 15.269 11.7087 15.269 7.58338C15.269 3.45555 11.8469 0.100586 7.64231 0.100586ZM7.64231 14.05C4.00588 14.05 1.0487 11.1487 1.0487 7.58084C1.0487 4.01302 4.00588 1.11164 7.64231 1.11164C11.2787 1.11164 14.2359 4.01302 14.2359 7.58084C14.2359 11.1487 11.2762 14.05 7.64231 14.05Z" fill="#A1A1AA"/>
+                        <path d="M14.7062 13.9255C14.5073 13.7253 14.1793 13.7228 13.9753 13.9179C13.7713 14.113 13.7687 14.4348 13.9675 14.635L16.0673 16.7433C16.168 16.8446 16.3023 16.8953 16.4366 16.8953C16.5657 16.8953 16.6975 16.8472 16.7982 16.7509C17.0022 16.5558 17.0048 16.2339 16.8059 16.0338L14.7062 13.9255Z" fill="#A1A1AA"/>
+                        </svg>
+                        
+    
+                </button>
+    
+    
+                </form>
+    
+                <div class="para text-center mt-36 text-white font-IRANYekan500 text-base">
+                    <p>
+                        با عرض پوزش نتیجه ای یافت نشد.
+                        <br>
+    لطفا واژه ی دیگری را جستجو نمایید.
+                    </p>
+                </div>
+            </div>
+        </div> -->
+    <div class="foundPage pt-[189px]">
+        <form class="w-80p  py-3 px-3.5 border border-gray50/[0.5] flex items-center justify-between mx-auto !max-w-[1050px]" role="search"
+        id="searchform" action="/search.bc" method="get">
+        <input type="search" class="w-full font-IRANYekan500 placeholder:font-IRANYekan500 text-base text-gray400 placeholder:text-gray400" name="q" placeholder="جستجو کنید..." />
+
+        <button type="submit" class="cursor-pointer ">
+           
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.64231 0.100586C3.43769 0.100586 0.015625 3.45809 0.015625 7.58338C0.015625 11.7087 3.43769 15.0662 7.64231 15.0662C11.8469 15.0662 15.269 11.7087 15.269 7.58338C15.269 3.45555 11.8469 0.100586 7.64231 0.100586ZM7.64231 14.05C4.00588 14.05 1.0487 11.1487 1.0487 7.58084C1.0487 4.01302 4.00588 1.11164 7.64231 1.11164C11.2787 1.11164 14.2359 4.01302 14.2359 7.58084C14.2359 11.1487 11.2762 14.05 7.64231 14.05Z" fill="#A1A1AA"/>
+                <path d="M14.7062 13.9255C14.5073 13.7253 14.1793 13.7228 13.9753 13.9179C13.7713 14.113 13.7687 14.4348 13.9675 14.635L16.0673 16.7433C16.168 16.8446 16.3023 16.8953 16.4366 16.8953C16.5657 16.8953 16.6975 16.8472 16.7982 16.7509C17.0022 16.5558 17.0048 16.2339 16.8059 16.0338L14.7062 13.9255Z" fill="#A1A1AA"/>
+                </svg>
+                
+
+        </button>
+
+
+        </form>
+
+
+        
+        <basis core="print" datamembername="basisName.related-blog">
+            <layout>
+                <section class="section7 mb-16">
+                    <h3 class="font-IRANYekan500 scrollTop text-2xl mb-6 w-90p mx-auto text-gray700">
+                        نتیجه جستجو در مقالات
+                    </h3>
+
+                    <div class="swiper relatedBlog">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+
+                            @child
+                        </div>
+
+                    </div>
+                </section>
+            </layout>
+
+            <face>
+
+                <div class="swiper-slide !w-[480px]">
+                    <div class="blogBox group/blogBox">
+                        <a href="/@link" title="@title">
+                            <div class="imgS overflow-hidden">
+                                <img src="[##cms.cms.cdn##]/@00400X00300prp"
+                                    class="w-full group-hover/blogBox:scale-125 duration-500" alt="@title">
+                            </div>
+                            <div class="date my-2.5">
+                                <span class=" font-PxGrotesk400 text-sm text-gray600">
+                                    @prp_7249
+                                </span>
+                            </div>
+                            <h3 class="font-IRANYekan500 mb-2.5 text-justify text-base text-gray700">
+                                @title
+                            </h3>
+                            <div class="para font-IRANYekan300 text-justify text-sm text-gray700 line-clamp-2">
+                                <p>
+                                    @prp_7244
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </face>
+        </basis>
+
+
+
+        <basis core="print" datamembername="basisName.related-Product">
+            <layout>
+                <section class="section8 mb-16">
+                    <h2 class="font-IRANYekan500 scrollTop text-2xl mb-10 w-90p mx-auto text-gray700">
+                        نتیجه جستجو در محصولات
+                    </h2>
+                    <div class="swiper relatedProduct">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+
+                            @child
+                        </div>
+
+                    </div>
+
+
+
+                </section>
+            </layout>
+
+            <face>
+                <div class="swiper-slide !w-[309px]">
+                    <div class="productBox group/productBox">
+                        <a href="/@link" title="@title">
+                            <div class="imgS overflow-hidden">
+                                <img src="[##cms.cms.cdn##]/@00300X00400prp"
+                                    class="w-full group-hover/blogBox:scale-125 duration-500" alt="@title">
+                            </div>
+
+                            <h4 class="font-IRANYekan500  mt-3 text-justify text-base text-gray600">
+                                @title
+                            </h4>
+
+                            <h5
+                                class="font-IRANYekan400 text-base text-gray600 opacity-0 duration-500 group-hover/productBox:opacity-100 group-hover/productBox:translate-y-0 -translate-y-[30px]">
+                                ساخت کشور @prp_10000792
+                            </h5>
+
+                        </a>
+                    </div>
+                </div>
+            </face>
+        </basis>
+
+        <basis core="print" datamembername="basisName.related-project">
+            <layout>
+                <section class="section9 overflow-hidden">
+                    <h3 class="font-IRANYekan700 scrollTop mb-[47px] text-2xl w-90p mx-auto text-gray700">
+                        نتیجه جستجو در پروژه ها
+                    </h3>
+
+                    <div class="grid grid-cols-4">
+                        @child
+
+                    </div>
+                </section>
+            </layout>
+
+            <face>
+                <div class="projectBox group/projectBox overflow-hidden">
+                    <a href="/@link" class="w-full h-full flex items-center justify-center relative" title="@title">
+
+                        <div class="imgS overflow-hidden">
+                            <img src="[##cms.cms.cdn##]/@00400X00800prp"
+                                class="h-full object-cover grayscale-100 group-hover/projectBox:grayscale-0 duration-500"
+                                alt="@title">
+
+                        </div>
+
+                        <div
+                            class="title scale-75 opacity-0 -right-1 group-hover/projectBox:opacity-100 group-hover/projectBox:scale-100 duration-500 -translate-y-[75px] w-[130px] absolute bg-white rounded-full h-[130px] flex items-center justify-center">
+                            <span class="font-IRANYekan500 text-base text-gray800">
+                                @title
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+            </face>
+        </basis>
+
+
+
+    </div>
+    
+    </main>
+</body>
+</html>

@@ -1,0 +1,430 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376647">
+    <member name="about-us" type="view" />
+    <member name="about-us250" postsql="select * from [db.about-us250] where TypeID =250" type="view" />
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376647">
+    <member name="image-aboutUs" type="list" format="4" />
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376647">
+    <member name="video-aboutUs" type="list" format="3" />
+</basis>
+
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درباره کاورسان</title>
+    <meta name="description" content="درباره کاروسان">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/locomotive.css">
+    <basis core="call" file="styles.inc" />
+</head>
+
+<body>
+    <main class="aboutUs overflow-x-hidden" dir="rtl">
+        <basis core="call" file="header3.inc" />
+
+        <div class="containerHorizontal">
+            <section id="PinSection">
+                <div class="Pin-Wrapp">
+                    <div class="flex darkSec shrink-0">
+                        <section class="section1 bg-black  pl-[118px]">
+                            <div class=" pt-[157px] h-full pb-8 flex flex-col justify-between">
+                                <div class="breadCrumb">
+                                    <ul class="flex items-center gap-x-1.5">
+                                        <li>
+                                            <a href="/" class="font-IRANYekan300 whitespace-nowrap text-sm text-gray50"
+                                                title="home">
+                                                صفحه نخست
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <span class="font-IRANYekan300 text-sm text-gray50">
+                                                .
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="font-IRANYekan300 whitespace-nowrap text-sm text-gray50">
+                                                درباره ما
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <basis core="print" datamembername="db.about-us">
+
+                                    <face filter="TypeID=150">
+                                        <h1 class="font-PxGrotesk400 whitespace-nowrap text-2xl text-white">
+                                            @Answer
+                                        </h1>
+
+                                    </face>
+                                </basis>
+
+
+                                <div
+                                    class="overflow-hidden cursor-pointer scrollBtmBtn flex gap-x-2.5 items-center h-fit">
+
+                                    <span class="font-PxGrotesk400 mb-2 text-sm text-gray600 lowercase">
+                                        scroll
+                                    </span>
+                                    <div
+                                        class="scrollBtm rotate-90 -translate-x-[25px] overflow-hidden h-[58px] w-px bg-gray600">
+                                        <div class="line h-[58px] w-px bg-main">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </section>
+                        <basis core="print" datamembername="db.video-aboutUs">
+
+                            <face>
+                                <section class="section2 shrink-0">
+                                    <video src="[##cms.cms.cdn##]/@largeIMG" muted autoplay
+                                        class="h-svh w-svw object-cover"></video>
+                                </section>
+
+                            </face>
+                        </basis>
+
+                        <basis core="print" datamembername="db.about-us250">
+                            <layout>
+                                @child
+                            </layout>
+
+                            <face filter="RowNumber=1">
+                                <section class="section3 bg-black  px-[74px] flex flex-col justify-center" dir="ltr">
+                                    <span class="font-PxGrotesk400 numberEff text-gray700 mb-10 text-5xl">
+                                        01
+                                    </span>
+                                    <h2 class="font-PxGrotesk400 scrollToTop capitalize text-gray300 mb-9 text-2xl">
+                                        @text
+                                    </h2>
+
+                                    <div
+                                        class="para font-PxGrotesk400 scrollToTop lowercase text-sm text-justify text-gray300 w-[425px]">
+                                        @largetext
+                                    </div>
+                                </section>
+
+                            </face>
+                        </basis>
+                        <basis core="print" datamembername="db.image-aboutUs">
+
+                            <face filter="ord=2">
+                                <section class="section4 shrink-0">
+                                    <div
+                                        class="imgS overflow-hidden group/activeImg activeImg after:w-full before:w-full after:absolute relative after:duration-500 after:inset-0 after:bg-white [&.activeFirs]:after:scale-y-0 after:origin-top after:z-2 before:absolute before:inset-0 before:bg-black before:z-1 [&.activeSec]:before:scale-y-0 before:duration-500 before:origin-top">
+                                        <img class="h-dvh grayscale-100 group-[&.activeSec]/activeImg:scale-100 delay-75 scale-125 duration-500"
+                                            src="[##cms.cms.cdn##]/@largeIMG" alt="ceo">
+                                    </div>
+                                </section>
+
+                            </face>
+                        </basis>
+                    </div>
+
+
+
+
+                    <basis core="print" datamembername="db.about-us250">
+
+                        <face filter="RowNumber=2">
+                            <section dir="ltr"
+                                class="section5 flex justify-center flex-col px-[74px] border-l border-l-gray700">
+                                <span class="font-PxGrotesk400 numberEff text-gray300 mb-10 text-5xl">
+                                    0@RowNumber
+                                </span>
+                                <h2 class="font-PxGrotesk400 scrollToTop capitalize text-gray700 mb-9 text-2xl">
+                                    @text
+                                </h2>
+
+                                <div
+                                    class="para font-PxGrotesk400 scrollToTop lowercase text-sm text-justify text-gray700 w-[425px]">
+                                    @largetext
+                                </div>
+
+
+                            </section>
+
+                        </face>
+                    </basis>
+                    <basis core="print" datamembername="db.image-aboutUs">
+
+                        <face filter="ord=3">
+                            <section class="section6 shrink-0 flex items-center px-[103px]">
+                                <div class="flex gap-x-[123px]">
+                                    <div class="title">
+                                        <span class="font-PxGrotesk400 numberEff text-gray300 mb-10 text-5xl">
+                                            03
+                                        </span>
+                                        <h3
+                                            class="font-IRANYekan500 scrollToTop whitespace-nowrap capitalize text-gray700 mb-9 text-2xl">
+                                            @name
+                                        </h3>
+
+                                    </div>
+
+                                    <div class="imgS">
+                                        <img src="[##cms.cms.cdn##]/@largeIMG" alt="partners">
+                                    </div>
+                                </div>
+                            </section>
+
+                        </face>
+                    </basis>
+
+                    <div class="flex darkSec shrink-0">
+                        <basis core="print" datamembername="db.about-us250">
+
+                            <face filter="RowNumber=3">
+                                <section class="section7 bg-black px-[134px] flex flex-col justify-center">
+                                    <span class="font-PxGrotesk400 numberEff text-gray700 mb-10 text-5xl">
+                                        04
+                                    </span>
+                                    <h3 class="font-IRANYekan500 scrollToTop capitalize text-gray300 mb-6 text-2xl">
+                                        @text
+                                    </h3>
+
+                                    <div
+                                        class="para font-IRANYekan300 scrollToTop lowercase text-sm text-justify text-gray300 w-[425px]">
+                                        @largetext
+                                    </div>
+                                </section>
+
+                            </face>
+                        </basis>
+
+                        <section class="section8 shrink-0 pr-1.5 flex items-center bg-black  pl-[140px]">
+                            <div class="grid grid-cols-6 gap-11">
+                                <basis core="print" datamembername="db.image-aboutUs">
+
+                                    <face filter="ord=1000">
+
+                                        <div class="iconBox grayscale-100">
+                                            <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                                        </div>
+                                    </face>
+                                </basis>
+
+                            </div>
+                        </section>
+                    </div>
+
+
+
+
+                    <basis core="print" datamembername="db.about-us250">
+
+                        <face filter="RowNumber=4">
+                            <section dir="ltr" class="section9 flex justify-center flex-col">
+                                <div
+                                    class="in px-[74px] relative after:absolute after:left-0 after:top-[calc(20%-160px)]  after:h-[calc(100%+160px)] after:w-px after:bg-gray600">
+                                    <span class="font-PxGrotesk400 numberEff text-gray300 mb-10 text-5xl">
+                                        05
+                                    </span>
+                                    <h2 class="font-PxGrotesk400 scrollToTop capitalize text-gray700 mb-9 text-2xl">
+                                        @text
+                                    </h2>
+
+                                    <div
+                                        class="para font-PxGrotesk400 scrollToTop lowercase text-sm text-justify text-gray700 w-[425px]">
+                                        @largetext
+                                    </div>
+
+                                </div>
+
+
+                            </section>
+
+                        </face>
+                        <face filter="RowNumber=5">
+                            <section dir="ltr" class="section9 flex justify-center flex-col">
+                                <div
+                                    class="in px-[74px] relative after:absolute after:left-0 after:top-[calc(20%-160px)]  after:h-[calc(100%+160px)] after:w-px after:bg-gray600">
+                                    <span class="font-PxGrotesk400 numberEff text-gray300 mb-10 text-5xl">
+                                        06
+                                    </span>
+                                    <h2 class="font-PxGrotesk400 scrollToTop capitalize text-gray700 mb-9 text-2xl">
+                                        @text
+                                    </h2>
+
+                                    <div
+                                        class="para font-PxGrotesk400 scrollToTop lowercase text-sm text-justify text-gray700 w-[425px]">
+                                        @largetext
+                                    </div>
+
+                                </div>
+
+
+                            </section>
+
+                        </face>
+                        <face filter="RowNumber=6">
+                            <section dir="ltr" class="section9 flex justify-center flex-col">
+                                <div
+                                    class="in px-[74px] relative after:absolute after:left-0 after:top-[calc(20%-160px)]  after:h-[calc(100%+160px)] after:w-px after:bg-gray600">
+                                    <span class="font-PxGrotesk400 numberEff text-gray300 mb-10 text-5xl">
+                                        07
+                                    </span>
+                                    <h2 class="font-PxGrotesk400 scrollToTop capitalize text-gray700 mb-9 text-2xl">
+                                        @text
+                                    </h2>
+
+                                    <div
+                                        class="para font-PxGrotesk400 scrollToTop lowercase text-sm text-justify text-gray700 w-[425px]">
+                                        @largetext
+                                    </div>
+
+                                </div>
+
+
+                            </section>
+
+                        </face>
+                        <face filter="RowNumber=7">
+                            <section dir="ltr" class="section9 flex justify-center flex-col">
+                                <div
+                                    class="in px-[74px] relative after:absolute after:left-0 after:top-[calc(20%-160px)]  after:h-[calc(100%+160px)] after:w-px after:bg-gray600">
+                                    <span class="font-PxGrotesk400 numberEff text-gray300 mb-10 text-5xl">
+                                        08
+                                    </span>
+                                    <h2 class="font-PxGrotesk400 scrollToTop capitalize text-gray700 mb-9 text-2xl">
+                                        @text
+                                    </h2>
+
+                                    <div
+                                        class="para font-PxGrotesk400 scrollToTop lowercase text-sm text-justify text-gray700 w-[425px]">
+                                        @largetext
+                                    </div>
+
+                                </div>
+
+
+                            </section>
+
+                        </face>
+                    </basis>
+
+
+                    <section class="section10 bg-black darkSec">
+                        <div class="pt-[90px] h-full flex flex-col justify-between px-[103px]">
+                            <a href="/" title="home" aria-label="home">
+                                <img src="[##cms.cms.cdn##]/images/megaFlag.png" alt="logo">
+
+                            </a>
+                            <div class="footerLine my-5 w-px h-full bg-white"></div>
+
+                            <div class="phone flex  items-center gap-x-2.5 ">
+                                <p class="font-IRANYekan300 text-sm text-white">
+                                    شماره تماس :
+                                </p>
+
+                                <span class="font-PxGrotesk300 text-white text-2xl"> 1736 </span>
+                            </div>
+
+                            <div class="footerLine my-5 w-px h-full bg-white"></div>
+                            <div class="btm">
+                                <div class="socials mb-8">
+                                    <ul class="flex items-center gap-x-4">
+
+                                        <basis core="print" datamembername="db.contactus">
+
+                                            <face filter="text='لینکدین'">
+                                                <li>
+                                                    <a href="@largetext" title="linkdin"
+                                                        class="opacity-50 duration-500 hover:opacity-100">
+                                                        <img src="[##cms.cms.cdn##]/images/linkdinFooter.svg"
+                                                            alt="linkdin">
+
+                                                    </a>
+                                                </li>
+
+                                            </face>
+                                        </basis>
+                                        <basis core="print" datamembername="db.contactus">
+
+                                            <face filter="text='واتس اپ'">
+                                                <li>
+                                                    <a href="@largetext" title="whatsapp"
+                                                        class="opacity-50 duration-500 hover:opacity-100">
+                                                        <img src="[##cms.cms.cdn##]/images/whatsappFooter.svg"
+                                                            alt="whatsapp">
+
+                                                    </a>
+                                                </li>
+                                            </face>
+                                        </basis>
+
+                                        <basis core="print" datamembername="db.contactus">
+
+                                            <face filter="TypeID=242">
+                                                <li>
+                                                    <a href="mailto:@Answer" title="email"
+                                                        class="opacity-50 duration-500 hover:opacity-100">
+                                                        <img src="[##cms.cms.cdn##]/images/emailFooter.svg" alt="email">
+
+                                                    </a>
+                                                </li>
+                                            </face>
+                                        </basis>
+
+                                        <basis core="print" datamembername="db.contactus">
+
+                                            <face filter="text='اینستاگرام'">
+                                                <li>
+                                                    <a href="@largetext" title="instagram"
+                                                        class="opacity-50 duration-500 hover:opacity-100">
+                                                        <img src="[##cms.cms.cdn##]/images/instagramFooter.svg"
+                                                            alt="instagram">
+
+
+                                                    </a>
+                                                </li>
+                                            </face>
+                                        </basis>
+
+                                    </ul>
+                                </div>
+
+                                <div class="pb-7 -mr-4 flex items-center gap-x-2.5">
+                                    <p class="font-IRANYekan300 text-[10px] whitespace-nowrap text-white">
+                                        طراحی سایت و بهینه‌سازی سایت
+                                    </p>
+                                    <a class="shrink-0" href="https://namasite.ir">
+                                        <img src="[##cms.cms.cdn##]/images/logoNamasite.svg" alt="namasite">
+                                    </a>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                    </section>
+
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <basis core="call" file="scripts.inc" />
+    <script src="[##cms.cms.cdn##]/_js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/imageLoaded.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/gsap.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/ScrollTrigger.min.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/locoScroll.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
+    <script src="[##cms.cms.cdn##]/js/aboutUs.js"></script>
+
+
+
+</body>
+
+</html>

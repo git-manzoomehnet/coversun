@@ -1,64 +1,47 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Scroll Effect</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Marker with Leaflet</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-    section {
-      width: 100%;
-      height: 100vh;
-      position: relative;
-    }
-    .video-section {
-      background: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      position: sticky;
-      top: 0;
-      z-index: 1;
-    }
-    .video-section video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .content-section {
-      background: white;
-      z-index: 2;
-      position: relative;
-      padding: 50px;
-      font-size: 24px;
-    }
+    html, body, #map { height: 100%; margin: 0; padding: 0; }
   </style>
 </head>
 <body>
+  <div id="map"></div>
 
-<section class="video-section">
-  <video src="http://cdn.basiscore.net/j110xu.undertest.ir/1049473796662001B" autoplay muted loop></video>
-</section>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const lat = 25.192743;
+    const lng = 55.272054;
 
-<section class="content-section">
-  <h1>سکشن دوم</h1>
-  <p>این متن محتوای سکشن دوم است.</p>
-</section>
+    const map = L.map('map').setView([lat, lng], 16);
 
-<script>
-  const contentSection = document.querySelector('.content-section');
+    // تایل تیره
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
 
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY;
-  const speed = 1.2; // عدد بالاتر => حرکت سریع‌تر سکشن دوم
-  contentSection.style.transform = `translateY(${-(scrollY / speed)}px)`;
-});
+    // ساخت مارکر سفارشی با HTML
+    const customIcon = L.divIcon({
+      className: '', // بدون کلاس پیش‌فرض leaflet
+      html: `
+        <div class="absolute">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}" target="_blank"
+            class="flex items-center justify-center bg-white/50 w-[48px] h-[48px] after:absolute after:w-[22px] after:h-[22px] after:bg-white after:rounded-full rounded-full">
+          </a>
+        </div>
+      `,
+      iconSize: [48, 48],
+      iconAnchor: [24, 24] // نقطه وسط مارکر روی مختصات باشه
+    });
 
-</script>
-
+    L.marker([lat, lng], { icon: customIcon }).addTo(map);
+  </script>
 </body>
 </html>

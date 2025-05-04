@@ -15,7 +15,8 @@
 @font-face {
   font-family: "IRANYekan400";
   src: url("../_fonts/iranyekanwebregular.eot");
-  src: url("../_fonts/iranyekanwebregular.eot?#iefix") format("embedded-opentype"),
+  src: url("../_fonts/iranyekanwebregular.eot?#iefix")
+      format("embedded-opentype"),
     url("../_fonts/iranyekanwebregular.woff") format("woff"),
     url("../_fonts/iranyekanwebregular.ttf") format("truetype");
   font-weight: 300;
@@ -26,7 +27,8 @@
 @font-face {
   font-family: "IRANYekan500";
   src: url("../_fonts/iranyekanwebmedium.eot");
-  src: url("../_fonts/iranyekanwebmedium.eot?#iefix") format("embedded-opentype"),
+  src: url("../_fonts/iranyekanwebmedium.eot?#iefix")
+      format("embedded-opentype"),
     url("../_fonts/iranyekanwebmedium.woff") format("woff"),
     url("../_fonts/iranyekanwebmedium.woff2") format("woff2"),
     url("../_fonts/iranyekanwebmedium.ttf") format("truetype");
@@ -37,10 +39,9 @@
 
 @font-face {
   font-family: "PxGrotesk300";
-  src:
-    url("../fonts/Px-Grotesk-Light.woff") format("woff"),
-    url("../fonts/Px-Grotesk-Light.woff2") format("woff2"),
-    url("../fonts/Px-Grotesk-Light.ttf") format("truetype");
+  src: url("../fonts/PxGrotesk-Light.woff") format("woff"),
+    url("../fonts/PxGrotesk-Light.woff2") format("woff2"),
+    url("../fonts/PxGrotesk-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -48,11 +49,19 @@
 
 @font-face {
   font-family: "PxGrotesk400";
-  src:
-    url("../fonts/Px-Grotesk-Regular.woff") format("woff"),
-    url("../fonts/Px-Grotesk-Regular.woff2") format("woff2"),
-    url("../fonts/Px-Grotesk-Regular.ttf") format("truetype");
+  src: url("../fonts/PxGroteskRegular.woff") format("woff"),
+    url("../fonts/PxGroteskRegular.woff2") format("woff2"),
+    url("../fonts/PxGroteskRegular.ttf") format("truetype");
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PxGrotesk700";
+  src: url("../fonts/PxGrotesk-Bold.woff") format("woff"),
+    url("../fonts/PxGrotesk-Bold.woff2") format("woff2"),
+    url("../fonts/PxGrotesk-Bold.ttf") format("truetype");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -63,14 +72,15 @@
   --font-IRANYekan500: "IRANYekan500" !important;
   --font-PxGrotesk300: "PxGrotesk300" !important;
   --font-PxGrotesk400: "PxGrotesk400" !important;
+  --font-PxGrotesk700: "PxGrotesk700" !important;
 
-  --color-main: #FFCB08;
-  --color-gray50: #FAFAFA;
-  --color-gray400: #A1A1AA;
-  --color-gray300: #D4D4D8;
-  --color-gray600: #52525B;
-  --color-gray700: #3F3F46;
-  --color-gray800: #27272A;
+  --color-main: #ffcb08;
+  --color-gray50: #fafafa;
+  --color-gray400: #a1a1aa;
+  --color-gray300: #d4d4d8;
+  --color-gray600: #52525b;
+  --color-gray700: #3f3f46;
+  --color-gray800: #27272a;
   --color-back-gray: #171717;
 
   --spacing-90p: 90%;
@@ -81,9 +91,7 @@
   max-width: 1440px;
 }
 
-
 @media (min-width: 1600px) {
-
   .megaMenu .leftSec,
   .megaMenu .bgHmenu,
   .blogShow .gallerySlider,
@@ -93,7 +101,7 @@
   .projectShow .relatedBlog,
   .projectShow .relatedProduct,
   .productShow .section2 .btm {
-    padding-left: calc(((100vw - 1440px)/2));
+    padding-left: calc(((100vw - 1440px) / 2));
   }
 
   .productList .cattitle,
@@ -102,21 +110,28 @@
   .blogShow .relatedProduct,
   .projectShow .section1 .rSide,
   .projectShow .gallerySlider,
+  .productShow .relatedBlog,
+  .searchPage .relatedBlog,
   .projectShow .relatedBlog,
+  .productShow .relatedProduct,
+  .productCat .section1,
+  .aboutUs .section1,
   .projectShow .relatedProduct,
+  .searchPage .relatedProduct,
+  .contactUs .rightSec,
   .productShow .section2 .top {
-    padding-right: calc(((100% - 1440px)/2));
-
+    padding-right: calc(((100vw - 1440px) / 2));
   }
 
   .closeForm {
-    margin-left: calc(((100% - 1440px)/2));
-
+    margin-left: calc(((100vw - 1440px) / 2));
+  }
+  .landing .cntBtn {
+    right: calc(((100vw - 1440px) / 2));
   }
 }
 
 @media (max-width: 1599px) {
-
   .megaMenu .leftSec,
   .megaMenu .bgHmenu,
   .blogShow .gallerySlider,
@@ -128,7 +143,7 @@
   .projectShow .relatedBlog,
   .projectShow .relatedProduct,
   .productShow .section2 .btm {
-    padding-left: 5%;
+    padding-left: 5vw;
   }
 
   .blogShow .gallerySlider,
@@ -136,26 +151,34 @@
   .blogShow .relatedProduct,
   .projectShow .section1 .rSide,
   .projectShow .gallerySlider,
+  .productShow .relatedBlog,
+  .searchPage .relatedBlog,
   .projectShow .relatedBlog,
+  .productShow .relatedProduct,
+  .searchPage .relatedProduct,
   .projectShow .relatedProduct,
+  .contactUs .rightSec,
+  .aboutUs .section1,
+  .productCat .section1,
   .productShow .section2 .top {
-    padding-right: 5%;
-
-  }
-  .productList .cattitle{
     padding-right: 5vw;
   }
-
+  .productList .cattitle {
+    padding-right: 5vw;
+  }
+  .landing .cntBtn {
+    right: 5vw;
+  }
   .closeForm {
-    margin-right: 5%;
-
+    margin-right: 5vw;
   }
 }
 
 
-
-
-
+.catBox .para .line{
+opacity: 0;
+transform: translateY(20px);
+}
 .accordion {
   width: 100%;
   overflow: hidden;
@@ -176,7 +199,6 @@
   transition: all 0.25s ease-out;
   opacity: 0;
 }
-
 
 .accordion__active .accordion__content {
   padding: 0 20px 20px;
@@ -214,7 +236,6 @@
   pointer-events: none;
 }
 
-
 .scrollTop {
   opacity: 0;
   transform: translateY(150px);
@@ -225,3 +246,158 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+.contactUs .mapSection .leaflet-zoom-animated {
+  width: 100%;
+  filter: invert(0.05) saturate(0);
+}
+
+#PinSection {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  right: 0;
+  direction: rtl;
+  position: relative;
+}
+
+.Pin-Wrapp {
+  display: flex;
+  direction: rtl;
+}
+
+.formContainer form legend {
+  display: none;
+}
+.formContainer form [data-bc-answer-container] {
+  width: 100% !important;
+}
+.formContainer form [data-bc-part-container],
+.formContainer form [data-bc-part-related-cell] {
+  width: 100% !important;
+}
+.formContainer form [data-bc-title-container] {
+  display: none;
+}
+.formContainer form [data-bc-schema-column] {
+  /* display: grid; */
+  column-count: 2;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 37px;
+  row-gap: 22px;
+}
+.formContainer form [data-bc-question] {
+  margin: 0 !important;
+  margin-bottom: 22px !important;
+}
+.formContainer form textarea,
+.formContainer form input,
+.formContainer form option,
+.formContainer form select {
+  background: transparent !important;
+  border-radius: 0 !important;
+  border: 1px solid #3f3f465e !important;
+  font-family: "IRANYekan300";
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+  color: #3f3f46;
+}
+.formContainer form select,
+.formContainer form input{
+  height: 50px !important;
+}
+.formContainer form .btm0{
+  margin-bottom: 0 !important;
+}
+.formPop .codeinputm {
+  border: none !important;
+  height: auto !important;
+}
+.formContainer form .errorPlaceholder{
+  background: #CA730040 !important;
+}
+.errorPlaceholder .captchaInput::placeholder,
+.errorPlaceholder::placeholder{
+  color: #CA7300 !important;
+}
+[data-bc-validation-part]{
+  display: none !important;
+}
+.catLists .listSvg {
+  position: relative;
+width: 99px;
+height: 99px;
+}
+
+.catLists .listSvg svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* path اصلی (کم‌رنگ، ثابت) */
+.catLists .listSvg .static path {
+  stroke: white;
+  stroke-width: 1;
+  fill: none;
+  opacity: 0.5;
+}
+
+/* path دوم (انیمیشنی، مخفی تا شروع) */
+.catLists .listSvg .animated path {
+  stroke: white;
+  stroke-width: 1;
+  fill: none;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  opacity: 1;
+  transition: stroke-dashoffset 3s ease;
+}
+
+/* وقتی draw شروع شد */
+.catLists .listSvg.draw .animated path {
+  stroke-dashoffset: 0;
+}
+
+.catLists .listSvg.draw .static {
+  opacity: 0; /* حذف پیش‌نمایش کم‌رنگ */
+  transition: opacity 0.5s ease;
+}
+
+
+
+.loaderForm {
+  width: 15px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  animation: l5 1s infinite linear alternate;
+}
+@keyframes l5 {
+    0%  {box-shadow: 20px 0 #FFCB08, -20px 0 #FFCB0823;background: #FFCB08 }
+    33% {box-shadow: 20px 0 #FFCB08, -20px 0 #FFCB0823;background: #FFCB0823}
+    66% {box-shadow: 20px 0 #FFCB0823,-20px 0 #FFCB08; background: #FFCB0823}
+    100%{box-shadow: 20px 0 #FFCB0823,-20px 0 #FFCB08; background: #FFCB08 }
+}
+
+.projectList .swiper-wrapper , .productList .swiper-wrapper {
+  transition-duration: 0.4s !important;
+}
+
+
+
+.cursor {
+  position: fixed;
+  background-color: #fff;
+
+  border-radius: 100%;
+  z-index: 1;
+  transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, 0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity, 0.4s ease scale;
+  user-select: none;
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: difference;
+  transform: translate(-50%,-50%);
+}
+
