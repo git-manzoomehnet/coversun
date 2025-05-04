@@ -115,6 +115,7 @@
   .projectShow .relatedBlog,
   .productShow .relatedProduct,
   .productCat .section1,
+  .landingCover .section1,
   .aboutUs .section1,
   .projectShow .relatedProduct,
   .searchPage .relatedProduct,
@@ -158,6 +159,7 @@
   .searchPage .relatedProduct,
   .projectShow .relatedProduct,
   .contactUs .rightSec,
+  .landingCover .section1,
   .aboutUs .section1,
   .productCat .section1,
   .productShow .section2 .top {
