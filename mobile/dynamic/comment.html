@@ -1,0 +1,145 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../assets/css/outputMobile.css">
+    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="commentForm">
+        <basis core="dbsource" source="userbehavior" name="db" title="{##db.senduserName.value##}" run="atclient"
+            triggers="db.sendcomment" if="{##db.sendcomment##}" parentid="0" usedforid="2376602" userid="100001"
+            mid="20" comment="{##db.sendcomment.value##}">
+            <member request="comment" type="scalar" name="comment" preview="true" onRendered="renderCommentFn" />
+        </basis>
+
+        <form action="" class="commentP">
+            <div class="userInfo mb-4">
+                <div class="nameInput relative">
+                    <input
+                        class="w-full userName outline-0 mb-3 text-right font-IRANSansWebFaNum400 text-base text-StarDust600 py-1.5 placeholder:font-IRANSansWebFaNum400 border-b border-b-StarDust400"
+                        type="text" placeholder="نام و نام خانوادگی" />
+                </div>
+                <div class="emailInput relative">
+                    <input type="email"
+                        class="w-full outline-0 mb-3 text-right font-IRANSansWebFaNum400 text-base text-StarDust600 py-1.5 placeholder:font-IRANSansWebFaNum400 border-b border-b-StarDust400"
+                        placeholder="ایمیل" />
+                </div>
+            </div>
+            <div class="msg">
+                <div class="msgInput relative">
+                    <_textarea
+                        class="w-full outline-0 mb-3 text-right font-IRANSansWebFaNum400 text-base text-StarDust600 py-1.5 placeholder:font-IRANSansWebFaNum400 border-b border-b-StarDust400"
+                        name="message" id="message" placeholder="دیدگاه خود را بنویسید..."></_textarea>
+                </div>
+            </div>
+
+            <div class="btnsContainer flex flex-col gap-3">
+                <basis core="dbsource" source="trust_login" name="captcha1" triggers="cms.reload1" run="atclient">
+                    <member name="code1" type="scalar" request="captcha"></member>
+                </basis>
+                <basis datamembername="captcha1.code1" core="print" run="atclient">
+                    <face>
+                        <script type="text/template">
+                            <div class="captchaContain w-full flex items-center gap-x-3 py-2 flex-row-reverse">
+                                <span class="captcha-sefaresh shrink-0">
+                                    <img src="/@captcha@" width="88" height="44" class="captcha-sefaresh" alt="captcha" title="captcha" />
+                                    <input type="hidden" name="captchaid" value="@captcha@" />
+                                </span>                                                                
+                                <img src="[##cms.cms.cdn##]/images/cached.png" class="refressh refressh1 cursor-pointer" run="atclient" bc-triggers="click" bc-name="cms.reload1" />
+                                <input type="text" class="codeinputm w-full border-b border-b-StarDust400 py-1.5 font-IRANSansWebFaNum400 text-base text-StarDust600 placeholder:font-IRANSansWebFaNum400 placeholder:text-base placeholder:text-StarDust600 " placeholder="عبارت امنیتی را وارد کنید" name="captcha" />
+                            </div>
+                        </script>
+                    </face>
+                </basis>
+                <button type="button" class="submitComment cursor-pointer justify-center flex items-center gap-x-2">
+                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M2.78174 0.5L0.495655 2.77076C0.177501 3.10187 -2.00074e-08 3.54243 0 4.00015C2.00074e-08 4.45786 0.177501 4.8977 0.495655 5.22881L2.78174 7.50015L3.60657 6.68084L1.48791 4.58347L14 4.58348L13.9998 3.41681L1.48791 3.41681L3.60657 1.3193L2.78174 0.5Z"
+                            fill="#2B2C2C" />
+                    </svg>
+
+                    <span class="font-IRANSansWebFaNum400 text-base text-StarDust950 whitespace-nowrap">
+                        ارسال فرم
+                    </span>
+                </button>
+            </div>
+            <div class="messageSend font-IRANSansWebFaNum400 text-StarDust600 text-base">
+                <p></p>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="https://cdn.basiscore.net/academy.basiscore.com/_js/basiscore-2.23.1.min.js"></script>
+<script>
+    const host = {
+        settings: {
+            "connection.web.callcommand": "/",
+            "connection.web.trust_login": "https://basispanel.ir/apicms",
+            "connection.web.basiscore": "https://basispanel.ir/apicms",
+            "connection.web.media": "https://basispanel.ir/apicms",
+            "connection.web.userbehavior": "https://basispanel.ir/apicms",
+            "default.dbsource.verb": "post",
+            "default.call.verb": "get",
+            "default.viewCommand.groupColumn": "prpid",
+            "default.dmnid": "4947",
+            "default.binding.regex": "\\{##([^#]*)##\\}",
+        },
+    };
+
+    let messageSend = document.querySelector(".messageSend")
+    let commentP = document.querySelector(".commentP")
+
+    function renderCommentFn(args) {
+
+    }
+    document.querySelector('.submitComment').addEventListener('click', (event) => {
+        //  let input1  = document.querySelector('.namee')
+        event.preventDefault();
+        let textar = document.querySelectorAll('.commentP input')
+        let emptyFlag = false;
+        textar.forEach(element => {
+            if (element.value == "") {
+                emptyFlag = true
+            }
+        });
+        if (!emptyFlag) {
+
+            let val = document.querySelector(".commentP textarea").value;
+            let userName = document.querySelector(".commentP .userName").value;
+
+            $bc.setSource('db.send', true)
+            $bc.setSource('db.senduserName', userName)
+            $bc.setSource('db.sendcomment', val)
+            $bc.setSource('db.run', true)
+            let sendbox = document.querySelector('.messageSend')
+            let text = sendbox.querySelector('p')
+            text.innerHTML = 'درخواست شما با موفقیت ثبت شد'
+            commentP.reset()
+            messageSend.style.display = "block"
+
+            document.querySelector(".commentP").reset();
+            setTimeout(() => {
+                messageSend.style.display = "none"
+            }, 3500)
+        } else {
+            let sendbox = document.querySelector('.messageSend')
+            let text = sendbox.querySelector('p')
+            text.innerHTML = 'فیلدهای الزامی را پر کنید'
+            messageSend.style.display = "block"
+
+            setTimeout(() => {
+                messageSend.style.display = "none"
+            }, 3500)
+
+        }
+
+
+    })
+
+</script>
+
+</html>

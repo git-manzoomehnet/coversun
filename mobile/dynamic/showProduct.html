@@ -1,0 +1,693 @@
+<basis core="dbsource" request="seo" source="basiscore" name="db" lid="1">
+    <member name="seolist" type="list" request="product" id="[##cms.query.id##]"></member>
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" usedforid="[##cms.query.id##]">
+    <member name="related-product" propertyid="17856,10000792" type="list" size="371x371" />
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="[##cms.query.id##]">
+    <member name="image" type="list" format="4" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="20" usedforid="[##cms.query.id##]">
+    <member name="en-related-product" type="list" size="371x371" />
+</basis>
+<basis core="dbsource" source="userbehavior" name="db" lid="1" userid="100005" usedforid="[##cms.query.id##]">
+    <member request="listcomment" type="list" name="commentlist" link="event.bc" />
+</basis>
+<basis core="inlinesource" name="list">
+    <member name="productJoin" lefttblcol="db.related-product.id" righttblcol="db.en-related-product.id" format="join"
+        jointype="leftjoin" propertyid="17856,10000792" />        
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="20" usedforid="[##cms.query.id##]">
+    <member name="image-product" type="list" format="4" />
+</basis>
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="20" usedforid="[##cms.query.id##]">
+    <member request="navigationcat" type="tree" name="nav"
+        postsql="select * from [db.nav] where Parentcatid not in (211667)" />
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="20" usedforid="[##cms.query.id##]">
+    <member name="pdf-product" type="list" format="9" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" usedforid="[##cms.query.id##]">
+    <member name="product" type="view" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" usedforid="[##cms.query.id##]">
+    <member name="product" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" usedforid="[##cms.query.id##]">
+    <member type="list" name="related-Product" propertyid="10000792" size="300x400" blgid="18" />
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" usedforid="[##cms.query.id##]">
+    <member type="list" name="related-blog" propertyid="7244,7249" size="400x300" blgid="218" />
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="20" usedforid="[##cms.query.id##]">
+    <member name="video-product" type="list" format="3" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" usedforid="[##cms.query.id##]">
+    <member name="relatedblog" type="list" blgid="218" size="373x240" propertyid="7244,7249" link="article.bc"
+        postsql=" select *, SUBSTR(prp_7244, 1,230-CHARINDEX(' ', REVERSE(SUBSTR(prp_7244, 1, 230)))) || '...' as substr from [db.relatedblog]" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" usedforid="[##cms.query.id##]">
+    <member name="relatedproduct" type="list" blgid="18" size="373x240" />
+</basis>
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../assets/css/outputMobile.css">
+    <link rel="stylesheet" href="http://www.ramand-co.com/css/swiper.css">
+    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
+    <basis core="print" datamembername="db.seolist">
+        <face>
+            <title>[##cms.seo.title|db.seolist.title##]</title>
+            <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
+        </face>
+    </basis>
+</head>
+<body>
+    <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
+    <main id="productList">
+        <div class="relative">
+            <div class="absolute z-20 top-0 pt-[70px] px-5">
+                <ul class="flex flex-row gap-1.5">
+                    <li class="text-[12px] font-IRANYekan300 text-gray-700"><a href="/">صفحه نخست</a></li>
+                    <basis core="print" datamembername="db.nav">
+                        <face>
+                            <li class="text-[12px] font-IRANYekan300 text-gray-700"><span href="">.</span></li>
+                            <li class="text-[12px] font-IRANYekan300 text-gray-700"><a
+                                    href="/product-list.bc?catid=@parentcatid" title="@title">@title</a></li>
+                        </face>
+                    </basis>
+                </ul>
+            </div>
+            <basis core="list" datamembername="list.productJoin">
+                <face>
+                    <div class="relative w-full h-[750px] flex flex-col justify-between bg-cover bg-center bg-no-repeat items-center overflow-hidden"
+                        style="background-image: url([##cms.cms.cdn##]/@db.related-product.image);">
+
+
+                        <div
+                            class="w-full h-full relative z-10 px-5 text-white text-3xl flex justify-start items-center">
+                            <div>
+                                <img class="scrollTop" src="[##cms.cms.cdn##]/images/icone-@Def-.png" alt="" />
+                                <h4 class="text-[24px] pt-5 pb-2.5 font-IRANYekan500 text-white">
+                                    @db.related-product.title</h4>
+
+
+
+                                <p class="text-[14px] text-white font-PxGrotesk400">@db.en-related-product.title</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </face>
+            </basis>
+
+        </div>
+
+        <section>
+            <div
+                class="w-[344px] h-auto relative top-[-80px] right-[0px] flex flex-col justify-start bg-[#FFCB08] pb-[29px] opacity-[85%] pt-[14px] px-[20px]">
+                <div class="flex flex-col justify-start items-center">
+                    <h4 class="font-PxGrotesk400 text-[14px] text-gray-400 mb-">scroll down</h4>
+                    <div class="c-scrolldown">
+                        <div class="c-line bg-black h-[35px]"></div>
+                    </div>
+                </div>
+                <basis core="list" datamembername="list.productJoin">
+                    <face>
+                        <div class="pt-5">
+                            <h3 class="font-IRANYekan500 text-black text-[18px] pb-2.5">توضیحات:</h3>
+                            <p class="text-[14px] font-IRANYekan300 text-gray-800 text-justify">
+                                @db.related-product.prp_17856</p>
+                        </div>
+                    </face>
+                </basis>
+            </div>
+        </section>
+
+        <section class="mt-[-60px]">
+            <div class="swiper scrollProjectList-1 relative">
+                <div class="swiper-wrapper w-full !h-[245px]">
+
+                    <basis core="print" datamembername="db.image-product">
+                        <face filter="ord=50">
+                            <div class="swiper-slide !w-full !h-[245px]">
+                                <img class="w-full h-[245px]" src="[##cms.cms.cdn##]/@largeIMG" alt="@title" />
+                            </div>
+                        </face>
+                    </basis>
+                </div>
+                <div class="swiper-buttons absolute bottom-0 left-0 flex gap-0 z-10">
+                    <div
+                        class="swiper-button-prev-project-1 w-[39px] h-[33px] bg-white flex items-center justify-center cursor-pointer">
+                        <svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.724924 0.433594L8.90234 8.2965L0.724924 16.1594" stroke="black"
+                                stroke-width="0.629032" />
+                        </svg>
+                    </div>
+                    <div
+                        class="swiper-button-next-project-1 w-[39px] h-[33px] bg-white flex items-center justify-center cursor-pointer">
+                        <svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.90398 0.433594L0.726562 8.2965L8.90398 16.1594" stroke="black"
+                                stroke-width="0.629032" />
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mt-[33px] px-5 h-auto pt-2.5 bg-[#FAFAFA]">
+            <div class="flex flex-col justify-center h-auto">
+                <div>
+                    <h4 class="font-IRANYekan500 text-[18px] text-black">مشخصات:</h4>
+                </div>
+                <div class="accordion w-full max-w-md mx-auto">
+                    <div class="accordion-item">
+                        <button
+                            class="accordion-header border-b w-full text-right py-5 flex justify-start gap-5 items-center focus:outline-none">
+                            رنگ
+                            <span class="icon">
+                                <svg width="13" height="8" viewBox="0 0 13 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 1.25L6.5 6.75L1 1.25" stroke="black" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="accordion-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <div class="grid grid-cols-4 gap-4 mt-5">
+                                <basis core="print" datamembername="db.image-product">
+                                    <face filter="ord=10">
+                                        <div class="w-full h-28 flex flex-col justify-between items-center">
+                                            <div class="w-full h-20 bg-[#D9D9D9]">
+                                                <img class="w-full h-20" src="[##cms.cms.cdn##]/@largeIMG"
+                                                    alt="@title" />
+                                            </div>
+                                            <div class="w-full flex justify-start items-start">
+                                                <h4 class="w-full text-[12px] text-start font-IRANYekan300 text-black">
+                                                    کد: @name</h4>
+                                            </div>
+                                        </div>
+                                    </face>
+                                </basis>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="accordion w-full max-w-md mx-auto ">
+                    <div class="accordion-item">
+                        <button
+                            class="accordion-header border-b w-full text-right py-5 flex justify-start gap-5 items-center focus:outline-none">
+                            کشور سازنده
+                            <span class="icon">
+                                <svg width="13" height="8" viewBox="0 0 13 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 1.25L6.5 6.75L1 1.25" stroke="black" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="accordion-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <div class="flex flex-row justify-center items-center mt-[20px] gap-2.5">
+                                <basis core="list" datamembername="list.productJoin">
+                                    <face>
+                                        <p>@db.related-product.10000792</p>
+
+                                    </face>
+                                </basis>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="accordion w-full max-w-md mx-auto ">
+                    <div class="accordion-item">
+                        <button
+                            class="accordion-header border-b w-full text-right py-5 flex justify-start gap-5 items-center focus:outline-none">
+                            مشخصات فنی
+                            <span class="icon">
+                                <svg width="13" height="8" viewBox="0 0 13 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 1.25L6.5 6.75L1 1.25" stroke="black" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="accordion-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <div class="flex flex-row justify-start mt-[20px] items-start gap-2.5">
+                                <ul class="flex flex-col ">
+                                    <basis core="print" datamembername="db.product">
+                                        <face filter="prpID not in (17826,10000792,54862,17856)">
+
+                                            <li class="py-2.5 flex items-center">
+                                                <span class="font-IRANYekan500 text-base text-gray600">
+                                                    @Question
+                                                </span>
+                                                <p class="font-IRANYekan500 text-base text-black">
+                                                    @Answer
+                                                </p>
+                                            </li>
+                                        </face>
+                                    </basis>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="accordion w-full max-w-md mx-auto ">
+                    <div class="accordion-item">
+                        <button
+                            class="accordion-header border-b w-full text-right py-5 flex justify-start gap-5 items-center focus:outline-none">
+                            دانلود کاتالوگ
+                            <span class="icon">
+                                <svg width="13" height="8" viewBox="0 0 13 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 1.25L6.5 6.75L1 1.25" stroke="black" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="accordion-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <div class="flex flex-col justify-start items-start mt-[20px] gap-2.5">
+                                <basis core="print" datamembername="db.pdf-product">
+                                    <face>
+                                        <a href="[##cms.cms.cdn##]/@largeIMG" download target="_blank">دریافت
+                                            کاتالوگ</a>
+                                    </face>
+
+                                </basis>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        <section class="mt-[33px] px-5 h-auto pt-2.5">
+            <div class="flex flex-col justify-center">
+                <div id="comment" class="">
+                    <h4 class="text-[18px] font-IRANYekan500 text-black">نظرات ثبت شده</h4>
+                </div>
+                <div class="swiper scrollProjectList-2 relative">
+                    <div class="swiper-wrapper w-full">
+                        <basis core="print" datamembername="db.commentlist">
+                            <layout>
+                                @child
+                            </layout>
+                            <else-layout>
+                                هنوز کامنتی ثبت نشده است.
+                                <br>
+                                شما اولین نفر باشید
+                            </else-layout>
+                            <face>
+                                <div class="swiper-slide !w-full h-[367px]">
+                                    <div
+                                        class="w-full flex flex-col justify-center items-start pt-[20px] pb-[100px] px-[15px]">
+                                        <h4 class="text-[16px] text-start  text-back-gray font-IRANYekan500 mb-[15px]">
+                                            @username</h4>
+                                        <p class="text-[14px] text-justify font-IRANYekan300 text-back-gray">@comment
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </face>
+                        </basis>
+                    </div>
+                    <div
+                        class="swiper-buttons absolute bottom-0 flex justify-center items-center gap-0 z-10 mt-[50px] mx-auto left-[25%] right-[25%]">
+                        <div
+                            class="swiper-button-prev-project-2 w-[64px] h-[54px] bg-white flex items-center justify-center cursor-pointer">
+                            <svg width="15" height="27" viewBox="0 0 15 27" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.501953 1L13.502 13.5L0.501953 26" stroke="black" />
+                            </svg>
+
+                        </div>
+                        <div
+                            class="swiper-button-next-project-2 w-[64px] h-[54px] bg-white flex items-center justify-center cursor-pointer">
+                            <svg width="15" height="27" viewBox="0 0 15 27" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.502 1L1.50195 13.5L14.502 26" stroke="black" />
+                            </svg>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="mt-[33px] px-5 h-auto pt-2.5 ">
+            <div class="flex flex-col justify-center">
+                <div>
+                    <h5 class="text-[18px] text-back-gray font-IRANYekan500 mb-[24px]">نظراتتان برای ما ارزشمند هست</h5>
+                </div>
+                <form action="">
+                    <div class="flex flex-col mt-[24px] gap-3">
+                        <div class="nameInput flex flex-col justify-start gap-[5px] mb-[12px]">
+                            <div class="text-[14px] font-IRANYekan300 text-back-gray">نام و نام خانوادگی</div>
+                            <input class="w-full h-[48px] bg-gray-50" type="text" />
+                        </div>
+
+                        <div class="emailInput flex flex-col justify-start gap-[5px] mb-[12px]">
+                            <div class="text-[14px] font-IRANYekan300 text-back-gray">ایمیل</div>
+                            <input type="email" class="w-full h-[48px] bg-gray-50" />
+                        </div>
+
+                        <div class="msg">
+                            <div class="text-[14px] font-IRANYekan300 text-back-gray">پیام</div>
+                            <div class="msgInput relative">
+                                <textarea class="min-h-[137px] w-full bg-gray-50" name="" id=""></textarea>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-[5px]">
+                            <div class="text-[14px] font-IRANYekan300 text-back-gray">کد امنیتی را وارد نمایید</div>
+                        </div>
+                        <!-- ############################################################ -->
+                        <div class="btnsContainer flex flex-col gap-3">
+                            <basis core="dbsource" source="userbehavior" name="db" title="{##db.senduserName.value##}"
+                                run="atclient" triggers="db.sendcomment" if="{##db.sendcomment##}" parentid="0"
+                                usedforid="[##cms.query.id##]" userid="100001" mid="20" comment="{##db.sendcomment.value##}">
+                                <member request="comment" type="scalar" name="comment" preview="true"
+                                    onRendered="renderCommentFn" />
+                            </basis>
+                            <basis core="dbsource" source="trust_login" name="captcha1" triggers="cms.reload1"
+                                run="atclient">
+                                <member name="code1" type="scalar" request="captcha"></member>
+                            </basis>
+                            <!-- ############################################################ -->
+                            <basis datamembername="captcha1.code1" core="print" run="atclient">
+                                <face>
+                                    <script type="text/template">
+                                        <div class="captchaContain w-full bg-gray-50 flex items-center gap-x-3 py-2 flex-row-reverse">
+                                            <span class="captcha-sefaresh shrink-0">
+                                                <img src="/@captcha@" width="88" height="44" class="captcha-sefaresh" alt="captcha" title="captcha" />
+                                                <input type="hidden" name="captchaid" value="@captcha@" />
+                                            </span>                                                                
+                                            <img src="[##cms.cms.cdn##]/images/cached.png" class="refressh refressh1 cursor-pointer" run="atclient" bc-triggers="click" bc-name="cms.reload1" />
+                                            <input type="text" class="codeinputm w-full py-1.5 font-IRANSansWebFaNum400 text-base text-StarDust600 placeholder:font-IRANSansWebFaNum400 placeholder:text-base placeholder:text-StarDust600 " placeholder="عبارت امنیتی را وارد کنید" name="captcha" />
+                                        </div>
+                                    </script>
+                                </face>
+                            </basis>
+                            <div class="relative submitComment w-[173px] h-[48px] mt-[12px]">
+                                <div class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-black z-0"></div>
+                                <div class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-black z-0"></div>
+                              
+                                <button type="button" class="relative z-10 font-IRANYekan500 text-[14px] w-full h-full flex items-center justify-center border border-black text-black text-lg font-bold no-underline">
+                                  ثبت
+                                </div>
+                              </div>
+
+
+
+                        </div>
+                        <div class="messageSend font-IRANSansWebFaNum400 text-StarDust600 text-base">
+                            <p></p>
+                        </div>
+
+
+                    </div>
+                </form>
+
+            </div>
+        </section>
+
+        <basis core="print" datamembername="db.relatedproduct">
+            <layout>
+                <section class="mt-[33px] pr-5 h-auto pt-2.5 ">
+                    <div class="flex flex-col justify-start gap-4">
+                        <div>
+                            <h4 class="text-[18px] font-IRANYekan500 text-black">محصولات مرتبط</h4>
+                        </div>
+                        <div class="">
+                            <div class="swiper scrollProjectList-3 relative">
+                                <div class="swiper-wrapper w-full">
+                                    @child
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </layout>
+            <face filter="@prp_10000792 not in (null)">
+                <div class="swiper-slide !w-[350px] h-[503px] flex flex-col gap-1.5">
+                    <div class="w-full h-full">
+                        <a href="/@link" title="@title">
+                            <img class="w-full h-[448px]" src="[##cms.cms.cdn##]/@00373X00240prp" alt="@title">
+                        </a>
+                    </div>
+                    <div class="flex flex-col">
+                        <h4 class="text-[16px] font-IRANYekan500 text-gray-500">@title</h4>
+                        <p class="text-[16px] font-IRANYekan400 leading-[28px] text-gray-500">ساخت کشور @prp_10000792
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </face>
+            <face filter="@prp_10000792 = (null)">
+                <div class="swiper-slide !w-[350px] h-[503px] flex flex-col gap-1.5">
+                    <div class="w-full h-full">
+                        <a href="/@link" title="@title">
+                            <img class="w-full h-[448px]" src="[##cms.cms.cdn##]/@00373X00240prp" alt="@title">
+                        </a>
+                    </div>
+                    <div class="flex flex-col">
+                        <h4 class="text-[16px] font-IRANYekan500 text-gray-500">@title</h4>
+                    </div>
+
+                </div>
+
+            </face>
+
+        </basis>
+        <basis core="print" datamembername="db.relatedblog">
+            <layout>
+                <section class="mt-[33px] pr-5 h-auto pt-2.5 ">
+                    <div class="flex flex-col justify-start gap-4">
+                        <div>
+                            <h4 class="text-[18px] font-IRANYekan500 text-black">مقالات مرتبط</h4>
+                        </div>
+                        <div class="">
+                            <div class="swiper scrollProjectList-4 relative">
+                                <div class="swiper-wrapper w-full">
+                                    @child
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </layout>
+
+            <face>
+                <div class="swiper-slide w-full h-[389px] flex flex-col gap-1.5">
+                    <div class="w-full h-full">
+                        <a href="/@link" title="@title">
+                            <img class="w-[360px] h-[196px]" src="[##cms.cms.cdn##]/@00400X00300prp" alt="">
+                        </a>
+                    </div>
+                    <div class="flex flex-col gap-2.5">
+                        <span class="text-[14px] text-gray-600 font-PxGrotesk400">@prp_7249</span>
+                        <h4 class="text-[16px] font-IRANYekan500 text-black">@title</h4>
+                        <p class="text-[14px] font-IRANYekan300 leading-[28px] h-[72px] overflow-hidden text-gray-500">
+                            @prp_7244</p>
+
+                    </div>
+
+                </div>
+            </face>
+        </basis>
+
+        <section class="mt-[33px] px-5 h-auto pt-2.5 ">
+            <div class="flex flex-col justify-start gap-4">
+                <div>
+                    <h4 class="text-[18px] font-IRANYekan500 text-black">نمونه پروژه های اجرا شده</h4>
+                </div>
+                <basis core="print" datamembername="db.video-product">
+                    <face filter="format=3">
+                        <div class="viduBoxM w-full h-[355px] flex flex-col gap-1.5">
+                            <div class="w-full h-full overflow-hidden">
+                                <video src="[##cms.cms.cdn##]/@largeIMG" muted loop controls playsinline
+                                    class="h-full object-cover grayscale-100 group-hover/viduBox:grayscale-0 duration-500">
+
+                                </video>
+                            </div>
+                        </div>
+                    </face>
+                    <face filter="format=4">
+                        <div class="w-full h-[355px] flex flex-col">
+                            <div class="w-full h-full overflow-hidden">
+                                <img src="[##cms.cms.cdn##]/@largeIMG"
+                                    class="h-full object-cover grayscale-100 group-hover/imgBox:grayscale-0 duration-500" />
+                            </div>
+                        </div>
+
+                    </face>
+                </basis>
+
+            </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="http://www.ramand-co.com/_js/swiper.js"></script>
+<script src="https://cdn.basiscore.net/academy.basiscore.com/_js/basiscore-2.23.1.min.js"></script>
+<script>
+    const host = {
+        settings: {
+            "connection.web.callcommand": "/",
+            "connection.web.trust_login": "https://basispanel.ir/apicms",
+            "connection.web.basiscore": "https://basispanel.ir/apicms",
+            "connection.web.media": "https://basispanel.ir/apicms",
+            "connection.web.userbehavior": "https://basispanel.ir/apicms",
+            "default.dbsource.verb": "post",
+            "default.call.verb": "get",
+            "default.viewCommand.groupColumn": "prpid",
+            "default.dmnid": "4947",
+            "default.binding.regex": "\\{##([^#]*)##\\}",
+        },
+    };
+    document.addEventListener('DOMContentLoaded', function () {
+        const swiperConfigs = [
+            {
+                container: '.scrollProjectList-1',
+                pagination: '.swiper-pagination-Project-1',
+                nextEl: '.swiper-button-next-project-1',
+                prevEl: '.swiper-button-prev-project-1',
+                spaceBetween: 10,
+                slidesPerView: 1,
+            },
+            {
+                container: '.scrollProjectList-2',
+                pagination: '.swiper-pagination-Project-2',
+                nextEl: '.swiper-button-next-project-2',
+                prevEl: '.swiper-button-prev-project-2',
+                spaceBetween: 10,
+                slidesPerView: 1,
+            },
+            {
+                container: '.scrollProjectList-3',
+                pagination: '.swiper-pagination-Project-3',
+                nextEl: '.swiper-button-next-project-3',
+                prevEl: '.swiper-button-prev-project-3',
+                spaceBetween: 10,
+                slidesPerView: 1.1,
+            },
+            {
+                container: '.scrollProjectList-4',
+                pagination: '.swiper-pagination-Project-4',
+                nextEl: '.swiper-button-next-project-4',
+                prevEl: '.swiper-button-prev-project-4',
+                spaceBetween: 10,
+                slidesPerView: 1,
+            },
+
+        ];
+
+        swiperConfigs.forEach((config, index) => {
+            new Swiper(config.container, {
+                spaceBetween: config.spaceBetween,
+                slidesPerView: config.slidesPerView,
+                pagination: {
+                    el: config.pagination,
+                },
+                navigation: {
+                    nextEl: config.nextEl,
+                    prevEl: config.prevEl
+                },
+                autoplay: {
+                    delay: 3000 + (index * 500),
+                    disableOnInteraction: false
+                },
+                loop: true,
+                speed: 800
+            });
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const headers = document.querySelectorAll('.accordion-header');
+
+        headers.forEach(header => {
+            header.addEventListener('click', function () {
+                const body = this.nextElementSibling;
+
+                if (body.style.maxHeight) {
+                    body.style.maxHeight = null;
+                    this.querySelector('.icon').innerHTML = '<svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 1.25L6.5 6.75L1 1.25" stroke="black"/></svg>';
+                } else {
+                    document.querySelectorAll('.accordion-body').forEach(b => {
+                        b.style.maxHeight = null;
+                    });
+                    document.querySelectorAll('.icon').forEach(icon => {
+                        icon.innerHTML = '<svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 1.25L6.5 6.75L1 1.25" stroke="black"/></svg>';
+                    });
+
+                    body.style.maxHeight = body.scrollHeight + 'px';
+                    this.querySelector('.icon').textContent = '−';
+                }
+            });
+        });
+    });
+
+    let messageSend = document.querySelector(".messageSend")
+    let commentP = document.querySelector(".commentP")
+
+    function renderCommentFn(args) {
+
+    }
+    document.querySelector('.submitComment').addEventListener('click', (event) => {
+        //  let input1  = document.querySelector('.namee')
+        event.preventDefault();
+        let textar = document.querySelectorAll('.commentP input')
+        let emptyFlag = false;
+        textar.forEach(element => {
+            if (element.value == "") {
+                emptyFlag = true
+            }
+        });
+        if (!emptyFlag) {
+
+            let val = document.querySelector(".commentP textarea").value;
+            let userName = document.querySelector(".commentP .userName").value;
+
+            $bc.setSource('db.send', true)
+            $bc.setSource('db.senduserName', userName)
+            $bc.setSource('db.sendcomment', val)
+            $bc.setSource('db.run', true)
+            let sendbox = document.querySelector('.messageSend')
+            let text = sendbox.querySelector('p')
+            text.innerHTML = 'درخواست شما با موفقیت ثبت شد'
+            commentP.reset()
+            messageSend.style.display = "block"
+
+            document.querySelector(".commentP").reset();
+            setTimeout(() => {
+                messageSend.style.display = "none"
+            }, 3500)
+        } else {
+            let sendbox = document.querySelector('.messageSend')
+            let text = sendbox.querySelector('p')
+            text.innerHTML = 'فیلدهای الزامی را پر کنید'
+            messageSend.style.display = "block"
+
+            setTimeout(() => {
+                messageSend.style.display = "none"
+            }, 3500)
+
+        }
+
+
+    })
+
+
+</script>
+
+</html>
