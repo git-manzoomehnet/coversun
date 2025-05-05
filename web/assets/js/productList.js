@@ -29,7 +29,6 @@ function onAllImagesLoaded(container, callback) {
   
   onAllImagesLoaded(document, () => {
     console.log('همه تصاویر (حتی اونی که ارور داده) بررسی شدن.');
-    let breadcrumb = document.querySelector('.breadCrumb');
 
     const swiper = new Swiper('.swiper', {
       slidesPerView: "auto",
@@ -38,20 +37,18 @@ function onAllImagesLoaded(container, callback) {
       allowTouchMove: true,
       freeMode: true,
 
+    
       on: {
-        setTranslate(translate) {
-          // مقدار translate معمولا منفی میشه وقتی اسلایدر حرکت می‌کنه
-          console.log(translate);
-          
-          if (translate !== 0) {
-            breadcrumb.classList.add('hide-breadcrumb');
-          } else {
-            breadcrumb.classList.remove('hide-breadcrumb');
-          }
-        }
-
-    },
-
+   
+      
+      
+        slideChange: function () {
+          handleHeaderVisibility();
+        },
+        reachEnd: function () {
+          handleHeaderVisibility();
+        },
+      },
     });
   
     document.querySelectorAll(".productSlide").forEach(element => {
@@ -62,3 +59,18 @@ function onAllImagesLoaded(container, callback) {
   });
   
 
+// کد برای پنهان کردن هدر وقتی به فوتر می‌رسیم
+function handleHeaderVisibility() {
+  let slides = document.querySelectorAll(".swiper-slide")
+  if (slides[slides.length-1].classList.contains("swiper-slide-next")) {
+      document.querySelector("header").style.opacity="0"
+    
+  }
+  // if (footerSection.classList.contains("swiper-slide-next")) {
+  //   document.querySelector("header").style.opacity="0"
+  // }
+  else{
+    document.querySelector("header").style.opacity="1"
+
+  }
+}

@@ -174,7 +174,6 @@ $(".containerHorizontal").imagesLoaded({
 
 }, function () {
     $(document).ready(function () {
-  console.log('همه تصاویر (حتی اونی که ارور داده) بررسی شدن.');
 
     setTimeout(() => {
       gsap.registerPlugin(ScrollTrigger);
@@ -228,6 +227,143 @@ $(".containerHorizontal").imagesLoaded({
 
       // Custom js
 
+
+      scroller.on('scroll', (e) => {
+        let scrollTop =e.scroll.y 
+
+        
+        if (scrollTop < 40) {
+          isScrolling = false;
+
+          document.querySelector(".homePage .logo-landing span").style.opacity="1"
+        } else {
+          if (!isScrolling) {
+            isScrolling = true;
+            document.querySelector(".homePage .logo-landing span").style.opacity="0"
+
+          }
+        }
+      });
+
+
+      let darkLogoA = "/images/logo-dark.png"
+      let darkLogoCover = "/images/coversun-logo-dark.png"
+      let darkSec = document.querySelectorAll(".darkSec")
+      let prevLog = document.querySelector("header .lSec img").getAttribute("src")
+      let prevLogCover = document.querySelector("header .logo-landing img").getAttribute("src")
+
+      darkSec.forEach(element => {
+          gsap.from(element, {
+              scrollTrigger: {
+                  trigger: element,
+                  start: 'right -5%',
+                  end: 'left 20%',
+                  containerAnimation: scrollTween,
+                  onEnter: ()=>{
+                    console.log("enter");
+                    
+                    
+                    document.querySelector("header .lSec img").setAttribute("src" , prevLog)
+                  },
+                  onLeave: ()=>{
+                    
+                    console.log("leave");
+                    
+                    document.querySelector("header .lSec img").setAttribute("src" , darkLogoA)
+                  },
+                  onEnterBack: ()=>{
+                    console.log("enterBack");
+                    document.querySelector("header .lSec img").setAttribute("src" , prevLog)
+                    
+                    
+                  },
+                  onLeaveBack: ()=>{
+                    
+                    console.log("leaveBack");
+                    
+                    document.querySelector("header .lSec img").setAttribute("src" , darkLogoA)
+                  },
+              },
+             
+
+
+
+          })
+          gsap.from(element, {
+              scrollTrigger: {
+                  trigger: element,
+                  start: 'right 60%',
+                  end: 'left 80%',
+                  containerAnimation: scrollTween,
+                  // markers:true,
+                  onEnter: ()=>{
+                    
+                    document.querySelector("header").classList.remove("blackHeader")
+
+                      
+                    document.querySelector("header .logo-landing img").setAttribute("src" , prevLogCover)
+                  },
+                  
+                  onLeave: ()=>{
+                    
+                    document.querySelector("header").classList.add("blackHeader")
+                    document.querySelector("header .logo-landing img").setAttribute("src" , darkLogoCover)
+
+                  },
+                  onEnterBack: ()=>{
+                    document.querySelector("header").classList.remove("blackHeader")
+                    document.querySelector("header .logo-landing img").setAttribute("src" , prevLogCover)
+
+                  },
+                  onLeaveBack: ()=>{
+                    document.querySelector("header").classList.add("blackHeader")
+                    document.querySelector("header .logo-landing img").setAttribute("src" , darkLogoCover)
+
+
+                  },
+              },
+             
+
+
+
+          })
+      });
+
+
+      gsap.to("header", {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".footerSection",
+          containerAnimation: scrollTween,
+          start: 'right 20%',
+          end: 'left -1%',
+
+          onEnter: ()=>{
+            console.log("enter");
+            document.querySelector("header").style.opacity="0"
+
+          },
+          onLeave: ()=>{
+            document.querySelector("header").style.opacity="0"
+
+            
+          },
+          onEnterBack: ()=>{
+            console.log("enterBack");
+            
+            
+          },
+          onLeaveBack: ()=>{
+            
+            document.querySelector("header").style.opacity="1"
+            
+          },
+
+
+        }
+      });
+
+
       let catLists = document.querySelector(".catLists")
       let catImgs = document.querySelectorAll(".bgImg img")
       catLists.querySelectorAll("li").forEach((element, i) => {
@@ -242,7 +378,6 @@ $(".containerHorizontal").imagesLoaded({
           }, 100);
         })
         element.addEventListener("mouseleave", function (params) {
-          console.log("out");
           element.querySelector(".listSvg").classList.remove("draw");
 
           catLists.style.width = "255px";
@@ -273,7 +408,6 @@ $(".containerHorizontal").imagesLoaded({
         fetch(`/project-video.inc?title=${titleProject}`)
           .then(response => response.text())
           .then(videoElem => {
-            console.log("videoElem", videoElem);
             const socialInfo = element.querySelector(".videoS");
             socialInfo.innerHTML = videoElem;
           })

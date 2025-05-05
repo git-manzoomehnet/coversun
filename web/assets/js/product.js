@@ -83,17 +83,17 @@ const gallerySlider = new Swiper('.gallerySlider', {
   let inputs = document.querySelectorAll('.commentP input')
   let textas = document.querySelectorAll('.commentP textarea')
   let emptyFlag = false;
-  let loaderBtn = document.querySelector(".loaderBtn")
-  loaderBtn.style.display="block"
-  submitComment.querySelector("span").style.display="none"
-  submitComment.style.background="#00A752"
+  // let loaderBtn = document.querySelector(".loaderBtn")
+  // loaderBtn.style.display="block"
+  // submitComment.querySelector("span").style.display="none"
+  // submitComment.style.background="#00A752"
   inputs.forEach(element => {
       
       if (element.value == "") {
           if (element.classList.contains("codeinputm")) {
               
               emptyFlag = true;
-             element.setAttribute("placeholder" , "لطفا کد امنیتی را وارد نمایید")
+          //    element.setAttribute("placeholder" , "لطفا کد امنیتی را وارد نمایید")
              element.parentElement.classList.add("emptyInput")
           //    console.log(element.parentElement);
              
@@ -101,7 +101,7 @@ const gallerySlider = new Swiper('.gallerySlider', {
           else{
               
               emptyFlag = true;
-              element.setAttribute("placeholder" , "لطفا این فیلد را پر نمایید")
+              // element.setAttribute("placeholder" , "لطفا این فیلد را پر نمایید")
               element.classList.add("emptyInput")
           }
           
@@ -114,7 +114,7 @@ const gallerySlider = new Swiper('.gallerySlider', {
           
               
               emptyFlag = true;
-              element.setAttribute("placeholder" , "لطفا این فیلد را پر نمایید")
+              // element.setAttribute("placeholder" , "لطفا این فیلد را پر نمایید")
               element.classList.add("emptyInput")
           
           
@@ -137,22 +137,21 @@ const gallerySlider = new Swiper('.gallerySlider', {
       document.querySelector(".commentP").reset();
       setTimeout(() => {
           messageSend.style.display = "none"
-          loaderBtn.style.display="none"
-          submitComment.querySelector("span").style.display="block"
+          // loaderBtn.style.display="none"
+          // submitComment.querySelector("span").style.display="block"
   
       }, 5000)
   }
   else {
-      // let sendbox = document.querySelector('.messageSend')
-      // let text = sendbox.querySelector('p')
-      // text.innerHTML = 'فیلدهای الزامی را پر کنید'
-      // messageSend.style.display = "block"
+      let sendbox = document.querySelector('.messageSend')
+      let text = sendbox.querySelector('p')
+      text.innerHTML = 'فیلدهای الزامی را پر کنید'
+      messageSend.style.display = "block"
       
       setTimeout(() => {
-          // messageSend.style.display = "none"
-          loaderBtn.style.display="none"
-          submitComment.querySelector("span").style.display="block"
-  
+          messageSend.style.display = "none"
+          // loaderBtn.style.display="none"
+          // submitComment.querySelector("span").style.display="block"
       }, 5000)
   
   }
@@ -161,7 +160,7 @@ const gallerySlider = new Swiper('.gallerySlider', {
       inputs.forEach(element => {
           if (element.classList.contains("codeinputm")) {
               element.classList.remove("emptyInput")
-              element.setAttribute("placeholder","کد امنیتی را وارد نمایید")
+              // element.setAttribute("placeholder","کد امنیتی را وارد نمایید")
               element.parentElement.classList.remove("emptyInput")
               submitComment.style.background="transparent"
   
@@ -170,7 +169,7 @@ const gallerySlider = new Swiper('.gallerySlider', {
   
   
               element.classList.remove("emptyInput")
-              element.setAttribute("placeholder","")
+              // element.setAttribute("placeholder","")
               element.parentElement.classList.remove("emptyInput")
               submitComment.style.background="transparent"
           }
@@ -179,7 +178,7 @@ const gallerySlider = new Swiper('.gallerySlider', {
       textas.forEach(element => {
   
           element.classList.remove("emptyInput")
-          element.setAttribute("placeholder","")
+          // element.setAttribute("placeholder","")
           submitComment.style.background="transparent"
           
       })
@@ -187,6 +186,8 @@ const gallerySlider = new Swiper('.gallerySlider', {
   
   
   })
+  
+  
   
   
   

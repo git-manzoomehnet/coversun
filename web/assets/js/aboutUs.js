@@ -251,7 +251,6 @@ $(".containerHorizontal").imagesLoaded({
           })
       });
 
-      let darkLogoA = "/images/logo-dark.png"
       let numberEff = document.querySelectorAll(".numberEff")
       numberEff.forEach(element => {
           gsap.from(element, {
@@ -306,17 +305,52 @@ $(".containerHorizontal").imagesLoaded({
 
           })
       });
+
+      gsap.to("header", {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".footerSection",
+          containerAnimation: scrollTween,
+          start: 'right 20%',
+          end: 'left -1%',
+
+          onEnter: ()=>{
+            console.log("enter");
+            document.querySelector("header").style.opacity="0"
+
+          },
+          onLeave: ()=>{
+            document.querySelector("header").style.opacity="0"
+
+            
+          },
+          onEnterBack: ()=>{
+            console.log("enterBack");
+            
+            
+          },
+          onLeaveBack: ()=>{
+            
+            document.querySelector("header").style.opacity="1"
+            
+          },
+
+
+        }
+      });
+      let darkLogoA = "/images/logo-dark.png"
+      let darkLogoCover = "/images/coversun-logo-dark.png"
       let darkSec = document.querySelectorAll(".darkSec")
       let prevLog = document.querySelector("header .lSec img").getAttribute("src")
+      let prevLogCover = document.querySelector("header .logo-landing img").getAttribute("src")
 
       darkSec.forEach(element => {
           gsap.from(element, {
               scrollTrigger: {
                   trigger: element,
-                  start: 'left -5%',
-                  end: 'right 20%',
+                  start: 'right -5%',
+                  end: 'left 20%',
                   containerAnimation: scrollTween,
-                  // markers:true,
                   onEnter: ()=>{
                     console.log("enter");
                     
@@ -351,12 +385,33 @@ $(".containerHorizontal").imagesLoaded({
           gsap.from(element, {
               scrollTrigger: {
                   trigger: element,
-                  start: 'left 30%',
-                  end: 'left -10%',
+                  start: 'right 50%',
+                  end: 'left 80%',
                   containerAnimation: scrollTween,
                   onEnter: ()=>{
-                    element.classList.add("activeSec")
                     
+                    document.querySelector("header").classList.remove("blackHeader")
+
+                      
+                    document.querySelector("header .logo-landing img").setAttribute("src" , prevLogCover)
+                  },
+                  
+                  onLeave: ()=>{
+                    
+                    document.querySelector("header").classList.add("blackHeader")
+                    document.querySelector("header .logo-landing img").setAttribute("src" , darkLogoCover)
+
+                  },
+                  onEnterBack: ()=>{
+                    document.querySelector("header").classList.remove("blackHeader")
+                    document.querySelector("header .logo-landing img").setAttribute("src" , prevLogCover)
+
+                  },
+                  onLeaveBack: ()=>{
+                    document.querySelector("header").classList.add("blackHeader")
+                    document.querySelector("header .logo-landing img").setAttribute("src" , darkLogoCover)
+
+
                   },
               },
              

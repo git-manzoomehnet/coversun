@@ -170,21 +170,31 @@
 //   });
 // })
 
-$(".containerHorizontal").imagesLoaded({
-
-}, function () {
-    $(document).ready(function () {
-  console.log('همه تصاویر (حتی اونی که ارور داده) بررسی شدن.');
-
+$(".containerHorizontal").imagesLoaded({}, function () {
+  $(document).ready(function () {
     setTimeout(() => {
       gsap.registerPlugin(ScrollTrigger);
 
       const pageContainer = document.querySelector('.containerHorizontal');
+      const pinWrap = document.querySelector('.Pin-Wrapp');
+      const sections = document.querySelectorAll('.Pin-Wrapp > section');
+      const scrollLength = pinWrap.scrollWidth - window.innerWidth;
 
+      // ذخیره موقعیت‌های section ها
+      const sectionPositions = [];
+      sections.forEach((section, index) => {
+        sectionPositions.push({
+          id: section.id,
+          position: section.offsetLeft,
+          progress: section.offsetLeft / scrollLength
+        });
+      });
+
+      // تنظیمات LocomotiveScroll برای اسکرول عمودی
       const scroller = new LocomotiveScroll({
         el: pageContainer,
         smooth: true,
-        direction: 'vertical', // اسکرول افقی با GSAP هست، نه Locomotive
+        direction: 'vertical', // اسکرول عمودی
       });
 
       scroller.on('scroll', ScrollTrigger.update);
@@ -205,61 +215,91 @@ $(".containerHorizontal").imagesLoaded({
       });
 
       ScrollTrigger.addEventListener('refresh', () => scroller.update());
-
-      let pinWrap = document.querySelector('.Pin-Wrapp');
-      let scrollLength = pinWrap.scrollWidth - window.innerWidth;
-
-     let scrollTween =  gsap.to(pinWrap, {
-        x: scrollLength, // حرکت از راست به چپ
+let currentProgress;
+let prevScroll;
+      // ایجاد اسکرول افقی
+      let scrollTween = gsap.to(pinWrap, {
+        x: scrollLength,
         ease: 'none',
         scrollTrigger: {
           trigger: '#PinSection',
-          scroller: pageContainer,
+          scroller: pageContainer, // استفاده از اسکرول عمودی برای افقی
           start: 'top top',
           end: () => `+=${scrollLength}`,
           scrub: true,
           pin: true,
           anticipatePin: 1,
+          onUpdate: self => {
+            console.log(prevScroll);
+            
+             currentProgress = self.progress + prevScroll?prevScroll : 0;
+            prevScroll = currentProgress;
+            console.log("currentProgress" , currentProgress);
+            
+            // به روزرسانی وضعیت فعال navigation
+            updateActiveNav(currentProgress);
+          }
         }
       });
 
-      ScrollTrigger.refresh();
+      // تابع برای به روزرسانی navigation فعال
+      function updateActiveNav(currentProgress) {
+        let activeSection = null;
+        sectionPositions.forEach((section, index) => {
+          if (currentProgress >= section.progress - 0.1) {
+            activeSection = section.id;
 
+          }
+        });
 
-      // Custom js
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('data-section') === activeSection) {
+            link.classList.add('active');
+          }
+        });
+      }
 
+      // کلیک نویگیشن
+      document.querySelectorAll('.navigation li[data-target]').forEach(navItem => {
+        navItem.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const targetSelector = this.getAttribute('data-target');
+          const targetEl = document.querySelector(`.${targetSelector}`);
+
+          if (targetEl) {
+            const targetIndex = Array.from(sections).indexOf(targetEl);
+            let totalOffset = 0;
+
+            for (let i = 0; i < targetIndex; i++) {
+              totalOffset += sections[i].offsetWidth;
+
+            }
+
+            const progress = totalOffset / scrollLength;
+            prevScroll = prevScroll+progress
     
-
-
-  
-
-
-
-
-    //   let splPara = document.querySelectorAll(".scrollToTop")
-    //   splPara.forEach(element => {
-    //       gsap.from(element, {
-    //           scrollTrigger: {
-    //               trigger: element,
-    //               start: 'left left',
-    //               end: 'left -40%',
-    //               containerAnimation: scrollTween,
-    //           },
-    //           y: 30,
-    //           opacity: 0,
-    //           stagger: 0.1,
-    //           delay: 0,
-    //           duration: 1,
-
-
-
-    //       })
-    //   });
-
+            console.log("progress" , progress);
+            
+            // فقط کنترل progress خود scrollTween
+            gsap.to(scrollTween, {
+              progress: progress,
+              duration: 1.2,
+              ease: "power2.out",
+              onUpdate: () => {
+                scroller.update();
+              },
+              onComplete: () => {
+                scroller.update();
+              }
+            });
+          }
+        });
+      });
 
 
 
     }, 500);
-})
-
-})
+  });
+});

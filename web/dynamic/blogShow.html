@@ -51,7 +51,14 @@
 <body>
     <main class="blogShow" dir="rtl">
         <basis core="call" file="header.inc" />
+        <div class="cursor w-[116px] flex items-center justify-center h-[116px] rounded-full scale-0 [&.activeCursor]:opacity-100 origin-center [&.activeCursor]:scale-100 duration-300 opacity-0 bg-white">
 
+            <svg width="25" height="28" viewBox="0 0 25 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24.2939 27.5498L8.26559 6.44668" stroke="#A1A1AA"/>
+                <path d="M6.04883 20.0605L7.96384 6.04867L21.9757 7.96368" stroke="#A1A1AA"/>
+                </svg>
+                
+        </div>
         <div class="breadCrumb mb-11 pt-1 pb-3 bg-gray50 z-1 mt-[156px]">
             <div class="w-90p mx-auto flex justify-between items-center">
                 <ul class="flex items-center gap-x-1.5">
@@ -702,7 +709,9 @@
 
     <basis core="call" file="scripts.inc" />
     <script src="[##cms.cms.cdn##]/js/scrollTotop.js"></script>
-
+    
+    <script src="[##cms.cms.cdn##]/_js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/TweenMax.min.js"></script>
     <script src="[##cms.cms.cdn##]/_js/basiscore-2.30.1.min.js"></script>
     <script src="[##cms.cms.cdn##]/_js/swiper-bundle11.0.5.min.js"></script>
     <script src="[##cms.cms.cdn##]/js/article.js"></script>

@@ -79,17 +79,17 @@ event.preventDefault();
 let inputs = document.querySelectorAll('.commentP input')
 let textas = document.querySelectorAll('.commentP textarea')
 let emptyFlag = false;
-let loaderBtn = document.querySelector(".loaderBtn")
-loaderBtn.style.display="block"
-submitComment.querySelector("span").style.display="none"
-submitComment.style.background="#00A752"
+// let loaderBtn = document.querySelector(".loaderBtn")
+// loaderBtn.style.display="block"
+// submitComment.querySelector("span").style.display="none"
+// submitComment.style.background="#00A752"
 inputs.forEach(element => {
 	
 	if (element.value == "") {
 		if (element.classList.contains("codeinputm")) {
 			
 			emptyFlag = true;
-		   element.setAttribute("placeholder" , "لطفا کد امنیتی را وارد نمایید")
+		//    element.setAttribute("placeholder" , "لطفا کد امنیتی را وارد نمایید")
 		   element.parentElement.classList.add("emptyInput")
 		//    console.log(element.parentElement);
 		   
@@ -97,7 +97,7 @@ inputs.forEach(element => {
 		else{
 			
 			emptyFlag = true;
-			element.setAttribute("placeholder" , "لطفا این فیلد را پر نمایید")
+			// element.setAttribute("placeholder" , "لطفا این فیلد را پر نمایید")
 			element.classList.add("emptyInput")
 		}
 		
@@ -110,7 +110,7 @@ textas.forEach(element => {
 		
 			
 			emptyFlag = true;
-			element.setAttribute("placeholder" , "لطفا این فیلد را پر نمایید")
+			// element.setAttribute("placeholder" , "لطفا این فیلد را پر نمایید")
 			element.classList.add("emptyInput")
 		
 		
@@ -133,22 +133,21 @@ if (!emptyFlag) {
 	document.querySelector(".commentP").reset();
 	setTimeout(() => {
 		messageSend.style.display = "none"
-		loaderBtn.style.display="none"
-		submitComment.querySelector("span").style.display="block"
+		// loaderBtn.style.display="none"
+		// submitComment.querySelector("span").style.display="block"
 
 	}, 5000)
 }
 else {
-	// let sendbox = document.querySelector('.messageSend')
-	// let text = sendbox.querySelector('p')
-	// text.innerHTML = 'فیلدهای الزامی را پر کنید'
-	// messageSend.style.display = "block"
+	let sendbox = document.querySelector('.messageSend')
+	let text = sendbox.querySelector('p')
+	text.innerHTML = 'فیلدهای الزامی را پر کنید'
+	messageSend.style.display = "block"
 	
 	setTimeout(() => {
-		// messageSend.style.display = "none"
-		loaderBtn.style.display="none"
-		submitComment.querySelector("span").style.display="block"
-
+		messageSend.style.display = "none"
+		// loaderBtn.style.display="none"
+		// submitComment.querySelector("span").style.display="block"
 	}, 5000)
 
 }
@@ -157,7 +156,7 @@ setTimeout(() => {
 	inputs.forEach(element => {
 		if (element.classList.contains("codeinputm")) {
 			element.classList.remove("emptyInput")
-			element.setAttribute("placeholder","کد امنیتی را وارد نمایید")
+			// element.setAttribute("placeholder","کد امنیتی را وارد نمایید")
 			element.parentElement.classList.remove("emptyInput")
 			submitComment.style.background="transparent"
 
@@ -166,7 +165,7 @@ setTimeout(() => {
 
 
 			element.classList.remove("emptyInput")
-			element.setAttribute("placeholder","")
+			// element.setAttribute("placeholder","")
 			element.parentElement.classList.remove("emptyInput")
 			submitComment.style.background="transparent"
 		}
@@ -175,7 +174,7 @@ setTimeout(() => {
 	textas.forEach(element => {
 
 		element.classList.remove("emptyInput")
-		element.setAttribute("placeholder","")
+		// element.setAttribute("placeholder","")
 		submitComment.style.background="transparent"
 		
 	})
@@ -199,3 +198,47 @@ navigation: {
 },
 
 });
+
+var cursor = $(".cursor");
+
+var posX = 0,
+	posY = 0;
+
+var mouseX = 0,
+	mouseY = 0;
+
+TweenMax.to({}, 0.016, {
+	repeat: -1,
+	onRepeat: function () {
+		posX += (mouseX - posX) / 9;
+		posY += (mouseY - posY) / 9;
+
+	
+
+		TweenMax.set(cursor, {
+			css: {
+				left: mouseX,
+				top: mouseY
+			}
+		});
+	}
+});
+
+$(document).on("mousemove", function (e) {
+	mouseX = e.clientX;
+	mouseY = e.clientY;
+});
+
+
+let boxes = document.querySelectorAll(".gallerySlider .swiper-slide")
+boxes.forEach(element => {
+ element.addEventListener("mouseenter", function (params) {
+	 document.querySelector(".cursor").classList.add("activeCursor")
+
+ })
+
+ element.addEventListener("mouseleave", function (params) {
+   document.querySelector(".cursor").classList.remove("activeCursor")
+
+ })
+})

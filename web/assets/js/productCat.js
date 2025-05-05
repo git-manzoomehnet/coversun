@@ -227,7 +227,38 @@ $(".containerHorizontal").imagesLoaded({
 
             // Custom js
 
+            gsap.to("header", {
+                opacity: 0,
+                scrollTrigger: {
+                  trigger: ".footerSection",
+                  containerAnimation: scrollTween,
+                  start: 'right 20%',
+                  end: 'left -1%',
 
+                  onEnter: ()=>{
+                    console.log("enter");
+                    document.querySelector("header").style.opacity="0"
+
+                  },
+                  onLeave: ()=>{
+                    document.querySelector("header").style.opacity="0"
+
+                    
+                  },
+                  onEnterBack: ()=>{
+                    console.log("enterBack");
+                    
+                    
+                  },
+                  onLeaveBack: ()=>{
+                    
+                    document.querySelector("header").style.opacity="1"
+                    
+                  },
+
+
+                }
+              });
             var cursor = $(".cursor");
 
             var posX = 0,
