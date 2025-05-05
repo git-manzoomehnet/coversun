@@ -183,7 +183,7 @@
                                     <face filter="ord=10">
                                         <div class="w-full h-28 flex flex-col justify-between items-center">
                                             <div class="w-full h-20 bg-[#D9D9D9]">
-                                                <img class="w-full h-20" src="[##cms.cms.cdn##]/@largeIMG"
+                                                <img class="w-full h-20" src="[##cms.cms.cdn##]/@largeIMG"                                                
                                                     alt="@title" />
                                             </div>
                                             <div class="w-full flex justify-start items-start">
@@ -212,11 +212,11 @@
                             </span>
                         </button>
                         <div class="accordion-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <div class="flex flex-row justify-center items-center mt-[20px] gap-2.5">
+                            <div class="flex flex-row justify-start items-sjustify-start mt-[20px] gap-2.5 [&>p]:!p-0">
                                 <basis core="list" datamembername="list.productJoin">
                                     <face>
-                                        <p>@db.related-product.10000792</p>
-
+                                        
+                                        <p class="[&>p]:font-IRANYekan300 [&>p]:text-[13px] [&>p]:text-gray-700">@db.related-product.prp_10000792</p>                                           
                                     </face>
                                 </basis>
                             </div>
@@ -242,11 +242,11 @@
                                     <basis core="print" datamembername="db.product">
                                         <face filter="prpID not in (17826,10000792,54862,17856)">
 
-                                            <li class="py-2.5 flex items-center">
-                                                <span class="font-IRANYekan500 text-base text-gray600">
+                                            <li class="flex items-center [&>p]:!p-0">
+                                                <!-- <span class="font-IRANYekan300 text-[15px] text-gray-700">
                                                     @Question
-                                                </span>
-                                                <p class="font-IRANYekan500 text-base text-black">
+                                                </span> -->
+                                                <p class="font-IRANYekan300 text-[13px] text-gray-700">
                                                     @Answer
                                                 </p>
                                             </li>
@@ -274,7 +274,7 @@
                             <div class="flex flex-col justify-start items-start mt-[20px] gap-2.5">
                                 <basis core="print" datamembername="db.pdf-product">
                                     <face>
-                                        <a href="[##cms.cms.cdn##]/@largeIMG" download target="_blank">دریافت
+                                        <a class="font-IRANYekan300 text-[13px] text-gray-700" href="[##cms.cms.cdn##]/@largeIMG" download target="_blank">دریافت
                                             کاتالوگ</a>
                                     </face>
 
@@ -299,9 +299,12 @@
                                 @child
                             </layout>
                             <else-layout>
-                                هنوز کامنتی ثبت نشده است.
-                                <br>
-                                شما اولین نفر باشید
+                                <div class="w-full h-[200px] flex flex-col justify-center items-center">
+                                    <p class="text-center">هنوز کامنتی ثبت نشده است.</p>                                    
+                                    <br>
+                                    <p class="text-center">شما اولین نفر باشید</p>
+                                                                        
+                                </div>
                             </else-layout>
                             <face>
                                 <div class="swiper-slide !w-full h-[367px]">
@@ -470,7 +473,7 @@
         </basis>
         <basis core="print" datamembername="db.relatedblog">
             <layout>
-                <section class="mt-[33px] pr-5 h-auto pt-2.5 ">
+                <section class="mt-[33px] pr-5 h-auto pt-2.5 mb-12">
                     <div class="flex flex-col justify-start gap-4">
                         <div>
                             <h4 class="text-[18px] font-IRANYekan500 text-black">مقالات مرتبط</h4>
@@ -490,13 +493,13 @@
                 <div class="swiper-slide w-full h-[389px] flex flex-col gap-1.5">
                     <div class="w-full h-full">
                         <a href="/@link" title="@title">
-                            <img class="w-[360px] h-[196px]" src="[##cms.cms.cdn##]/@00400X00300prp" alt="">
+                            <img class="w-[360px] h-[196px]" src="[##cms.cms.cdn##]/@image" alt="">
                         </a>
                     </div>
                     <div class="flex flex-col gap-2.5">
                         <span class="text-[14px] text-gray-600 font-PxGrotesk400">@prp_7249</span>
                         <h4 class="text-[16px] font-IRANYekan500 text-black">@title</h4>
-                        <p class="text-[14px] font-IRANYekan300 leading-[28px] h-[72px] overflow-hidden text-gray-500">
+                        <p class="text-[14px] font-IRANYekan300 leading-[28px] h-[85px] overflow-hidden text-gray-500">
                             @prp_7244</p>
 
                     </div>
@@ -504,38 +507,44 @@
                 </div>
             </face>
         </basis>
+        <basis core="print" datamembername="db.video-product">
+            <layout>
+                <section class="mt-[33px] px-5 h-auto pt-2.5 ">
+                    <div class="flex flex-col justify-start gap-4">
+                        <div>
+                            <h4 class="text-[18px] font-IRANYekan500 text-black">نمونه پروژه های اجرا شده</h4>
+                        </div>                        
+                        @child    
+                    </div>
+                    </div>
+                </section>
+            </layout>
+            <face filter="format=3">
+                <div class="viduBoxM w-full h-[355px] flex flex-col gap-1.5">
+                    <div class="w-full h-full overflow-hidden">
+                        <video src="[##cms.cms.cdn##]/@largeIMG" muted loop controls playsinline
+                            class="h-full object-cover grayscale-100 group-hover/viduBox:grayscale-0 duration-500">
 
-        <section class="mt-[33px] px-5 h-auto pt-2.5 ">
-            <div class="flex flex-col justify-start gap-4">
-                <div>
-                    <h4 class="text-[18px] font-IRANYekan500 text-black">نمونه پروژه های اجرا شده</h4>
+                        </video>
+                    </div>
                 </div>
-                <basis core="print" datamembername="db.video-product">
-                    <face filter="format=3">
-                        <div class="viduBoxM w-full h-[355px] flex flex-col gap-1.5">
-                            <div class="w-full h-full overflow-hidden">
-                                <video src="[##cms.cms.cdn##]/@largeIMG" muted loop controls playsinline
-                                    class="h-full object-cover grayscale-100 group-hover/viduBox:grayscale-0 duration-500">
+            </face>
+            <face filter="format=4">
+                <div class="w-full h-[355px] flex flex-col">
+                    <div class="w-full h-full overflow-hidden">
+                        <img src="[##cms.cms.cdn##]/@largeIMG"
+                            class="h-full object-cover grayscale-100 group-hover/imgBox:grayscale-0 duration-500" />
+                    </div>
+                </div>
 
-                                </video>
-                            </div>
-                        </div>
-                    </face>
-                    <face filter="format=4">
-                        <div class="w-full h-[355px] flex flex-col">
-                            <div class="w-full h-full overflow-hidden">
-                                <img src="[##cms.cms.cdn##]/@largeIMG"
-                                    class="h-full object-cover grayscale-100 group-hover/imgBox:grayscale-0 duration-500" />
-                            </div>
-                        </div>
-
-                    </face>
-                </basis>
-
-            </div>
-            </div>
-        </section>
+            </face>
+        </basis>
     </main>
+    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
+
+
+    <script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
+    <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]" />
 </body>
 <script src="http://www.ramand-co.com/_js/swiper.js"></script>
 <script src="https://cdn.basiscore.net/academy.basiscore.com/_js/basiscore-2.23.1.min.js"></script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiple Boxes Example</title>
+  <link rel="stylesheet" href="./../assets/css/outputMobile.css">
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen gap-4 bg-gray-100">
+
+  <div class="flex flex-col gap-4 w-72">
+
+    <!-- Box 1 -->
+    <div class="box w-full h-[31px] bg-white border rounded-md overflow-hidden relative transition-all duration-500 cursor-pointer flex items-center justify-center shadow-md">
+      <span class="z-10 text-gray-800">باکس اول</span>
+      <img src="https://via.placeholder.com/150/FF0000/FFFFFF"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 pointer-events-none" />
+    </div>
+
+    <!-- Box 2 -->
+    <div class="box w-full h-[31px] bg-white border rounded-md overflow-hidden relative transition-all duration-500 cursor-pointer flex items-center justify-center shadow-md">
+      <span class="z-10 text-gray-800">باکس دوم</span>
+      <img src="https://via.placeholder.com/150/00FF00/FFFFFF"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 pointer-events-none" />
+    </div>
+
+    <!-- Box 3 -->
+    <div class="box w-full h-[31px] bg-white border rounded-md overflow-hidden relative transition-all duration-500 cursor-pointer flex items-center justify-center shadow-md">
+      <span class="z-10 text-gray-800">باکس سوم</span>
+      <img src="https://via.placeholder.com/150/0000FF/FFFFFF"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 pointer-events-none" />
+    </div>
+
+  </div>
+
+  <script>
+    const boxes = document.querySelectorAll('.box');
+
+    boxes.forEach((box) => {
+      box.addEventListener('click', () => {
+        boxes.forEach((b) => {
+          b.classList.replace("h-[75px]", "h-[31px]");
+          b.querySelector("img").classList.replace("opacity-100", "opacity-0");
+        });
+
+        if (!box.classList.contains("h-[75px]")) {
+          box.classList.replace("h-[31px]", "h-[75px]");
+          box.querySelector("img").classList.replace("opacity-0", "opacity-100");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

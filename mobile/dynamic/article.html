@@ -7,30 +7,30 @@
 <basis core="dbsource" source="basiscore" mid="20" name="db" lid="1" usedforid="[##cms.query.id##]">
     <member name="list5" type="list" request="groupid"></member>
 </basis>
-<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376632">
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]">
     <member name="article" type="view" />
 </basis>
-<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376632">
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]">
     <member name="article" type="view" />
     <member name="article250" postsql="select * from [db.article250] where TypeID = 250" type="view" />
 </basis>
-<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376632">
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="[##cms.query.id##]">
     <member name="image-article" type="list" format="4" />
 </basis>
-<basis core="dbsource" source="userbehavior" name="db" lid="1" userid="100005" usedforid="2376632">
+<basis core="dbsource" source="userbehavior" name="db" lid="1" userid="100005" usedforid="[##cms.query.id##]">
     <member request="listcomment" type="list" name="commentlist" link="event.bc" />
 </basis>
 
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376639">
     <member name="faq" type="view" />
 </basis>
-<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="1" usedforid="2376632">
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="1" usedforid="[##cms.query.id##]">
     <member type="list" name="related-project" link="project.bc" size="400x800" blgid="1611" />
 </basis>
-<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="1" usedforid="2376632">
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="1" usedforid="[##cms.query.id##]">
     <member type="list" name="related-product" propertyid="10000792" size="300x400" blgid="221" />
 </basis>
-<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="1" usedforid="2376632">
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="1" usedforid="[##cms.query.id##]">
     <member type="list" name="related-blog" propertyid="7244,7249" link="article.bc" size="400x300" blgid="222" />
 </basis>
 
@@ -501,9 +501,9 @@
                 </layout>
 
                 <face filter="TypeID=250">
-                    <div class="accordion-item border-b border-b-main ">
+                    <div class="accordion-item border-b border-b-main bg-gray-50 ">
                         <button
-                            class="accordion-header w-full text-right py-3 text-[16px] text-black font-IRANYekan500 flex justify-between items-center focus:outline-none">
+                            class="accordion-header w-full text-right py-3 h-[80px] bg-gray-50 text-[16px] text-black font-IRANYekan500 flex justify-between items-center focus:outline-none px-5" >
                             @text
                             <span class="icon">
                                 <svg width="22" height="23" viewBox="0 0 22 23" fill="none"
@@ -515,7 +515,7 @@
 
                             </span>
                         </button>
-                        <div class="accordion-body max-h-0  overflow-hidden transition-all duration-300 ease-in-out ">
+                        <div class="accordion-body max-h-0  overflow-hidden transition-all duration-300 ease-in-out bg-gray-50 mb-3.5">
                             <p class="text-[14px] font-IRANYekan300 pb-6 text-back-gray [&>p]:pb-[5px] ">@largetext</p>
                         </div>
                     </div>

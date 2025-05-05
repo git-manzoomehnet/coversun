@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GSAP Seamless Marquee</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<link rel="stylesheet" href="./../assets/css/outputMobile.css">
+  <style>
+    .marquee-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      background: white;
+      z-index: 9999;
+      height: 60px;
+    }
+
+    .marquee-track {
+      display: flex;
+      white-space: nowrap;
+      will-change: transform;
+    }
+
+    .marquee-item {
+      padding-right: 4rem;
+      font-size: 32px;
+      font-family: 'Raleway Dots', sans-serif;
+      color: #1f2937; /* Tailwind text-gray-800 */
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <div class="marquee-container">
+    <div class="marquee-track" id="marquee">
+      <div class="marquee-item">dORSA HOME + COVERSUN</div>
+      <div class="marquee-item">dORSA HOME + COVERSUN</div>
+      <div class="marquee-item">dORSA HOME + COVERSUN</div>
+      <div class="marquee-item">dORSA HOME + COVERSUN</div>
+      <div class="marquee-item">dORSA HOME + COVERSUN</div>
+      <div class="marquee-item">dORSA HOME + COVERSUN</div>
+      <div class="marquee-item">dORSA HOME + COVERSUN</div>
+    </div>
+  </div>
+
+  <script>
+    const marquee = document.getElementById("marquee");
+
+    gsap.to(marquee, {
+      xPercent: -50,
+      ease: "none",
+      duration: 20,
+      repeat: -1,
+      modifiers: {
+        xPercent: gsap.utils.wrap(-50, 0)
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,3 +1,10 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" catid="214363" run="atclient">
+    <member name="list-project" size="400x80" type="list" preview="true" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="214364">
+    <member name="list-project" size="400x80" type="list" />
+</basis>
+
 <html lang="en">
 
 <head>
@@ -6,58 +13,55 @@
     <link rel="stylesheet" href="./../assets/css/outputMobile.css">
     <title>Document</title>
 </head>
+<style>
+    .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .marquee-content {
+                font-size: 1rem; 
+                animation-duration: 12s; 
+            }
+        }
+   
+</style>
+
 <body>
-    <header>
-        <div class="absolute z-50 w-full flex px-5 pt-2.5 flex-row justify-between items-center h-[70px] mb-2.5">
-            <div class="flex flex-col h-full justify-center items-center ">
-                <div class="flex flex-row">
-                    <button id="openmenu">
-                        <svg width="29" height="20" viewBox="0 0 29 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <line x1="1.02781e-07" y1="2" x2="29" y2="2" stroke="black" stroke-width="3" />
-                            <line x1="1.02781e-07" y1="10" x2="29" y2="10" stroke="black" stroke-width="3" />
-                            <line x1="1.02781e-07" y1="18" x2="29" y2="18" stroke="black" stroke-width="3" />
-                        </svg>
-                    </button>
-
-                    <a href="">
-                        <img class="w-[167px] h-[23px]" src="./../assets/images/logocover.svg" alt="">
-                    </a>
-                </div>
-                <div class="flex flex-row gap-3.5 mt-2.5">
-                    <a class="text-[14px] font-IRANYekan300 text-black" href="">ثبت سفارش</a>
-                    <a class="text-[14px] font-IRANYekan300 text-black" href="">EN</a>
-                    <button id="opensearch">
-                        <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M7.19271 0.599609C3.23542 0.599609 0.0146484 3.95711 0.0146484 8.0824C0.0146484 12.2077 3.23542 15.5652 7.19271 15.5652C11.15 15.5652 14.3708 12.2077 14.3708 8.0824C14.3708 3.95458 11.15 0.599609 7.19271 0.599609ZM7.19271 14.5491C3.77019 14.5491 0.986956 11.6477 0.986956 8.07987C0.986956 4.51205 3.77019 1.61066 7.19271 1.61066C10.6152 1.61066 13.3985 4.51205 13.3985 8.07987C13.3985 11.6477 10.6128 14.5491 7.19271 14.5491Z"
-                                fill="black" />
-                            <path
-                                d="M13.8406 14.4255C13.6534 14.2253 13.3447 14.2228 13.1527 14.4179C12.9607 14.613 12.9582 14.9348 13.1454 15.135L15.1216 17.2433C15.2164 17.3446 15.3428 17.3953 15.4692 17.3953C15.5908 17.3953 15.7147 17.3472 15.8095 17.2509C16.0016 17.0558 16.004 16.7339 15.8168 16.5338L13.8406 14.4255Z"
-                                fill="black" />
-                        </svg>
-
-                    </button>
-                </div>
-
-            </div>
-            <div class="h-full flex">
-                <a href="/">
-                    <img class="w-[73px] h-[31px]" src="./../assets/images/coversunyellow.png" alt="">
-                </a>
-            </div>
-        </div>
-    </header>
     <main>
         <section class="pt-[100px]">
+            <div class="marquee-container">
+                <div class="marquee-content text-lg font-bold text-blue-600">
+                    این یک متن نمونه است که در حال حرکت است! این یک متن نمونه است که در حال حرکت است!
+                </div>
+            </div>
+
+
         </section>
-        <section class="px-5">
+        <section class="px-5 bg-gray-50 py-4">
             <div class="w-full flex flex-col">
                 <div>
                     <h3 class="text-[18px] text-black font-IRANYekan500">پروژه های شاخص</h3>
                 </div>
                 <div class="flex flex-col gap-2.5">
                     <div
-                        class="box w-full h-[31px] bg-white  overflow-hidden relative transition-all duration-500 cursor-pointer flex items-center justify-center gap-2.5">
+                        class="box w-full h-[31px]   overflow-hidden relative transition-all duration-500 cursor-pointer flex items-center justify-center gap-2.5">
                         <div
                             class="textboxshow  z-10 w-full flex flex-row justify-start gap-3 items-center text-gray-800">
                             <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
@@ -75,7 +79,7 @@
                             class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 pointer-events-none" />
                     </div>
                     <div
-                        class="box w-full h-[31px] bg-white  overflow-hidden relative transition-all duration-500 cursor-pointer flex items-center justify-center ">
+                        class="box w-full h-[31px]   overflow-hidden relative transition-all duration-500 cursor-pointer flex items-center justify-center ">
                         <div
                             class="textboxshow  z-10 w-full flex flex-row justify-start gap-3 items-center text-gray-800">
                             <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
@@ -101,7 +105,7 @@
                 </div>
                 <div class="flex flex-col gap-2.5">
                     <div
-                        class="box w-full h-[31px] bg-white  overflow-hidden relative transition-all duration-500 cursor-pointer flex items-center justify-center gap-2.5">
+                        class="box w-full h-[31px]   overflow-hidden relative transition-all duration-500 cursor-pointer flex items-center justify-center gap-2.5">
                         <div
                             class="textboxshow z-10 w-full flex flex-row justify-start gap-3 items-center text-gray-800">
                             <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
@@ -119,7 +123,7 @@
                             class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 pointer-events-none" />
                     </div>
                     <div
-                        class="box w-full h-[31px] bg-white  overflow-hidden relative transition-all duration-500 cursor-pointer flex items-center justify-center ">
+                        class="box w-full h-[31px]   overflow-hidden relative transition-all duration-500 cursor-pointer flex items-center justify-center ">
                         <div
                             class="textboxshow z-10 w-full flex flex-row justify-start gap-3 items-center text-gray-800">
                             <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
@@ -460,33 +464,33 @@
 
     let activeTextbox = null;
 
-document.querySelectorAll('.box').forEach(box => {
-    box.addEventListener('click', () => {
-        // حذف کلاس از textbox قبلی (در صورت وجود)
-        if (activeTextbox) {
-            activeTextbox.classList.remove('activeTextshow');
-        }
+    document.querySelectorAll('.box').forEach(box => {
+        box.addEventListener('click', () => {
+            // حذف کلاس از textbox قبلی (در صورت وجود)
+            if (activeTextbox) {
+                activeTextbox.classList.remove('activeTextshow');
+            }
 
-        // گرفتن تگ textbox مربوط به این box
-        const textbox = box.querySelector('.textboxshow');
+            // گرفتن تگ textbox مربوط به این box
+            const textbox = box.querySelector('.textboxshow');
 
-        if (textbox) {
-            textbox.classList.add('activeTextshow');
-            activeTextbox = textbox; // ذخیره برای دسترسی بعدی
-        }
+            if (textbox) {
+                textbox.classList.add('activeTextshow');
+                activeTextbox = textbox; // ذخیره برای دسترسی بعدی
+            }
 
-        // بقیه عملیات height و opacity
-        document.querySelectorAll('.box').forEach(b => {
-            b.classList.replace('h-[75px]', 'h-[31px]');
-            b.querySelector('img').classList.replace('opacity-100', 'opacity-0');
+            // بقیه عملیات height و opacity
+            document.querySelectorAll('.box').forEach(b => {
+                b.classList.replace('h-[75px]', 'h-[31px]');
+                b.querySelector('img').classList.replace('opacity-100', 'opacity-0');
+            });
+
+            if (!box.classList.contains('h-[75px]')) {
+                box.classList.replace('h-[31px]', 'h-[75px]');
+                box.querySelector('img').classList.replace('opacity-0', 'opacity-100');
+            }
         });
-
-        if (!box.classList.contains('h-[75px]')) {
-            box.classList.replace('h-[31px]', 'h-[75px]');
-            box.querySelector('img').classList.replace('opacity-0', 'opacity-100');
-        }
     });
-});
 </script>
 
 </html>
