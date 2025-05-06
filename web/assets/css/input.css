@@ -34,6 +34,17 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "RalewayDots400";
+  src: url("../fonts/RalewayDots-Regular.eot");
+  src: url("../fonts/RalewayDots-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/RalewayDots-Regular.woff") format("woff"),
+    url("../fonts/RalewayDots-Regular.woff2") format("woff2"),
+    url("../fonts/RalewayDots-Regular.ttf") format("truetype");
+  font-weight: 00;
+  font-style: normal;
+  font-display: swap;
+}
 
 @font-face {
   font-family: "PxGrotesk300";
@@ -72,6 +83,7 @@
   --font-PxGrotesk300: "PxGrotesk300" !important;
   --font-PxGrotesk400: "PxGrotesk400" !important;
   --font-PxGrotesk700: "PxGrotesk700" !important;
+  --font-RalewayDots400: "RalewayDots400" !important;
 
   --color-main: #ffcb08;
   --color-gray50: #fafafa;
@@ -115,7 +127,7 @@
   .projectShow .relatedBlog,
   .productShow .relatedProduct,
   .productCat .section1,
-  .landingCover .section1,
+  .landingCover .landBread,
   .aboutUs .section1,
   .projectShow .relatedProduct,
   .searchPage .relatedProduct,
@@ -135,6 +147,12 @@
   {
     right: calc(((100vw - 1440px) / 2));
   }
+
+  .landingCover .landBread::after{
+    right: calc((((100vw - 1440px) / 2) - 45px));
+
+  }
+
 }
 
 @media (max-width: 1599px) {
@@ -165,13 +183,15 @@
   .searchPage .relatedProduct,
   .projectShow .relatedProduct,
   .contactUs .rightSec,
-  .landingCover .section1,
+  .landingCover .landBread,
   .aboutUs .section1,
   .productCat .section1,
   .productShow .section2 .top {
     padding-right: 5vw;
   }
-
+  .landingCover .landBread::after{
+    right: 2.5vw;
+  }
   .productList .cattitle {
     padding-right: 5vw;
   }

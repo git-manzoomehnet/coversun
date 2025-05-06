@@ -19,6 +19,7 @@ module.exports = {
         PxGrotesk300: ["PxGrotesk300"],
         PxGrotesk400: ["PxGrotesk400"],
         PxGrotesk700: ["PxGrotesk700"],
+        RalewayDots400: ["RalewayDots400"],
  
       },
       translate: {

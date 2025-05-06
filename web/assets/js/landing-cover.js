@@ -198,9 +198,19 @@ $(".containerHorizontal").imagesLoaded({}, function () {
       });
 
       scroller.on('scroll', ScrollTrigger.update);
+      let bactToLeft = document.querySelector(".bactToLeft")
 
       ScrollTrigger.scrollerProxy(pageContainer, {
+
+
         scrollTop(value) {
+          if (scroller.scroll.instance.scroll.y > window.innerWidth) {
+            bactToLeft.classList.remove("scale-0")
+          }
+          else {
+            bactToLeft.classList.add("scale-0")
+
+          }
           return arguments.length ? scroller.scrollTo(value, 0, 0) : scroller.scroll.instance.scroll.y;
         },
         getBoundingClientRect() {
@@ -215,8 +225,8 @@ $(".containerHorizontal").imagesLoaded({}, function () {
       });
 
       ScrollTrigger.addEventListener('refresh', () => scroller.update());
-let currentProgress;
-let prevScroll;
+      let currentProgress;
+      let prevScroll;
       // ایجاد اسکرول افقی
       let scrollTween = gsap.to(pinWrap, {
         x: scrollLength,
@@ -230,12 +240,10 @@ let prevScroll;
           pin: true,
           anticipatePin: 1,
           onUpdate: self => {
-            console.log(prevScroll);
-            
-             currentProgress = self.progress + prevScroll?prevScroll : 0;
+
+            currentProgress = self.progress + prevScroll ? prevScroll : 0;
             prevScroll = currentProgress;
-            console.log("currentProgress" , currentProgress);
-            
+
             // به روزرسانی وضعیت فعال navigation
             updateActiveNav(currentProgress);
           }
@@ -278,25 +286,413 @@ let prevScroll;
             }
 
             const progress = totalOffset / scrollLength;
-            prevScroll = prevScroll+progress
-    
-            console.log("progress" , progress);
-            
-            // فقط کنترل progress خود scrollTween
-            gsap.to(scrollTween, {
-              progress: progress,
-              duration: 1.2,
-              ease: "power2.out",
-              onUpdate: () => {
-                scroller.update();
-              },
-              onComplete: () => {
-                scroller.update();
-              }
-            });
+            prevScroll = progress
+
+            scroller.scrollTo(0, totalOffset)
+
+            prevScroll = progress;
+            currentProgress = progress;
+
           }
         });
       });
+
+      let itemsImgs = document.querySelectorAll(".itemsImgs img")
+      let hoverItems = document.querySelectorAll(".hoverItems")
+      let listNavItem = document.querySelectorAll(".navigation li")
+      hoverItems.forEach((element, i) => {
+        element.addEventListener("mouseover", function (params) {
+        console.log("in");
+        
+        listNavItem.forEach((element2, i) => {
+            element2.classList.add("opacity-0")
+          })
+          setTimeout(() => {
+            
+            element.classList.remove("opacity-0")
+          }, 50);
+          itemsImgs[i].classList.remove("opacity-0")
+          itemsImgs[i].classList.add("z-1")
+          
+        })
+        element.addEventListener("mouseleave", function (params) {
+          console.log("leave");
+          
+          listNavItem.forEach((element2, i) => {
+            element2.classList.remove("opacity-0")
+          })
+          itemsImgs[i].classList.remove("z-1")
+          itemsImgs[i].classList.add("opacity-0")
+        })
+      });
+
+
+
+
+
+      let darkLogoA = "/images/logo-dark.png"
+      let darkLogoCover = "/images/coversun-logo-dark.png"
+      let darkSec = document.querySelectorAll(".darkSec")
+      let prevLog = document.querySelector("header .lSec img").getAttribute("src")
+      let prevLogCover = document.querySelector("header .logo-landing img").getAttribute("src")
+
+      darkSec.forEach(element => {
+          gsap.from(element, {
+              scrollTrigger: {
+                  trigger: element,
+                  start: 'right -5%',
+                  end: 'left 20%',
+                  containerAnimation: scrollTween,
+                  onEnter: ()=>{
+                    console.log("enter");
+                    
+                    
+                    document.querySelector("header .lSec img").setAttribute("src" , prevLog)
+                  },
+                  onLeave: ()=>{
+                    
+                    console.log("leave");
+                    
+                    document.querySelector("header .lSec img").setAttribute("src" , darkLogoA)
+                  },
+                  onEnterBack: ()=>{
+                    console.log("enterBack");
+                    document.querySelector("header .lSec img").setAttribute("src" , prevLog)
+                    
+                    
+                  },
+                  onLeaveBack: ()=>{
+                    
+                    console.log("leaveBack");
+                    
+                    document.querySelector("header .lSec img").setAttribute("src" , darkLogoA)
+                  },
+              },
+             
+
+
+
+          })
+          gsap.from(element, {
+              scrollTrigger: {
+                  trigger: element,
+                  start: 'right 60%',
+                  end: 'left 80%',
+                  containerAnimation: scrollTween,
+                  // markers:true,
+                  onEnter: ()=>{
+                    
+                    document.querySelector("header").classList.remove("blackHeader")
+
+                      
+                    document.querySelector("header .logo-landing img").setAttribute("src" , prevLogCover)
+                  },
+                  
+                  onLeave: ()=>{
+                    
+                    document.querySelector("header").classList.add("blackHeader")
+                    document.querySelector("header .logo-landing img").setAttribute("src" , darkLogoCover)
+
+                  },
+                  onEnterBack: ()=>{
+                    document.querySelector("header").classList.remove("blackHeader")
+                    document.querySelector("header .logo-landing img").setAttribute("src" , prevLogCover)
+
+                  },
+                  onLeaveBack: ()=>{
+                    document.querySelector("header").classList.add("blackHeader")
+                    document.querySelector("header .logo-landing img").setAttribute("src" , darkLogoCover)
+
+
+                  },
+              },
+             
+
+
+
+          })
+      });
+
+
+
+      gsap.to("header", {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".footerSection",
+          containerAnimation: scrollTween,
+          start: 'right 20%',
+          end: 'left -1%',
+
+          onEnter: ()=>{
+            console.log("enter");
+            document.querySelector("header").style.opacity="0"
+
+          },
+          onLeave: ()=>{
+            document.querySelector("header").style.opacity="0"
+
+
+          },
+          onEnterBack: ()=>{
+            console.log("enterBack");
+
+
+          },
+          onLeaveBack: ()=>{
+
+            document.querySelector("header").style.opacity="1"
+
+          },
+
+
+        }
+      });
+
+      gsap.to(bactToLeft, {
+        scrollTrigger: {
+          trigger: ".footerSection",
+          containerAnimation: scrollTween,
+          start: 'right 0%',
+          end: 'left 10%',
+          onEnter: () => {
+            console.log("enter");
+
+            bactToLeft.style.scale = "0"
+            console.log(bactToLeft);
+
+          },
+          onLeave: () => {
+
+
+            console.log("leave");
+
+          },
+          onEnterBack: () => {
+            console.log("enterBack");
+
+
+
+          },
+          onLeaveBack: () => {
+            bactToLeft.style.scale = "1"
+            console.log("leaveBack");
+            console.log(bactToLeft);
+
+
+          },
+
+
+        }
+      });
+
+
+      bactToLeft.addEventListener("click", function (params) {
+        scroller.scrollTo(0, 0)
+      })
+
+
+
+      let splPara = document.querySelectorAll(".scrollToTop")
+      splPara.forEach(element => {
+        gsap.from(element, {
+          scrollTrigger: {
+            trigger: element,
+            start: 'left left',
+            end: 'left -40%',
+            containerAnimation: scrollTween,
+          },
+          y: 30,
+          opacity: 0,
+          stagger: 0.1,
+          delay: 0,
+          duration: 1,
+
+
+
+        })
+      });
+      let ImgScale = document.querySelectorAll(".ImgScale")
+      ImgScale.forEach(element => {
+        gsap.from(element, {
+          scrollTrigger: {
+            trigger: element,
+            start: 'left left',
+            end: 'left -40%',
+            containerAnimation: scrollTween,
+          },
+          scale: 1.25,
+          opacity: 0,
+          stagger: 0.1,
+          delay: 0,
+          duration: 1,
+
+
+
+        })
+      });
+
+
+
+      let textAnim = document.querySelectorAll(".textAnim")
+      textAnim.forEach(element => {
+        gsap.to(element, {
+          scrollTrigger: {
+            trigger: element,
+            start: 'left -10%',
+            end: 'left 150%',
+            containerAnimation: scrollTween,
+            scrub: true,
+          },
+          y: "-100vh",
+          stagger: 0.1,
+          delay: 0,
+          duration: 1,
+
+
+
+        })
+      });
+
+
+      let imgTrnlte = document.querySelectorAll(".imgTrnlte")
+      imgTrnlte.forEach(element => {
+        gsap.to(element, {
+          scrollTrigger: {
+            trigger: element,
+            start: 'left -10%',
+            end: 'left 150%',
+            containerAnimation: scrollTween,
+            scrub: true,
+          },
+          x: "35%",
+          stagger: 0.1,
+          delay: 0,
+          duration: 1,
+
+
+
+        })
+      });
+      let imgTrnlteIn = document.querySelectorAll(".imgTrnlteIn")
+      imgTrnlteIn.forEach(element => {
+        // gsap.to(element, {
+        //     scrollTrigger: {
+        //         trigger: element,
+        //         start: 'left -10%',
+        //         end: 'left 150%',
+        //         containerAnimation: scrollTween,
+        //         scrub:true,
+        //       },
+        //       x: "35%",
+        //     stagger: 0.1,
+        //     delay: 0,
+        //     duration: 1,
+
+
+
+        // })
+
+
+        gsap.fromTo(element,
+          { x: "10%" }, // شروع: پایین
+          {
+            x: "-10%", // پایان: موقعیت اصلی
+            scrollTrigger: {
+              trigger: element,
+              start: 'left -10%',
+              end: 'left 150%',
+              containerAnimation: scrollTween,
+              scrub: true,
+            },
+            stagger: 0.1,
+            delay: 0,
+            duration: 1
+          }
+        );
+      });
+
+      const galleryPopSlider = new Swiper('.galleryPopSlider', {
+
+        loop: true,
+
+        speed: 1000,
+        // Navigation arrows
+        navigation: {
+          nextEl: '.nextGallery',
+          prevEl: '.prevGallery',
+        },
+
+      });
+
+      let galleryPop = document.querySelector(".galleryPop")
+      let galleryShowPop = document.querySelector(".galleryShowPop")
+      let closeGallery = document.querySelector(".closeGallery")
+      let zoomIn = document.querySelector(".zoomIn")
+      let zoomOut = document.querySelector(".zoomOut")
+      let rotateLeft = document.querySelector(".rotateLeft")
+      let rotateRight = document.querySelector(".rotateRitght")
+      let openPopGallery = document.querySelectorAll(".openPopGallery")
+
+      let minZoom = 0.5
+      let maxZoom = 1.5
+      let currZoom = 1;
+      let curRotate = 0;
+      let closeGallerShowPop = document.querySelector(".closeGallerShowPop")
+      let innerGallery = document.querySelector(".galleryPop .innerGallery")
+      let galleryPopBoxes = document.querySelectorAll(".galleryPop .innerGallery .boxImg")
+      galleryPopBoxes.forEach((element,i) => {
+        element.addEventListener("click", function (params) {
+          galleryShowPop.classList.remove("translate-y-[100vh]")
+          innerGallery.classList.add("-translate-y-[100vh]")
+          galleryPopSlider.slideTo(i,10)
+        })
+      });
+
+      closeGallerShowPop.addEventListener("click", function (params) {
+        galleryShowPop.classList.add("translate-y-[100vh]")
+        innerGallery.classList.remove("-translate-y-[100vh]")
+      })
+      closeGallery.addEventListener("click", function (params) {
+        galleryPop.classList.add("-top-[100vh]")
+
+        galleryShowPop.classList.add("-translate-y-[100vh]")
+      })
+      openPopGallery.forEach(element => {
+        element.addEventListener("click" , function (params) {
+          galleryPop.classList.remove("-top-[100vh]")
+          innerGallery.classList.remove("-translate-y-[100vh]")
+
+        })
+      });
+
+
+      zoomIn.addEventListener("click", function (params) {
+        let activeSlide = document.querySelector(".galleryPopSlider .swiper-slide-active img")
+        if (currZoom < maxZoom) {
+          currZoom += 0.1
+          activeSlide.style.scale = currZoom
+        }
+      })
+      zoomOut.addEventListener("click", function (params) {
+        let activeSlide = document.querySelector(".galleryPopSlider .swiper-slide-active img")
+        if (currZoom > minZoom) {
+          currZoom -= 0.1
+          activeSlide.style.scale = currZoom
+        }
+      })
+
+      rotateLeft.addEventListener("click" , function (params) {
+               let activeSlide = document.querySelector(".galleryPopSlider .swiper-slide-active img")
+
+        curRotate+=90
+        activeSlide.style.rotate = `${-curRotate}deg`
+    })
+    rotateRight.addEventListener("click" , function (params) {
+               let activeSlide = document.querySelector(".galleryPopSlider .swiper-slide-active img")
+
+        curRotate+=90
+        activeSlide.style.rotate = `${curRotate}deg`
+    })
 
 
 
