@@ -409,7 +409,7 @@
                             <h4 class="text-[12px] text-gray-600 mt-2.5 font-IRANYekan400">@prp_7249</h4>
                             <h4 class="text-[16px] text-black font-IRANYekan500">@title</h4>
                             <p
-                                class="text-[14px] text-gray-700 font-IRANYekan300 overflow-hidden text-ellipsis line-clamp-3 max-h-[72px]">
+                                class="text-[14px] text-gray-700 font-IRANYekan300 overflow-hidden text-ellipsis line-clamp-3 max-h-[45px]">
                                 @prp_7244</p>
                         </div>
                     </div>
@@ -664,14 +664,13 @@
 
 
 
-    const textareas = document.querySelectorAll("textarea");
-    textareas.forEach(element => {
+    const _textareas = document.querySelectorAll("_textarea");
+    _textareas.forEach(element => {
         if (element.value.trim() === "") {
             element.value = "";
         }
 
     });
-    // اگر مقدارش خالی نیست، و فقط فاصله یا اینتر هست، پاکش کن
     let messageSend = document.querySelector(".messageSend")
     let commentP = document.querySelector(".commentP")
 
@@ -684,7 +683,7 @@
         //  let input1  = document.querySelector('.namee')
         event.preventDefault();
         let inputs = document.querySelectorAll('.commentP input')
-        let textas = document.querySelectorAll('.commentP textarea')
+        let textas = document.querySelectorAll('.commentP _textarea')
         let emptyFlag = false;
         let loaderBtn = document.querySelector(".loaderBtn")
         loaderBtn.style.display = "block"
@@ -724,7 +723,7 @@
             }
         });
         if (!emptyFlag) {
-            let val = document.querySelector(".commentP textarea").value;
+            let val = document.querySelector(".commentP _textarea").value;
             let userName = document.querySelector(".commentP .userName").value;
             console.log("val", val);
             $bc.setSource('db.send', true)

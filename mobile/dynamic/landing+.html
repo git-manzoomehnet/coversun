@@ -1,46 +1,71 @@
-<basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" catid="214363" run="atclient">
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" catid="214363">
     <member name="list-project" size="400x80" type="list" preview="true" />
 </basis>
+<script src="./../basis-loader.js"></script>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="214364">
-    <member name="list-project" size="400x80" type="list" />
+    <member name="list-project2" size="400x80" type="list" />
 </basis>
+
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" catid="214363">
+    <member name="list2-project" size="400x300" propertyid="17877" type="list" link="gallery.bc" />
+</basis>
+
+
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" usedforid="2376527">
+    <member name="project" type="view" />
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="19" usedforid="2376527">
+    <member name="image-project" type="list" format="4" />
+</basis>
+<!-- ############### -->
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="214364">
+    <member name="list-hover-brand" size="300x200" type="list" />
+</basis>
+
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="214364">
+    <member name="list1-brand" size="200x300" type="list" />
+</basis>
+
+<script src="./../basis-loader.js"></script>
+
 
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
     <link rel="stylesheet" href="./../assets/css/outputMobile.css">
     <title>Document</title>
 </head>
 <style>
     .marquee-container {
-            overflow: hidden;
-            white-space: nowrap;
-            width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+    }
+
+    .marquee-content {
+        display: inline-block;
+        animation: marquee 10s linear infinite;
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
         }
 
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    @media (max-width: 640px) {
         .marquee-content {
-            display: inline-block;
-            animation: marquee 10s linear infinite;
+            font-size: 1rem;
+            animation-duration: 12s;
         }
-
-        @keyframes marquee {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        @media (max-width: 640px) {
-            .marquee-content {
-                font-size: 1rem; 
-                animation-duration: 12s; 
-            }
-        }
-   
+    }
 </style>
 
 <body>
@@ -60,42 +85,33 @@
                     <h3 class="text-[18px] text-black font-IRANYekan500">پروژه های شاخص</h3>
                 </div>
                 <div class="flex flex-col gap-2.5">
-                    <div
-                        class="box w-full h-[31px]   overflow-hidden relative transition-all duration-500 cursor-pointer flex items-center justify-center gap-2.5">
-                        <div
-                            class="textboxshow  z-10 w-full flex flex-row justify-start gap-3 items-center text-gray-800">
-                            <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M13.4656 6.92748H7.53435V0.572519C7.53435 0.229008 7.32061 0 7 0C6.67939 0 6.46565 0.229008 6.46565 0.572519V6.92748H0.534351C0.21374 6.92748 0 7.15649 0 7.5C0 7.84351 0.21374 8.07252 0.534351 8.07252H6.46565V14.4275C6.46565 14.771 6.67939 15 7 15C7.32061 15 7.53435 14.771 7.53435 14.4275V8.07252H13.4656C13.7863 8.07252 14 7.84351 14 7.5C14 7.15649 13.7863 6.92748 13.4656 6.92748Z"
-                                    fill="black" />
-                            </svg>
-                            <span class="text-[18px] text-black font-IRANYekan300">
-                                مجتمع تجاری مهروماه
-                            </span>
+                    <basis core="print" datamembername="db.list-project">
+                        <layout>
+                            @child
+                        </layout>
+                        <face>
+                            <div
+                                class="box w-full h-[31px]   overflow-hidden relative transition-all duration-500 cursor-pointer flex items-center justify-center gap-2.5">
+                                <div
+                                    class="textboxshow  z-10 w-full flex flex-row justify-start gap-3 items-center text-gray-800">
+                                    <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M13.4656 6.92748H7.53435V0.572519C7.53435 0.229008 7.32061 0 7 0C6.67939 0 6.46565 0.229008 6.46565 0.572519V6.92748H0.534351C0.21374 6.92748 0 7.15649 0 7.5C0 7.84351 0.21374 8.07252 0.534351 8.07252H6.46565V14.4275C6.46565 14.771 6.67939 15 7 15C7.32061 15 7.53435 14.771 7.53435 14.4275V8.07252H13.4656C13.7863 8.07252 14 7.84351 14 7.5C14 7.15649 13.7863 6.92748 13.4656 6.92748Z"
+                                            fill="black" />
+                                    </svg>
+                                    <span class="text-[18px] text-black font-IRANYekan300">
+                                        @title
+                                    </span>
 
-                        </div>
-                        <img src="https://via.placeholder.com/150/FF0000/FFFFFF"
-                            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 pointer-events-none" />
-                    </div>
-                    <div
-                        class="box w-full h-[31px]   overflow-hidden relative transition-all duration-500 cursor-pointer flex items-center justify-center ">
-                        <div
-                            class="textboxshow  z-10 w-full flex flex-row justify-start gap-3 items-center text-gray-800">
-                            <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M13.4656 6.92748H7.53435V0.572519C7.53435 0.229008 7.32061 0 7 0C6.67939 0 6.46565 0.229008 6.46565 0.572519V6.92748H0.534351C0.21374 6.92748 0 7.15649 0 7.5C0 7.84351 0.21374 8.07252 0.534351 8.07252H6.46565V14.4275C6.46565 14.771 6.67939 15 7 15C7.32061 15 7.53435 14.771 7.53435 14.4275V8.07252H13.4656C13.7863 8.07252 14 7.84351 14 7.5C14 7.15649 13.7863 6.92748 13.4656 6.92748Z"
-                                    fill="black" />
-                            </svg>
-                            <span class="text-[18px] text-black font-IRANYekan300">
-                                مجتمع تجاری مهروماه
-                            </span>
+                                </div>
+                                <img src="[##cms.cms.cdn##]/@00400X00080prp"
+                                    class="absolute inset-0 w-full h-full  opacity-0 transition-opacity duration-500 pointer-events-none" />
+                            </div>
 
-                        </div>
-                        <img src="https://via.placeholder.com/150/FF0000/FFFFFF"
-                            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 pointer-events-none" />
-                    </div>
+                        </face>
+                    </basis>
+
                 </div>
 
             </div>
@@ -104,113 +120,73 @@
                     <h3 class="text-[18px] text-black font-IRANYekan500"> کو برندینگ</h3>
                 </div>
                 <div class="flex flex-col gap-2.5">
-                    <div
-                        class="box w-full h-[31px]   overflow-hidden relative transition-all duration-500 cursor-pointer flex items-center justify-center gap-2.5">
-                        <div
-                            class="textboxshow z-10 w-full flex flex-row justify-start gap-3 items-center text-gray-800">
-                            <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M13.4656 6.92748H7.53435V0.572519C7.53435 0.229008 7.32061 0 7 0C6.67939 0 6.46565 0.229008 6.46565 0.572519V6.92748H0.534351C0.21374 6.92748 0 7.15649 0 7.5C0 7.84351 0.21374 8.07252 0.534351 8.07252H6.46565V14.4275C6.46565 14.771 6.67939 15 7 15C7.32061 15 7.53435 14.771 7.53435 14.4275V8.07252H13.4656C13.7863 8.07252 14 7.84351 14 7.5C14 7.15649 13.7863 6.92748 13.4656 6.92748Z"
-                                    fill="black" />
-                            </svg>
-                            <span class="text-[18px] text-black font-IRANYekan300">
-                                درسا هوم
-                            </span>
+                    <basis core="print" datamembername="db.list-project2">
+                        <layout>
+                            @child
+                        </layout>
+                        <else-layout>
 
-                        </div>
-                        <img src="https://via.placeholder.com/150/FF0000/FFFFFF"
-                            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 pointer-events-none" />
-                    </div>
-                    <div
-                        class="box w-full h-[31px]   overflow-hidden relative transition-all duration-500 cursor-pointer flex items-center justify-center ">
-                        <div
-                            class="textboxshow z-10 w-full flex flex-row justify-start gap-3 items-center text-gray-800">
-                            <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M13.4656 6.92748H7.53435V0.572519C7.53435 0.229008 7.32061 0 7 0C6.67939 0 6.46565 0.229008 6.46565 0.572519V6.92748H0.534351C0.21374 6.92748 0 7.15649 0 7.5C0 7.84351 0.21374 8.07252 0.534351 8.07252H6.46565V14.4275C6.46565 14.771 6.67939 15 7 15C7.32061 15 7.53435 14.771 7.53435 14.4275V8.07252H13.4656C13.7863 8.07252 14 7.84351 14 7.5C14 7.15649 13.7863 6.92748 13.4656 6.92748Z"
-                                    fill="black" />
-                            </svg>
-                            <span class="text-[18px] text-black font-IRANYekan300">
-                                زرماکارن
-                            </span>
+                        </else-layout>
+                        <face>
+                            <div
+                                class="box w-full h-[31px] overflow-hidden relative transition-all duration-500 cursor-pointer flex items-center justify-center gap-2.5">
+                                <div
+                                    class="textboxshow z-10 w-full flex flex-row justify-start gap-3 items-center text-gray-800">
+                                    <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M13.4656 6.92748H7.53435V0.572519C7.53435 0.229008 7.32061 0 7 0C6.67939 0 6.46565 0.229008 6.46565 0.572519V6.92748H0.534351C0.21374 6.92748 0 7.15649 0 7.5C0 7.84351 0.21374 8.07252 0.534351 8.07252H6.46565V14.4275C6.46565 14.771 6.67939 15 7 15C7.32061 15 7.53435 14.771 7.53435 14.4275V8.07252H13.4656C13.7863 8.07252 14 7.84351 14 7.5C14 7.15649 13.7863 6.92748 13.4656 6.92748Z"
+                                            fill="black" />
+                                    </svg>
+                                    <span class="text-[18px] text-black font-IRANYekan300">
+                                        @title
+                                    </span>
 
-                        </div>
-                        <img src="https://via.placeholder.com/150/FF0000/FFFFFF"
-                            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 pointer-events-none" />
-                    </div>
+                                </div>
+                                <img src="[##cms.cms.cdn##]/@00400X00080prp"
+                                    class="absolute inset-0 w-full h-full  opacity-0 transition-opacity duration-500 pointer-events-none" />
+                            </div>
+                        </face>
+                    </basis>
+
                 </div>
-
-            </div>
-            <div>
-                <ul class="flex flex-col mt-[15px] gap-[5px]">
-                    <li class="text-[18px] text-black font-IRANYekan500">ایونت</li>
-                    <li class="text-[18px] text-black font-IRANYekan500">گروه هم‌افزایی سان وایب</li>
-                </ul>
-            </div>
+                <div>
+                    <ul class="flex flex-col mt-[15px] gap-[5px]">
+                        <li class="text-[18px] text-black font-IRANYekan500">ایونت</li>
+                        <li class="text-[18px] text-black font-IRANYekan500">گروه هم‌افزایی سان وایب</li>
+                    </ul>
+                </div>
         </section>
         <section class="px-5">
             <div class="flex flex-col">
-                <div class="pt-[51px] border-b border-b-black">
-                    <div>
-                        <h3 class="text-[18px] font-IRANYekan300 text-black">مجتمع تجاری مهروماه</h3>
-                        <p class="text-[14px] font-IRANYekan300 text-black my-7 text-justify">لورم ایپسوم متن ساختگی با
-                            تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
-                            روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
-                            کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، ، چاپگرها و متون بلکه روزنامه و مجله
-                            در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با
-                            هدف بهبود ابزارهای کاربردی می باشد، </p>
-                    </div>
-                    <a class="flex flex-row justify-start items-center gap-[5px]" href="">
-                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M13.4656 7.42748H7.53435V1.07252C7.53435 0.729008 7.32061 0.5 7 0.5C6.67939 0.5 6.46565 0.729008 6.46565 1.07252V7.42748H0.534351C0.21374 7.42748 0 7.65649 0 8C0 8.34351 0.21374 8.57252 0.534351 8.57252H6.46565V14.9275C6.46565 15.271 6.67939 15.5 7 15.5C7.32061 15.5 7.53435 15.271 7.53435 14.9275V8.57252H13.4656C13.7863 8.57252 14 8.34351 14 8C14 7.65649 13.7863 7.42748 13.4656 7.42748Z"
-                                fill="#3F3F46" />
-                        </svg>
-                        مشاهده گالری</a>
-                    <img class="w-full h-[260px] my-7" src="./../assets/images/productList/img3.png" alt="">
-                </div>
-                <!-- ########## -->
-                <div class="pt-[51px] border-b border-b-black">
-                    <div>
-                        <h3 class="text-[18px] font-IRANYekan300 text-black">دریای نور</h3>
-                        <p class="text-[14px] font-IRANYekan300 text-black my-7 text-justify">لورم ایپسوم متن ساختگی با
-                            تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
-                            روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
-                            کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، ، چاپگرها و متون بلکه روزنامه و مجله
-                            در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با
-                            هدف بهبود ابزارهای کاربردی می باشد، </p>
-                    </div>
-                    <a class="flex flex-row justify-start items-center gap-[5px]" href="">
-                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M13.4656 7.42748H7.53435V1.07252C7.53435 0.729008 7.32061 0.5 7 0.5C6.67939 0.5 6.46565 0.729008 6.46565 1.07252V7.42748H0.534351C0.21374 7.42748 0 7.65649 0 8C0 8.34351 0.21374 8.57252 0.534351 8.57252H6.46565V14.9275C6.46565 15.271 6.67939 15.5 7 15.5C7.32061 15.5 7.53435 15.271 7.53435 14.9275V8.57252H13.4656C13.7863 8.57252 14 8.34351 14 8C14 7.65649 13.7863 7.42748 13.4656 7.42748Z"
-                                fill="#3F3F46" />
-                        </svg>
-                        مشاهده گالری</a>
-                    <img class="w-full h-[260px] my-7" src="./../assets/images/productList/img2.png" alt="">
-                </div>
-                <!-- ########## -->
-                <div class="pt-[51px] border-b border-b-black">
-                    <div>
-                        <h3 class="text-[18px] font-IRANYekan300 text-black">بورس</h3>
-                        <p class="text-[14px] font-IRANYekan300 text-black my-7 text-justify">لورم ایپسوم متن ساختگی با
-                            تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
-                            روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
-                            کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، ، چاپگرها و متون بلکه روزنامه و مجله
-                            در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با
-                            هدف بهبود ابزارهای کاربردی می باشد، </p>
-                    </div>
-                    <a class="flex flex-row justify-start items-center gap-[5px]" href="">
-                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M13.4656 7.42748H7.53435V1.07252C7.53435 0.729008 7.32061 0.5 7 0.5C6.67939 0.5 6.46565 0.729008 6.46565 1.07252V7.42748H0.534351C0.21374 7.42748 0 7.65649 0 8C0 8.34351 0.21374 8.57252 0.534351 8.57252H6.46565V14.9275C6.46565 15.271 6.67939 15.5 7 15.5C7.32061 15.5 7.53435 15.271 7.53435 14.9275V8.57252H13.4656C13.7863 8.57252 14 8.34351 14 8C14 7.65649 13.7863 7.42748 13.4656 7.42748Z"
-                                fill="#3F3F46" />
-                        </svg>
-                        مشاهده گالری</a>
-                    <img class="w-full h-[260px] my-7" src="./../assets/images/productList/img1.png" alt="">
-                </div>
+                <basis core="print" datamembername="db.list2-project">
+                    <layout>
+                        @child
+                    </layout>
+                    <else-layout>
+
+                    </else-layout>
+                    <face>
+                        <div class="pt-[51px] border-b border-b-black">
+                            <div>
+                                <h3 class="text-[18px] font-IRANYekan300 text-black">@title</h3>
+                                <p class="text-[14px] font-IRANYekan300 text-black my-7 text-justify">@prp_17877</p>
+                            </div>
+                            <a class="flex flex-row justify-start items-center gap-[5px]" href="@link">
+                                <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.4656 7.42748H7.53435V1.07252C7.53435 0.729008 7.32061 0.5 7 0.5C6.67939 0.5 6.46565 0.729008 6.46565 1.07252V7.42748H0.534351C0.21374 7.42748 0 7.65649 0 8C0 8.34351 0.21374 8.57252 0.534351 8.57252H6.46565V14.9275C6.46565 15.271 6.67939 15.5 7 15.5C7.32061 15.5 7.53435 15.271 7.53435 14.9275V8.57252H13.4656C13.7863 8.57252 14 8.34351 14 8C14 7.65649 13.7863 7.42748 13.4656 7.42748Z"
+                                        fill="#3F3F46" />
+                                </svg>
+                                مشاهده گالری</a>
+                            <a class="w-full h-full" href="@link">
+                                <img class="w-full h-[260px] my-7" src="[##cms.cms.cdn##]/@00400X00300prp" alt="@title">
+                            </a>
+                        </div>
+
+                    </face>
+                </basis>
                 <!-- ########## -->
             </div>
             <div class="flex flex-col">

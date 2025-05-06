@@ -82,12 +82,35 @@
 }
 
 @font-face {
+  font-family: "PxGrotesk300";
+  src: url("../fonts/PxGrotesk-Light.woff") format("woff"),
+    url("../fonts/PxGrotesk-Light.woff2") format("woff2"),
+    url("../fonts/PxGrotesk-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "PxGrotesk400";
-  src: url("https://cdn.basiscore.net/_fonts/Px-Grotesk-Regular.ttf") format("ttf");
+  src: url("../fonts/PxGroteskRegular.woff") format("woff"),
+    url("../fonts/PxGroteskRegular.woff2") format("woff2"),
+    url("../fonts/PxGroteskRegular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "PxGrotesk700";
+  src: url("../fonts/PxGrotesk-Bold.woff") format("woff"),
+    url("../fonts/PxGrotesk-Bold.woff2") format("woff2"),
+    url("../fonts/PxGrotesk-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: "RalewayDots400";
   src: url("./../fonts/RalewayDots-Regular.ttf") format("ttf");
@@ -105,8 +128,10 @@
   --font-IRANYekan300: "IRANYekan300" !important;
   --font-IRANYekan200: "IRANYekan200" !important;
   --font-IRANYekan100: "IRANYekan100" !important;
-  --font-PxGrotesk400: "PxGrotesk400" !important;
   --font-RalewayDots400: "RalewayDots400" !important;
+  --font-PxGrotesk300: "PxGrotesk300" !important;
+  --font-PxGrotesk400: "PxGrotesk400" !important;
+  --font-PxGrotesk700: "PxGrotesk700" !important;
 
   --color-main: #FFCB08;
   --color-gray-50: #FAFAFA;
@@ -148,6 +173,9 @@
   transform: translateY(0);
 }
 
+/* 85 */
+/* 27 */
+
 .c-scrolldown {
   width: 1px;
   height: 60px;
@@ -165,6 +193,8 @@
   background-position: 0 -60px;
   background-size: 100% 200%;
   animation: scrolldown 2.2s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); /* ease-in-out */
+
 }
 
 @keyframes scrolldown {
@@ -314,4 +344,95 @@
 .accordion-image {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+}
+
+.showImg{
+  transform: scale(1.5);
+  transition: transform 1.4s cubic-bezier(.165,.84,.44,1)
+}
+.showImgCh{
+
+}
+@media (min-width: 359px) and (max-width: 361px) {
+  .showNameCh {
+    margin-top: 377px;
+  }
+}
+
+@media (min-width: 374px) and (max-width: 376px) {
+  .showNameCh {
+    margin-top: 414px;
+  }
+  .showImgCh {
+    top: 710px;
+  }
+}
+
+@media (min-width: 427px) and (max-width: 429px) {
+  .showNameCh {
+    margin-top: 500px;
+  }
+  .showImgCh {
+    top: 662px;
+  }
+}
+
+@media (min-width: 412px) and (max-width: 420px) {
+  .showNameCh {
+    margin-top: 518px;
+  }
+  .showImgCh {
+    top: 662px;
+  }
+}
+.ProductItemCat {
+  filter: grayscale(1);
+  transition: filter 0.6s ease-in-out;
+}
+
+.ProductItemCat:hover {
+  filter: grayscale(0);
+}
+#headerLangSvg ,#openMenuHeader{
+  fill: black;
+}
+
+
+
+#ProductListm #openForm,
+#productList #openForm,
+#ProductListm #langWeb,
+#productList #langWeb,
+#ProductListm #headerLangSvg button,
+#productList #headerLangSvg button,
+#productList #headerLangSvg a ,
+#ProductListm #headerLangSvg a ,
+#blog-productList #openForm,
+#blog-list #openForm,
+#blog-list #langWeb,
+#productList #langWeb,
+#blog-list #headerLangSvg button,
+#productList #headerLangSvg button,
+#productList #headerLangSvg a,
+#blog-list #headerLangSvg a {
+  color: #fff !important;
+}
+
+#productList #openMenuHeader,
+#ProductListm #openMenuHeader,
+#ProductListm #headerLangSvg,
+#productList #headerLangSvg,
+#productList #openMenuHeader,
+#blog-list #openMenuHeader,
+#productList #headerLangSvg,
+#blog-list #headerLangSvg{
+  fill: #fff !important;
+}
+productList
+
+#productList #openMenuHeader line ,
+#ProductListm #openMenuHeader line ,
+#productList #openMenuHeader line ,
+#blog-list #openMenuHeader line {
+  stroke: #fff !important;
 }

@@ -42,7 +42,7 @@
                 <face filter="ord=50">
                     <div class="w-full bg-cover bg-center bg-no-repeat h-full relative z-10 bg-[#00000033] text-white text-3xl justify-center items-cejustify-center"
                         style="background-image: url([##cms.cms.cdn##]/@largeIMG);">
-                        <div class="w-full h-full flex flex-col justify-end items-start p-6">
+                        <div id="scrollBtn" class="w-full h-full flex flex-col justify-end items-start p-6">
                             <div class="flex flex-col justify-start gap-2 items-center w-full">
                                 <h4 class="font-PxGrotesk400 text-[14px] text-gray-50 mb-">scroll down</h4>
                                 <div class="c-scrolldown">
@@ -53,10 +53,9 @@
                     </div>
                 </face>
             </basis>
-
-
+                        
         </div>
-        <section>
+        <section id="targetSection">
             <div class="w-full h-auto  flex flex-col justify-center items-start">
                 <basis core="list" datamembername="basisName.productCat">
                     <face filter="parentid=214297">

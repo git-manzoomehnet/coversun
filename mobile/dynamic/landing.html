@@ -23,7 +23,7 @@
                 <div class="w-full h-full flex flex-col justify-end items-start p-6">
 
 
-                    <div class="flex flex-col justify-start items-center w-full">
+                    <div id="scrollBtn" class="flex flex-col justify-start items-center w-full">
                         <h4 class="font-PxGrotesk400 text-[14px] text-gray-300 mb-">scroll down</h4>
                         <div class="c-scrolldown">
                             <div class="c-line"></div>
@@ -46,7 +46,7 @@
 
         </div>
         <section>
-            <div class="w-full h-auto px-5 flex flex-col justify-center items-start gap-9 py-[68px] bg-back-gray">
+            <div id="targetSection" class="w-full h-auto px-5 flex flex-col justify-center items-start gap-9 py-[68px] bg-back-gray">
                 <h3 class="text-gray-300 font-IRANYekan500 text-[24px] scrollTop mx-auto">مجموعه‌ی کاورسان</h3>
                 <p class="text-gray-300 font-IRANYekan300 text-center scrollTop text-[14px]">کاور سان تولید کننده تخصصی انواع پرده
                     های مدرن و سقف های برقی می باشد که از سال 1382 فعالیت خود را آغاز کرد و پس از دو دهه تلاش و تمرکز بر
@@ -311,7 +311,7 @@
             </div>
         </section>
         <section class="mt-[33px] px-5 h-auto pt-2.5 ">
-            <div class="flex flex-col justify-center">
+            <div class="flex flex-col justify-center pb-[38px]">
                 <div>
                     <h5 class="text-[18px] text-back-gray font-IRANYekan500 mb-[24px]">نظراتتان برای ما ارزشمند هست</h5>
                 </div>
@@ -351,13 +351,8 @@
 
             </div>
         </section>
-
-
-
-
-
-
     </main>
+    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
 </body>
 <script src="[##cms.cms.cdn##]/_js/swiper.js"></script>
 

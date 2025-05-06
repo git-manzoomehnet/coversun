@@ -212,3 +212,29 @@ const openmenu = document.querySelector('#openmenu');
         window.location.href = `/search.bc?q=${value}`
     }
         
+
+  document.addEventListener('DOMContentLoaded', function () {
+    function smoothScrollTo(targetY, duration = 1000) {
+      const startY = window.scrollY;
+      const distance = targetY - startY;
+      const startTime = performance.now();
+
+      function animation(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = progress < 0.5
+          ? 2 * progress * progress
+          : -1 + (4 - 2 * progress) * progress;
+        window.scrollTo(0, startY + distance * ease);
+        if (progress < 1) requestAnimationFrame(animation);
+      }
+
+      requestAnimationFrame(animation);
+    }
+
+    document.getElementById('scrollBtn').addEventListener('click', function () {
+      const target = document.getElementById('targetSection');
+      const targetY = target.getBoundingClientRect().top + window.scrollY;
+      smoothScrollTo(targetY, 1500);
+    });
+  });

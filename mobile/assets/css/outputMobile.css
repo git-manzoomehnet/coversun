@@ -44,8 +44,9 @@
     --font-IRANYekan500: "IRANYekan500";
     --font-IRANYekan400: "IRANYekan400";
     --font-IRANYekan300: "IRANYekan300";
-    --font-PxGrotesk400: "PxGrotesk400";
     --font-RalewayDots400: "RalewayDots400";
+    --font-PxGrotesk300: "PxGrotesk300";
+    --font-PxGrotesk400: "PxGrotesk400";
     --color-main: #FFCB08;
     --color-back-gray: #171717;
     --spacing-90p: 90%;
@@ -290,9 +291,6 @@
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
-  .left-1 {
-    left: calc(var(--spacing) * 1);
-  }
   .left-1\/2 {
     left: calc(1/2 * 100%);
   }
@@ -359,9 +357,6 @@
   .\!mx-2\.5 {
     margin-inline: calc(var(--spacing) * 2.5) !important;
   }
-  .mx-2 {
-    margin-inline: calc(var(--spacing) * 2);
-  }
   .mx-2\.5 {
     margin-inline: calc(var(--spacing) * 2.5);
   }
@@ -370,9 +365,6 @@
   }
   .mx-auto {
     margin-inline: auto;
-  }
-  .my-2 {
-    margin-block: calc(var(--spacing) * 2);
   }
   .my-2\.5 {
     margin-block: calc(var(--spacing) * 2.5);
@@ -413,14 +405,8 @@
   .my-auto {
     margin-block: auto;
   }
-  .mt-1 {
-    margin-top: calc(var(--spacing) * 1);
-  }
   .mt-1\.5 {
     margin-top: calc(var(--spacing) * 1.5);
-  }
-  .mt-2 {
-    margin-top: calc(var(--spacing) * 2);
   }
   .mt-2\.5 {
     margin-top: calc(var(--spacing) * 2.5);
@@ -482,6 +468,9 @@
   .mt-\[25px\] {
     margin-top: 25px;
   }
+  .mt-\[30px\] {
+    margin-top: 30px;
+  }
   .mt-\[33px\] {
     margin-top: 33px;
   }
@@ -515,17 +504,11 @@
   .mt-\[400px\] {
     margin-top: 400px;
   }
-  .mr-2 {
-    margin-right: calc(var(--spacing) * 2);
-  }
   .mr-2\.5 {
     margin-right: calc(var(--spacing) * 2.5);
   }
   .\!mb-0 {
     margin-bottom: calc(var(--spacing) * 0) !important;
-  }
-  .mb-2 {
-    margin-bottom: calc(var(--spacing) * 2);
   }
   .mb-2\.5 {
     margin-bottom: calc(var(--spacing) * 2.5);
@@ -551,6 +534,9 @@
   .mb-12 {
     margin-bottom: calc(var(--spacing) * 12);
   }
+  .mb-\[8px\] {
+    margin-bottom: 8px;
+  }
   .mb-\[12px\] {
     margin-bottom: 12px;
   }
@@ -572,6 +558,9 @@
   .mb-\[28px\] {
     margin-bottom: 28px;
   }
+  .mb-\[32px\] {
+    margin-bottom: 32px;
+  }
   .mb-\[33px\] {
     margin-bottom: 33px;
   }
@@ -586,6 +575,9 @@
   }
   .mb-\[62px\] {
     margin-bottom: 62px;
+  }
+  .mb-\[75px\] {
+    margin-bottom: 75px;
   }
   .ml-\[32px\] {
     margin-left: 32px;
@@ -613,9 +605,6 @@
   }
   .inline-block {
     display: inline-block;
-  }
-  .table {
-    display: table;
   }
   .\!h-\[245px\] {
     height: 245px !important;
@@ -718,9 +707,6 @@
   }
   .h-\[60\%\] {
     height: 60%;
-  }
-  .h-\[60px\] {
-    height: 60px;
   }
   .h-\[65px\] {
     height: 65px;
@@ -896,6 +882,9 @@
   .max-h-0 {
     max-height: calc(var(--spacing) * 0);
   }
+  .max-h-\[45px\] {
+    max-height: 45px;
+  }
   .max-h-\[70px\] {
     max-height: 70px;
   }
@@ -974,6 +963,9 @@
   .w-\[132px\] {
     width: 132px;
   }
+  .w-\[135px\] {
+    width: 135px;
+  }
   .w-\[160px\] {
     width: 160px;
   }
@@ -1025,6 +1017,9 @@
   .w-\[full\] {
     width: full;
   }
+  .w-auto {
+    width: auto;
+  }
   .w-full {
     width: 100%;
   }
@@ -1043,28 +1038,18 @@
   .shrink-0 {
     flex-shrink: 0;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .-translate-x-1 {
-    --tw-translate-x: calc(var(--spacing) * -1);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
   .-translate-x-1\/2 {
     --tw-translate-x: calc(calc(1/2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
-  .scale-\[1\.7\] {
-    scale: 1.7;
+  .scale-\[2\.3\] {
+    scale: 2.3;
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
   .cursor-pointer {
     cursor: pointer;
-  }
-  .resize {
-    resize: both;
   }
   .grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1083,9 +1068,6 @@
   }
   .flex-nowrap {
     flex-wrap: nowrap;
-  }
-  .flex-wrap {
-    flex-wrap: wrap;
   }
   .items-center {
     align-items: center;
@@ -1176,9 +1158,6 @@
   }
   .gap-\[62px\] {
     gap: 62px;
-  }
-  .gap-x-1 {
-    column-gap: calc(var(--spacing) * 1);
   }
   .gap-x-1\.5 {
     column-gap: calc(var(--spacing) * 1.5);
@@ -1392,14 +1371,8 @@
   .p-\[20px\] {
     padding: 20px;
   }
-  .px-1 {
-    padding-inline: calc(var(--spacing) * 1);
-  }
   .px-1\.5 {
     padding-inline: calc(var(--spacing) * 1.5);
-  }
-  .px-2 {
-    padding-inline: calc(var(--spacing) * 2);
   }
   .px-2\.5 {
     padding-inline: calc(var(--spacing) * 2.5);
@@ -1473,9 +1446,6 @@
   .py-\[68px\] {
     padding-block: 68px;
   }
-  .pt-2 {
-    padding-top: calc(var(--spacing) * 2);
-  }
   .pt-2\.5 {
     padding-top: calc(var(--spacing) * 2.5);
   }
@@ -1541,9 +1511,6 @@
   }
   .pr-36 {
     padding-right: calc(var(--spacing) * 36);
-  }
-  .pb-2 {
-    padding-bottom: calc(var(--spacing) * 2);
   }
   .pb-2\.5 {
     padding-bottom: calc(var(--spacing) * 2.5);
@@ -1622,6 +1589,9 @@
   }
   .font-IRANYekan700 {
     font-family: var(--font-IRANYekan700);
+  }
+  .font-PxGrotesk300 {
+    font-family: var(--font-PxGrotesk300);
   }
   .font-PxGrotesk400 {
     font-family: var(--font-PxGrotesk400);
@@ -1703,6 +1673,13 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+  .tracking-\[27\%\] {
+    --tw-tracking: 27%;
+    letter-spacing: 27%;
+  }
+  .text-nowrap {
+    text-wrap: nowrap;
+  }
   .text-ellipsis {
     text-overflow: ellipsis;
   }
@@ -1760,9 +1737,6 @@
   .no-underline {
     text-decoration-line: none;
   }
-  .underline {
-    text-decoration-line: underline;
-  }
   .opacity-0 {
     opacity: 0%;
   }
@@ -1775,10 +1749,6 @@
   .shadow-md {
     --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .outline-0 {
     outline-style: var(--tw-outline-style);
@@ -1794,11 +1764,6 @@
   }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
-  }
-  .transition {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .transition-all {
     transition-property: all;
@@ -1928,9 +1893,9 @@
       font-family: var(--font-IRANYekan300);
     }
   }
-  .\[\&\>p\]\:text-\[13px\] {
+  .\[\&\>p\]\:font-PxGrotesk300 {
     &>p {
-      font-size: 13px;
+      font-family: var(--font-PxGrotesk300);
     }
   }
   .\[\&\>p\]\:text-\[14px\] {
@@ -2024,9 +1989,23 @@
   font-display: swap;
 }
 @font-face {
+  font-family: "PxGrotesk300";
+  src: url("../fonts/PxGrotesk-Light.woff") format("woff"), url("../fonts/PxGrotesk-Light.woff2") format("woff2"), url("../fonts/PxGrotesk-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
   font-family: "PxGrotesk400";
-  src: url("https://cdn.basiscore.net/_fonts/Px-Grotesk-Regular.ttf") format("ttf");
+  src: url("../fonts/PxGroteskRegular.woff") format("woff"), url("../fonts/PxGroteskRegular.woff2") format("woff2"), url("../fonts/PxGroteskRegular.ttf") format("truetype");
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PxGrotesk700";
+  src: url("../fonts/PxGrotesk-Bold.woff") format("woff"), url("../fonts/PxGrotesk-Bold.woff2") format("woff2"), url("../fonts/PxGrotesk-Bold.ttf") format("truetype");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -2069,6 +2048,7 @@
   background-position: 0 -60px;
   background-size: 100% 200%;
   animation: scrolldown 2.2s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 @keyframes scrolldown {
   0% {
@@ -2184,6 +2164,58 @@
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
+.showImg {
+  transform: scale(1.5);
+  transition: transform 1.4s cubic-bezier(.165,.84,.44,1);
+}
+@media (min-width: 359px) and (max-width: 361px) {
+  .showNameCh {
+    margin-top: 377px;
+  }
+}
+@media (min-width: 374px) and (max-width: 376px) {
+  .showNameCh {
+    margin-top: 414px;
+  }
+  .showImgCh {
+    top: 710px;
+  }
+}
+@media (min-width: 427px) and (max-width: 429px) {
+  .showNameCh {
+    margin-top: 500px;
+  }
+  .showImgCh {
+    top: 662px;
+  }
+}
+@media (min-width: 412px) and (max-width: 420px) {
+  .showNameCh {
+    margin-top: 518px;
+  }
+  .showImgCh {
+    top: 662px;
+  }
+}
+.ProductItemCat {
+  filter: grayscale(1);
+  transition: filter 0.6s ease-in-out;
+}
+.ProductItemCat:hover {
+  filter: grayscale(0);
+}
+#headerLangSvg ,#openMenuHeader {
+  fill: black;
+}
+#ProductListm #openForm, #productList #openForm, #ProductListm #langWeb, #productList #langWeb, #ProductListm #headerLangSvg button, #productList #headerLangSvg button, #productList #headerLangSvg a , #ProductListm #headerLangSvg a , #blog-productList #openForm, #blog-list #openForm, #blog-list #langWeb, #productList #langWeb, #blog-list #headerLangSvg button, #productList #headerLangSvg button, #productList #headerLangSvg a, #blog-list #headerLangSvg a {
+  color: #fff !important;
+}
+#productList #openMenuHeader, #ProductListm #openMenuHeader, #ProductListm #headerLangSvg, #productList #headerLangSvg, #productList #openMenuHeader, #blog-list #openMenuHeader, #productList #headerLangSvg, #blog-list #headerLangSvg {
+  fill: #fff !important;
+}
+productList #productList #openMenuHeader line , #ProductListm #openMenuHeader line , #productList #openMenuHeader line , #blog-list #openMenuHeader line {
+  stroke: #fff !important;
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;
@@ -2229,6 +2261,10 @@
   inherits: false;
 }
 @property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
   syntax: "*";
   inherits: false;
 }
@@ -2382,6 +2418,7 @@
       --tw-border-style: solid;
       --tw-leading: initial;
       --tw-font-weight: initial;
+      --tw-tracking: initial;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;
       --tw-shadow-alpha: 100%;

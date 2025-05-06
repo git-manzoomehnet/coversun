@@ -41,7 +41,7 @@
                 </face>
             </basis>
             
-            <div class="w-[74px] h-[82px] flex flex-col justify-center items-center gap-[8px] mt-11">
+            <div id="scrollBtn" class="w-[74px] h-[82px] flex flex-col justify-center items-center gap-[8px] mt-11">
                 <h5 class="font-PxGrotesk400 text-[14px] flex-nowrap text-gray-400">scroll donw </h5>
                 <div class="c-scrolldown">
                     <div class="c-line"></div>
@@ -49,22 +49,22 @@
 
             </div>
         </div>
-        <div class="w-full h-auto">
+        <div id="targetSection" class="w-full h-auto">
             <div class="ProductListItem flex flex-col justify-center items-center">
                 <basis core="list" datamembername="basisName.productCat">
                     <face filter="parentid=214297">
                             <a href="/product-list.bc?catid=@catid">
                                 <div
-                            class="ProductItem relative w-full h-[300px] flex grayscale bg-cover bg-no-repeat bg-center flex-col justify-end items-center overflow-hidden"
+                            class="ProductItemCat relative w-full h-[300px] flex grayscale bg-cover bg-no-repeat bg-center flex-col justify-end items-center overflow-hidden"
                             style="background-image: url([##cms.cms.cdn##]/@image);">
                             
                             
                             <div class="absolute top-0 left-0 w-full h-full bg-black/60 z-10"></div>
 
-                            <div class="relative p-[20px] flex flex-col justify-end items-start z-20">
-                                <img class="w-[102px] h-[102px]" src="[##cms.cms.cdn##]/images/icone-Def-@catid.png" alt="@title" />
-                                <h4 class="text-[16px] font-PxGrotesk500 text-white py-[15px]">@title</h4>
-                                <p class="text-[12px] font-IRANYekan300 text-white">
+                            <div class="relative p-[20px] flex flex-col justify-end items-start z-20 scrollTop">
+                                <img class="w-[102px] h-[102px] " src="[##cms.cms.cdn##]/images/icone-Def-@catid.png" alt="@title" />
+                                <h4 class="text-[16px] font-PxGrotesk500  text-white py-[15px]">@title</h4>
+                                <p class="text-[12px] font-IRANYekan300 text-white ">
                                     @urldescription
                                 </p>
                             </div>

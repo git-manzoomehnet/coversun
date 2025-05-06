@@ -2,7 +2,7 @@
     <member name="seolist" type="list" request="product" id="[##cms.query.id##]"></member>
 </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" usedforid="[##cms.query.id##]">
-    <member name="related-product" propertyid="17856,10000792" type="list" size="371x371" />
+    <member name="related-product" propertyid="17856,10000792" type="list" size="300x500" />
 </basis>
 <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="[##cms.query.id##]">
     <member name="image" type="list" format="4" />
@@ -43,11 +43,11 @@
     <member name="video-product" type="list" format="3" />
 </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" usedforid="[##cms.query.id##]">
-    <member name="relatedblog" type="list" blgid="218" size="373x240" propertyid="7244,7249" link="article.bc"
-        postsql=" select *, SUBSTR(prp_7244, 1,230-CHARINDEX(' ', REVERSE(SUBSTR(prp_7244, 1, 230)))) || '...' as substr from [db.relatedblog]" />
+    <member name="relatedblog" type="list" blgid="218" size="373x240" propertyid="7244,7249" link="article.bc" postsql=" select *, SUBSTR(prp_7244, 1,230-CHARINDEX(' ', REVERSE(SUBSTR(prp_7244, 1, 230)))) || '...' as substr from [db.relatedblog]" />
 </basis>
+
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" usedforid="[##cms.query.id##]">
-    <member name="relatedproduct" type="list" blgid="18" size="373x240" />
+    <member name="relatedproduct" type="list" blgid="18" size="300x200" />
 </basis>
 <!DOCTYPE html>
 <html lang="fa">
@@ -65,9 +65,9 @@
         </face>
     </basis>
 </head>
-<body>
+<body id="productList">
     <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
-    <main id="productList">
+    <main >
         <div class="relative">
             <div class="absolute z-20 top-0 pt-[70px] px-5">
                 <ul class="flex flex-row gap-1.5">
@@ -93,11 +93,7 @@
                                 <img class="scrollTop" src="[##cms.cms.cdn##]/images/icone-@Def-.png" alt="" />
                                 <h4 class="text-[24px] pt-5 pb-2.5 font-IRANYekan500 text-white">
                                     @db.related-product.title</h4>
-
-
-
-                                <p class="text-[14px] text-white font-PxGrotesk400">@db.en-related-product.title</p>
-
+                                    <p class="text-[14px] text-white font-PxGrotesk400">@db.en-related-product.title</p>
                             </div>
 
                         </div>
@@ -110,7 +106,7 @@
         <section>
             <div
                 class="w-[344px] h-auto relative top-[-80px] right-[0px] flex flex-col justify-start bg-[#FFCB08] pb-[29px] opacity-[85%] pt-[14px] px-[20px]">
-                <div class="flex flex-col justify-start items-center">
+                <div id="scrollBtn" class="flex flex-col justify-start items-center">
                     <h4 class="font-PxGrotesk400 text-[14px] text-gray-400 mb-">scroll down</h4>
                     <div class="c-scrolldown">
                         <div class="c-line bg-black h-[35px]"></div>
@@ -160,7 +156,7 @@
             </div>
         </section>
 
-        <section class="mt-[33px] px-5 h-auto pt-2.5 bg-[#FAFAFA]">
+        <section id="targetSection" class="mt-[33px] px-5 h-auto pt-2.5 bg-[#FAFAFA]">
             <div class="flex flex-col justify-center h-auto">
                 <div>
                     <h4 class="font-IRANYekan500 text-[18px] text-black">مشخصات:</h4>
@@ -216,7 +212,7 @@
                                 <basis core="list" datamembername="list.productJoin">
                                     <face>
                                         
-                                        <p class="[&>p]:font-IRANYekan300 [&>p]:text-[13px] [&>p]:text-gray-700">@db.related-product.prp_10000792</p>                                           
+                                        <p class="font-IRANYekan300 text-[13px] text-gray-700">@db.related-product.prp_10000792</p>                                           
                                     </face>
                                 </basis>
                             </div>
@@ -363,7 +359,7 @@
                         <div class="msg">
                             <div class="text-[14px] font-IRANYekan300 text-back-gray">پیام</div>
                             <div class="msgInput relative">
-                                <textarea class="min-h-[137px] w-full bg-gray-50" name="" id=""></textarea>
+                                <_textarea class="min-h-[137px] w-full bg-gray-50" name="" id=""></_textarea>
                             </div>
                         </div>
 
@@ -438,37 +434,24 @@
                 </section>
 
             </layout>
-            <face filter="@prp_10000792 not in (null)">
-                <div class="swiper-slide !w-[350px] h-[503px] flex flex-col gap-1.5">
+            <face >
+                <div class="swiper-slide w-full h-[503px] flex flex-col gap-1.5">
                     <div class="w-full h-full">
                         <a href="/@link" title="@title">
-                            <img class="w-full h-[448px]" src="[##cms.cms.cdn##]/@00373X00240prp" alt="@title">
+                            <img class="w-full h-[448px]" src="[##cms.cms.cdn##]/@00300X00200prp" alt="@title">
                         </a>
                     </div>
                     <div class="flex flex-col">
                         <h4 class="text-[16px] font-IRANYekan500 text-gray-500">@title</h4>
-                        <p class="text-[16px] font-IRANYekan400 leading-[28px] text-gray-500">ساخت کشور @prp_10000792
-                        </p>
+                        <!-- <p class="text-[16px] font-IRANYekan400 leading-[28px] text-gray-500">ساخت کشور @prp_10000792
+                        </p> -->
 
                     </div>
 
                 </div>
 
             </face>
-            <face filter="@prp_10000792 = (null)">
-                <div class="swiper-slide !w-[350px] h-[503px] flex flex-col gap-1.5">
-                    <div class="w-full h-full">
-                        <a href="/@link" title="@title">
-                            <img class="w-full h-[448px]" src="[##cms.cms.cdn##]/@00373X00240prp" alt="@title">
-                        </a>
-                    </div>
-                    <div class="flex flex-col">
-                        <h4 class="text-[16px] font-IRANYekan500 text-gray-500">@title</h4>
-                    </div>
 
-                </div>
-
-            </face>
 
         </basis>
         <basis core="print" datamembername="db.relatedblog">
@@ -497,7 +480,7 @@
                         </a>
                     </div>
                     <div class="flex flex-col gap-2.5">
-                        <span class="text-[14px] text-gray-600 font-PxGrotesk400">@prp_7249</span>
+                        <span class="text-[14px] text-gray-600 font-PxGrotesk400 mt-[10px]">@prp_7249</span>
                         <h4 class="text-[16px] font-IRANYekan500 text-black">@title</h4>
                         <p class="text-[14px] font-IRANYekan300 leading-[28px] h-[85px] overflow-hidden text-gray-500">
                             @prp_7244</p>
@@ -509,13 +492,23 @@
         </basis>
         <basis core="print" datamembername="db.video-product">
             <layout>
-                <section class="mt-[33px] px-5 h-auto pt-2.5 ">
+                <section class="mt-[33px] px-5 h-auto pt-2.5  mb-[32px]">
                     <div class="flex flex-col justify-start gap-4">
                         <div>
                             <h4 class="text-[18px] font-IRANYekan500 text-black">نمونه پروژه های اجرا شده</h4>
                         </div>                        
                         @child    
                     </div>
+                    <!-- #### -->
+                    <div class="relative w-[173px] h-[48px] mt-[30px]">
+                        <div class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-black z-0"></div>
+                        <div class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-black z-0"></div>
+                      
+                        <a href="/project-list.bc" class="relative z-10 font-IRANYekan500 text-[14px] w-full h-full flex items-center justify-center border border-black text-black text-lg no-underline">
+                            پروژ های بیشتر
+                        </a>
+                      </div>
+                    <!-- #### -->
                     </div>
                 </section>
             </layout>
@@ -523,7 +516,7 @@
                 <div class="viduBoxM w-full h-[355px] flex flex-col gap-1.5">
                     <div class="w-full h-full overflow-hidden">
                         <video src="[##cms.cms.cdn##]/@largeIMG" muted loop controls playsinline
-                            class="h-full object-cover grayscale-100 group-hover/viduBox:grayscale-0 duration-500">
+                            class="h-full object-cover group-hover/viduBox:grayscale-0 duration-500">
 
                         </video>
                     </div>
@@ -533,7 +526,7 @@
                 <div class="w-full h-[355px] flex flex-col">
                     <div class="w-full h-full overflow-hidden">
                         <img src="[##cms.cms.cdn##]/@largeIMG"
-                            class="h-full object-cover grayscale-100 group-hover/imgBox:grayscale-0 duration-500" />
+                            class="h-full object-cover group-hover/imgBox:grayscale-0 duration-500" />
                     </div>
                 </div>
 
@@ -664,7 +657,7 @@
         });
         if (!emptyFlag) {
 
-            let val = document.querySelector(".commentP textarea").value;
+            let val = document.querySelector(".commentP _textarea").value;
             let userName = document.querySelector(".commentP .userName").value;
 
             $bc.setSource('db.send', true)
