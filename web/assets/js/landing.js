@@ -170,3 +170,30 @@ navigation: {
 },
 
 });
+
+
+
+
+
+let viduBox = document.querySelectorAll(".viduBox");
+
+viduBox?.forEach(element => {
+  element.addEventListener("mousemove", function () {
+    element.querySelector("video")?.play();
+  });
+
+  element.addEventListener("mouseout", function () {
+    element.querySelector("video")?.pause();
+  });
+
+  let titleProject = element.getAttribute("data-title");
+  fetch(`/project-video.inc?title=${titleProject}`)
+    .then(response => response.text())
+    .then(videoElem => {
+      const socialInfo = element.querySelector(".videoS");
+      socialInfo.innerHTML = videoElem;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+});

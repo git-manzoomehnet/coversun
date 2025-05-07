@@ -1,10 +1,16 @@
 <basis core="dbsource" source="media" name="basisName" lid="1" catid="2391"> <member type="list" name="projectList-video" perpage="10" pageno="1" /> </basis>	
 
+
 <basis core="print" datamembername="basisName.projectList-video">
-  
-    <face filter="name='[##cms.query.title##]'">
+    <face filter="name='[##cms.query.title##]' and largeIMG is not (null)">
         <video
-        class="h-full w-full object-cover grayscale-100 group-hover/projectBox:grayscale-0 duration-500"
+        class="h-full object-cover grayscale-100 group-hover/projectBox:grayscale-0 duration-500"
         src="[##cms.cms.cdn##]/@largeIMG" muted loop></video>
+    </face>
+  
+    <face filter="name='[##cms.query.title##]' and largeIMG is null">
+        <video
+        class="h-full object-cover grayscale-100 group-hover/projectBox:grayscale-0 duration-500"
+        src="[##cms.cms.cdn##]/@largeIMG" poster="/[##cms.query.poster##]" muted loop></video>
     </face>
 </basis>

@@ -11,7 +11,8 @@
     <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376696"> <member name="pop-gallery" type="list" format="4"/> </basis>
     <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376699"> <member name="Sun-vibe" type="view"/ > </basis>
     <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376699"> <member name="image-Sun-vibe" type="list" format="4"/> </basis>
-    
+    <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376691"> <member name="image-brand3" type="list" format="4"/> </basis>
+
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376684"> <member name="event3" type="view"/ > </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376686"> <member name="event2" type="view"/ > </basis>
 <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376686"> <member name="image-event2" type="list" format="4"/> </basis>	
@@ -143,18 +144,74 @@
 
                                         </face>
                                     </basis>
+                                    <li class="flex items-center mb-2.5 gap-x-2.5">
+                                        <span class="text-lg font-IRANYekan500">
+                                            کو برندینگ
+                                        </span>
+                                    </li>
                                     <basis core="print" datamembername="db.co-brand">
-                                        <layout>
-                                            <li class="flex items-center mb-2.5 gap-x-2.5">
-                                                <span class="text-lg font-IRANYekan500">
-                                                    کو برندینگ
+                                        
+
+                                        <face filter="id=2376687">
+                                            <li data-target="company-1"
+                                                class="flex cursor-pointer items-center mb-2.5 gap-x-2.5 hoverItems group/hoverItem">
+                                                <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path class="group-hover/hoverItem:fill-white duration-500"
+                                                        d="M13.4656 6.92748H7.53435V0.572519C7.53435 0.229008 7.32061 0 7 0C6.67939 0 6.46565 0.229008 6.46565 0.572519V6.92748H0.534351C0.21374 6.92748 0 7.15649 0 7.5C0 7.84351 0.21374 8.07252 0.534351 8.07252H6.46565V14.4275C6.46565 14.771 6.67939 15 7 15C7.32061 15 7.53435 14.771 7.53435 14.4275V8.07252H13.4656C13.7863 8.07252 14 7.84351 14 7.5C14 7.15649 13.7863 6.92748 13.4656 6.92748Z"
+                                                        fill="black" />
+                                                </svg>
+
+                                                <span
+                                                    class="nav-link text-lg cursor-pointer font-IRANYekan300 group-hover/hoverItem:text-white duration-500">
+                                                    @title
                                                 </span>
                                             </li>
-                                            @child
-                                        </layout>
 
-                                        <face>
-                                            <li data-target="company-@RowNumber"
+                                        </face>
+                                         </basis>
+
+                                           <basis core="print" datamembername="db.co-brand">
+                                        <face filter="id=2376686">
+                                            <li data-target="company-2"
+                                                class="flex cursor-pointer items-center mb-2.5 gap-x-2.5 hoverItems group/hoverItem">
+                                                <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path class="group-hover/hoverItem:fill-white duration-500"
+                                                        d="M13.4656 6.92748H7.53435V0.572519C7.53435 0.229008 7.32061 0 7 0C6.67939 0 6.46565 0.229008 6.46565 0.572519V6.92748H0.534351C0.21374 6.92748 0 7.15649 0 7.5C0 7.84351 0.21374 8.07252 0.534351 8.07252H6.46565V14.4275C6.46565 14.771 6.67939 15 7 15C7.32061 15 7.53435 14.771 7.53435 14.4275V8.07252H13.4656C13.7863 8.07252 14 7.84351 14 7.5C14 7.15649 13.7863 6.92748 13.4656 6.92748Z"
+                                                        fill="black" />
+                                                </svg>
+
+                                                <span
+                                                    class="nav-link text-lg cursor-pointer font-IRANYekan300 group-hover/hoverItem:text-white duration-500">
+                                                    @title
+                                                </span>
+                                            </li>
+
+                                        </face>
+                                        </basis>
+                                          <basis core="print" datamembername="db.co-brand">
+                                        <face filter="id=2376684">
+                                            <li data-target="company-3"
+                                                class="flex cursor-pointer items-center mb-2.5 gap-x-2.5 hoverItems group/hoverItem">
+                                                <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path class="group-hover/hoverItem:fill-white duration-500"
+                                                        d="M13.4656 6.92748H7.53435V0.572519C7.53435 0.229008 7.32061 0 7 0C6.67939 0 6.46565 0.229008 6.46565 0.572519V6.92748H0.534351C0.21374 6.92748 0 7.15649 0 7.5C0 7.84351 0.21374 8.07252 0.534351 8.07252H6.46565V14.4275C6.46565 14.771 6.67939 15 7 15C7.32061 15 7.53435 14.771 7.53435 14.4275V8.07252H13.4656C13.7863 8.07252 14 7.84351 14 7.5C14 7.15649 13.7863 6.92748 13.4656 6.92748Z"
+                                                        fill="black" />
+                                                </svg>
+
+                                                <span
+                                                    class="nav-link text-lg cursor-pointer font-IRANYekan300 group-hover/hoverItem:text-white duration-500">
+                                                    @title
+                                                </span>
+                                            </li>
+
+                                        </face>
+                                        </basis>
+                                          <basis core="print" datamembername="db.co-brand">
+                                        <face filter="id=2376682">
+                                            <li data-target="company-4"
                                                 class="flex cursor-pointer items-center mb-2.5 gap-x-2.5 hoverItems group/hoverItem">
                                                 <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
@@ -205,7 +262,7 @@
                                             @title
                                         </a>
                                     </h3>
-                                    <div
+                                    <div style="min-height: 139px;"
                                         class="para line-clamp-[7] scrollToTop max-w-[400px] font-IRANYekan300 text-sm text-justify mb-16 text-gray600">
                                         <p>
                                             @prp_17877
@@ -556,9 +613,9 @@
                         </div>
                     </section>
 
-                    <div class="darkSec flex">
+                    <section class="darkSec events flex shrink-0">
                         <section
-                            class="section6 brand-1 bg-black events flex after:absolute after:w-px after:h-[78vh] after:top-[12%] after:max-h-[700px] after:left-0 pl-[134px] shrink-0 after:bg-gray300 relative"
+                            class="section6 brand-1 bg-black  flex after:absolute after:w-px after:h-[78vh] after:top-[12%] after:max-h-[700px] after:left-0 pl-[134px] shrink-0 after:bg-gray300 relative"
                             id="section6">
 
                             <basis core="print" datamembername="db.en-list-brand">
@@ -580,7 +637,7 @@
                                         <div class="overflow-hidden self-start ">
         
                                             <img class="ImgScale h-[48vh] max-h-[435px]"
-                                                src="[##cms.cms.cdn##]/@00600X00400prp" alt="@title">
+                                                src="/@00600X00400prp" alt="@title">
                                         </div>
                                         
                                     </face>
@@ -808,11 +865,11 @@
                                         
                                     </face>
                                 </basis>
-                                <basis core="print" datamembername="db.image-brand">
+                                <basis core="print" datamembername="db.image-brand3">
                                    
                                     <face filter="ord=1">
                                         <div
-                                            class="logoC  w-[184px] h-[184px] absolute left-9 bottom-0 rounded-full bg-white z-1 flex items-center justify-center">
+                                            class="logoC w-[184px] h-[184px] absolute left-9 bottom-0 rounded-full bg-white z-1 flex items-center justify-center">
                                             <img src="[##cms.cms.cdn##]/@largeIMG" alt="@title">
                                         </div>
                                         
@@ -873,14 +930,20 @@
                         </div>
                     </section>
 
-                    </div>
+                    </section>
 
 
                     <section class="section7 logosSection gap-x-28 flex shrink-0 items-center pr-32 pl-28">
                         <div class="details shrink-0 translate-y-[58px]" dir="ltr">
-                            <div class="imgS mb-8 scrollToTop">
-                                <img src="[##cms.cms.cdn##]/images/Sun-Vibe 1.png" alt="Sun-Vibe">
-                            </div>
+                            <basis core="print" datamembername="db.image-Sun-vibe">
+                              
+                                <face filter="ord=1">
+                                    <div class="imgS mb-8 scrollToTop">
+                                        <img src="[##cms.cms.cdn##]/@largeIMG" alt="Sun-Vibe">
+                                    </div>
+                                    
+                                </face>
+                            </basis>
                             <basis core="print" datamembername="db.Sun-vibe">
                               
                                 <face filter="TypeID=129">

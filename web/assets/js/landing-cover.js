@@ -275,7 +275,8 @@ $(".containerHorizontal").imagesLoaded({}, function () {
 
           const targetSelector = this.getAttribute('data-target');
           const targetEl = document.querySelector(`.${targetSelector}`);
-
+         
+          
           if (targetEl) {
             const targetIndex = Array.from(sections).indexOf(targetEl);
             let totalOffset = 0;
@@ -289,7 +290,11 @@ $(".containerHorizontal").imagesLoaded({}, function () {
             prevScroll = progress
 
             scroller.scrollTo(0, totalOffset)
-
+            console.log("targetIndex",targetIndex);
+            console.log("totalOffset",totalOffset);
+            console.log("targetEl",targetEl);
+            console.log("progress",progress);
+            
             prevScroll = progress;
             currentProgress = progress;
 
@@ -302,7 +307,6 @@ $(".containerHorizontal").imagesLoaded({}, function () {
       let listNavItem = document.querySelectorAll(".navigation li")
       hoverItems.forEach((element, i) => {
         element.addEventListener("mouseover", function (params) {
-        console.log("in");
         
         listNavItem.forEach((element2, i) => {
             element2.classList.add("opacity-0")
@@ -316,7 +320,6 @@ $(".containerHorizontal").imagesLoaded({}, function () {
           
         })
         element.addEventListener("mouseleave", function (params) {
-          console.log("leave");
           
           listNavItem.forEach((element2, i) => {
             element2.classList.remove("opacity-0")
@@ -344,26 +347,22 @@ $(".containerHorizontal").imagesLoaded({}, function () {
                   end: 'left 20%',
                   containerAnimation: scrollTween,
                   onEnter: ()=>{
-                    console.log("enter");
                     
                     
                     document.querySelector("header .lSec img").setAttribute("src" , prevLog)
                   },
                   onLeave: ()=>{
                     
-                    console.log("leave");
                     
                     document.querySelector("header .lSec img").setAttribute("src" , darkLogoA)
                   },
                   onEnterBack: ()=>{
-                    console.log("enterBack");
                     document.querySelector("header .lSec img").setAttribute("src" , prevLog)
                     
                     
                   },
                   onLeaveBack: ()=>{
                     
-                    console.log("leaveBack");
                     
                     document.querySelector("header .lSec img").setAttribute("src" , darkLogoA)
                   },
@@ -424,23 +423,24 @@ $(".containerHorizontal").imagesLoaded({}, function () {
           end: 'left -1%',
 
           onEnter: ()=>{
-            console.log("enter");
             document.querySelector("header").style.opacity="0"
-
+            document.querySelector("header").style.zIndex="-1"
+            
           },
           onLeave: ()=>{
             document.querySelector("header").style.opacity="0"
+            document.querySelector("header").style.zIndex="-1"
 
 
           },
           onEnterBack: ()=>{
-            console.log("enterBack");
 
 
           },
           onLeaveBack: ()=>{
 
             document.querySelector("header").style.opacity="1"
+            document.querySelector("header").style.zIndex="1000000001"
 
           },
 
@@ -455,28 +455,22 @@ $(".containerHorizontal").imagesLoaded({}, function () {
           start: 'right 0%',
           end: 'left 10%',
           onEnter: () => {
-            console.log("enter");
 
             bactToLeft.style.scale = "0"
-            console.log(bactToLeft);
 
           },
           onLeave: () => {
 
 
-            console.log("leave");
 
           },
           onEnterBack: () => {
-            console.log("enterBack");
 
 
 
           },
           onLeaveBack: () => {
             bactToLeft.style.scale = "1"
-            console.log("leaveBack");
-            console.log(bactToLeft);
 
 
           },
@@ -655,7 +649,7 @@ $(".containerHorizontal").imagesLoaded({}, function () {
       closeGallery.addEventListener("click", function (params) {
         galleryPop.classList.add("-top-[100vh]")
 
-        galleryShowPop.classList.add("-translate-y-[100vh]")
+        // galleryShowPop.classList.add("-translate-y-[100vh]")
       })
       openPopGallery.forEach(element => {
         element.addEventListener("click" , function (params) {

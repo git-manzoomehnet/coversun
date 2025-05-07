@@ -341,10 +341,12 @@ $(".containerHorizontal").imagesLoaded({
           onEnter: ()=>{
             console.log("enter");
             document.querySelector("header").style.opacity="0"
-
+            document.querySelector("header").style.zIndex="-1"
+            
           },
           onLeave: ()=>{
             document.querySelector("header").style.opacity="0"
+            document.querySelector("header").style.zIndex="-1"
 
             
           },
@@ -356,7 +358,8 @@ $(".containerHorizontal").imagesLoaded({
           onLeaveBack: ()=>{
             
             document.querySelector("header").style.opacity="1"
-            
+            document.querySelector("header").style.zIndex="1000000001"
+
           },
 
 
@@ -370,6 +373,7 @@ $(".containerHorizontal").imagesLoaded({
         element.addEventListener("mouseenter", function (params) {
           element.querySelector(".listSvg").classList.add("draw");
           catLists.style.width = "408px";
+          catLists.querySelector(".catBtnnnnn").style.background="#FFCB08"
           element.querySelector(".title").classList.remove("hidden")
           catImgs[i].classList.remove("opacity-0")
           setTimeout(() => {
@@ -379,7 +383,7 @@ $(".containerHorizontal").imagesLoaded({
         })
         element.addEventListener("mouseleave", function (params) {
           element.querySelector(".listSvg").classList.remove("draw");
-
+ catLists.querySelector(".catBtnnnnn").style.background="#D4D4D8"
           catLists.style.width = "255px";
           catImgs[i].classList.add("opacity-0")
           element.querySelector(".title").classList.add("opacity-0")

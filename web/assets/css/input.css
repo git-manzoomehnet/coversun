@@ -35,6 +35,17 @@
   font-display: swap;
 }
 @font-face {
+  font-family: "IRANYekan700";
+  src: url("../_fonts/IRANYekanBold.eot");
+  src: url("../_fonts/IRANYekanBold.eot?#iefix") format("embedded-opentype"),
+    url("../_fonts/IRANYekanBold.woff") format("woff"),
+    url("../_fonts/IRANYekanBold.woff2") format("woff2"),
+    url("../_fonts/IRANYekanBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
   font-family: "RalewayDots400";
   src: url("../fonts/RalewayDots-Regular.eot");
   src: url("../fonts/RalewayDots-Regular.eot?#iefix") format("embedded-opentype"),
@@ -80,6 +91,7 @@
   --font-IRANYekan300: "IRANYekan300" !important;
   --font-IRANYekan400: "IRANYekan400" !important;
   --font-IRANYekan500: "IRANYekan500" !important;
+  --font-IRANYekan700: "IRANYekan700" !important;
   --font-PxGrotesk300: "PxGrotesk300" !important;
   --font-PxGrotesk400: "PxGrotesk400" !important;
   --font-PxGrotesk700: "PxGrotesk700" !important;

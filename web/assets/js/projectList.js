@@ -37,7 +37,8 @@ viduBox?.forEach(element => {
   });
 
   let titleProject = element.getAttribute("data-title");
-  fetch(`/project-video.inc?title=${titleProject}`)
+  let posterProject = element.getAttribute("data-poster");
+  fetch(`/project-video.inc?title=${titleProject}&poster=${posterProject}&refresh=true`)
     .then(response => response.text())
     .then(videoElem => {
       console.log("videoElem", videoElem);

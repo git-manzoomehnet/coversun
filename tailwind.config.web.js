@@ -16,6 +16,7 @@ module.exports = {
         IRANYekan300: ["IRANYekan300"],
         IRANYekan400: ["IRANYekan400"],
         IRANYekan500: ["IRANYekan500"],
+        IRANYekan700: ["IRANYekan700"],
         PxGrotesk300: ["PxGrotesk300"],
         PxGrotesk400: ["PxGrotesk400"],
         PxGrotesk700: ["PxGrotesk700"],

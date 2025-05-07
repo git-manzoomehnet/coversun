@@ -50,23 +50,24 @@
                                     class="relative after:absolute after:inset-0 after:bg-back-gray/[0.95] after:-z-1 pt-[189px] flex flex-col justify-between w-full h-full">
                                     <div class="bgImg w-full h-full absolute inset-0 -z-1">
                                         <basis core="print" datamembername="basisName.productCat">
-                                      
+
                                             <face filter="catid<>214297">
                                                 <img src="[##cms.cms.cdn##]/@image"
                                                     class="w-full h-full object-cover duration-500 -z-1 absolute inset-0 opacity-0"
                                                     alt="@catid">
-                                                
+
                                             </face>
                                         </basis>
-                                       
+
                                     </div>
-                                    <ul>
+                                    <ul class="overflow-y-auto">
 
                                         <basis core="print" datamembername="basisName.productCat">
-                                        
+
                                             <face filter="catid<>214297">
                                                 <li class="mb-10 group/listItemLink">
-                                                    <a href="/product-list.bc?catid=@catid" class="flex items-center justify-center gap-x-5">
+                                                    <a href="/product-list.bc?catid=@catid"
+                                                        class="flex items-center justify-center gap-x-5">
                                                         <div class="listSvg">
                                                             <!-- <svg class="static" fill="white" width="99px" height="99px"
                                                                 viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"
@@ -80,30 +81,31 @@
                                                                 <path
                                                                     d="M9 0C7.355469 0 6 1.355469 6 3L6 50L44 50L44 3C44 1.355469 42.644531 0 41 0 Z M 9 2L41 2C41.554688 2 42 2.445313 42 3L42 48L38 48L38 36L27 36L27 48L8 48L8 3C8 2.445313 8.445313 2 9 2 Z M 12 6L12 14L23 14L23 6 Z M 27 6L27 14L38 14L38 6 Z M 14 8L21 8L21 12L14 12 Z M 29 8L36 8L36 12L29 12 Z M 12 16L12 24L23 24L23 16 Z M 27 16L27 24L38 24L38 16 Z M 14 18L21 18L21 22L14 22 Z M 29 18L36 18L36 22L29 22 Z M 12 26L12 34L23 34L23 26 Z M 27 26L27 34L38 34L38 26 Z M 14 28L21 28L21 32L14 32 Z M 29 28L36 28L36 32L29 32 Z M 12 36L12 44L23 44L23 36 Z M 14 38L21 38L21 42L14 42 Z M 29 38L36 38L36 48L29 48Z" />
                                                             </svg> -->
-                                                            <img class="opacity-50 duration-500 group-hover/listItemLink:opacity-100" src="/images/icone-Def-@catid.png" alt="@title">
+                                                            <img class="opacity-50 duration-500 group-hover/listItemLink:opacity-100"
+                                                                src="/images/icone-Def-@catid.png" alt="@title">
                                                         </div>
-        
+
                                                         <div
                                                             class="title hidden group-hover/listItemLink:w-fit group-hover/listItemLink:scale-x-100 opacity-0 duration-500">
-        
+
                                                             <h4 class="font-IRANYekan500 text-base text-white">
                                                                 سقف قابل جابه جایی
                                                             </h4>
-        
+
                                                             <span class="font-PxGrotesk400 text-sm text-white mt-5">
                                                                 REMOVABLE ROOF
                                                             </span>
                                                         </div>
                                                     </a>
                                                 </li>
-                                             
-                                                
+
+
                                             </face>
                                         </basis>
 
                                     </ul>
                                     <a href="/product-cat.bc"
-                                        class="h-[77px] flex items-center justify-center w-full bg-gray300 gap-x-2">
+                                        class="h-[77px] catBtnnnnn duration-500 flex items-center justify-center w-full bg-gray300 gap-x-2">
                                         <span class="font-IRANYekan500 text-gray-800">
                                             محصولات بیشتر
                                         </span>
@@ -123,7 +125,7 @@
                                 <section dir="ltr" class="section2 flex flex-col justify-center bg-main  px-24">
                                     @child
 
-                                    <a href="/about-us.bc" download target="_blank"
+                                    <a href="/about-us.bc"
                                         class="relative flex items-center justify-center w-fit group/linkBtn">
                                         <svg class="group-hover/linkBtn:opacity-0 duration-500" width="191" height="66"
                                             viewBox="0 0 191 66" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -192,7 +194,7 @@
 
                             <div
                                 class="moreProjects shrink-0 h-dvh  flex items-center justify-center w-[227px] bg-main ">
-                                <a href="/project-list.bc" download target="_blank"
+                                <a href="/project-list.bc"
                                     class="relative flex items-center justify-center w-fit group/linkBtn">
                                     <svg class="group-hover/linkBtn:opacity-0 duration-500" width="191" height="66"
                                         viewBox="0 0 191 66" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -244,7 +246,7 @@
 
                                                     <face filter="text='لینکدین'">
                                                         <li>
-                                                            <a href="@largetext" title="linkdin"
+                                                            <a href="@largetext" title="linkdin" target="_blank"
                                                                 class=" duration-500  group/linkdin">
 
                                                                 <svg width="25" height="24" viewBox="0 0 25 24"
@@ -265,7 +267,7 @@
 
                                                     <face filter="text='واتس اپ'">
                                                         <li>
-                                                            <a href="@largetext" title="whatsapp"
+                                                            <a href="@largetext" title="whatsapp" target="_blank"
                                                                 class="group/whatsapp">
 
                                                                 <svg width="25" height="24" viewBox="0 0 25 24"
@@ -286,7 +288,8 @@
 
                                                     <face filter="TypeID=242">
                                                         <li>
-                                                            <a href="mailto:@Answer" title="email" class="group/mail">
+                                                            <a href="mailto:@Answer" title="email" class="group/mail"
+                                                                target="_blank">
 
                                                                 <svg width="26" height="24" viewBox="0 0 26 24"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -307,7 +310,7 @@
 
                                                     <face filter="text='اینستاگرام'">
                                                         <li>
-                                                            <a href="@largetext" title="instagram"
+                                                            <a href="@largetext" title="instagram" target="_blank"
                                                                 class="group/instagram">
 
                                                                 <svg width="24" height="24" viewBox="0 0 24 24"

@@ -238,10 +238,12 @@ $(".containerHorizontal").imagesLoaded({
                   onEnter: ()=>{
                     console.log("enter");
                     document.querySelector("header").style.opacity="0"
-
-                  },
-                  onLeave: ()=>{
+                    document.querySelector("header").style.zIndex="-1"
+                    
+                },
+                onLeave: ()=>{
                     document.querySelector("header").style.opacity="0"
+                    document.querySelector("header").style.zIndex="-1"
 
                     
                   },
@@ -253,7 +255,7 @@ $(".containerHorizontal").imagesLoaded({
                   onLeaveBack: ()=>{
                     
                     document.querySelector("header").style.opacity="1"
-                    
+                    document.querySelector("header").style.zIndex="1000000001"
                   },
 
 
