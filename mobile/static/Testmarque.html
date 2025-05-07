@@ -4,7 +4,7 @@
     <title>Infinite Marquee</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="./../assets/css/outputMobile.css" rel="stylesheet" />
 </head>
 <style>
     .body__inner-wrapper {
@@ -26,15 +26,14 @@
 
     .marquee {
         width: 100%;
-        height: 12rem;
+        height: 100%;
         background: black;
         overflow: hidden;
-        box-shadow: 0 2rem 2rem 0.4rem rgba(0, 0, 0, 0.2);
-        margin-bottom: 2rem;
+        box-shadow: 0 2rem 2rem 0.4rem rgba(0, 0, 0, 0.2);    
     }
 
     .marquee__inner-wrap {
-        height: 100%;
+        height: 116px;
         width: 100%;
         overflow: hidden;
     }
@@ -92,11 +91,9 @@
         width: max(8rem, 12vw);
         height: 8rem;
         margin: 0 4vw;
-        border-radius: 100rem;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-color: #444;
         filter: grayscale(0.6);
     }
 
@@ -147,49 +144,50 @@
         </div>
 
         <!-- First Marquee (Left to Right) -->
-        <div class="marquee" id="marquee1">
+        <div class="marquee" id="marquee2">
             <div class="marquee__inner-wrap">
                 <div class="marquee__inner marquee__inner--right">
-                    <span>Panda Bamboo</span>
-                    <div class="marquee__img"
-                        style="background-image: url(https://images.unsplash.com/photo-1525382455947-f319bc05fb35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
-                    </div>
-                    <span>Polar Bear</span>
-                    <div class="marquee__img"
-                        style="background-image: url(https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
-                    </div>
-                    <span>Firefox</span>
-                    <div class="marquee__img"
-                        style="background-image: url(https://images.unsplash.com/photo-1604429868519-8a64cb3b010b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
-                    </div>
-                    <span>Horse graze</span>
-                    <div class="marquee__img"
-                        style="background-image: url(https://images.unsplash.com/photo-1534681534056-461f50de526f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
-                    </div>
+                    <div class="marquee__img bg-[red] w-[73px] grayscale h-[73px]"
+                    style="background-image: url([##cms.cms.cdn##]/@largeIMG)"></div>
+                    <div class="marquee__img bg-[red] w-[73px] grayscale h-[73px]"
+                    style="background-image: url([##cms.cms.cdn##]/@largeIMG)"></div>
+                    <div class="marquee__img bg-[red] w-[73px] grayscale h-[73px]"
+                    style="background-image: url([##cms.cms.cdn##]/@largeIMG)"></div>
+                    <div class="marquee__img bg-[red] w-[73px] grayscale h-[73px]"
+                    style="background-image: url([##cms.cms.cdn##]/@largeIMG)"></div>
+                    <div class="marquee__img bg-[red] w-[73px] grayscale h-[73px]"
+                    style="background-image: url([##cms.cms.cdn##]/@largeIMG)"></div>
+                    <div class="marquee__img bg-[red] w-[73px] grayscale h-[73px]"
+                    style="background-image: url([##cms.cms.cdn##]/@largeIMG)"></div>
+                    <div class="marquee__img bg-[red] w-[73px] grayscale h-[73px]"
+                    style="background-image: url([##cms.cms.cdn##]/@largeIMG)"></div>
+                    <div class="marquee__img bg-[red] w-[73px] grayscale h-[73px]"
+                    style="background-image: url([##cms.cms.cdn##]/@largeIMG)"></div>
                 </div>
             </div>
         </div>
 
         <!-- Second Marquee (Right to Left) -->
-        <div class="marquee" id="marquee2">
+        <div class="marquee" id="marquee1">
             <div class="marquee__inner-wrap">
                 <div class="marquee__inner marquee__inner--left">
-                    <span>Horse graze</span>
-                    <div class="marquee__img"
+                    
+                    <div class="marquee__img w-[73px] h-[73px]"
                         style="background-image: url(https://images.unsplash.com/photo-1534681534056-461f50de526f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
                     </div>
-                    <span>Firefox</span>
-                    <div class="marquee__img"
-                        style="background-image: url(https://images.unsplash.com/photo-1604429868519-8a64cb3b010b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                    <div class="marquee__img w-[73px] h-[73px]"
+                        style="background-image: url(https://images.unsplash.com/photo-1534681534056-461f50de526f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
                     </div>
-                    <span>Polar Bear</span>
-                    <div class="marquee__img"
-                        style="background-image: url(https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                    <div class="marquee__img w-[73px] h-[73px]"
+                        style="background-image: url(https://images.unsplash.com/photo-1534681534056-461f50de526f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
                     </div>
-                    <span>Panda Bamboo</span>
-                    <div class="marquee__img"
-                        style="background-image: url(https://images.unsplash.com/photo-1525382455947-f319bc05fb35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                    <div class="marquee__img w-[73px] h-[73px]"
+                        style="background-image: url(https://images.unsplash.com/photo-1534681534056-461f50de526f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
                     </div>
+                    <div class="marquee__img w-[73px] h-[73px]"
+                        style="background-image: url(https://images.unsplash.com/photo-1534681534056-461f50de526f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -211,15 +209,19 @@
         // First Marquee (Left to Right)
         const marquee1 = document.querySelector('#marquee1 .marquee__inner');
         const marquee1Content = marquee1.innerHTML;
-        marquee1.innerHTML = marquee1Content + marquee1Content;
+        // marquee1.innerHTML = marquee1Content + marquee1Content;
         const marquee1Width = marquee1.offsetWidth / 2;
 
-        gsap.to(marquee1, {
-            x: -marquee1Width,
-            duration: 30,
-            ease: "none",
-            repeat: -1
-        });
+        gsap.fromTo(marquee1, {
+  x: 0
+}, {
+  x: -marquee1.scrollWidth / 2,
+  duration: 30,
+  ease: "none",
+  repeat: -1
+});
+
+
 
         // Second Marquee (Right to Left)
         const marquee2 = document.querySelector('#marquee2 .marquee__inner');
@@ -227,12 +229,15 @@
         marquee2.innerHTML = marquee2Content + marquee2Content;
         const marquee2Width = marquee2.offsetWidth / 2;
 
-        gsap.to(marquee2, {
-            x: marquee2Width,
-            duration: 30,
-            ease: "none",
-            repeat: -1
-        });
+        gsap.fromTo(marquee2, {
+  x: 0
+}, {
+  x: marquee2Width,
+  duration: 30,
+  ease: "none",
+  repeat: -1
+});
+
     </script>
 </body>
 

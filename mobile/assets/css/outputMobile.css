@@ -288,9 +288,6 @@
   .right-3 {
     right: calc(var(--spacing) * 3);
   }
-  .right-4 {
-    right: calc(var(--spacing) * 4);
-  }
   .right-8 {
     right: calc(var(--spacing) * 8);
   }
@@ -441,6 +438,9 @@
   .my-\[13px\] {
     margin-block: 13px;
   }
+  .my-\[20px\] {
+    margin-block: 20px;
+  }
   .my-\[23px\] {
     margin-block: 23px;
   }
@@ -525,6 +525,9 @@
   .mt-\[25px\] {
     margin-top: 25px;
   }
+  .mt-\[26px\] {
+    margin-top: 26px;
+  }
   .mt-\[30px\] {
     margin-top: 30px;
   }
@@ -548,6 +551,9 @@
   }
   .mt-\[62px\] {
     margin-top: 62px;
+  }
+  .mt-\[80px\] {
+    margin-top: 80px;
   }
   .mt-\[100px\] {
     margin-top: 100px;
@@ -651,9 +657,6 @@
   .mb-\[75px\] {
     margin-bottom: 75px;
   }
-  .ml-\[5px\] {
-    margin-left: 5px;
-  }
   .ml-\[32px\] {
     margin-left: 32px;
   }
@@ -725,12 +728,6 @@
   }
   .h-28 {
     height: calc(var(--spacing) * 28);
-  }
-  .h-40 {
-    height: calc(var(--spacing) * 40);
-  }
-  .h-48 {
-    height: calc(var(--spacing) * 48);
   }
   .h-\[1px\] {
     height: 1px;
@@ -897,9 +894,6 @@
   .h-\[260px\] {
     height: 260px;
   }
-  .h-\[270px\] {
-    height: 270px;
-  }
   .h-\[300px\] {
     height: 300px;
   }
@@ -915,14 +909,14 @@
   .h-\[373px\] {
     height: 373px;
   }
-  .h-\[380px\] {
-    height: 380px;
-  }
   .h-\[389px\] {
     height: 389px;
   }
   .h-\[398px\] {
     height: 398px;
+  }
+  .h-\[400px\] {
+    height: 400px;
   }
   .h-\[440px\] {
     height: 440px;
@@ -969,9 +963,6 @@
   .h-full {
     height: 100%;
   }
-  .h-screen {
-    height: 100vh;
-  }
   .h-svh {
     height: 100svh;
   }
@@ -1002,23 +993,11 @@
   .w-8 {
     width: calc(var(--spacing) * 8);
   }
-  .w-40 {
-    width: calc(var(--spacing) * 40);
-  }
-  .w-48 {
-    width: calc(var(--spacing) * 48);
-  }
-  .w-64 {
-    width: calc(var(--spacing) * 64);
-  }
   .w-72 {
     width: calc(var(--spacing) * 72);
   }
   .w-90p {
     width: var(--spacing-90p);
-  }
-  .w-96 {
-    width: calc(var(--spacing) * 96);
   }
   .w-\[0\.5px\] {
     width: 0.5px;
@@ -1074,9 +1053,6 @@
   .w-\[122px\] {
     width: 122px;
   }
-  .w-\[130px\] {
-    width: 130px;
-  }
   .w-\[132px\] {
     width: 132px;
   }
@@ -1112,12 +1088,6 @@
   }
   .w-\[298px\] {
     width: 298px;
-  }
-  .w-\[300px\] {
-    width: 300px;
-  }
-  .w-\[305px\] {
-    width: 305px;
   }
   .w-\[344px\] {
     width: 344px;
@@ -1176,6 +1146,18 @@
   }
   .scale-\[2\.3\] {
     scale: 2.3;
+  }
+  .rotate-90 {
+    rotate: 90deg;
+  }
+  .rotate-\[-90deg\] {
+    rotate: -90deg;
+  }
+  .rotate-\[180deg\] {
+    rotate: 180deg;
+  }
+  .rotate-\[180dev\] {
+    rotate: 180dev;
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
@@ -1434,12 +1416,6 @@
   .bg-\[red\] {
     background-color: red;
   }
-  .bg-amber-400 {
-    background-color: var(--color-amber-400);
-  }
-  .bg-amber-500 {
-    background-color: var(--color-amber-500);
-  }
   .bg-back-gray {
     background-color: var(--color-back-gray);
   }
@@ -1451,9 +1427,6 @@
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-black) 60%, transparent);
     }
-  }
-  .bg-blue-500 {
-    background-color: var(--color-blue-500);
   }
   .bg-gray-50 {
     background-color: var(--color-gray-50);
@@ -1677,6 +1650,12 @@
   .pr-36 {
     padding-right: calc(var(--spacing) * 36);
   }
+  .pr-\[10px\] {
+    padding-right: 10px;
+  }
+  .pr-\[20px\] {
+    padding-right: 20px;
+  }
   .pb-2 {
     padding-bottom: calc(var(--spacing) * 2);
   }
@@ -1728,9 +1707,6 @@
   .pb-\[126px\] {
     padding-bottom: 126px;
   }
-  .pl-\[5px\] {
-    padding-left: 5px;
-  }
   .text-center {
     text-align: center;
   }
@@ -1769,9 +1745,6 @@
   }
   .font-RalewayDots400 {
     font-family: var(--font-RalewayDots400);
-  }
-  .font-serif {
-    font-family: var(--font-serif);
   }
   .text-3xl {
     font-size: var(--text-3xl);
@@ -1905,9 +1878,6 @@
   }
   .text-gray-800 {
     color: var(--color-gray-800);
-  }
-  .text-pink-500 {
-    color: var(--color-pink-500);
   }
   .text-white {
     color: var(--color-white);
