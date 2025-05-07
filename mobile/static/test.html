@@ -4,46 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./../assets/css/outputMobile.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body dir="rtl">
-    <div class="swiper">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            ...
+    <div class="relative w-full h-[500px] flex justify-center items-center bg-white">
+        <!-- تصویر سمت چپ -->
+        <div class="absolute left-1/4 top-1/4 w-[132px] h-[200px] z-10">
+          <img src="./../assets/images/productList/img3.png" class="w-full h-full object-cover rounded" />
+          <span class="absolute top-3 right-3 bg-pink-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold">F</span>
         </div>
-    </div>
+        <!-- تصویر سمت راست -->
+        <div class="absolute right-1/4 top-0 w-[234px] h-[158px] z-20">
+          <img src="./../assets/images/productList/img2.png" class="w-full h-full object-cover rounded" />
+        </div>
+        <!-- دایره وسط -->
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30 flex flex-col items-center">
+          <div class="relative bg-black text-white rounded-full w-[98px] h-[98px] flex flex-col items-center justify-center text-base font-bold">
+            <span class="absolute top-2 right-2 bg-pink-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold">F</span>
+            <span class="mt-6 text-center text-xs">DORSA<br>HOME</span>
+          </div>
+        </div>
+      </div>
+      
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-    const swiper = new Swiper('.swiper', {
-        spaceBetween: 10,
-        slidesPerView: 1.1,
-        loop: true,
-
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-        },
-
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-
-        // And if we need scrollbar
-        scrollbar: {
-            el: '.swiper-scrollbar',
-        },
-    });
-
-</script>
 
 </html>

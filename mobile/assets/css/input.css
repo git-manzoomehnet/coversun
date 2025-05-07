@@ -337,6 +337,12 @@
 .accordion-body p {
   padding: 0 20px 20px 20px;
 }
+.activeTextshow span{
+  color: #ffff;
+}
+.activeTextshow svg{
+  fill: #fff;
+}
 .activeTextshow{
   padding: 0px 10px !important;  
   color: #ffff;

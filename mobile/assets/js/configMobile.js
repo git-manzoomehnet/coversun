@@ -15,13 +15,12 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     const el = entry.target;
 
-    if (entry.isIntersecting) {
+    const alreadyAnimated = el.dataset.animated === "true";
+
+    if (entry.isIntersecting && !alreadyAnimated) {
       if (isInitialLoad || isScrollingDown) {
         el.classList.add('visible', 'animate');
-      }
-    } else {
-      if (!isScrollingDown) {
-        el.classList.remove('visible', 'animate');
+        el.dataset.animated = "true"; 
       }
     }
   });

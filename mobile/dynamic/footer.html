@@ -1,7 +1,6 @@
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="5" usedforid="9656">
     <member name="contactus" type="view" />
 </basis>
-
 <footer>
         <div class="w-full flex flex-col justify-center items-center bg-black py-[32px] px-5">
             <a href="/">
@@ -10,7 +9,7 @@
             </a>
             <div
                 class="w-full border-t border-b border-white pt-[23px] my-[31px] pb-[17px] flex flex-col justify-center items-center">
-                <a class="text-white font-IRANYekan300 text-[14px]" dir="ltr" href="">1736: تماس</a>
+                <h3 class="text-white font-IRANYekan300 text-[14px] flex flex-row gap-1" dir="rtl"><span class="flex mx-[5px]">تماس:</span><span>1736</span></h3>
                 <span class="flex w-[173px] h-[1px] bg-white my-[23px]"></span>
                 
                     <basis core="print" datamembername="db.contactus">
@@ -20,17 +19,17 @@
                             </ul>
                         </layout>
                         <face filter="prpID=9785">
-                            <li><a href="@largetext"><img src="[##cms.cms.cdn##]/images/emailFooter.svg" alt=""></a></li>                                                                
+                            <li><a href="mailto:@Answer" target="_blank"><img src="[##cms.cms.cdn##]/images/emailFooter.svg" alt=""></a></li>                                                                
                         </face>
                         <face filter="prpID=91459 and text ='اینستاگرام'">
-                            <li><a href="@largetext"><img src="[##cms.cms.cdn##]/images/instagramFooter.svg" alt=""></a></li>                            
+                            <li><a href="@largetext" target="_blank"><img src="[##cms.cms.cdn##]/images/instagramFooter.svg" alt=""></a></li>                            
                         </face>
                         <face filter="prpID=91459 and text ='واتس اپ'">
-                            <li><a href="@largetext"><img src="[##cms.cms.cdn##]/images/whatsappFooter.svg" alt=""></a></li>                                    
+                            <li><a href="https://api.whatsapp.com/send?phone=@largetext" target="_blank"><img src="[##cms.cms.cdn##]/images/whatsappFooter.svg" alt=""></a></li>                                    
                         </face>
 
                         <face filter="prpID=91459 and text ='واتس اپ'">
-                            <li><a href="@largetext"><img src="[##cms.cms.cdn##]/images/linkdinFooter.svg" alt=""></a></li>                                    
+                            <li><a href="@largetext" target="_blank"><img src="[##cms.cms.cdn##]/images/linkdinFooter.svg" alt=""></a></li>                                    
                         </face>
 
                     </basis>
@@ -39,8 +38,8 @@
             <div>
                 <a class="text-[14px] font-IRANYekan400 text-gray-50 flex flex-row gap-[10px] justify-center items-center"
                     href="https://www.namasite.ir">
-                    <img src="[##cms.cms.cdn##]/images/logoNamasite.svg" alt="Namasite">
                     طراحی سایت و بهینه‌سازی سایت
+                    <img src="[##cms.cms.cdn##]/images/logoNamasite.svg" alt="Namasite">
                 </a>
 
             </div>
