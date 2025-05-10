@@ -1,4 +1,3 @@
-
 <html lang="fa">
 <head>
     <meta charset="UTF-8">
@@ -148,10 +147,10 @@
             <div>
                 <h4 class="text-[18px] font-IRANYekan500 pb-6 text-black">سوالات متداول</h4>
             </div>
-            <div class="accordion w-full max-w-md mx-auto mt-10">
-                <div class="accordion-item border-b border-b-main ">
-                    <button
-                        class="accordion-header w-full text-right py-4 text-[16px] text-black font-IRANYekan500 flex justify-between items-center focus:outline-none">
+            <div class="accordion w-full max-w-md mx-auto m0t-10">
+                <div class="accordion-item border-b border-b-main mb-3">
+                    <button style="padding: 12px 23px;"
+                        class="accordion-header w-full text-right bg-gray-50 py-4 text-[16px] text-black font-IRANYekan500 flex justify-between items-center focus:outline-none">
                         نمای شیشه ای | بهترین انواع شیشه در بازار جهانی
                         <span class="icon">
                             <svg width="22" height="23" viewBox="0 0 22 23" fill="none"
@@ -171,9 +170,9 @@
                         </p>
                     </div>
                 </div>
-                <div class="accordion-item border-b border-b-main">
-                    <button
-                        class="accordion-header w-full text-right py-4  text-[16px] text-black font-IRANYekan500 flex justify-between items-center focus:outline-none">
+                <div class="accordion-item border-b border-b-main mb-3">
+                    <button style="padding: 12px 23px;"
+                        class="accordion-header w-full text-right py-4  bg-gray-50 text-[16px] text-black font-IRANYekan500 flex justify-between items-center focus:outline-none">
                         نمای کامپوزیت
                         <span class="icon">
                             <svg width="22" height="23" viewBox="0 0 22 23" fill="none"
@@ -193,9 +192,9 @@
                         </p>
                     </div>
                 </div>
-                <div class="accordion-item border-b border-b-main">
-                    <button
-                        class="accordion-header w-full text-right py-4  text-[16px] text-black font-IRANYekan500 flex justify-between items-center focus:outline-none">
+                <div class="accordion-item border-b border-b-main mb-3">
+                    <button style="padding: 12px 23px;"
+                        class="accordion-header w-full text-right py-4  bg-gray-50 text-[16px] text-black font-IRANYekan500 flex justify-between items-center focus:outline-none">
                         معرفی سیستم های نما
                         <span class="icon">
                             <svg width="22" height="23" viewBox="0 0 22 23" fill="none"
@@ -215,9 +214,9 @@
                         </p>
                     </div>
                 </div>
-                <div class="accordion-item border-b border-b-main">
-                    <button
-                        class="accordion-header w-full text-right py-4  text-[16px] text-black font-IRANYekan500 flex justify-between items-center focus:outline-none">
+                <div class="accordion-item border-b border-b-main mb-3">
+                    <button style="padding: 12px 23px;"
+                        class="accordion-header w-full text-right py-4  bg-gray-50 text-[16px] text-black font-IRANYekan500 flex justify-between items-center focus:outline-none">
                         نرده شیشه ای
                         <span class="icon">
                             <svg width="22" height="23" viewBox="0 0 22 23" fill="none"
@@ -288,7 +287,7 @@
                         </div>
                     </div>
                     <div
-                        class="swiper-buttons absolute bottom-[18px] flex justify-center items-center gap-0 z-10 mt-[50px] mx-auto left-[25%] right-[25%]">
+                        class="swiper-buttons absolute bottom-[18px] gap-x-2 flex justify-center items-center gap-0 z-10 mt-[50px] mx-auto left-[25%] right-[25%]">
                         <div
                             class="swiper-button-prev-project-2 w-[64px] h-[54px] bg-white flex items-center justify-center cursor-pointer">
                             <svg width="15" height="27" viewBox="0 0 15 27" fill="none"
@@ -315,38 +314,78 @@
                 <div>
                     <h5 class="text-[18px] text-back-gray font-IRANYekan500 mb-[24px]">نظراتتان برای ما ارزشمند هست</h5>
                 </div>
-                <form action="">
+                 <form action="" class="commentP">
                     <div class="flex flex-col mt-[24px] gap-3">
-                        <div class="flex flex-col justify-start gap-[5px] mb-[12px]">
-                            <div class="text-[14px] font-IRANYekan300 text-back-gray">نام و نام خانوادگی</div>
-                            <input class="w-full h-[48px] bg-gray-50" type="text">
+                        <div class="nameInput flex flex-col justify-start gap-[5px] mb-[12px]">
+                            <div class="text-[14px] font-IRANYekan300 text-back-gray mb-1.5">نام و نام خانوادگی</div>
+                            <input class="w-full userName h-[48px] p-3.5 bg-gray-50" type="text" />
                         </div>
-                        <div class="flex flex-col justify-start gap-[5px] mb-[12px]">
-                            <div class="text-[14px] font-IRANYekan300 text-back-gray">ایمیل</div>
-                            <input class="w-full h-[48px] bg-gray-50" type="text">
+
+                        <div class="emailInput flex flex-col justify-start gap-[5px] mb-[12px]">
+                            <div class="text-[14px] font-IRANYekan300 text-back-gray mb-1.5">ایمیل</div>
+                            <input type="email" class="w-full p-3.5 h-[48px] bg-gray-50" />
                         </div>
-                        <div class="flex flex-col justify-start gap-[5px] mb-[12px]">
-                            <div class="text-[14px] font-IRANYekan300 text-back-gray">پیام</div>
-                            <textarea class="min-h-[137px] w-full bg-gray-50" name="" id=""></textarea>
+
+                        <div class="msg">
+                            <div class="text-[14px] font-IRANYekan300 text-back-gray mb-1.5">پیام</div>
+                            <div class="msgInput relative">
+                                <_textarea class="min-h-[137px] p-3.5 w-full bg-gray-50" name="" id=""></_textarea>
+                            </div>
                         </div>
+
                         <div class="flex flex-col gap-[5px]">
                             <div class="text-[14px] font-IRANYekan300 text-back-gray">کد امنیتی را وارد نمایید</div>
-                            <div class="w-full h-[59px]">
+                        </div>
+                        <!-- ############################################################ -->
+                        <div class="btnsContainer flex flex-col gap-3">
+                            <basis core="dbsource" source="userbehavior" name="db" title="{##db.senduserName.value##}"
+                                run="atclient" triggers="db.sendcomment" if="{##db.sendcomment##}" parentid="0"
+                                usedforid="[##cms.query.id##]" userid="100001" mid="20"
+                                comment="{##db.sendcomment.value##}">
+                                <member request="comment" type="scalar" name="comment" preview="true"
+                                    onRendered="renderCommentFn" />
+                            </basis>
+                            <basis core="dbsource" source="trust_login" name="captcha1" triggers="cms.reload1"
+                                run="atclient">
+                                <member name="code1" type="scalar" request="captcha"></member>
+                            </basis>
+                            <!-- ############################################################ -->
+                            <basis datamembername="captcha1.code1" core="print" run="atclient">
+                                <face>
+                                    <script type="text/template">
+                                        <div class="captchaContain w-full bg-gray-50 flex items-center gap-x-3 py-2 flex-row-reverse">
+                                            <span class="captcha-sefaresh shrink-0">
+                                                <img src="/@captcha@" width="88" height="44" class="captcha-sefaresh" alt="captcha" title="captcha" />
+                                                <input type="hidden" name="captchaid" value="@captcha@" />
+                                            </span>                                                                
+                                            <img src="[##cms.cms.cdn##]/images/cached.png" class="refressh refressh1 cursor-pointer" run="atclient" bc-triggers="click" bc-name="cms.reload1" />
+                                            <input type="text" class="codeinputm px-1.5 w-full py-1.5 font-IRANYekan300 text-base text-StarDust600 placeholder:font-IRANSansWebFaNum400 placeholder:text-base placeholder:text-StarDust600 " placeholder="عبارت امنیتی را وارد کنید" name="captcha" />
+                                        </div>
+                                    </script>
+                                </face>
+                            </basis>
+                            <div class="relative submitComment w-[173px] h-[48px] mt-[12px]">
+                                <div
+                                    class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-black z-0">
+                                </div>
+                                <div
+                                    class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-black z-0">
+                                </div>
 
+                                <button type="button"
+                                    class="relative z-10 font-IRANYekan500 text-[14px] w-full h-full flex items-center justify-center border border-black text-black text-lg font-bold no-underline">
+                                    ثبت
                             </div>
+                        </div>
 
-                        </div>
+
+
                     </div>
-                    <div class="relative w-[173px] h-[48px]">
-                        <div class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-black z-0">
-                        </div>
-                        <div class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-black z-0">
-                        </div>
-                        <button
-                            class="relative z-10 font-IRANYekan400 bg-white text-[14px] w-full h-full flex items-center justify-center border border-black text-black text-lg  no-underline">
-                            ثبت
-                            </a>
+                    <div class="messageSend mt-[15px] font-IRANSansWebFaNum400 text-StarDust600 text-base">
+                        <p></p>
                     </div>
+
+
                 </form>
 
             </div>

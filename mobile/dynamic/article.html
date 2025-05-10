@@ -91,7 +91,7 @@
 
                 <div class="w-full flex flex-row justify-between items-center my-6">
                     <basis core="print" datamembername="db.article">
-                        <face filter="TypeID=128">
+                        <face filter="prpID=7249">
                             <h3 class="text-[14px] font-PxGrotesk400 text-gray-600">@Answer</h3>
                         </face>
                     </basis>
@@ -321,7 +321,7 @@
                                                 <input type="hidden" name="captchaid" value="@captcha@" />
                                             </span>                                                                
                                             <img src="[##cms.cms.cdn##]/images/cached.png" class="refressh refressh1 cursor-pointer" run="atclient" bc-triggers="click" bc-name="cms.reload1" />
-                                            <input type="text" class="codeinputm px-1.5 w-full py-1.5 font-IRANSansWebFaNum400 text-base text-StarDust600 placeholder:font-IRANSansWebFaNum400 placeholder:text-base placeholder:text-StarDust600 " placeholder="عبارت امنیتی را وارد کنید" name="captcha" />
+                                            <input type="text" class="codeinputm px-1.5 w-full py-1.5 font-IRANYekan300 text-base text-StarDust600 placeholder:font-IRANSansWebFaNum400 placeholder:text-base placeholder:text-StarDust600 " placeholder="عبارت امنیتی را وارد کنید" name="captcha" />
                                         </div>
                                     </script>
                                 </face>
@@ -473,7 +473,7 @@
                 <face filter="TypeID=250">
                     <div class="accordion-item border-b border-b-main bg-gray-50 ">
                         <button
-                            class="accordion-header w-full text-right py-3 h-[80px] bg-gray-50 text-[16px] text-black font-IRANYekan500 flex justify-between items-center focus:outline-none px-5" >
+                            class="accordion-header w-full text-right py-3  bg-gray-50 text-[16px] text-black font-IRANYekan500 flex justify-between items-center focus:outline-none px-5" style="    padding: 12px 23px 0 12px;">
                             @text
                             <span class="icon">
                                 <svg width="22" height="23" viewBox="0 0 22 23" fill="none"
@@ -542,9 +542,10 @@
 </body>
 <script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
 <script src="http://www.ramand-co.com/_js/swiper.js"></script>
-<script src="https://cdn.basiscore.net/academy.basiscore.com/_js/basiscore-2.23.1.min.js"></script>
-<script src="[##cms.cms.cdn##]/js/articleMobile.js"></script>
+
 <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]" />
+
+<script src="[##cms.cms.cdn##]/js/articleMobile.js"></script>
 <script>    
     
 

@@ -1,12 +1,12 @@
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="214339" q="[##cms.query.q|('')##]">
-    <member name="list-blog" size="300x200" propertyid="7244,7249" type="list" />
+    <member name="list-blog" size="300x200" propertyid="7244,7249" type="list" link="article.bc" />
 </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" catid="214297" q="[##cms.query.q|('')##]">
     <member name="list-product" size="300x400" propertyid="10000792" type="list" />
     
 </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" catid="214308" q="[##cms.query.q|('')##]">
-    <member name="list-project" type="list" size="300x600" />
+    <member name="list-project" type="list" size="300x600" link="project.bc" />
 </basis>
 <!DOCTYPE html>
 <html lang="fa">
@@ -27,7 +27,7 @@
                 class="w-full flex flex-row items-center justify-start text-[12px] text-gray-700 font-IRANYekan300 gap-0.5">
                 <li class="text-[12px] font-IRANYekan300 text-gray-700"><a href="/">صفحه نخست</a></li>
                 <span class="text-[12px] font-IRANYekan300 text-gray-700">.</span>
-                <a href="/landing-coversun.bc" class="text-[12px] font-IRANYekan300 text-gray-700">کاورسان پلاس</a>
+                <p class="text-[12px] font-IRANYekan300 text-gray-700" style="font-size: 12px;">نتیجه جستجو برای [##cms.query.q##]</p>
             </ul>
             <div class="relative">
                 <button id="buttonSearcht" class="absolute top-[25px] left-[14px]">
@@ -41,7 +41,7 @@
                     </svg>
 
                 </button>
-                <input id="inputSercht" class="w-full h-[54px] outline-none text-gray-800 mt-[8px] p-3.5 border border-gray-800"
+                <input id="inputSercht" class="w-full h-[54px] font-IRANYekan300 outline-none text-gray-800 mt-[8px] p-3.5 border border-gray-800"
                     placeholder="جستجو کنید..." type="text" value="[##cms.query.q##]">
             </div>
 
@@ -62,7 +62,9 @@
                     </div>
                 </layout>
                 <else-layout>
+<p>
                     مقاله ای یافت نشد
+</p>
                 </else-layout>
                 <face>
                     <div class="swiper-slide w-full h-auto">
@@ -100,7 +102,9 @@
                     </div>
                 </layout>
                 <else-layout>
+<p>
                     محصولی یافت نشد
+</p>
                 </else-layout>
                 <face filter="@prp_10000792 not in (null)">
                     <div class="swiper-slide w-full h-[503px] flex flex-col gap-1.5">
@@ -153,7 +157,9 @@
                     </div>
                 </layout>
                 <else-layout>
+<p>
                     پروژه ای یافت نشد
+</p>
                 </else-layout>
                 <face>
                     <div class="swiper-slide w-full h-full flex flex-col gap-1.5">
