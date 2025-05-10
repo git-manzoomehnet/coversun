@@ -13,9 +13,11 @@
 
 @font-face {
   font-family: "IRANYekan700";
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Bold.woff") format("woff");
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Bold.woff2") format("woff2");
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Bold.ttf") format("ttf");
+  src: url("../_fonts/IRANYekanBold.eot");
+  src: url("../_fonts/IRANYekanBold.eot?#iefix") format("embedded-opentype"),
+    url("../_fonts/IRANYekanBold.woff") format("woff"),
+    url("../_fonts/IRANYekanBold.woff2") format("woff2"),
+    url("../_fonts/IRANYekanBold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -30,32 +32,35 @@
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "IRANYekan500";
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Medium.ttf") format("ttf"),
-   url("https://cdn.basiscore.net/_fonts/IRANYekanX-Medium.woff") format("woff"),
-   url("https://cdn.basiscore.net/_fonts/IRANYekanX-Medium.woff2") format("woff2");
+  src: url("../_fonts/iranyekanwebmedium.eot");
+  src: url("../_fonts/iranyekanwebmedium.eot?#iefix") format("embedded-opentype"),
+    url("../_fonts/iranyekanwebmedium.woff") format("woff"),
+    url("../_fonts/iranyekanwebmedium.woff2") format("woff2"),
+    url("../_fonts/iranyekanwebmedium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "IRANYekan400";
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Regular.ttf") format("ttf"),
-    url("https://cdn.basiscore.net/_fonts/IRANYekanX-Regular.woff") format("woff"),
-    url("https://cdn.basiscore.net/_fonts/IRANYekanX-Regular.woff2") format("woff2");
-  font-weight: 400;
+  src: url("../_fonts/iranyekanwebregular.eot");
+  src: url("../_fonts/iranyekanwebregular.eot?#iefix") format("embedded-opentype"),
+    url("../_fonts/iranyekanwebregular.woff") format("woff"),
+    url("../_fonts/iranyekanwebregular.ttf") format("truetype");
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "IRANYekanr300";
-  src: url("https://cdn.basiscore.net/_fonts/IRANYekanX-Light.woff") format("woff"),
-    url("https://cdn.basiscore.net/_fonts/IRANYekanX-Light.woff2") format("woff2"),
-    url("https://cdn.basiscore.net/_fonts/IRANYekanX-Light.ttf") format("ttf");
+  font-family: "IRANYekan300";
+  src: url("../_fonts/IRANYekanLight.eot");
+  src: url("../_fonts/IRANYekanLight.eot?#iefix") format("embedded-opentype"),
+    url("../_fonts/IRANYekanLight.woff") format("woff"),
+    url("../_fonts/IRANYekanLight.woff2") format("woff2"),
+    url("../_fonts/IRANYekanLight.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -113,8 +118,12 @@
 
 @font-face {
   font-family: "RalewayDots400";
-  src: url("./../fonts/RalewayDots-Regular.ttf") format("ttf");
-  font-weight: 400;
+  src: url("../fonts/RalewayDots-Regular.eot");
+  src: url("../fonts/RalewayDots-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/RalewayDots-Regular.woff") format("woff"),
+    url("../fonts/RalewayDots-Regular.woff2") format("woff2"),
+    url("../fonts/RalewayDots-Regular.ttf") format("truetype");
+  font-weight: 00;
   font-style: normal;
   font-display: swap;
 }
@@ -161,6 +170,10 @@
   opacity: 1 !important;
   display: flex  !important;
   transition: opacity 0.3s ease !important;    
+}
+p{
+  font-family: var(--font-IRANYekan300) ;
+  font-size: 14px ;
 }
 
 .scrollTop {
@@ -441,4 +454,139 @@ productList
 #productList #openMenuHeader line ,
 #blog-list #openMenuHeader line {
   stroke: #fff !important;
+}
+
+#headersitem{
+  z-index: 1000;
+  transition: transform 0.4s ease, background-color 0.4s ease, opacity 0.4s ease;
+
+}
+.header--hidden {
+transform: translateY(-100%);
+opacity: 0;
+}
+
+.header--scrolled {
+background-color: color-mix(in oklab, var(--color-black) 30%, transparent);
+backdrop-filter: blur(4px);
+}
+.formContainer form .errorPlaceholder {
+background: #CA730040 !important;
+}
+.errorPlaceholder .captchaInput::placeholder, .errorPlaceholder::placeholder {
+color: #CA7300 !important;
+}
+.data-bc-schema-main-container [data-bc-section] [data-bc-schema-column] [data-bc-question]{
+margin-bottom: 15px !important;
+}
+[data-bc-schema-info-part="1"] [data-bc-part-related-cell]{
+width: 100% !important;
+}
+.marquee-wrapperText {
+  width: 100% !important;
+  overflow: hidden !important;
+  direction: ltr;
+
+}
+
+
+.marqueepy {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 20s linear infinite;
+}
+
+@keyframes marqueeScroll {
+  0% {
+      transform: translateX(0);
+  }
+
+  100% {
+      transform: translateX(-50%);
+  }
+}
+
+.text-item {
+  white-space: nowrap;
+  padding: 0 1rem;
+  flex-shrink: 0;
+}
+
+.marquee {
+  width: 100%;
+  height: 116px;
+  overflow: hidden;
+}
+
+.marquee__inner-wrap {
+  height: 116px;
+  width: 100%;
+  overflow: hidden;
+  direction: ltr;
+}
+
+.marquee__inner {
+  height: 100%;
+  width: fit-content;
+  align-items: center;
+  display: flex;
+  position: relative;
+  will-change: transform;
+}
+
+.marquee__inner--right {
+  animation: marquee-right 30s linear infinite;
+}
+
+.marquee__inner--left {
+  animation: marquee-left 30s linear infinite;
+}
+
+@keyframes marquee-right {
+  from {
+      transform: translateX(0);
+  }
+
+  to {
+      transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-left {
+  from {
+      transform: translateX(-50%);
+  }
+
+  to {
+      transform: translateX(0);
+  }
+}
+
+.marquee__img {
+  width: 75px;
+  height: 75px;
+  margin: 0 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sunVibemo p {
+  font-family: var(--font-PxGrotesk300);
+  size: 14px;
+  line-height: 20px;
+  color: black;
+}
+
+.imageShow {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.5);
+  transition: transform 1.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.imageShow.is-show {
+  transform: scale(1);
+  transition-delay: 0.2s;
 }

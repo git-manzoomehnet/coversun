@@ -50,11 +50,11 @@ const headers = document.querySelectorAll('.accordion-header');
                 nextEl: config.nextEl,
                 prevEl: config.prevEl
             },
-            autoplay: {
-                delay: 3000 + (index * 500),
-                disableOnInteraction: false
-            },
+            // autoplay: {
+            //     delay: 3000 + (index * 500),
+            //     disableOnInteraction: false
+            // },
             loop: true,
-            speed: 800
+            // speed: 800
         });
     });

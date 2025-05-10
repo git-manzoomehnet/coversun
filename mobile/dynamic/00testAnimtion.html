@@ -4,6 +4,39 @@
 <basis core="dbsource" source="media" name="basisName" lid="1" catid="2384">
     <member type="list" name="cataloug-menu" perpage="10" pageno="1" />
 </basis>
+<basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
+<style>
+    #headersitem{
+        z-index: 1000;
+        transition: transform 0.4s ease, background-color 0.4s ease, opacity 0.4s ease;
+
+    }
+    .header--hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  
+  .header--scrolled {
+    background-color: color-mix(in oklab, var(--color-black) 30%, transparent);
+    backdrop-filter: blur(4px);
+  }
+  .formContainer form .errorPlaceholder {
+  background: #CA730040 !important;
+}
+.errorPlaceholder .captchaInput::placeholder, .errorPlaceholder::placeholder {
+  color: #CA7300 !important;
+}
+.data-bc-schema-main-container [data-bc-section] [data-bc-schema-column] [data-bc-question]{
+    margin-bottom: 15px !important;
+}
+[data-bc-schema-info-part="1"] [data-bc-part-related-cell]{
+    width: 100% !important;
+}
+
+</style>
+
+
+
     <header>
         <!-- Header -->
         <div id="headersitem" class="fixed z-50 w-full flex px-5 pt-2.5 flex-row justify-between items-center h-[80px] mb-2.5">
@@ -52,11 +85,13 @@
                 <div class="flex flex-row justify-between items-center">
                     <button id="closepopup">
                         <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13 0.832996L12.167 0L6.5 5.667L0.832812 0L0 0.832996L5.66719 6.5L0 12.167L0.832812 13L6.5 7.333L12.167 13L13 12.167L7.33314 6.5L13 0.832996Z" fill="black"/>
-                        </svg>                            
+                            <path
+                                d="M13 0.832996L12.167 0L6.5 5.667L0.832812 0L0 0.832996L5.66719 6.5L0 12.167L0.832812 13L6.5 7.333L12.167 13L13 12.167L7.33314 6.5L13 0.832996Z"
+                                fill="#FAFAFA" />
+                        </svg>
                     </button>
                     <a href="">
-                        <img class="w-[73px] h-[31px]" src="[##cms.cms.cdn##]/images/logo-menu.png" alt="">
+                        <img class="w-[73px] h-[31px]" src="[##cms.cms.cdn##]/images/logo-light.png" alt="">
                     </a>
                         
 
@@ -69,7 +104,7 @@
 
             </div>
             <div class="w-full ">
-                <ul class="flex flex-col justify-center items-center gap-10">
+                <ul class="flex flex-col justify-center items-center gap-5">
                     <li class="text-[16px] text-black font-IRANYekan500"><a href="/">صفحه نخست </a></li>
                     <li class="text-[16px] text-black font-IRANYekan500"><a href="/landing-coversun.bc">کاورسان پلاس</a></li>
                     <li class="text-[16px] text-black font-IRANYekan500"><a href="/about-us.bc">درباره ما</a></li>
@@ -171,7 +206,7 @@
         </div>
         <!-- Form -->
         <div id="showForm"
-            class="absolute h-auto duration-150 opacity-0 p-5 pt-2.5 pb-14 top-0 hidden flex-col justify-baseline items-center left-0 right-0 bg-[#000000E5] pupUp z-[1000]">
+            class="absolute mix-h-[100%] h-auto duration-150 opacity-0 p-5 pt-2.5 pb-14 top-0 hidden flex-col justify-baseline items-center bottom-0 left-0 right-0 bg-[#000000E5] pupUp z-[1000]">
             <div class="w-full flex flex-row justify-between icon h-[55px]">
                 <button id="closepopupform">
                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -195,7 +230,6 @@
                         کنید.
                         متشکرم</p>
                 </div>
-                <!-- form to -->
                 <div class="formContainer relative ">
                     <div class="loaderContainer absolute flex items-center justify-center inset-0 bg-white/[0.6] z-1">
                         <div class="loader"></div>
@@ -276,41 +310,39 @@
                         </div>
                     </form>
                 </div>
+
+
+
+
+            </div>
+        </div>
+
+        <div class="responseMsg hidden relative  items-center mt-3 justify-center w-fit mx-auto">
+            class="">
+            <svg class=" duration-500" width="191" height="66" viewBox="0 0 191 66" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M161 1H1V28" stroke="white" stroke-width="0.75" />
+                <path d="M42.5 65H190.5V22" stroke="white" stroke-width="0.75" />
+            </svg>
+
+
+           
+            <span
+                class="w-[221px]  font-IRANYekan500 text-sm  h-[48px] absolute border bg-white flex items-center justify-center">
+
+            </span>
+
+
+
+        </div><!-- form to -->
+                
                 <!-- form to -->
             </div>
         </div>
 
-        <!-- showStatus -->
-        <div id="closepopupStatus"
-        class="fixed h-[100vh] p-5 top-0 hidden flex-col justify-baseline items-center bottom-0 left-0 right-0 bg-[#000000E5] pupUp z-[110000]">
-        <div class="w-full flex flex-row justify-between icon h-[55px]">
-            <button id="closepopup">
-                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M13 0.832996L12.167 0L6.5 5.667L0.832812 0L0 0.832996L5.66719 6.5L0 12.167L0.832812 13L6.5 7.333L12.167 13L13 12.167L7.33314 6.5L13 0.832996Z"
-                        fill="#FAFAFA" />
-                </svg>
-            </button>
-            <a href="">
-                <img src="./../assets/images/icon/logocoversunpopup.png" alt="">
-
-            </a>
-
-        </div>
-        <div class="w-full h-full  my-auto flex justify-center items-center">            
-            <div class="relative w-[173px] h-[48px] mx-auto">
-                <div class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-white z-0"></div>
-                <div class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-white z-0"></div>
-              
-                <span id="showTextStatus" class="relative z-10 font-IRANYekan500 text-[14px] bg-white w-full h-full flex items-center justify-center border border-white text-black text-lg font-bold no-underline">
-                    ثبت با موفقیت انجام شد.
-                </span>
-              </div>
-        </div>
-    </div>
-
     </header>
-    
-<script>
+<script src="https://cdn.basiscore.net/academy.basiscore.com/_js/basiscore-2.23.1.min.js"></script>
 
+<script>
+    
 </script>

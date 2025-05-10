@@ -17,7 +17,7 @@
 <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="[##cms.query.id##]">
     <member name="image-article" type="list" format="4" />
 </basis>
-<basis core="dbsource" source="userbehavior" name="db" lid="1" userid="100005" usedforid="[##cms.query.id##]">
+<basis core="dbsource" source="userbehavior" name="db" lid="1" usedforid="[##cms.query.id##]">
     <member request="listcomment" type="list" name="commentlist" link="event.bc" />
 </basis>
 
@@ -43,10 +43,8 @@
     <link rel="stylesheet" href="http://www.ramand-co.com/css/swiper.css">
     <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
 
-    <title>Document</title>
+    <title>مقاله</title>
 </head>
-<script src="./../basis-loader.js"></script>
-
 <body>
     <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
     <main>
@@ -54,7 +52,7 @@
             <div class="w-full flex flex-col pt-[80px]">
                 <div class="w-full h-9 flex justify-start items-center px-5 bg-gray-50">
                     <ul
-                        class="w-full flex flex-row items-center justify-start text-[12px] text-black font-IRANYekan300 gap-0.5">
+                        class="w-full flex flex-row items-center justify-start text-[12px] text-black font-IRANYekan300 gap-0.5 text-nowrap overflow-hidden">
                         <li class="text-[12px] font-IRANYekan300 text-black"><a href="/">صفحه نخست</a></li>
                         <li class="text-[12px] font-IRANYekan300 text-black">.</li>
                         <li class="text-[12px] font-IRANYekan300 text-black"><a class="text-[12px] font-IRANYekan300 text-black" href="aboutus.bc">مقالات</a></li>                        
@@ -119,7 +117,7 @@
 
                         <face filter="TypeID=129">
 
-                            <div class="[&>p]:text-[14px] [&>p]:text-justify [&>p]:font-IRANYekan300 [&>p]:text-black">
+                            <div class="[&>p]:text-[14px] [&>p]:text-justify [&>p]:font-IRANYekan300 [&>p]:text-black [&>p]:leading-[26px]">
                                 @Answer
                             </div>
                         </face>
@@ -141,11 +139,11 @@
 
                         <face filter="text <> 'نتیجه‌گیری' and RowNumber<4">
                             <h3
-                                class="[&>p]:text-[14px] [&>p]:text-justify [&>p]:text-black [&>p]:font-IRANYekan300 pb-[5px]">
+                                class="[&>p]:text-[14px] [&>p]:text-justify [&>p]:text-black [&>p]:font-IRANYekan300 pt-1.5 pb-[5px]">
 
                                 @text
                             </h3>
-                            <div class="[&>p]:text-[14px] [&>p]:text-justify [&>p]:text-black [&>p]:font-IRANYekan300">
+                            <div class="[&>p]:text-[14px] [&>p]:text-justify [&>p]:text-black [&>p]:font-IRANYekan300 [&>p]:leading-[26px]">
                                 @largetext
                             </div>
 
@@ -189,7 +187,7 @@
                             <h3 class="text-[14px] text-black font-IRANYekan700 pb-[5px]">
                                 @text
                             </h3>
-                            <div class="[&>p]:font-IRANYekan300 [&>p]:text-[14px] [&>p]:text-black">
+                            <div class="[&>p]:font-IRANYekan300 [&>p]:text-[14px] [&>p]:text-black [&>P]:leading-[26px]">
                                 @largetext
                             </div>
                         </face>
@@ -225,7 +223,7 @@
                 </div>
                 <basis core="print" datamembername="db.commentlist">
                     <layout>
-                        <div class="swiper scrollProjectList-2 relative bg-gray-50">
+                        <div class="swiper scrollProjectList-2 w-full relative bg-gray-50">
                             <div class="swiper-wrapper w-full">
                                 @child
                             </div>
@@ -274,86 +272,61 @@
             </div>
         </section>
         <section class="mt-[33px] px-5 h-auto pt-2.5 ">
-            <basis core="dbsource" source="userbehavior" name="db" title="{##db.senduserName.value##}" run="atclient"
-                triggers="db.sendcomment" if="{##db.sendcomment##}" parentid="0" usedforid="[##cms.query.id##]"
-                userid="100005" mid="1" comment="{##db.sendcomment.value##}">
-                <member request="comment" type="scalar" name="comment" preview="true" onRendered="renderCommentFn" />
-            </basis>
             <div class="flex flex-col justify-center">
                 <div>
                     <h5 class="text-[18px] text-back-gray font-IRANYekan500 mb-[24px]">نظراتتان برای ما ارزشمند هست</h5>
                 </div>
-                <form action="" class="commentP relative">
-                    <div class="userInfo mb-4">
-                        <div class="nameInput relative mb-3">
-                            <label style="margin-bottom: 6px;" for="userName"
-                                class="font-IRANYekan300 text-back-gray block text-sm ">
-                                نام و نام خانوادگی
-                            </label>
-                            <input name="userName"
-                                class="w-full h-[48px] bg-gray-50 userName outline-0 mb-3 text-right font-IRANYekan300 text-sm bg-gray50  placeholder:font-IRANYekan300 "
-                                type="text" />
-                        </div>
-                        <div class="emailInput relative" style="margin-bottom: 10px;">
-                            <label style="margin-bottom: 6px;" for="email"
-                                class="font-IRANYekan300 text-back-gray block text-sm ">
-                                ایمیل یا شماره همراه
-                            </label>
-                            <input type="email" name="email"
-                                class="w-full h-[48px] bg-gray-50 outline-0 mb-3 text-right font-IRANYekan300 text-sm bg-gray50  placeholder:font-IRANYekan300 " />
+                <form action="" class="commentP">
+                    <div class="flex flex-col mt-[24px] gap-3">
+                        <div class="nameInput flex flex-col justify-start gap-[5px] mb-[12px]">
+                            <div class="text-[14px] font-IRANYekan300 text-back-gray mb-1.5">نام و نام خانوادگی</div>
+                            <input class="w-full userName h-[48px] p-3.5 bg-gray-50" type="text" />
                         </div>
 
-                    </div>
-                    <div class="msg">
-                        <div class="msgInput relative flex flex-col">
-                            <label style="margin-bottom: 6px;" for="message" class="w-full">
-                                پیام
-                            </label>
-                            <_textarea
-                                class="min-h-[137px] w-full bg-gray-50 outline-0 mb-3 text-right font-IRANYekan300 text-sm h-[137px] bg-gray50  placeholder:font-IRANYekan300 "
-                                name="message" id="message" placeholder="">
-                            </_textarea>
+                        <div class="emailInput flex flex-col justify-start gap-[5px] mb-[12px]">
+                            <div class="text-[14px] font-IRANYekan300 text-back-gray mb-1.5">ایمیل</div>
+                            <input type="email" class="w-full p-3.5 h-[48px] bg-gray-50" />
                         </div>
-                    </div>
 
-                    <div class="btnsContainer mt-6">
-                        <div class="gap-x-2.5 flex justify-start items-start">
+                        <div class="msg">
+                            <div class="text-[14px] font-IRANYekan300 text-back-gray mb-1.5">پیام</div>
+                            <div class="msgInput relative">
+                                <_textarea class="min-h-[137px] p-3.5 w-full bg-gray-50" name="" id=""></_textarea>
+                            </div>
+                        </div>
 
+                        <div class="flex flex-col gap-[5px]">
+                            <div class="text-[14px] font-IRANYekan300 text-back-gray">کد امنیتی را وارد نمایید</div>
+                        </div>
+                        <!-- ############################################################ -->
+                        <div class="btnsContainer flex flex-col gap-3">
+                            <basis core="dbsource" source="userbehavior" name="db" title="{##db.senduserName.value##}"
+                                run="atclient" triggers="db.sendcomment" if="{##db.sendcomment##}" parentid="0"
+                                usedforid="[##cms.query.id##]" userid="100001" mid="20"
+                                comment="{##db.sendcomment.value##}">
+                                <member request="comment" type="scalar" name="comment" preview="true"
+                                    onRendered="renderCommentFn" />
+                            </basis>
                             <basis core="dbsource" source="trust_login" name="captcha1" triggers="cms.reload1"
                                 run="atclient">
                                 <member name="code1" type="scalar" request="captcha"></member>
                             </basis>
+                            <!-- ############################################################ -->
                             <basis datamembername="captcha1.code1" core="print" run="atclient">
                                 <face>
                                     <script type="text/template">
-                                    <div class="">
-                                        <label style="margin-bottom: 6px;" for="captcha"
-                                        class="text-[14px] font-IRANYekan300 text-back-gray">
-                                        
-                                        کد امنیتی را وارد نمایید
-                                    </label>
-                                    <div style="column-gap: 6px;" class="captchaContain px-4 py-1 bg-gray50 w-full flex items-center gap-x-3 flex-row-reverse">
-
-                      <span class="captcha-sefaresh shrink-0" style="flex-shrink: 0;">
-                          <img src="/@captcha@" width="88" height="44" class="captcha-sefaresh"
-                              alt="captcha" title="captcha" />
-                          <input type="hidden" name="captchaid" value="@captcha@" />
-                      </span>
-  
-                        <img src="[##cms.cms.cdn##]/images/cached.png" class="refressh refressh1 cursor-pointer" run="atclient" bc-triggers="click" bc-name="cms.reload1" />
-         
-  
-              
-                            <input type="text" class="codeinputm w-full  font-IRANYekan300 text-sm placeholder:font-IRANYekan300 "
-                             name="captcha" />
-     
-                                    </div>
-
-                                    </div>
+                                        <div class="captchaContain w-full bg-gray-50 flex items-center gap-x-3 py-2 flex-row-reverse">
+                                            <span class="captcha-sefaresh shrink-0">
+                                                <img src="/@captcha@" width="88" height="44" class="captcha-sefaresh" alt="captcha" title="captcha" />
+                                                <input type="hidden" name="captchaid" value="@captcha@" />
+                                            </span>                                                                
+                                            <img src="[##cms.cms.cdn##]/images/cached.png" class="refressh refressh1 cursor-pointer" run="atclient" bc-triggers="click" bc-name="cms.reload1" />
+                                            <input type="text" class="codeinputm px-1.5 w-full py-1.5 font-IRANSansWebFaNum400 text-base text-StarDust600 placeholder:font-IRANSansWebFaNum400 placeholder:text-base placeholder:text-StarDust600 " placeholder="عبارت امنیتی را وارد کنید" name="captcha" />
+                                        </div>
                                     </script>
                                 </face>
                             </basis>
-                            <div class="relative w-[173px] submitComment h-[48px]">
+                            <div class="relative submitComment w-[173px] h-[48px] mt-[12px]">
                                 <div
                                     class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-black z-0">
                                 </div>
@@ -361,25 +334,22 @@
                                     class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-black z-0">
                                 </div>
 
-                                <button
+                                <button type="button"
                                     class="relative z-10 font-IRANYekan500 text-[14px] w-full h-full flex items-center justify-center border border-black text-black text-lg font-bold no-underline">
                                     ثبت
-                                    </a>
                             </div>
-
-
-
-
                         </div>
 
-                    </div>
 
-                    <div class="messageSend font-IRANYekan500 text-StarDust600 text-sm absolute" style="bottom: -30px;">
+
+                    </div>
+                    <div class="messageSend mt-[15px] font-IRANSansWebFaNum400 text-StarDust600 text-base">
                         <p></p>
                     </div>
 
 
-                </form>
+            </div>
+            </form>
 
             </div>
         </section>
@@ -409,7 +379,7 @@
                             <h4 class="text-[12px] text-gray-600 mt-2.5 font-IRANYekan400">@prp_7249</h4>
                             <h4 class="text-[16px] text-black font-IRANYekan500">@title</h4>
                             <p
-                                class="text-[14px] text-gray-700 font-IRANYekan300 overflow-hidden text-ellipsis line-clamp-3 max-h-[45px]">
+                                class="text-[14px] text-gray-700 font-IRANYekan300 overflow-hidden text-ellipsis line-clamp-3 max-h-[72px]">
                                 @prp_7244</p>
                         </div>
                     </div>
@@ -495,7 +465,7 @@
                     <div>
                         <h4 class="text-[18px] font-IRANYekan500 pb-6 text-black">سوالات متداول</h4>
                     </div>
-                    <div class="accordion w-full max-w-md mx-auto mt-10">
+                    <div class="accordion w-full max-w-md mx-auto">
                         @child
                     </div>
                 </layout>
@@ -523,13 +493,11 @@
             </basis>
         </section>
     </main>
-    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
-    <script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
-    <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]" />
+    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />    
     <div
-        class="absolute h-[100vh] opacity-0 z-50 p-5 top-0 hidden flex-col justify-baseline items-center bottom-0 left-0 right-0 bg-[#000000E5] pupUp ">
+        class="fixed h-[100vh] opacity-0 z-50 p-5 top-0 hidden flex-col justify-baseline items-center bottom-0 left-0 right-0 bg-[#000000E5] pupUpShare">
         <div class="w-full flex flex-row justify-between icon h-[55px]">
-            <button id="closepopup">
+            <button id="closepopupshare">
                 <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M13 0.832996L12.167 0L6.5 5.667L0.832812 0L0 0.832996L5.66719 6.5L0 12.167L0.832812 13L6.5 7.333L12.167 13L13 12.167L7.33314 6.5L13 0.832996Z"
@@ -543,7 +511,7 @@
 
         </div>
         <div class="w-full  h-[80px] bg-white my-auto">
-            <ul class="flex w-full h-full gap-[32px] flex-row justify-center items-center">
+            <ul id="shareBox" class="flex w-full h-full gap-[32px] flex-row justify-center items-center">
                 <li>
                     <a href="https://www.instagram.com/?url=https://[##cms.request.host##]/[##cms.request.rawurl##]">
                         <img src="[##cms.cms.cdn##]/images/Instagram.png" alt="">
@@ -561,234 +529,28 @@
                         <img src="[##cms.cms.cdn##]/images/Whatapp.png" alt="">
                     </a>
                 </li>
-                <li class="flex flex-row justify-center items-center gap-1">
-                    <a class="flex flex-row justify-center items-center gap-1.5" href="">
+                <li id="copylinkm" class="flex flex-row justify-center items-center gap-1">
+                    <!-- <a class="flex flex-row justify-center items-center gap-1.5" href=""> -->
                         <img src="[##cms.cms.cdn##]/images/Copy.png" alt="">
                         <p class="text-[14px] text-black font-PxGrotesk400">copy link</p>
-                    </a>
+                    <!-- </a> -->
                 </li>
             </ul>
         </div>
     </div>
 
 </body>
+<script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
 <script src="http://www.ramand-co.com/_js/swiper.js"></script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const swiperConfigs = [
-            {
-                container: '.scrollProjectList-2',
-                pagination: '.swiper-pagination-Project-2',
-                nextEl: '.swiper-button-next-project-2',
-                prevEl: '.swiper-button-prev-project-2',
-                spaceBetween: 15,
-                slidesPerView: 1,
-            },
-            {
-                container: '.scrollProjectList-3',
-                pagination: '.swiper-pagination-Project-3',
-                nextEl: '.swiper-button-next-project-3',
-                prevEl: '.swiper-button-prev-project-3',
-                spaceBetween: 15,
-                slidesPerView: 1.1,
-            },
-            {
-                container: '.scrollProjectList-4',
-                pagination: '.swiper-pagination-Project-4',
-                nextEl: '.swiper-button-next-project-4',
-                prevEl: '.swiper-button-prev-project-4',
-                spaceBetween: 15,
-                slidesPerView: 1.1,
-            },
-            {
-                container: '.scrollProjectList-5',
-                pagination: '.swiper-pagination-Project-4',
-                nextEl: '.swiper-button-next-project-4',
-                prevEl: '.swiper-button-prev-project-4',
-                spaceBetween: 23,
-                slidesPerView: 1.2,
-            }
-        ];
-
-        swiperConfigs.forEach((config, index) => {
-            new Swiper(config.container, {
-                spaceBetween: config.spaceBetween,
-                slidesPerView: config.slidesPerView,
-                pagination: {
-                    el: config.pagination,
-                },
-                navigation: {
-                    nextEl: config.nextEl,
-                    prevEl: config.prevEl
-                },
-                // autoplay: {
-                //     delay: 3000 + (index * 500),
-                //     disableOnInteraction: false
-                // },
-                loop: true,
-                // speed: 800
-            });
-        });
-        const headers = document.querySelectorAll('.accordion-header');
-
-        headers.forEach(header => {
-            header.addEventListener('click', function () {
-                const body = this.nextElementSibling;
-
-                if (body.style.maxHeight) {
-                    body.style.maxHeight = null;
-                    this.querySelector('.icon').innerHTML = '<svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.1603 10.6221H11.8397V0.877863C11.8397 0.351145 11.5038 0 11 0C10.4962 0 10.1603 0.351145 10.1603 0.877863V10.6221H0.839695C0.335878 10.6221 0 10.9733 0 11.5C0 12.0267 0.335878 12.3779 0.839695 12.3779H10.1603V22.1221C10.1603 22.6489 10.4962 23 11 23C11.5038 23 11.8397 22.6489 11.8397 22.1221V12.3779H21.1603C21.6641 12.3779 22 12.0267 22 11.5C22 10.9733 21.6641 10.6221 21.1603 10.6221Z" fill="black"/></svg>';
-                } else {
-                    document.querySelectorAll('.accordion-body').forEach(b => {
-                        b.style.maxHeight = null;
-                    });
-                    document.querySelectorAll('.icon').forEach(icon => {
-                        icon.innerHTML = '<svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.1603 10.6221H11.8397V0.877863C11.8397 0.351145 11.5038 0 11 0C10.4962 0 10.1603 0.351145 10.1603 0.877863V10.6221H0.839695C0.335878 10.6221 0 10.9733 0 11.5C0 12.0267 0.335878 12.3779 0.839695 12.3779H10.1603V22.1221C10.1603 22.6489 10.4962 23 11 23C11.5038 23 11.8397 22.6489 11.8397 22.1221V12.3779H21.1603C21.6641 12.3779 22 12.0267 22 11.5C22 10.9733 21.6641 10.6221 21.1603 10.6221Z" fill="black"/></svg>';
-                    });
-
-                    body.style.maxHeight = body.scrollHeight + 'px';
-                    this.querySelector('.icon').innerHTML = '<svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5634 0.694874L8.97276 7.28554L2.08251 0.395299C1.71007 0.0228529 1.22427 0.0120564 0.868019 0.368309C0.511767 0.724561 0.522562 1.21036 0.895008 1.58281L7.78525 8.47305L1.19458 15.0637C0.838332 15.42 0.849127 15.9058 1.22157 16.2782C1.59402 16.6507 2.07982 16.6615 2.43607 16.3052L9.02674 9.71453L15.917 16.6048C16.2894 16.9772 16.7752 16.988 17.1315 16.6318C17.4877 16.2755 17.4769 15.7897 17.1045 15.4173L10.2142 8.52703L16.8049 1.93636C17.1612 1.58011 17.1504 1.09431 16.7779 0.721865C16.4055 0.349419 15.9197 0.338622 15.5634 0.694874Z" fill="black"/></svg>';
-                }
-            });
-        });
-        const shareBtn = document.querySelector("#shareBtn")
-        const closeBtn = document.getElementById('closepopup');
-        const popup = document.querySelector('.pupUp');
-        shareBtn.addEventListener("click", () => { popup.classList.add("hidden-popup") })
-        closeBtn.addEventListener('click', () => {
-            popup.classList.remove("hidden-popup")
-        });
-    });
+<script src="https://cdn.basiscore.net/academy.basiscore.com/_js/basiscore-2.23.1.min.js"></script>
+<script src="[##cms.cms.cdn##]/js/articleMobile.js"></script>
+<basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]" />
+<script>    
+    
 
 
 
-
-    const _textareas = document.querySelectorAll("_textarea");
-    _textareas.forEach(element => {
-        if (element.value.trim() === "") {
-            element.value = "";
-        }
-
-    });
-    let messageSend = document.querySelector(".messageSend")
-    let commentP = document.querySelector(".commentP")
-
-    function renderCommentFn(args) {
-        console.log(args);
-
-    }
-    let submitComment = document.querySelector('.submitComment')
-    submitComment.addEventListener('click', (event) => {
-        //  let input1  = document.querySelector('.namee')
-        event.preventDefault();
-        let inputs = document.querySelectorAll('.commentP input')
-        let textas = document.querySelectorAll('.commentP _textarea')
-        let emptyFlag = false;
-        let loaderBtn = document.querySelector(".loaderBtn")
-        loaderBtn.style.display = "block"
-        submitComment.querySelector("span").style.display = "none"
-        submitComment.style.background = "#00A752"
-        inputs.forEach(element => {
-
-            if (element.value == "") {
-                if (element.classList.contains("codeinputm")) {
-
-                    emptyFlag = true;
-                    element.setAttribute("placeholder", "لطفا کد امنیتی را وارد نمایید")
-                    element.parentElement.classList.add("emptyInput")
-                    //    console.log(element.parentElement);
-
-                }
-                else {
-
-                    emptyFlag = true;
-                    element.setAttribute("placeholder", "لطفا این فیلد را پر نمایید")
-                    element.classList.add("emptyInput")
-                }
-
-            }
-        });
-        textas.forEach(element => {
-
-            console.log(element.value.trim() === "");
-            if (element.value.trim() === "") {
-
-
-                emptyFlag = true;
-                element.setAttribute("placeholder", "لطفا این فیلد را پر نمایید")
-                element.classList.add("emptyInput")
-
-
-            }
-        });
-        if (!emptyFlag) {
-            let val = document.querySelector(".commentP _textarea").value;
-            let userName = document.querySelector(".commentP .userName").value;
-            console.log("val", val);
-            $bc.setSource('db.send', true)
-            $bc.setSource('db.senduserName', userName)
-            $bc.setSource('db.sendcomment', val)
-            $bc.setSource('db.run', true)
-            let sendbox = document.querySelector('.messageSend')
-            let text = sendbox.querySelector('p')
-            text.innerHTML = 'پیام شما با موفقیت ثبت گردید.'
-            text.style.color = "#00A752"
-            commentP.reset()
-            messageSend.style.display = "block"
-            document.querySelector(".commentP").reset();
-            setTimeout(() => {
-                messageSend.style.display = "none"
-                loaderBtn.style.display = "none"
-                submitComment.querySelector("span").style.display = "block"
-
-            }, 5000)
-        }
-        else {
-            // let sendbox = document.querySelector('.messageSend')
-            // let text = sendbox.querySelector('p')
-            // text.innerHTML = 'فیلدهای الزامی را پر کنید'
-            // messageSend.style.display = "block"
-
-            setTimeout(() => {
-                // messageSend.style.display = "none"
-                loaderBtn.style.display = "none"
-                submitComment.querySelector("span").style.display = "block"
-
-            }, 5000)
-
-        }
-
-        setTimeout(() => {
-            inputs.forEach(element => {
-                if (element.classList.contains("codeinputm")) {
-                    element.classList.remove("emptyInput")
-                    element.setAttribute("placeholder", "کد امنیتی را وارد نمایید")
-                    element.parentElement.classList.remove("emptyInput")
-                    submitComment.style.background = "transparent"
-
-                }
-                else {
-
-
-                    element.classList.remove("emptyInput")
-                    element.setAttribute("placeholder", "")
-                    element.parentElement.classList.remove("emptyInput")
-                    submitComment.style.background = "transparent"
-                }
-
-            })
-            textas.forEach(element => {
-
-                element.classList.remove("emptyInput")
-                element.setAttribute("placeholder", "")
-                submitComment.style.background = "transparent"
-
-            })
-        }, 5000);
-
-
-    })
+    
 
 </script>
 

@@ -9,58 +9,59 @@
 </head>
 
 <body>
-    <div
-        class="absolute h-[100vh] z-50 p-5 top-0  flex-col justify-baseline items-center bottom-0 left-0 right-0 bg-[#000000E5] pupUp ">
+    <div id="showPopupGallry"
+        class="fixed h-[100%] bg- z-50 p-5 top-0 flex flex-col justify-between items-center bottom-0 left-0 right-0 bg-[#FFFFFFE5] pupUp ">
         <div class="w-full flex flex-row justify-between icon h-[55px]">
-            <button id="closepopup">
-                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button id="closepopupItem">
+                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
-                        d="M13 0.832996L12.167 0L6.5 5.667L0.832812 0L0 0.832996L5.66719 6.5L0 12.167L0.832812 13L6.5 7.333L12.167 13L13 12.167L7.33314 6.5L13 0.832996Z"
-                        fill="#FAFAFA" />
+                        d="M10.1337 30.0837L7.91699 27.867L16.7837 19.0003L7.91699 10.1337L10.1337 7.91699L19.0003 16.7837L27.867 7.91699L30.0837 10.1337L21.217 19.0003L30.0837 27.867L27.867 30.0837L19.0003 21.217L10.1337 30.0837Z"
+                        fill="black" />
                 </svg>
             </button>
-            <a href="">
-                <img src="./../assets/images/icon/logocoversunpopup.png" alt="">
-
-            </a>
-
         </div>
-        <div class="w-full  my-auto">
-            <div class="swiper galleryPopSlider relative">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <!-- <basis core="print" datamembername="db.pop-gallery"> -->
+        <div id="showItemList" class="flex flex-col items-center justify-center gap-6">
+            <basis core="print" datamembername="db.pop-gallery">
+            <face filter="ord=1000">
+            <div class="boxImg">
+                <img class="w-full max-w-[350px] h-[200px]" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+            </div>                            
+            </face>
+            </basis>
+        </div>
+        <div id="showImgItem"
+            class="fixed bg-[#FFFFFFE5] p-5 h-[100vh] w-full flex-col justify-between items-start top-[0] bottom-[0] my-auto flex opacity-0 invisible">
+            <button id="closepopupgallry">
+                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10.1337 30.0837L7.91699 27.867L16.7837 19.0003L7.91699 10.1337L10.1337 7.91699L19.0003 16.7837L27.867 7.91699L30.0837 10.1337L21.217 19.0003L30.0837 27.867L27.867 30.0837L19.0003 21.217L10.1337 30.0837Z"
+                        fill="black" />
+                </svg>
+            </button>
+            <div class="w-full h-[200pv]">
+                <div class="swiper galleryPopSlider w-full relative h-[200px]">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <basis core="print" datamembername="db.pop-gallery">
+                            <face filter="ord=1000">
+                                <div class="swiper-slide">
+                                    <div class="imgS flex items-center justify-center overflow-hidden">
+                                        <img class="h-[200px] w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                                    </div>
+                                </div>
+                            </face>
+                        </basis>
 
-                    <!-- <face filter="ord=1000"> -->
-                    <div class="swiper-slide">
-                        <div class="imgS flex items-center justify-center overflow-hidden">
-                            <img class="h-[200px] max-h-[588px]" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
-                        </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="imgS flex items-center justify-center overflow-hidden">
-                            <img class="h-[200px] max-h-[588px]" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="imgS flex items-center justify-center overflow-hidden">
-                            <img class="h-[200px] max-h-[588px]" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
-                        </div>
-                    </div>
-
-                    <!-- </face> -->
-                    <!-- </basis> -->
-
                 </div>
-
-                <div class="flex flex-row justify-between"> 
-                    <div class="nextGallery cursor-pointer z-10 absolute left-0 top-0">
+                <div class="w-full flex flex-row justify-between mt-6">
+                    <div class="nextGallery cursor-pointer z-10  left-0 top-0">
                         <svg width="22" height="27" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 13.5L21.75 0.942631V26.0574L0 13.5Z" fill="black" />
+                            <path d="M22 13.5L0.25 0.942631V26.0574L22 13.5Z" fill="black" />
                         </svg>
                     </div>
-                    <div class="tools flex gap-x-4">
+                    <div class="tools flex gap-x-5">
                         <div class="zoomIn cursor-pointer">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -100,63 +101,123 @@
 
                         </div>
                     </div>
-                    <div class="prevGallery cursor-pointer z-10 absolute right-0 top-0">
+                    <div class="prevGallery cursor-pointer z-10  right-0 top-0">
                         <svg width="22" height="27" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22 13.5L0.25 0.942631V26.0574L22 13.5Z" fill="black" />
+                            <path d="M0 13.5L21.75 0.942631V26.0574L0 13.5Z" fill="black" />
                         </svg>
-
                     </div>
                 </div>
-
-
             </div>
+            <div></div>
+
+
 
 
 
         </div>
-    </div>
+        <div></div>
 
+    </div>
 </body>
 <script src="http://j110xu.undertest.ir/_js/swiper.js"></script>
 <script>
-
-
+    
     const galleryPopSlider = new Swiper('.galleryPopSlider', {
-
         loop: true,
-
         speed: 1000,
-        // Navigation arrows
         navigation: {
             nextEl: '.nextGallery',
             prevEl: '.prevGallery',
-        },
-
+        }
     });
 
-    let galleryPop = document.querySelector(".galleryPop")
-    let galleryShowPop = document.querySelector(".galleryShowPop")
-    let closeGallery = document.querySelector(".closeGallery")
-    let zoomIn = document.querySelector(".zoomIn")
-    let zoomOut = document.querySelector(".zoomOut")
-    let rotateLeft = document.querySelector(".rotateLeft")
-    let rotateRight = document.querySelector(".rotateRitght")
-    let openPopGallery = document.querySelectorAll(".openPopGallery")
+    let galleryPop = document.querySelector(".galleryPop");
+    let galleryShowPop = document.querySelector(".galleryShowPop");
+    let closeGallery = document.querySelector(".closeGallery");
+    let zoomIn = document.querySelector(".zoomIn");
+    let zoomOut = document.querySelector(".zoomOut");
+    let rotateLeft = document.querySelector(".rotateLeft");
+    let rotateRight = document.querySelector(".rotateRitght");
+    let openPopGallery = document.querySelectorAll(".openPopGallery");
+    let showItemList = document.querySelector("#showItemList")
+    let showImgItem = document.querySelector("#showImgItem")
+    let closepopupItem = document.querySelector("#closepopupItem")
+    let closepopupgallry = document.querySelector("#closepopupgallry")
+    let showPopupGallry = document.querySelector("#showPopupGallry")
 
-    let minZoom = 0.5
-    let maxZoom = 1.5
+
+    // showItemList
+    // showImgItem
+
+    let minZoom = 0.5;
+    let maxZoom = 1.5;
     let currZoom = 1;
     let curRotate = 0;
-    let closeGallerShowPop = document.querySelector(".closeGallerShowPop")
-    let innerGallery = document.querySelector(".galleryPop .innerGallery")
-    let galleryPopBoxes = document.querySelectorAll(".galleryPop .innerGallery .boxImg")
+    let closeGallerShowPop = document.querySelector(".closeGallerShowPop");
+    let innerGallery = document.querySelector(".galleryPop .innerGallery");
+    let galleryPopBoxes = document.querySelectorAll(".boxImg");
+    console.log(galleryPopBoxes);
     galleryPopBoxes.forEach((element, i) => {
-        element.addEventListener("click", function (params) {
-            galleryShowPop.classList.remove("translate-y-[100vh]")
-            innerGallery.classList.add("-translate-y-[100vh]")
-            galleryPopSlider.slideTo(i, 10)
-        })
+        console.log(i);
+        element.addEventListener("click", function () {
+            closepopupItem.setAttribute("opengallery", "")
+            // showItemList.style.display = "none"
+            console.log(i);
+            galleryPopSlider.slideToLoop(i, 10);
+            setTimeout(() => {
+                showImgItem.classList.remove("invisible")
+                showImgItem.style.opacity = "1"
+            }, 50);
+
+        });
     });
+    zoomIn.addEventListener("click", () => {
+        let activeSlide = document.querySelector(".galleryPopSlider .swiper-slide-active img");
+        if (currZoom < maxZoom) {
+            currZoom += 0.1;
+            activeSlide.style.scale = currZoom;
+        }
+    });
+
+    zoomOut.addEventListener("click", () => {
+        let activeSlide = document.querySelector(".galleryPopSlider .swiper-slide-active img");
+        if (currZoom > minZoom) {
+            currZoom -= 0.1;
+            activeSlide.style.scale = currZoom;
+        }
+    });
+
+    rotateLeft.addEventListener("click", () => {
+        let activeSlide = document.querySelector(".galleryPopSlider .swiper-slide-active img");
+        curRotate += 90;
+        activeSlide.style.rotate = `${-curRotate}deg`;
+    });
+
+    rotateRight.addEventListener("click", () => {
+        let activeSlide = document.querySelector(".galleryPopSlider .swiper-slide-active img");
+        curRotate += 90;
+        activeSlide.style.rotate = `${curRotate}deg`;
+    });
+    closepopupItem.addEventListener("click", (e) => {
+        const getStatus = e.currentTarget.getAttribute("opengallery")
+        if (getStatus == null) {
+            console.log("Yes");
+            showPopupGallry.style.display = "none"
+
+        } else {
+            showItemList.style.display = "flex"
+            showImgItem.style.display = "none"
+            // e.currentTarget.removeAttribute("opengallery")
+        }
+
+
+    })
+    closepopupgallry.addEventListener("click", () => {
+        showImgItem.style.opacity = "0"
+        showImgItem.classList.add("invisible")
+        closepopupItem.removeAttribute("opengallery")
+    })
 </script>
+
 
 </html>

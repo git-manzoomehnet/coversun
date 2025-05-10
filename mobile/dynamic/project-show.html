@@ -18,7 +18,7 @@
     <member type="list" name="related-blog" propertyid="7249,7244" size="300x200" blgid="631" link="article.bc"  />
 </basis>
 <basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="19" usedforid="[##cms.query.id##]">
-    <member type="list" name="related-Product" propertyid="10000972" size="300x400" blgid="630" />
+    <member type="list" name="related-Product" propertyid="10000972,10000792" size="300x400" blgid="630" />
 </basis>
 <basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="19" usedforid="[##cms.query.id##]">
     <member type="list" name="related-project" size="300x600" blgid="629" link="project.bc" />
@@ -107,7 +107,7 @@
             <layout>
                 <div class="w-full flex flex-col px-5 gap-4 mt-5">
                     <h4 class="text-[14px] font-PxGrotesk400 text-gray-800">توضیحات:</h4>
-                    <div class="[&>p]:text-[14px] [&>p]:font-IRANYekan300 [&>p]:text-justify ">
+                    <div class="[&>p]:text-[14px] [&>p]:font-IRANYekan300 [&>p]:text-justify [&>p]:leading-[26px]">
                         @child
                     </div>
                 </div>
@@ -189,7 +189,7 @@
                     </div>
                 </div>
             </layout>
-            <face>
+            <face filter="prp_10000792 not in (null)">
                 <div class="swiper-slide flex flex-col">
                     <div class="w-full h-[448px] flex flex-col">
                         <a href="/@link" title="@title" class="w-full h-full">                            
@@ -199,8 +199,21 @@
                     </div>
                     <div class="flex-col flex gap-1.5 mt-1.5">
                         <h4 class="text-[16px] text-gray-600 font-IRANYekan500">@title</h4>
-                        <p class="text-[16px] text-gray-600 font-IRANYekan400 flex flex-row">ساخت کشور <span class="text-[16px] text-gray-600 font-IRANYekan400">@prp_10000972</span></p>
+                        <p class="text-[16px] text-gray-600 font-IRANYekan400 flex flex-row">ساخت کشور <span class="text-[16px] text-gray-600 font-IRANYekan400">@prp_10000792</span></p>
                         
+                    </div>
+                </div>
+            </face>
+            <face filter="prp_10000792 is null">
+                <div class="swiper-slide flex flex-col">
+                    <div class="w-full h-[448px] flex flex-col">
+                        <a href="/@link" title="@title" class="w-full h-full">                            
+                            <img class="w-[350px] h-[448px]" src="[##cms.cms.cdn##]/@00300X00400prp" alt="@title">
+                        </a>
+
+                    </div>
+                    <div class="flex-col flex gap-1.5 mt-1.5">
+                        <h4 class="text-[16px] text-gray-600 font-IRANYekan500">@title</h4>
                         
                     </div>
                 </div>

@@ -1,16 +1,12 @@
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" catid="214363">
     <member name="list-projectO" size="400x80" type="list" />
 </basis>
-<script src="./../basis-loader.js"></script>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="214364">
     <member name="list-project2" size="400x80" type="list" />
 </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" catid="214363">
     <member name="list2-project" size="400x300" propertyid="17877" type="list" link="gallery.bc" />
 </basis>
-<!-- ####################################################################################################################################### -->
-<!-- ####################################################################################################################################### -->
-<!-- ####################################################################################################################################### -->
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" catid="214363">
     <member name="list-project" size="400x900" type="list" />
 </basis>
@@ -71,8 +67,6 @@
 <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376682">
     <member name="image-event4" type="list" format="4" />
 </basis>
-
-
 </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="214364">
     <member name="list5-brand" size="300x600" type="list" />
@@ -106,9 +100,6 @@
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376691">
     <member name="brand3" type="view" />
 </basis>
-<!-- ####################################################################################################################################### -->
-<!-- ####################################################################################################################################### -->
-<!-- ####################################################################################################################################### -->
 
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376699">
     <member name="Sun-vibe" type="view" />
@@ -119,174 +110,31 @@
 <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376699">
     <member name="image-Sun-vibe" type="list" format="4" />
 </basis>
-
-
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
-    <link rel="stylesheet" href="./../assets/css/outputMobile.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
+    <title>لندینگ</title>
 </head>
-<style>
-    .marquee-container {
-        overflow: hidden !important;
-        white-space: nowrap !important;
-        width: 100% !important;
-    }
-
-    .marquee-content {
-        display: inline-block !important;
-        animation: marquee 10s linear infinite !important;
-    }
-
-    @keyframes marquee {
-        0% {
-            transform: translateX(0) !important;
-        }
-
-        100% {
-            transform: translateX(-50%) !important;
-        }
-    }
-
-    @media (max-width: 640px) {
-        .marquee-content {
-            font-size: 1rem !important;
-            animation-duration: 12s !important;
-        }
-    }
-
-    /* ################################## */
-    /* ################################## */
-    /* ################################## */
-    .body__inner-wrapper {
-        height: 100% !important;
-        max-width: 104rem !important;
-        display: flex;
-        flex-direction: column !important;
-        gap: 6rem !important;
-        justify-content: center !important;
-        margin-inline: auto !important;
-        margin-block-start: 6rem !important;
-    }
-
-    .outline__text {
-        font-family: sans-serif !important;
-        -webkit-text-stroke: 1px black !important;
-        -webkit-text-fill-color: white !important;
-    }
-
-    .marquee {
-        width: 100% !important;
-        overflow: hidden !important;
-    }
-
-    .marquee__inner-wrap {
-        height: 116px !important;
-        width: 100% !important;
-        overflow: hidden !important;
-    }
-
-    .marquee__inner {
-        height: 100% !important;
-        width: fit-content !important;
-        align-items: center !important;
-        display: flex !important;
-        position: relative !important;
-        will-change: transform !important;
-    }
-
-    .marquee__inner--right {
-        animation: marquee-right 30s linear infinite !important;
-    }
-
-    .marquee__inner--left {
-        animation: marquee-left 30s linear infinite !important;
-    }
-
-    @keyframes marquee-right {
-        from {
-            transform: translateX(0) !important;
-        }
-
-        to {
-            transform: translateX(-50%) !important;
-        }
-    }
-
-    @keyframes marquee-left {
-        from {
-            transform: translateX(-50%) !important;
-        }
-
-        to {
-            transform: translateX(0) !important;
-        }
-    }
-
-    .marquee span {
-        text-align: center !important;
-        color: lightgray !important;
-        font-weight: 400 !important;
-        white-space: nowrap !important;
-        font-size: max(2vw, 2.4rem) !important;
-        line-height: 1.2 !important;
-        font-weight: 700 !important;
-        padding: 1vh 1vw 0 !important;
-        text-transform: uppercase !important;
-    }
-
-    .marquee__img {
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
-    }
-
-    /* Simple Text Marquee Styles */
-    .simple-marquee {
-        width: 100% !important;
-        height: 4rem !important;
-        overflow: hidden !important;
-        position: relative !important;
-        margin-bottom: 2rem !important;
-    }
-
-    .simple-marquee__content {
-        position: absolute !important;
-        white-space: nowrap !important;
-        color: #fff !important;
-        font-size: 2rem !important;
-        font-weight: bold !important;
-        padding: 1rem 0 !important;
-        display: flex !important;
-    }
-
-    .simple-marquee__text {
-        padding: 0 2rem !important;
-    }
-
-    @keyframes simple-marquee {
-        from {
-            transform: translateX(100%) !important;
-        }
-
-        to {
-            transform: translateX(-100%) !important;
-        }
-    }
-</style>
-
 <body>
+    <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
     <main>
-        <section class="pt-[100px]">
-        </section>
+        <div class="relative">
+            <div class="pt-[80px] px-5">
+                <ul class="flex flex-row gap-1.5">
+                    <li class="text-[12px] font-IRANYekan300 text-gray-700"><a href="/">صفحه نخست</a></li>
+                    <li class="text-[12px] font-IRANYekan300 text-gray-700"><span href="">.</span></li>                  
+                    <li class="text-[12px] font-IRANYekan300 text-gray-700"><span>لندینگ</span></li>
+                </ul>
+            </div>
+
+        </div>
         <section class="bg-gray-50 py-4">
             <div class="w-full flex flex-col">
                 <div>
-                    <h3 class="text-[18px] text-black font-IRANYekan500 px-5 pb-[5px]">پروژه های شاخص</h3>
+                    <h3 class="text-[18px] text-black font-IRANYekan500 px-5 pb-2.5">پروژه های شاخص</h3>
                 </div>
                 <div class="flex flex-col gap-2.5">
                     <basis core="print" datamembername="db.list-projectO">
@@ -302,7 +150,7 @@
                                         <path
                                             d="M13.4656 6.92748H7.53435V0.572519C7.53435 0.229008 7.32061 0 7 0C6.67939 0 6.46565 0.229008 6.46565 0.572519V6.92748H0.534351C0.21374 6.92748 0 7.15649 0 7.5C0 7.84351 0.21374 8.07252 0.534351 8.07252H6.46565V14.4275C6.46565 14.771 6.67939 15 7 15C7.32061 15 7.53435 14.771 7.53435 14.4275V8.07252H13.4656C13.7863 8.07252 14 7.84351 14 7.5C14 7.15649 13.7863 6.92748 13.4656 6.92748Z" />
                                     </svg>
-                                    <span class="text-[18px] text-black font-IRANYekan300">
+                                    <span class="text-[17px] text-black font-IRANYekan300">
                                         @title
                                     </span>
 
@@ -319,7 +167,7 @@
             </div>
             <div class="w-full flex flex-col mt-[10px]">
                 <div>
-                    <h3 class="text-[18px] text-black font-IRANYekan500 px-5"> کو برندینگ</h3>
+                    <h3 class="text-[18px] text-black pb-2.5 font-IRANYekan500 px-5"> کو برندینگ</h3>
                 </div>
                 <div class="flex flex-col gap-2.5">
                     <basis core="print" datamembername="db.list-project2">
@@ -338,7 +186,7 @@
                                         <path
                                             d="M13.4656 6.92748H7.53435V0.572519C7.53435 0.229008 7.32061 0 7 0C6.67939 0 6.46565 0.229008 6.46565 0.572519V6.92748H0.534351C0.21374 6.92748 0 7.15649 0 7.5C0 7.84351 0.21374 8.07252 0.534351 8.07252H6.46565V14.4275C6.46565 14.771 6.67939 15 7 15C7.32061 15 7.53435 14.771 7.53435 14.4275V8.07252H13.4656C13.7863 8.07252 14 7.84351 14 7.5C14 7.15649 13.7863 6.92748 13.4656 6.92748Z" />
                                     </svg>
-                                    <span class="text-[18px] text-black font-IRANYekan300">
+                                    <span class="text-[17px] text-black font-IRANYekan300">
                                         @title
                                     </span>
 
@@ -352,9 +200,11 @@
                 </div>
                 <div>
                     <ul class="flex flex-col mt-[15px] gap-[5px]">
-                        <li class="scroll-btnG text-[18px] text-black px-5 font-IRANYekan500" data-target="#section1">ایونت</li>
-                        <li class="scroll-btnG text-[18px] text-black px-5 font-IRANYekan500" data-target="#section2">گروه هم‌افزایی سان وایب</li>
-                        
+                        <li class="scroll-btnG text-[18px] text-black px-5 font-IRANYekan500" data-target="#section1">
+                            ایونت</li>
+                        <li class="scroll-btnG text-[18px] text-black px-5 font-IRANYekan500" data-target="#section2">
+                            گروه هم‌افزایی سان وایب</li>
+
                     </ul>
                 </div>
         </section>
@@ -370,10 +220,11 @@
                     <face>
                         <div class="pt-[51px] border-b border-b-black">
                             <div>
-                                <h3 class="text-[18px] font-IRANYekan300 text-black">@title</h3>
-                                <p class="text-[14px] font-IRANYekan300 text-black my-7 text-justify">@prp_17877</p>
+                                <h3 class="text-[18px] font-IRANYekan300 text-black scrollTop">@title</h3>
+                                <p class="text-[14px] my-4 text-justify text-gray-600 leading-[26px] scrollTop">@prp_17877</p>
                             </div>
-                            <a class="flex flex-row justify-start items-center gap-[5px]" href="@link">
+                            <a class="flex flex-row justify-start items-center font-IRANYekan300 gap-[5px] scrollTop text-[14px] text-gray-700 pt-[15px]"
+                                href="@link">
                                 <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -381,406 +232,658 @@
                                         fill="#3F3F46" />
                                 </svg>
                                 مشاهده گالری</a>
-                            <a class="w-full h-full" href="@link">
-                                <img class="w-full h-[260px] my-7" src="[##cms.cms.cdn##]/@00400X00300prp" alt="@title">
-                            </a>
+                                <div class="w-full h-[260px] my-7 overflow-hidden">
+                                    <a class="w-full h-full" href="@link">
+                                        <img class="imageShow" src="[##cms.cms.cdn##]/@00400X00300prp" alt="@title">
+                                    </a>
+                                </div>
+                            
                         </div>
 
                     </face>
                 </basis>
-                <!-- ########## -->
-            </div>
-            <div class="flex flex-col">
-                <div class="w-full flex flex-col border-b border-b-black py-5">
-                    <div class="w-full flex flex-col justify-center items-start">
-                        <h3> کو برندینگ </h3>
+                        </div>
+        </section>
+        <section>
+            <div>
+                <h3 class="text-[18px] font-IRANYekan500 px-5 mt-4 text-black"> کو برندینگ </h3>
+                <div class="marquee-wrapperText text-black my-4">
+                    <div class="marqueepy">
                         <basis core="print" datamembername="db.en-list1-brand">
-
                             <face filter="id=2376687">
-                                <h5 class="font-RalewayDots400 text-[32px] text-gray-800 inline-block">COVERSUN + @title
-                                </h5>
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-800 inline-block">COVERSUN
+                                    + @title </span>
                             </face>
                         </basis>
-                        <!--  -->
-
-                        <div class="relative w-full h-auto mx-auto flex justify-center items-center mt-[32px]">
-
-                            <basis core="print" datamembername="db.list1-brand">
-
-                                <face filter="id=2376687">
-                                    <img class="w-[234px] h-[158px] absolute top-0 z-10 right-0"
-                                        src="[##cms.cms.cdn##]/@00600X00400prp" alt="@title">
-                                </face>
-                            </basis>
-
-
-                            <basis core="print" datamembername="db.list2-brand">
-                                <face filter="id=2376687">
-                                    <img class="w-[132px] h-[203px] absolute top-4 z-20 right-[210px]"
-                                        src="[##cms.cms.cdn##]/@00400X00600prp" alt="">
-                                </face>
-                            </basis>
-
-                            <basis core="print" datamembername="db.image-event">
-                                <face filter="ord=1">
-                                    <a class="w-[98px] h-[98px] rounded-full bg-gray-800 flex justify-center items-center absolute right-8 z-30 top-[117px]"
-                                        href="@link">
-                                        <img class="w-[62px] h-[42px]" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
-                                    </a>
-                                </face>
-                            </basis>
-
-
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap mt-[240px]">
-                        <h4 class="text-[16px] text-gray-500 font-IRANYekan500">01</h4>
-                        <basis core="print" datamembername="db.event1">
-                            <face filter="TypeID=150">
-                                <h5 class="text-[24px] text-gray-600 font-IRANYekan500">@Answer</h5>
-                            </face>
-                            <face filter="TypeID=129">
-                                <div
-                                    class="[&>p]:text-[14px] [&>p]:text-gray-600 [&>p]:font-IRANYekan300 [&>p]:pt-4 [&>p]:text-justify">
-                                    @Answer
-                                </div>
-                            </face>
-                        </basis>
-                    </div>
-                </div>
-                <!-- $$$ -->
-                <div class="w-full flex flex-col border-b border-b-black py-5">
-                    <div class="w-full">
-                        <!-- ################# -->
                         <basis core="print" datamembername="db.en-list1-brand">
-                            <face filter="id=2376686">
-                                <h5 class="font-RalewayDots400 text-[32px] text-gray-800 inline-block">COVERSUN + @title
-                                </h5>
-
+                            <face filter="id=2376687">
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-800 inline-block">COVERSUN
+                                    + @title </span>
                             </face>
                         </basis>
-                        <div class="relative w-full">
-                            <basis core="print" datamembername="db.list3-brand">
-                                <face filter="id=2376686">
-                                    <img class="w-[199px] h-[240px] absolute top-0 z-10 right-0"
-                                        src="[##cms.cms.cdn##]/@00500X00700prp" alt="@title">
-                                </face>
-                            </basis>
-                            <basis core="print" datamembername="db.list4-brand">
-                                <face filter="id=2376686">
-                                    <img class="w-[111px] h-[98px] absolute top-28 z-20 right-[150px]"
-                                        src="[##cms.cms.cdn##]/@00300X00400prp" alt="@title">
-                                </face>
-                            </basis>
-                            <basis core="print" datamembername="db.image-event2">
-                                <face filter="ord=1">
-                                    <a class="w-[98px] h-[98px] rounded-full bg-gray-800 flex justify-center items-center absolute right-8 z-30 top-[117px]"
-                                        href="@link">
-                                        <img class="w-[62px] h-[42px]" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
-                                    </a>
-                                </face>
-                            </basis>
-
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap mt-[240px]">
-                        <h4 class="text-[16px] text-gray-500 font-IRANYekan500">02</h4>
-                        <basis core="print" datamembername="db.event2">
-
-                            <face filter="TypeID=150">
-                                <h5 class="text-[24px] text-gray-600 font-IRANYekan500">@Answer</h5>
+                        <basis core="print" datamembername="db.en-list1-brand">
+                            <face filter="id=2376687">
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-800 inline-block">COVERSUN
+                                    + @title </span>
                             </face>
-                            <face filter="TypeID=129">
-                                <p class="text-[14px] text-gray-600 font-IRANYekan300 pt-4 text-justify">@Answer</p>
+                        </basis>
+                        <basis core="print" datamembername="db.en-list1-brand">
+                            <face filter="id=2376687">
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-800 inline-block">COVERSUN
+                                    + @title </span>
                             </face>
                         </basis>
                     </div>
                 </div>
-                <div class="w-full flex flex-col border-b border-b-black py-5">
-                    <div class="w-full flex flex-col justify-center items-start">
-                        <h3> کو برندینگ </h3>
-                        <!-- ##################### -->
-                                <basis core="print" datamembername="db.en-list1-brand">
-                                    <face filter="id=2376684">
-                                        <h5 class="simple-marquee__text font-RalewayDots400 text-[32px] text-gray-800 inline-block"> COVERSUN + @title</h5>
+                <div class="px-5">
+                    <div class="w-full flex flex-col border-b border-b-black py-5">
+
+                        <!-- ############## -->
+                        <div class="flex w-full h-[260px] relative justify-start items-start mx-auto">
+                            <div class="relative w-[235px] top-0 h-[158px] z-10 ">
+                                <basis core="print" datamembername="db.list1-brand">
+
+                                    <face filter="id=2376687">
+                                        <img class="w-[234px] h-[158px] absolute top-0 z-10 right-0"
+                                            src="[##cms.cms.cdn##]/@00600X00400prp" alt="@title">
                                     </face>
                                 </basis>
-                        <!-- ##################### -->
+                                <div class="absolute w-[132px] h-[205px] top-[5px] right-[210px] z-20 ">
+                                    <basis core="print" datamembername="db.list2-brand">
+                                        <face filter="id=2376687">
+                                            <img class="w-full h-full absolute top-4 z-20"
+                                                src="[##cms.cms.cdn##]/@00400X00600prp" alt="">
+                                        </face>
+                                    </basis>
+                                </div>
+                                <div class="absolute rounded-full w-[99px] h-[99px] right-8 bottom-[-70px] z-20 ">
+                                    <basis core="print" datamembername="db.image-event">
+                                        <face filter="ord=1">
+                                            <img class="w-full h-full bg-gray-800 rounded-full"
+                                                src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                                        </face>
+                                    </basis>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ############## -->
 
-                        <div class="relative w-full h-auto mx-auto flex justify-center items-center mt-[32px]">
-                            <basis core="print" datamembername="db.list3-brand">
-                                <face filter="id=2376684">
-                                    <img class="w-[234px] h-[158px] absolute top-0 z-10 right-0"
-                                        src="[##cms.cms.cdn##]/@00500X00700prp" alt="">
+                        <div class="flex flex-col gap">
+                            <h4 class="text-[16px] text-gray-400 font-IRANYekan500">01</h4>
+                            <basis core="print" datamembername="db.event1">
+                                <face filter="TypeID=150">
+                                    <h5 class="text-[24px] text-gray-600 font-IRANYekan500">@Answer</h5>
                                 </face>
-                            </basis>
-                            <basis core="print" datamembername="db.list4-brand">
-
-                                <face filter="id=2376684">
-                                    <img class="w-[132px] h-[203px] absolute top-4 z-20 right-[210px]"
-                                        src="[##cms.cms.cdn##]/@00300X00400prp" alt="@title">
-                                </face>
-                            </basis>
-                            <basis core="print" datamembername="db.image-event3">
-                                <face filter="ord=1">
-                                    <a class="w-[98px] h-[98px] rounded-full bg-gray-800 flex justify-center items-center absolute right-8 z-30 top-[117px]"
-                                        href="@link">
-                                        <img class="w-[62px] h-[42px]" src="[##cms.cms.cdn##]/@largeIMG" alt="@title">
-                                    </a>
+                                <face filter="TypeID=129">
+                                    <div
+                                        class="[&>p]:text-[14px] [&>p]:text-gray-600 [&>p]:font-IRANYekan300 pt-4 [&>p]:text-justify [&>p]:leading-[26px]">
+                                        @Answer
+                                    </div>
                                 </face>
                             </basis>
                         </div>
                     </div>
-
-
-
-                    <div class="flex flex-col gap mt-[240px]">
-                        <h4 class="text-[16px] text-gray-500 font-IRANYekan500">03</h4>
-                        <basis core="print" datamembername="db.event3">
-
-                            <face filter="TypeID=150">
-                                <h5 class="text-[24px] text-gray-600 font-IRANYekan500">@Answer</h5>
+                </div>
+            </div>
+            <div>
+                <div class="marquee-wrapperText text-black my-4">
+                    <div class="marqueepy">
+                        <basis core="print" datamembername="db.en-list1-brand">
+                            <face filter="id=2376686">
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-800 inline-block">COVERSUN
+                                    + @title </span>
                             </face>
-                            <face filter="TypeID=129">
-                                <p class="text-[14px] text-gray-600 font-IRANYekan300 pt-4 text-justify">@Answer</p>
+                        </basis>
+                        <basis core="print" datamembername="db.en-list1-brand">
+                            <face filter="id=2376686">
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-800 inline-block">COVERSUN
+                                    + @title </span>
+                            </face>
+                        </basis>
+                        <basis core="print" datamembername="db.en-list1-brand">
+                            <face filter="id=2376686">
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-800 inline-block">COVERSUN
+                                    + @title </span>
+                            </face>
+                        </basis>
+                        <basis core="print" datamembername="db.en-list1-brand">
+                            <face filter="id=2376686">
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-800 inline-block">COVERSUN
+                                    + @title </span>
                             </face>
                         </basis>
                     </div>
                 </div>
-                <!-- $$$ -->
-                <div class="w-full flex flex-col border-b border-b-black py-5 overflow-x-hidden">
-                    <div class="w-full flex flex-col justify-center items-start">
-                        <h3> کو برندینگ </h3>
+                <div class="px-5">
+                    <div class="w-full flex flex-col border-b border-b-black py-5">
+                        <div class="w-full">
+
+                            <div class="flex w-full h-[260px] relative justify-start items-start mx-auto">
+                                <div class="relative w-[200px] top-0 h-[240px] z-10">
+                                    <basis core="print" datamembername="db.list3-brand">
+                                        <face filter="id=2376686">
+                                            <img class="w-full h-full absolute z-10"
+                                                src="[##cms.cms.cdn##]/@00500X00700prp" alt="@title">
+                                        </face>
+                                    </basis>
+                                    <div class="absolute w-[100px] h-[99px] top-[115px] right-[170px] z-20">
+                                        <basis core="print" datamembername="db.list4-brand">
+                                            <face filter="id=2376686">
+                                                <img class="w-full h-full absolute z-20"
+                                                    src="[##cms.cms.cdn##]/@00300X00400prp" alt="@title">
+                                            </face>
+                                        </basis>
+                                    </div>
+
+                                    <div
+                                        class="absolute rounded-full w-[99px] h-[99px] right-[250px] top-[120px] z-20 bg-gray-800">
+                                        <basis core="print" datamembername="db.image-event2">
+                                            <face filter="ord=1">
+                                                <img class="w-full h-full rounded-full"
+                                                    src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                                            </face>
+                                        </basis>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ################# -->
+                        </div>
+                        <div class="flex flex-col gap">
+                            <h4 class="text-[16px] text-gray-400 font-IRANYekan500">02</h4>
+                            <basis core="print" datamembername="db.event2">
+
+                                <face filter="TypeID=150">
+                                    <h5 class="text-[24px] text-gray-600 font-IRANYekan500">@Answer</h5>
+                                </face>
+                                <face filter="TypeID=129">
+                                    <div
+                                        class="[&>p]:text-[14px] [&>p]:text-gray-600 [&>p]:font-IRANYekan300 :pt-4 [&>p]:text-justify [&>p]:leading-[26px]">
+                                        @Answer
+                                    </div>
+                                </face>
+                            </basis>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <div class="marquee-wrapperText text-black my-4">
+                    <div class="marqueepy">
+                        <basis core="print" datamembername="db.en-list1-brand">
+                            <face filter="id=2376684">
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-800 inline-block">COVERSUN
+                                    + @title </span>
+                            </face>
+                        </basis>
+                        <basis core="print" datamembername="db.en-list1-brand">
+                            <face filter="id=2376684">
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-800 inline-block">COVERSUN
+                                    + @title </span>
+                            </face>
+                        </basis>
+                        <basis core="print" datamembername="db.en-list1-brand">
+                            <face filter="id=2376684">
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-800 inline-block">COVERSUN
+                                    + @title </span>
+                            </face>
+                        </basis>
+                        <basis core="print" datamembername="db.en-list1-brand">
+                            <face filter="id=2376684">
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-800 inline-block">COVERSUN
+                                    + @title </span>
+                            </face>
+                        </basis>
+                    </div>
+                </div>
+
+                <div class="px-5">
+                    <div class="w-full flex flex-col border-b border-b-black py-5">
+                        <div class="w-full flex flex-col justify-center items-start">
+                            <!-- ##################### -->
+                            <div class="flex w-full h-[260px] relative justify-start items-start mx-auto">
+                                <div class="relative w-[235px] top-0 h-[158px] z-10 ">
+                                    <basis core="print" datamembername="db.list3-brand">
+                                        <face filter="id=2376684">
+                                            <img class="w-[234px] h-[158px] absolute top-0 z-10 right-0"
+                                                src="[##cms.cms.cdn##]/@00500X00700prp" alt="@title">
+                                        </face>
+                                    </basis>
+                                    <div class="absolute w-[132px] h-[205px] top-[15px] right-[200px] z-20 ">
+                                        <basis core="print" datamembername="db.list4-brand">
+                                            <face filter="id=2376684">
+                                                <img class="w-full h-full absolute top-4 z-20"
+                                                    src="[##cms.cms.cdn##]/@00300X00400prp" alt="@title">
+                                            </face>
+                                        </basis>
+                                    </div>
+
+                                    <div class="absolute rounded-full w-[99px] h-[99px] right-8 bottom-[-45px] z-20 ">
+                                        <basis core="print" datamembername="db.image-event3">
+                                            <face filter="ord=1">
+                                                <img class="w-full h-full bg-gray-800 rounded-full"
+                                                    src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                                            </face>
+                                        </basis>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap">
+                            <h4 class="text-[16px] text-gray-400 font-IRANYekan500">03</h4>
+                            <basis core="print" datamembername="db.event3">
+
+                                <face filter="TypeID=150">
+                                    <h5 class="text-[24px] text-gray-600 font-IRANYekan500">@Answer</h5>
+                                </face>
+                                <face filter="TypeID=129">
+                                    <div
+                                        class="[&>p]:text-[14px] [&>p]:text-gray-600 [&>p]:font-IRANYekan300 pt-4 [&>p]:text-justify [&>p]:leading-[26px]">
+                                        @Answer
+                                    </div>
+                                </face>
+                            </basis>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="marquee-wrapperText text-black my-4">
+                    <div class="marqueepy">
                         <basis core="print" datamembername="db.en-list1-brand">
                             <face filter="id=2376682">
-                                <span class="font-RalewayDots400 text-[32px] text-gray-800 inline-block">COVERSUN +
-                                    @title</span>
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-800 inline-block">COVERSUN
+                                    + @title </span>
                             </face>
                         </basis>
-
-                        <div class="relative w-full h-auto mx-auto flex justify-center items-center mt-[32px]">
-                            <basis core="print" datamembername="db.list1-brand">
-                                <face filter="id=2376682">
-                                    <img class="w-[234px] h-[158px] absolute top-0 z-10 right-0"
-                                        src="[##cms.cms.cdn##]/@00600X00400prp" alt="@title">
-                                </face>
-                            </basis>
-                            <basis core="print" datamembername="db.list5-brand">
-                                <face filter="id=2376682">
-                                    <img class="w-[132px] h-[203px] absolute top-4 z-20 right-[210px]"
-                                        src="[##cms.cms.cdn##]/@00300X00600prp" alt="@title">
-                                </face>
-                            </basis>
-                            <basis core="print" datamembername="db.image-event4">
-                                <face filter="ord=1">
-                                    <a class="w-[98px] h-[98px] rounded-full bg-gray-800 flex justify-center items-center absolute right-8 z-30 top-[117px]"
-                                        href="@link">
-                                        <img class="w-[62px] h-[42px]" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
-                                    </a>
-                                </face>
-                            </basis>
-
-
-
-
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap mt-[240px]">
-                        <h4 class="text-[16px] text-gray-500 font-IRANYekan500">01</h4>
-                        <basis core="print" datamembername="db.event4">
-
-                            <face filter="TypeID=150">
-                                <h5 class="text-[24px] text-gray-600 font-IRANYekan500">@Answer</h5>
+                        <basis core="print" datamembername="db.en-list1-brand">
+                            <face filter="id=2376682">
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-800 inline-block">COVERSUN
+                                    + @title </span>
                             </face>
-                            <face filter="TypeID=129">
-                                <div
-                                    class="[&>p]:text-[14px] [&>p]:text-gray-600 [&>p]:font-IRANYekan300 [&>p]:pt-4 [&>p]:text-justify">
-                                    @Answer
-                                </div>
+                        </basis>
+                        <basis core="print" datamembername="db.en-list1-brand">
+                            <face filter="id=2376682">
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-800 inline-block">COVERSUN
+                                    + @title </span>
+                            </face>
+                        </basis>
+                        <basis core="print" datamembername="db.en-list1-brand">
+                            <face filter="id=2376682">
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-800 inline-block">COVERSUN
+                                    + @title </span>
                             </face>
                         </basis>
                     </div>
                 </div>
-                <!-- $$$ -->
+                <div class="px-5">
+                    <div class="w-full flex flex-col border-b border-b-black py-5 overflow-x-hidden mb-[7px]">
+                        <div class="w-full flex flex-col justify-center items-start">
+                            <div class="flex w-full h-[260px] relative justify-start items-start mx-auto">
+                                <div class="relative w-[200px] top-0 h-[240px] z-10">
+                                    <basis core="print" datamembername="db.list1-brand">>
+                                        <face filter="id=2376682">
+                                            <img class="w-full h-full absolute z-10"
+                                                src="[##cms.cms.cdn##]/@00600X00400prp" alt="@title">
+
+                                        </face>
+                                    </basis>
+                                    <div class="absolute w-[100px] h-[99px] top-[115px] right-[170px] z-20">
+                                        <basis core="print" datamembername="db.list5-brand">
+                                            <face filter="id=2376682">
+                                                <img class="w-full h-full absolute z-20"
+                                                    src="[##cms.cms.cdn##]/@00300X00600prp" alt="@title">
+                                            </face>
+                                        </basis>
+                                    </div>
+
+                                    <div
+                                        class="absolute rounded-full w-[99px] h-[99px] right-[250px] top-[120px] z-20 bg-gray-800">
+                                        <basis core="print" datamembername="db.image-event4">
+                                            <face filter="ord=1">
+                                                <img class="w-full h-full rounded-full"
+                                                    src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                                            </face>
+                                        </basis>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ################# -->
+
+                        </div>
+                        <div class="flex flex-col gap">
+                            <h4 class="text-[16px] text-gray-400 font-IRANYekan500">04</h4>
+                            <basis core="print" datamembername="db.event4">
+
+                                <face filter="TypeID=150">
+                                    <h5 class="text-[24px] text-gray-600 font-IRANYekan500">@Answer</h5>
+                                </face>
+                                <face filter="TypeID=129">
+                                    <div
+                                        class="[&>p]:text-[14px] [&>p]:text-gray-600 [&>p]:font-IRANYekan300 pt-4 [&>p]:text-justify [&>p]:leading-[26px]">
+                                        @Answer
+                                    </div>
+                                </face>
+                            </basis>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="section1">
             <!-- event -->
-            <div class="w-full px-5 h-auto py-3 bg-black">
+            <div class="w-full h-auto py-3 bg-black">
                 <div>
-                    <h3 class="text-[18px] text-white font-IRANYekan500">ایونت</h3>
+                    <h3 class="text-[18px] px-5 leading-[31px] text-white font-IRANYekan500">ایونت</h3>
                 </div>
-
-                <div class="pt-[25px] pb-[47px] border-b border-b-gray-400">
-                    <h5 class="font-RalewayDots400 text-[32px] text-gray-800 inline-block mt-[36px] mb-[15px]">JEANSWEST
-                        + COVERSUN</h5>
-                    <div class="relative w-full h-auto mx-auto flex justify-center items-center mt-[32px]">
-                        <basis core="print" datamembername="db.list7-brand">
-                            <face filter="id=2376696">
-                                <img class="w-[234px] h-[158px] absolute top-0 z-10 right-0"
-                                    src="[##cms.cms.cdn##]/@00600X00400prp" alt="@title">
+                <!-- $$$$$$$$$ -->
+                <div class="marquee-wrapperText text-black my-4">
+                    <div class="marqueepy">
+                        <basis core="print" datamembername="db.en-list1-brand">
+                            <face filter="id=2376687">
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-300 inline-block">COVERSUN
+                                    + @title </span>
                             </face>
                         </basis>
-                        <basis core="print" datamembername="db.list8-brand">
-                            <face filter="id=2376696">
-                                <img class="w-[132px] h-[203px] absolute top-4 z-20 right-[210px]"
-                                    src="[##cms.cms.cdn##]/@00300X00500prp" alt="@title">
+                        <basis core="print" datamembername="db.en-list1-brand">
+                            <face filter="id=2376687">
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-300 inline-block">COVERSUN
+                                    + @title </span>
                             </face>
                         </basis>
-                        <basis core="print" datamembername="db.image-brand">
-                            <face filter="ord=1">
-                                <a class="w-[98px] h-[98px] rounded-full bg-gray-800 flex justify-center items-center absolute right-8 z-30 top-[117px]"
-                                    href="@link">
-                                    <img class="w-[62px] h-[42px]" src="[##cms.cms.cdn##]/@largeIMG" alt="@title">
-                                </a>
+                        <basis core="print" datamembername="db.en-list1-brand">
+                            <face filter="id=2376687">
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-300 inline-block">COVERSUN
+                                    + @title </span>
+                            </face>
+                        </basis>
+                        <basis core="print" datamembername="db.en-list1-brand">
+                            <face filter="id=2376687">
+                                <span
+                                    class="text-item span font-RalewayDots400 text-[32px] text-gray-300 inline-block">COVERSUN
+                                    + @title </span>
                             </face>
                         </basis>
                     </div>
-                    <div class="mt-[240px] flex flex-col gap-4">
-                        <h4 class="text-[16px] text-gray-400 font-IRANYekan500">01</h4>
-                        <!-- ################## -->
-                        <basis core="print" datamembername="db.brand1">
-                            <face filter="TypeID=150">
-                                <h4 class="text-[24px] text-gray-50 font-IRANYekan500">@Answer</h4>
-                            </face>
-                            <face filter="TypeID=129">
-                                <div class="text-[14px] text-gray-50 text-justify font-IRANYekan300">
-                                    <p class="">@Answer</p>
+                </div>
+                <div class="px-5">
+
+
+                    <div class="pt-[25px] pb-[47px] border-b border-b-gray-400">
+                        <!-- ################# -->
+                        <div class="flex w-full h-[260px] relative justify-start items-start mx-auto">
+                            <div class="relative w-[200px] top-0 h-[240px] z-10">
+                                <basis core="print" datamembername="db.list7-brand">
+                                    <face filter="id=2376696">
+                                        <img class="w-full h-full absolute z-10" src="[##cms.cms.cdn##]/@00600X00400prp"
+                                            alt="@title">
+
+                                    </face>
+                                </basis>
+                                <div class="absolute w-[112px] h-[99px] top-[100px] right-[170px] z-20">
+                                    <basis core="print" datamembername="db.list8-brand">
+                                        <face filter="id=2376696">
+                                            <img class="w-full h-full absolute z-20"
+                                                src="[##cms.cms.cdn##]/@00300X00500prp" alt="@title">
+                                        </face>
+                                    </basis>
                                 </div>
 
-                            </face>
-                        </basis>
-                        <!-- ################## -->
-
-
-                        <div class="relative w-[173px] h-[48px] my-4">
-                            <div class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-white z-0">
+                                <div
+                                    class="absolute rounded-full w-[99px] h-[99px] right-[250px] top-[120px] z-20 bg-white">
+                                    <basis core="print" datamembername="db.image-brand">
+                                        <face filter="ord=1">
+                                            <img class="w-full h-full rounded-full" src="[##cms.cms.cdn##]/@largeIMG"
+                                                alt="@name">
+                                        </face>
+                                    </basis>
+                                </div>
                             </div>
-                            <div
-                                class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-white z-0">
-                            </div>
+                        </div>
+                        <!-- ################# -->
+                        <div class="flex flex-col gap-4">
+                            <h4 class="text-[16px] text-gray-400 font-IRANYekan500">01</h4>
+                            <!-- ################## -->
+                            <basis core="print" datamembername="db.brand1">
+                                <face filter="TypeID=150">
+                                    <h4 class="text-[24px] text-gray-50 font-IRANYekan500">@Answer</h4>
+                                </face>
+                                <face filter="TypeID=129">
+                                    <div
+                                        class="[&>p]:text-[14px] [&>p]:text-gray-50 [&>p]:font-IRANYekan300 [&>p]:pt-4 [&>p]:text-justify [&>p]:leading-[26px]">
+                                        @Answer
+                                    </div>
 
-                            <a href="#"
-                                class="relative z-10 w-full h-full flex items-center justify-center border border-white text-white text-lg font-bold no-underline">
-                                مشاهده گالری
-                            </a>
+                                </face>
+                            </basis>
+                            <!-- ################## -->
+
+
+                            <div class="relative w-[173px] h-[48px] my-4 openPopGallery mr-2.5">
+                                <div
+                                    class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-white z-0">
+                                </div>
+                                <div
+                                    class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-white z-0">
+                                </div>
+
+                                <button
+                                    class="relative z-10 w-full h-full flex items-center justify-center border border-white text-white text-lg font-bold no-underline">
+                                    مشاهده گالری
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="marquee-wrapperText text-black my-4">
+                        <div class="marqueepy">
+                            <basis core="print" datamembername="db.en-list1-brand">
+                                <face filter="id=2376686">
+                                    <span
+                                        class="text-item span font-RalewayDots400 text-[32px] text-gray-300 inline-block">COVERSUN
+                                        + @title </span>
+                                </face>
+                            </basis>
+                            <basis core="print" datamembername="db.en-list1-brand">
+                                <face filter="id=2376686">
+                                    <span
+                                        class="text-item span font-RalewayDots400 text-[32px] text-gray-300 inline-block">COVERSUN
+                                        + @title </span>
+                                </face>
+                            </basis>
+                            <basis core="print" datamembername="db.en-list1-brand">
+                                <face filter="id=2376686">
+                                    <span
+                                        class="text-item span font-RalewayDots400 text-[32px] text-gray-300 inline-block">COVERSUN
+                                        + @title </span>
+                                </face>
+                            </basis>
+                            <basis core="print" datamembername="db.en-list1-brand">
+                                <face filter="id=2376686">
+                                    <span
+                                        class="text-item span font-RalewayDots400 text-[32px] text-gray-300 inline-block">COVERSUN
+                                        + @title </span>
+                                </face>
+                            </basis>
+                        </div>
+                    </div>
+                    <div class="mx-5">
+
+
+                        <div class="flex w-full h-[260px] relative justify-start items-start mx-auto">
+                            <div class="relative w-[235px] top-0 h-[158px] z-10 ">
+                                <basis core="print" datamembername="db.list7-brand">
+                                    <face filter="id=2376695">
+                                        <img class="w-[234px] h-[158px] absolute top-[15px] z-10 right-0"
+                                            src="[##cms.cms.cdn##]/@00600X00400prp" alt="@title">
+                                    </face>
+                                </basis>
+
+                                <div class="absolute w-[132px] h-[205px] right-[200px] z-20 ">
+                                    <basis core="print" datamembername="db.list9-brand">
+                                        <face filter="id=2376695">
+                                            <img class="w-full h-full absolute z-20"
+                                                src="[##cms.cms.cdn##]/@00400X00500prp" alt="">
+
+                                        </face>
+                                    </basis>
+                                </div>
+                                <div class="absolute rounded-full w-[99px] h-[99px] right-8 bottom-[-45px] z-20 ">
+                                    <basis core="print" datamembername="db.image-brand2">
+                                        <face filter="ord=1">
+                                            <img class="w-full h-full bg-gray-800 rounded-full"
+                                                src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                                        </face>
+                                    </basis>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="w-full flex flex-col gap-4 items-start justify-start pt-[25px] pb-[47px] border-b border-b-gray-400">
+                            <h4 class="text-[16px] text-gray-400 font-IRANYekan500">02</h4>
+                            <basis core="print" datamembername="db.brand2">
+                                <face filter="TypeID=150">
+                                    <h4 class="text-[24px] text-gray-50 font-IRANYekan500">@Answer</h4>
+                                </face>
+                                <face filter="TypeID=129">
+                                    <div
+                                        class="[&>p]:text-[14px] [&>p]:text-gray-50 [&>p]:font-IRANYekan300 [&>p]:pt-4 [&>p]:text-justify [&>p]:leading-[26px]">
+                                        @Answer
+                                    </div>
+
+                                </face>
+                            </basis>
+                            <div class="relative w-[173px] h-[48px] my-4 openPopGallery mr-2.5">
+                                <div
+                                    class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-white z-0">
+                                </div>
+                                <div
+                                    class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-white z-0">
+                                </div>
+
+                                <button
+                                    class="relative z-10 font-IRANYekan500 text-[14px] w-full h-full flex items-center justify-center border border-white text-white text-lg font-bold no-underline">
+                                    مشاهده گالری
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div>
 
-                    <h5 class="font-RalewayDots400 text-[32px] text-gray-800 inline-block mt-[36px] mb-[15px]">JEANSWEST
-                        + COVERSUN</h5>
-                    <div class="relative w-full">
-                        <basis core="print" datamembername="db.list7-brand">
-                            <face filter="id=2376695">
-                                <img class="w-[199px] h-[240px] absolute top-0 z-10 right-0"
-                                    src="[##cms.cms.cdn##]/@00600X00400prp" alt="@title">
-                            </face>
-                        </basis>
-                        <basis core="print" datamembername="db.image-brand2">
-                            <face filter="ord=1">
-                                <img class="w-[111px] h-[98px] absolute top-28 z-20 right-[150px]"
-                                    src="[##cms.cms.cdn##]/@largeIMG" alt="@title">
-                            </face>
-                        </basis>
-                        <basis core="print" datamembername="db.list9-brand">
-                            <face filter="id=2376695">
-                                <a class="w-[98px] h-[98px] rounded-full bg-gray-800 flex justify-center items-center absolute right-[250px] z-30 top-29"
-                                    href="@link">
-                                    <img class="w-[62px] h-[42px]" src="[##cms.cms.cdn##]/@00400X00500prp" alt="@title">
-                                </a>
-                            </face>
-                        </basis>
-
-                    </div>
-                    <div class="w-full mt-[260px] flex flex-col gap-4 items-start justify-start">
-                        <h4 class="text-[16px] text-gray-400 font-IRANYekan500">02</h4>
-                        <basis core="print" datamembername="db.brand2">
-                            <face filter="TypeID=150">
-                                <h4 class="text-[24px] text-gray-50 font-IRANYekan500">@Answer</h4>
-                            </face>
-                            <face filter="TypeID=129">
-                                <div
-                                    class="para mb-16 w-[400px] scrollToTop font-IRANYekan300 text-sm text-gray50 text-justify">
-                                    @Answer
-                                    @Answer
-                                </div>
-                                <div class="text-[14px] text-gray-50 text-justify font-IRANYekan300">
-                                    @Answer
-                                </div>
-
-                            </face>
-                        </basis>
-                        <div class="relative w-[173px] h-[48px] my-4">
-                            <div class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-white z-0">
-                            </div>
-                            <div
-                                class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-white z-0">
-                            </div>
-
-                            <a href="#"
-                                class="relative z-10 font-IRANYekan500 text-[14px] w-full h-full flex items-center justify-center border border-white text-white text-lg font-bold no-underline">
-                                مشاهده گالری
-                            </a>
+                    <div class="marquee-wrapperText text-black my-4">
+                        <div class="marqueepy">
+                            <basis core="print" datamembername="db.en-list1-brand">
+                                <face filter="id=2376687">
+                                    <span
+                                        class="text-item span font-RalewayDots400 text-[32px] text-gray-300 inline-block">COVERSUN
+                                        + @title </span>
+                                </face>
+                            </basis>
+                            <basis core="print" datamembername="db.en-list1-brand">
+                                <face filter="id=2376687">
+                                    <span
+                                        class="text-item span font-RalewayDots400 text-[32px] text-gray-300 inline-block">COVERSUN
+                                        + @title </span>
+                                </face>
+                            </basis>
+                            <basis core="print" datamembername="db.en-list1-brand">
+                                <face filter="id=2376687">
+                                    <span
+                                        class="text-item span font-RalewayDots400 text-[32px] text-gray-300 inline-block">COVERSUN
+                                        + @title </span>
+                                </face>
+                            </basis>
+                            <basis core="print" datamembername="db.en-list1-brand">
+                                <face filter="id=2376687">
+                                    <span
+                                        class="text-item span font-RalewayDots400 text-[32px] text-gray-300 inline-block">COVERSUN
+                                        + @title </span>
+                                </face>
+                            </basis>
                         </div>
                     </div>
-                </div>
-                <div>
+                    <div class="px-5">
 
-                    <h5 class="font-RalewayDots400 text-[32px] text-gray-800 inline-block mt-[36px] mb-[15px]">JEANSWEST
-                        + COVERSUN</h5>
-                    <div class="relative w-full">
-                        <basis core="print" datamembername="db.list7-brand">
-                            <face filter="id=2376695">
-                                <img class="w-[199px] h-[240px] absolute top-0 z-10 right-0"
-                                    src="[##cms.cms.cdn##]/@00600X00400prp" alt="@title">
-                            </face>
-                        </basis>
-                        <basis core="print" datamembername="db.image-brand2">
-                            <face filter="ord=1">
-                                <img class="w-[111px] h-[98px] absolute top-28 z-20 right-[150px]"
-                                    src="[##cms.cms.cdn##]/@largeIMG" alt="@title">
-                            </face>
-                        </basis>
-                        <basis core="print" datamembername="db.list9-brand">
-                            <face filter="id=2376695">
-                                <a class="w-[98px] h-[98px] rounded-full bg-gray-800 flex justify-center items-center absolute right-[250px] z-30 top-29"
-                                    href="@link">
-                                    <img class="w-[62px] h-[42px]" src="[##cms.cms.cdn##]/@00400X00500prp" alt="@title">
-                                </a>
-                            </face>
-                        </basis>
 
-                    </div>
-                    <div class="w-full mt-[260px] flex flex-col gap-4 items-start justify-start">
-                        <h4 class="text-[16px] text-gray-400 font-IRANYekan500">03</h4>
-                        <basis core="print" datamembername="db.brand3">
-                            <face filter="TypeID=150">
-                                <h4 class="text-[24px] text-gray-50 font-IRANYekan500">@Answer</h4>
-                            </face>
-                            <face filter="TypeID=129">
+                        <div class="flex w-full h-[260px] relative justify-start items-start mx-auto">
+                            <div class="relative w-[235px] top-0 h-[158px] z-10 ">
+                                <basis core="print" datamembername="db.list7-brand">
+                                    <face filter="id=2376695">
+                                        <img class="w-[234px] h-[158px] absolute top-[15px] z-10 right-0"
+                                            src="[##cms.cms.cdn##]/@00600X00400prp" alt="@title">
+                                    </face>
+                                </basis>
+
+                                <div class="absolute w-[132px] h-[205px] right-[200px] z-20 ">
+                                    <basis core="print" datamembername="db.list9-brand">
+                                        <face filter="id=2376695">
+                                            <img class="w-full h-full absolute z-20"
+                                                src="[##cms.cms.cdn##]/@00400X00500prp" alt="">
+
+                                        </face>
+                                    </basis>
+                                </div>
+                                <div class="absolute rounded-full w-[99px] h-[99px] right-8 bottom-[-45px] z-20 ">
+                                    <basis core="print" datamembername="db.image-brand2">
+                                        <face filter="ord=1">
+                                            <img class="w-full h-full bg-gray-800 rounded-full"
+                                                src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                                        </face>
+                                    </basis>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ############## -->
+                        <div class="w-full flex flex-col gap-4 items-start justify-start">
+                            <h4 class="text-[16px] text-gray-400 font-IRANYekan500">03</h4>
+                            <basis core="print" datamembername="db.brand3">
+                                <face filter="TypeID=150">
+                                    <h4 class="text-[24px] text-gray-50 font-IRANYekan500">@Answer</h4>
+                                </face>
+                                <face filter="TypeID=129">
+                                    <div
+                                        class="[&>p]:text-[14px] [&>p]:text-gray-50 [&>p]:font-IRANYekan300 [&>p]:pt-4 [&>p]:text-justify [&>p]:leading-[26px]">
+                                        @Answer
+                                    </div>
+
+                                </face>
+                            </basis>
+                            <div class="relative w-[173px] h-[48px] my-4 openPopGallery mr-2.5">
                                 <div
-                                    class="para mb-16 w-[400px] scrollToTop font-IRANYekan300 text-sm text-gray50 text-justify">
-                                    @Answer
+                                    class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-white z-0">
                                 </div>
-                                <div class="text-[14px] text-gray-50 text-justify font-IRANYekan300">
-                                    @Answer
+                                <div
+                                    class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-white z-0">
                                 </div>
 
-                            </face>
-                        </basis>
-                        <div class="relative w-[173px] h-[48px] my-4">
-                            <div class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-white z-0">
+                                <button
+                                    class="relative z-10 font-IRANYekan500 text-[14px] w-full h-full flex items-center justify-center border border-white text-white text-lg font-bold no-underline">
+                                    مشاهده گالری
+                                </button>
                             </div>
-                            <div
-                                class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-white z-0">
-                            </div>
-
-                            <a href="#"
-                                class="relative z-10 font-IRANYekan500 text-[14px] w-full h-full flex items-center justify-center border border-white text-white text-lg font-bold no-underline">
-                                مشاهده گالری
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -788,7 +891,7 @@
 
             </div>
         </section>
-        <section>
+        <section id="section2">
             <div class="px-5 flex flex-col items-end py-10 gap-3.5">
                 <basis core="print" datamembername="db.image-Sun-vibe">
                     <face filter="ord=51">
@@ -797,7 +900,7 @@
                 </basis>
                 <basis core="print" datamembername="db.Sun-vibe">
                     <face filter="prpID=7244">
-                        <div class="text-[14px] leading-[20px] text-left text-black font-PxGrotesk300">
+                        <div class="sunVibemo text-[14px] leading-[20px] text-left text-black font-PxGrotesk300">
                             @Answer
                         </div>
                     </face>
@@ -805,147 +908,151 @@
             </div>
         </section>
         <section>
-            <!-- <div class="marquee" id="marquee2">
+
+            <!-- ############################# -->
+            <div class="marquee" id="marquee2">
                 <div class="marquee__inner-wrap">
-                    <div class="marquee__inner marquee__inner--left gap-[50px]">
+                    <div class="marquee__inner marquee__inner--right">
                         <basis core="print" datamembername="db.image-Sun-vibe">
                             <face filter="ord=1000">
-                                <div class="marquee__img w-[73px] grayscale h-[73px] " style="background-image: url([##cms.cms.cdn##]/@largeIMG)">
-                            </div>                                
-                            </face>
-                        </basis>                        
-                    </div>
-                </div>
-            </div> -->
-            <div class="marquee" id="marquee1">
-                <div class="marquee__inner-wrap">
-                    <div class="marquee__inner marquee__inner--right gap-[50px]">
-                        <basis core="print" datamembername="db.image-Sun-vibe">
-                            <face filter="ord=1000">
-                                <div class="marquee__img w-[73px] grayscale h-[73px]" style="background-image: url([##cms.cms.cdn##]/@largeIMG)">
-                            </div>                                
+                                <div class="marquee__img w-[75px] grayscale h-[75px]"
+                                    style="background-image: url([##cms.cms.cdn##]/@largeIMG)"></div>
                             </face>
                         </basis>
                     </div>
                 </div>
-            </div>            
+            </div>
+            <div class="marquee" id="marquee1">
+                <div class="marquee__inner-wrap">
+                    <div class="marquee__inner marquee__inner--left">
+                        <basis core="print" datamembername="db.image-Sun-vibe">
+                            <face filter="ord=1000">
+                                <div class="marquee__img w-[75px] grayscale h-[75px]"
+                                    style="background-image: url([##cms.cms.cdn##]/@largeIMG)"></div>
+                            </face>
+                        </basis>
+                    </div>
+                </div>
+            </div>
         </section>
-
-
-
-
-
-
     </main>
+    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
+
+    <div id="showPopupGallry"
+        class="fixed h-[100%] bg- z-50 p-5 top-0 flex-col justify-between items-center bottom-0 left-0 right-0 bg-[#FFFFFFE5] pupUp hidden">
+        <div class="w-full flex flex-row justify-between icon h-[55px]">
+            <button id="closepopupItem">
+                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10.1337 30.0837L7.91699 27.867L16.7837 19.0003L7.91699 10.1337L10.1337 7.91699L19.0003 16.7837L27.867 7.91699L30.0837 10.1337L21.217 19.0003L30.0837 27.867L27.867 30.0837L19.0003 21.217L10.1337 30.0837Z"
+                        fill="black" />
+                </svg>
+            </button>
+        </div>
+        <div id="showItemList" class="flex flex-col items-center justify-center gap-6">
+            <basis core="print" datamembername="db.pop-gallery">
+                <face filter="ord=1000">
+                    <div class="boxImg">
+                        <img class="w-full max-w-[350px] h-[200px]" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                    </div>
+                </face>
+            </basis>
+        </div>
+        <div id="showImgItem"
+            class="fixed bg-[#FFFFFFE5] p-5 h-[100vh] w-full flex-col justify-between items-start top-[0] bottom-[0] my-auto flex opacity-0 invisible">
+            <button id="closepopupgallry">
+                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10.1337 30.0837L7.91699 27.867L16.7837 19.0003L7.91699 10.1337L10.1337 7.91699L19.0003 16.7837L27.867 7.91699L30.0837 10.1337L21.217 19.0003L30.0837 27.867L27.867 30.0837L19.0003 21.217L10.1337 30.0837Z"
+                        fill="black" />
+                </svg>
+            </button>
+            <div class="w-full h-[200pv]">
+                <div class="swiper galleryPopSlider w-full relative h-[200px]">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <basis core="print" datamembername="db.pop-gallery">
+                            <face filter="ord=1000">
+                                <div class="swiper-slide">
+                                    <div class="imgS flex items-center justify-center overflow-hidden">
+                                        <img class="h-[200px] w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                                    </div>
+                                </div>
+                            </face>
+                        </basis>
+
+                    </div>
+                </div>
+                <div class="w-full flex flex-row justify-between mt-6">
+                    <div class="nextGallery cursor-pointer z-10  left-0 top-0">
+                        <svg width="22" height="27" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 13.5L0.25 0.942631V26.0574L22 13.5Z" fill="black" />
+                        </svg>
+                    </div>
+                    <div class="tools flex gap-x-5">
+                        <div class="zoomIn cursor-pointer">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M3.3684e-08 9C0.000155699 7.56238 0.344701 6.14571 1.00479 4.86859C1.66489 3.59146 2.62132 2.49105 3.79402 1.65947C4.96672 0.827885 6.32158 0.28933 7.74516 0.0888866C9.16874 -0.111557 10.6196 0.0319443 11.9764 0.507377C13.3331 0.982809 14.5562 1.77634 15.5433 2.82154C16.5304 3.86673 17.2527 5.13318 17.6498 6.51487C18.0469 7.89656 18.1073 9.35328 17.8258 10.7631C17.5443 12.1729 16.9292 13.4947 16.032 14.618L19.707 18.293C19.8892 18.4816 19.99 18.7342 19.9877 18.9964C19.9854 19.2586 19.8802 19.5094 19.6948 19.6948C19.5094 19.8802 19.2586 19.9854 18.9964 19.9877C18.7342 19.99 18.4816 19.8892 18.293 19.707L14.618 16.032C13.2939 17.09 11.6979 17.7526 10.0138 17.9435C8.32966 18.1344 6.62586 17.8459 5.0985 17.1112C3.57113 16.3764 2.28228 15.2253 1.38029 13.7904C0.478308 12.3554 -0.000146577 10.6949 3.3684e-08 9ZM9 5C9.26522 5 9.51957 5.10536 9.70711 5.2929C9.89464 5.48043 10 5.73479 10 6V8H12C12.2652 8 12.5196 8.10536 12.7071 8.2929C12.8946 8.48043 13 8.73479 13 9C13 9.26522 12.8946 9.51957 12.7071 9.70711C12.5196 9.89465 12.2652 10 12 10H10V12C10 12.2652 9.89464 12.5196 9.70711 12.7071C9.51957 12.8946 9.26522 13 9 13C8.73478 13 8.48043 12.8946 8.29289 12.7071C8.10536 12.5196 8 12.2652 8 12V10H6C5.73478 10 5.48043 9.89465 5.29289 9.70711C5.10536 9.51957 5 9.26522 5 9C5 8.73479 5.10536 8.48043 5.29289 8.2929C5.48043 8.10536 5.73478 8 6 8H8V6C8 5.73479 8.10536 5.48043 8.29289 5.2929C8.48043 5.10536 8.73478 5 9 5Z"
+                                    fill="black" />
+                            </svg>
+
+                        </div>
+                        <div class="zoomOut cursor-pointer">
+                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16.031 14.617L20.314 18.899L18.899 20.314L14.617 16.031C13.0237 17.3082 11.042 18.0029 9 18C4.032 18 0 13.968 0 9C0 4.032 4.032 0 9 0C13.968 0 18 4.032 18 9C18.0029 11.042 17.3082 13.0237 16.031 14.617ZM5 8V10H13V8H5Z"
+                                    fill="black" />
+                            </svg>
+
+
+                        </div>
+                        <div class="rotateLeft cursor-pointer">
+                            <svg width="19" height="22" viewBox="0 0 19 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.99861 8.59625L2.41236 6.99875C1.39986 8.30375 0.769863 9.81125 0.578613 11.375H2.85111C3.00861 10.3962 3.40236 9.44 3.99861 8.59625ZM2.85111 13.625H0.578613C0.769863 15.1888 1.38861 16.6962 2.40111 18.0012L3.98736 16.4037C3.40236 15.56 3.00861 14.615 2.85111 13.625ZM3.98736 19.61C5.29236 20.6225 6.81111 21.23 8.37486 21.4212V19.1375C7.39611 18.9688 6.45111 18.5863 5.60736 17.9788L3.98736 19.61ZM10.6249 3.57875V0.125L5.50611 5.24375L10.6249 10.25V5.85125C13.8199 6.39125 16.2499 9.15875 16.2499 12.5C16.2499 15.8413 13.8199 18.6087 10.6249 19.1488V21.4212C15.0686 20.87 18.4999 17.09 18.4999 12.5C18.4999 7.91 15.0686 4.13 10.6249 3.57875Z"
+                                    fill="black" />
+                            </svg>
+
+                        </div>
+
+                        <div class="rotateRitght cursor-pointer">
+                            <svg width="19" height="22" viewBox="0 0 19 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15.0009 8.59625L16.5871 6.99875C17.5996 8.30375 18.2296 9.81125 18.4209 11.375H16.1484C15.9909 10.3962 15.5971 9.44 15.0009 8.59625ZM16.1484 13.625H18.4209C18.2296 15.1888 17.6109 16.6962 16.5984 18.0012L15.0121 16.4037C15.5971 15.56 15.9909 14.615 16.1484 13.625ZM15.0121 19.61C13.7071 20.6225 12.1884 21.23 10.6246 21.4212V19.1375C11.6034 18.9688 12.5484 18.5863 13.3921 17.9788L15.0121 19.61ZM8.37465 3.57875V0.125L13.4934 5.24375L8.37465 10.25V5.85125C5.17965 6.39125 2.74965 9.15875 2.74965 12.5C2.74965 15.8413 5.17965 18.6087 8.37465 19.1488V21.4212C3.9309 20.87 0.499649 17.09 0.499649 12.5C0.499649 7.91 3.9309 4.13 8.37465 3.57875Z"
+                                    fill="black" />
+                            </svg>
+
+                        </div>
+                    </div>
+                    <div class="prevGallery cursor-pointer z-10  right-0 top-0">
+                        <svg width="22" height="27" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 13.5L21.75 0.942631V26.0574L0 13.5Z" fill="black" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div></div>
+
+
+
+
+
+        </div>
+        <div></div>
+
+    </div>
+
 </body>
-
-<script>
-    const headers = document.querySelectorAll('.accordion-header');
-
-    headers.forEach(header => {
-        header.addEventListener('click', function () {
-            const body = this.nextElementSibling;
-
-            if (body.style.maxHeight) {
-                body.style.maxHeight = null;
-                this.querySelector('.icon').innerHTML = '<svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.1603 10.6221H11.8397V0.877863C11.8397 0.351145 11.5038 0 11 0C10.4962 0 10.1603 0.351145 10.1603 0.877863V10.6221H0.839695C0.335878 10.6221 0 10.9733 0 11.5C0 12.0267 0.335878 12.3779 0.839695 12.3779H10.1603V22.1221C10.1603 22.6489 10.4962 23 11 23C11.5038 23 11.8397 22.6489 11.8397 22.1221V12.3779H21.1603C21.6641 12.3779 22 12.0267 22 11.5C22 10.9733 21.6641 10.6221 21.1603 10.6221Z" fill="black"/></svg>';
-            } else {
-                document.querySelectorAll('.accordion-body').forEach(b => {
-                    b.style.maxHeight = null;
-                });
-                document.querySelectorAll('.icon').forEach(icon => {
-                    icon.innerHTML = '<svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.1603 10.6221H11.8397V0.877863C11.8397 0.351145 11.5038 0 11 0C10.4962 0 10.1603 0.351145 10.1603 0.877863V10.6221H0.839695C0.335878 10.6221 0 10.9733 0 11.5C0 12.0267 0.335878 12.3779 0.839695 12.3779H10.1603V22.1221C10.1603 22.6489 10.4962 23 11 23C11.5038 23 11.8397 22.6489 11.8397 22.1221V12.3779H21.1603C21.6641 12.3779 22 12.0267 22 11.5C22 10.9733 21.6641 10.6221 21.1603 10.6221Z" fill="black"/></svg>';
-                });
-
-                body.style.maxHeight = body.scrollHeight + 'px';
-                this.querySelector('.icon').innerHTML = '<svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5634 0.694874L8.97276 7.28554L2.08251 0.395299C1.71007 0.0228529 1.22427 0.0120564 0.868019 0.368309C0.511767 0.724561 0.522562 1.21036 0.895008 1.58281L7.78525 8.47305L1.19458 15.0637C0.838332 15.42 0.849127 15.9058 1.22157 16.2782C1.59402 16.6507 2.07982 16.6615 2.43607 16.3052L9.02674 9.71453L15.917 16.6048C16.2894 16.9772 16.7752 16.988 17.1315 16.6318C17.4877 16.2755 17.4769 15.7897 17.1045 15.4173L10.2142 8.52703L16.8049 1.93636C17.1612 1.58011 17.1504 1.09431 16.7779 0.721865C16.4055 0.349419 15.9197 0.338622 15.5634 0.694874Z" fill="black"/></svg>';
-            }
-        });
-    });
-
-    let activeTextbox = null;
-
-    document.querySelectorAll('.box').forEach(box => {
-        box.addEventListener('click', () => {
-            // حذف کلاس از textbox قبلی (در صورت وجود)
-            if (activeTextbox) {
-                activeTextbox.classList.remove('activeTextshow');
-            }
-
-            // گرفتن تگ textbox مربوط به این box
-            const textbox = box.querySelector('.textboxshow');
-
-            if (textbox) {
-                textbox.classList.add('activeTextshow');
-                activeTextbox = textbox; // ذخیره برای دسترسی بعدی
-            }
-
-            // بقیه عملیات height و opacity
-            document.querySelectorAll('.box').forEach(b => {
-                b.classList.replace('h-[75px]', 'h-[31px]');
-                b.querySelector('img').classList.replace('opacity-100', 'opacity-0');
-            });
-
-            if (!box.classList.contains('h-[75px]')) {
-                box.classList.replace('h-[31px]', 'h-[75px]');
-                box.querySelector('img').classList.replace('opacity-0', 'opacity-100');
-            }
-        });
-    });
-</script>
+<script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
+<script src="[##cms.cms.cdn##]/_js/swiper-bundle11.0.6.min.js"></script>
+<script src="[##cms.cms.cdn##]/_js/gsap.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script>
-    // Simple Text Marquee with GSAP
-    // const simpleMarquee = document.querySelector('.simple-marquee__content');
-    // const simpleMarqueeWidth = simpleMarquee.offsetWidth / 2;
-
-    // gsap.to(simpleMarquee, {
-    //     x: -simpleMarqueeWidth,
-    //     duration: 20,
-    //     ease: "none",
-    //     repeat: -1
-    // });
-
-    // First Marquee (Left to Right)
-    const marquee1 = document.querySelector('#marquee1 .marquee__inner');
-    const marquee1Content = marquee1.innerHTML;
-    marquee1.innerHTML = marquee1Content + marquee1Content;
-    const marquee1Width = marquee1.offsetWidth / 2;
-
-    gsap.to(marquee1, {
-        x: -marquee1Width,
-        duration: 30,
-        ease: "none",
-        repeat: -1
-    });
-
-    // Second Marquee (Right to Left)
-    const marquee2 = document.querySelector('#marquee2 .marquee__inner');
-    const marquee2Content = marquee2.innerHTML;
-    marquee2.innerHTML = marquee2Content + marquee2Content;
-    const marquee2Width = marquee2.offsetWidth / 2;
-
-    gsap.to(marquee2, {
-        x: marquee2Width,
-        duration: 30,
-        ease: "none",
-        repeat: -1
-    });
-    document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll('.scroll-btnG');
-
-    buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const targetSelector = btn.getAttribute('data-target');
-            const target = document.querySelector(targetSelector);
-
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
-});
-
-</script>
-
+<script src="[##cms.cms.cdn##]/js/landingplusMobile.js"></script>
+<basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]" />
 </html>
