@@ -1,30 +1,22 @@
-let lastScrollY = window.scrollY;
-let isInitialLoad = true;
-
+// انتخاب همه‌ی المان‌هایی که باید انیمیشن بخورن
 const elements = document.querySelectorAll('.scrollTop');
 
-const observer = new IntersectionObserver((entries) => {
-  const currentScrollY = window.scrollY;
-  const isScrollingDown = currentScrollY > lastScrollY;
-
+// ساخت Observer
+const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
-    const el = entry.target;
-
     if (entry.isIntersecting) {
-      if (isInitialLoad || isScrollingDown) {
-        el.classList.add('visible', 'animate');
-      }
-    } else {
-      if (!isScrollingDown) {
-        el.classList.remove('visible', 'animate');
-      }
+      const el = entry.target;
+
+      // اضافه کردن کلاس‌های انیمیشن
+      el.classList.add('visible', 'animate');
+
+      // فقط یک بار انیمیشن اجرا بشه
+      observer.unobserve(el);
     }
   });
-
-  lastScrollY = currentScrollY;
-  isInitialLoad = false;
 }, {
-  threshold: 0.01
+  threshold: 0.01 // یعنی فقط کمی از المان دیده بشه کافیه
 });
 
+// فعال‌سازی Observer برای هر المان
 elements.forEach(el => observer.observe(el));

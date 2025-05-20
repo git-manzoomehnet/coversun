@@ -186,10 +186,12 @@ viduBox?.forEach(element => {
     element.querySelector("video")?.pause();
   });
 
-  let titleProject = element.getAttribute("data-title");
-  fetch(`/project-video.inc?title=${titleProject}`)
+   let titleProject = element.getAttribute("data-title");
+  let posterProject = element.getAttribute("data-poster");
+  fetch(`/project-video.inc?title=${titleProject}&poster=${posterProject}&refresh=true`)
     .then(response => response.text())
     .then(videoElem => {
+      console.log("videoElem", videoElem);
       const socialInfo = element.querySelector(".videoS");
       socialInfo.innerHTML = videoElem;
     })

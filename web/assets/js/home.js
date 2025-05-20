@@ -209,7 +209,7 @@ $(".containerHorizontal").imagesLoaded({
       let scrollLength = pinWrap.scrollWidth - window.innerWidth;
 
      let scrollTween =  gsap.to(pinWrap, {
-        x: scrollLength, // حرکت از راست به چپ
+        x: -scrollLength, // حرکت از راست به چپ
         ease: 'none',
         scrollTrigger: {
           trigger: '#PinSection',
