@@ -6,9 +6,8 @@
     <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
     <title>404</title>
 </head>
-
-<body>
-    <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
+<body id="page404">
+    <basis core="call" file="header3.inc" pageindex="[##cms.cms.pageindex##]" />
     <main>
         <section class="w-full h-[60%] px-5 flex pt-[80px] flex-col justify-between items-center">
             <div class="w-full text-start">
@@ -23,14 +22,14 @@
                 <img class="w-[219px]" src="[##cms.cms.cdn##]/images/404.png" alt="">
             </div>
         </section>
-        <section class="w-full h-[40%] bg-main flex flex-col justify-center items-center gap-[50px] pt-[77px] pb-[126px]">
-            <p class="text-[16px] w-[350px] text-center mx-auto text-back-gray font-IRANYekan500">"صفحه‌ای که به دنبال آن هستید یافت نشد!
+        <section id="show404" class="w-full h-[40%] bg-main flex flex-col justify-center items-center gap-[50px] pt-[77px] pb-[126px]">
+            <p class="text-[16px]  text-center px-5 mx-auto text-back-gray font-IRANYekan500 font-bold">"صفحه‌ای که به دنبال آن هستید یافت نشد!
                 ممکن است آدرس را اشتباه وارد کرده باشید یا صفحه موردنظر حذف شده باشد."</p>
                 <div class="relative w-[173px] h-[48px] mx-auto">
                     <div class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-black z-0"></div>
                     <div class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-black z-0"></div>
                   
-                    <a href="#" class="relative z-10 font-IRANYekan500 text-[14px] w-full h-full flex items-center justify-center border border-black text-black text-lg font-bold no-underline">
+                    <a href="/" class="relative z-10 font-IRANYekan500 text-[14px] w-full h-full flex items-center justify-center border border-black text-black text-lg font-bold no-underline">
                         بازگشت به صفحه نخست
                     </a>
                   </div>
@@ -38,8 +37,7 @@
 
         </section>
     </main>
-    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
-
+    <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]" />
 </body>
 
 </html>

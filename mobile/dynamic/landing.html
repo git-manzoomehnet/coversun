@@ -1,4 +1,19 @@
+    <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376647">
+        <member name="image-aboutUs" type="list" format="4" />
+    </basis>
+
+    <basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" > <member request="cat" type="tree" name="productCat" parentid="214297"  /> </basis>
+    <basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" catid="214308">
+        <member link="project.bc" name="list" type="list" size="300x600" />
+    </basis>
+    <basis core="dbsource" source="userbehavior" name="db" lid="1" userid="100005" usedforid="[##cms.query.id##]">
+        <member request="listcomment" type="list" name="commentlist" link="event.bc" />
+    </basis>
+    <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376639">
+        <member name="article" type="view" />
+    </basis>
 <html lang="fa">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,43 +26,53 @@
     <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
     <main>
         <div class="relative w-full h-[750px] flex flex-col justify-between items-center overflow-hidden">
-            <div class="w-full bg-cover bg-no-repeat h-full relative z-10 pt-[80px] pb-5 px-5 bg-[#00000033] text-white text-3xl justify-center items-cejustify-center"
-                style="background-image: url('[##cms.cms.cdn##]/images/landingMobile.png');">
-                <ul
-                    class="w-full flex flex-row items-center justify-start text-[12px] text-gray-700 font-IRANYekan300 gap-0.5">
-                    <li class="text-[12px] font-IRANYekan300 text-gray-700"><a href="/">صفحه نخست</a></li>
-                    <span class="text-[12px] font-IRANYekan300 text-gray-700">.</span>
-                    <a class="text-[12px] font-IRANYekan300 text-gray-700">کاورسان پلاس</a>
-                </ul>
-                <div class="w-full h-full flex flex-col justify-end items-start p-6">
+            <basis core="print" datamembername="db.image-aboutUs">
+
+                <face filter="ord=51">
+                    <div class="w-full bg-cover bg-no-repeat h-full relative z-10 pt-[80px] pb-5 px-5 bg-[#00000033] text-white text-3xl justify-center items-cejustify-center"
+                        style="background-image: url('[##cms.cms.cdn##]/@largeIMG');">
+                        <ul
+                            class="w-full flex flex-row items-center justify-start text-[12px] text-gray-700 font-IRANYekan300 gap-0.5">
+                            <li class="text-[12px] font-IRANYekan300 text-gray-700"><a href="/">صفحه نخست</a></li>
+                            <span class="text-[12px] font-IRANYekan300 text-gray-700">.</span>
+                            <a class="text-[12px] font-IRANYekan300 text-gray-700">لندینگ</a>
+                        </ul>
+                        <div class="w-full h-full flex flex-col justify-end items-start p-6">
 
 
-                    <div id="scrollBtn" class="flex flex-col justify-start items-center w-full">
-                        <h4 class="font-PxGrotesk400 text-[14px] text-gray-300 mb-">scroll down</h4>
-                        <div class="c-scrolldown">
-                            <div class="c-line"></div>
+                            <div id="scrollBtn" class="flex flex-col justify-start items-center w-full">
+                                <h4 class="font-PxGrotesk400 text-[14px] text-gray-300 mb-">scroll down</h4>
+                                <div class="c-scrolldown">
+                                    <div class="c-line"></div>
+                                </div>
+                            </div>
+                            <div class="relative w-[173px] h-[48px]">
+                                <div
+                                    class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-black z-0">
+                                </div>
+                                <div
+                                    class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-black z-0">
+                                </div>
+
+                                <a href="/contact-us.bc"
+                                    class="relative z-10 font-IRANYekan500 text-[14px] w-full h-full flex items-center justify-center border bg-white border-black text-black text-lg  no-underline">
+                                    تماس با ما
+                                </a>
+                            </div>
                         </div>
+
                     </div>
-                    <div class="relative w-[173px] h-[48px]">
-                        <div class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-black z-0">
-                        </div>
-                        <div class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-black z-0">
-                        </div>
 
-                        <a href="/contact-us.bc"
-                            class="relative z-10 font-IRANYekan500 text-[14px] w-full h-full flex items-center justify-center border bg-white border-black text-black text-lg  no-underline">
-                            تماس با ما
-                        </a>
-                    </div>
-                </div>
-
-            </div>
+                </face>
+            </basis>
 
         </div>
         <section>
-            <div id="targetSection" class="w-full h-auto px-5 flex flex-col justify-center items-start gap-9 py-[68px] bg-back-gray">
+            <div id="targetSection"
+                class="w-full h-auto px-5 flex flex-col justify-center items-start gap-9 py-[68px] bg-back-gray">
                 <h3 class="text-gray-300 font-IRANYekan500 text-[24px] scrollTop mx-auto">مجموعه‌ی کاورسان</h3>
-                <p class="text-gray-300 font-IRANYekan300 text-center scrollTop text-[14px]">کاور سان تولید کننده تخصصی انواع پرده
+                <p class="text-gray-300 font-IRANYekan300 text-center scrollTop text-[14px]">کاور سان تولید کننده تخصصی
+                    انواع پرده
                     های مدرن و سقف های برقی می باشد که از سال 1382 فعالیت خود را آغاز کرد و پس از دو دهه تلاش و تمرکز بر
                     نوآوری در این زمینه، این شرکت توانسته است سطح کیفی این شاخه صنعت را ارتقا داده و عرضه کند. بسته ای
                     جامع از محصولات مختلف که تمامی نیازهای پروژه های مدرن در این زمینه را برآورده می کند. شایان ذکر است
@@ -60,49 +85,24 @@
         <section>
             <div class="w-full h-auto px-5 flex flex-col justify-center gap-3 items-center pt-[51px]">
                 <h4 class="w-full text-black font-IRANYekan500 text-[18px] mb-[13px] text-start">دسته بندی محصولات</h4>
+                <basis core="print" datamembername="basisName.productCat">
 
-                <div class="w-full h-[184px] flex flex-row bg-gray-50">
-                    <div class="w-[50%] h-full flex justify-center items-center">
-                        <img class="w[140px] h-[140px]" src="[##cms.cms.cdn##]/images/landingCat1.svg" alt="landingCat">
-                        
-                        
-                    </div>
-                    <div class="w-[50%] h-full flex justify-center flex-col items-center gap-2.5">
-                        <h4 class="w-full text-back-gray font-IRANYekan500 text-[18px]">سقف قابل جابجایی</h4>
-                        <h5 class="w-full text-back-gray font-PxGrotesk400 text-[14px]">REMOVABLE ROOF</h5>
-                    </div>
+                    <face filter="catid<>214297">
+                        <a href="/product-list.bc?catid=@catid" class="w-full h-[184px] flex flex-row bg-gray-50">
+                            <div class="w-[50%] h-full flex justify-center items-center" style="mix-blend-mode: difference;">
+                                <img class="w[140px] " src="[##cms.cms.cdn##]/images/icone-Def-@catid.png"
+                                    alt="landingCat">
 
-                </div>
-                <div class="w-full h-[184px] flex flex-row bg-gray-50">
-                    <div class="w-[50%] h-full flex justify-center items-center">
-                        <img class="w[140px] h-[140px]" src="[##cms.cms.cdn##]/images/landingCat2.svg" alt="landingCat">
-                    </div>
-                    <div class="w-[50%] h-full flex justify-center flex-col items-center gap-2.5">
-                        <h4 class="w-full text-back-gray font-IRANYekan500 text-[18px]">پرده های آلومینیومی</h4>
-                        <h5 class="w-full text-back-gray font-PxGrotesk400 text-[14px]">ALUMINUM VENATION BLINDS
-                        </h5>
-                    </div>
 
-                </div>
-                <div class="w-full h-[184px] flex flex-row bg-gray-50">
-                    <div class="w-[50%] h-full flex justify-center items-center">
-                        <img class="w[140px] h-[140px]" src="[##cms.cms.cdn##]/images/landingCat3.svg" alt="landingCat">
-                    </div>
-                    <div class="w-[50%] h-full flex justify-center flex-col items-center gap-2.5">
-                        <h4 class="w-full text-back-gray font-IRANYekan500 text-[18px]">پرده‌های رول‌آپ</h4>
-                        <h5 class="w-full text-back-gray font-PxGrotesk400 text-[14px]">REMOVABLE ROOF</h5>
-                    </div>
-                </div>
-                <div class="w-full h-[184px] flex flex-row bg-gray-50">
-                    <div class="w-[50%] h-full flex justify-center items-center">
-                        <img class="w[140px] h-[140px]" src="[##cms.cms.cdn##]/images/landingCat4.svg" alt="landingCat">
-                    </div>
-                    <div class="w-[50%] h-full flex justify-center flex-col items-center gap-2.5">
-                        <h4 class="w-full text-back-gray font-IRANYekan500 text-[18px]">سیستم سایبان</h4>
-                        <h5 class="w-full text-back-gray font-PxGrotesk400 text-[14px]">AWNING SYSTEM
-                        </h5>
-                    </div>
-                </div>
+                            </div>
+                            <div class="w-[50%] h-full flex justify-center flex-col items-center gap-2.5">
+                                <h4 class="w-full text-back-gray font-IRANYekan500 text-[18px]">@title</h4>
+                                <h5 class="w-full text-back-gray font-PxGrotesk400 text-[14px]">@urltitle</h5>
+                            </div>
+
+                        </a>
+                    </face>
+                </basis>
             </div>
         </section>
         <section>
@@ -113,29 +113,30 @@
                 <div class="">
                     <div class="swiper scrollProjectList-4 relative">
                         <div class="swiper-wrapper w-full !h-[657px]">
-                            <div class="swiper-slide w-full h-full flex flex-col gap-1.5">
-                                <div class="w-full h-[624px]">
-                                    <img class="w-full h-[624px]" src="[##cms.cms.cdn##]/images/landingSlideMobile.jpg"
-                                        alt="">
-                                </div>
-                                <div class="flex flex-col gap-1.5 py-1.5">
-                                    <h4 class="text-[16px] font-IRANYekan500 text-gray-500"> black out</h4>
+                            <basis core="print" datamembername="db.list">
+                                <face filter="RowNumber<5">
+                                    <div class="swiper-slide w-full h-full projectBox viduBox" data-title="@title"
+                                        data-poster="@00300X00600prp">
+
+                                        <a href="/@link" title="@title" class=" w-full h-full flex flex-col gap-1.5">
+                                            <div class="w-full h-[624px]">
+                                                <div class="videoS h-[624px] overflow-hidden">
+
+                                                </div>
+
+                                            </div>
+                                            <div class="flex flex-col gap-1.5 py-1.5">
+                                                <h4 class="text-[16px] font-IRANYekan500 text-gray-500"> @title</h4>
 
 
-                                </div>
+                                            </div>
 
-                            </div>
-                            <div class="swiper-slide w-full h-full flex flex-col gap-1.5">
-                                <div class="w-full h-[624px]">
-                                    <img class="w-full h-[624px]" src="[##cms.cms.cdn##]/images/landingSlideMobile.jpg"
-                                        alt="">
-                                </div>
-                                <div class="flex flex-col gap-1.5 py-1.5">
-                                    <h4 class="text-[16px] font-IRANYekan500 text-gray-500"> black out</h4>
+                                        </a>
 
-                                </div>
+                                    </div>
+                                </face>
 
-                            </div>
+                            </basis>
 
                         </div>
 
@@ -148,94 +149,34 @@
                 <h4 class="text-[18px] font-IRANYekan500 pb-6 text-black">سوالات متداول</h4>
             </div>
             <div class="accordion w-full max-w-md mx-auto m0t-10">
-                <div class="accordion-item border-b border-b-main mb-3">
-                    <button style="padding: 12px 23px;"
-                        class="accordion-header w-full text-right bg-gray-50 py-4 text-[16px] text-black font-IRANYekan500 flex justify-between items-center focus:outline-none">
-                        نمای شیشه ای | بهترین انواع شیشه در بازار جهانی
-                        <span class="icon">
-                            <svg width="22" height="23" viewBox="0 0 22 23" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M21.1603 10.6221H11.8397V0.877863C11.8397 0.351145 11.5038 0 11 0C10.4962 0 10.1603 0.351145 10.1603 0.877863V10.6221H0.839695C0.335878 10.6221 0 10.9733 0 11.5C0 12.0267 0.335878 12.3779 0.839695 12.3779H10.1603V22.1221C10.1603 22.6489 10.4962 23 11 23C11.5038 23 11.8397 22.6489 11.8397 22.1221V12.3779H21.1603C21.6641 12.3779 22 12.0267 22 11.5C22 10.9733 21.6641 10.6221 21.1603 10.6221Z"
-                                    fill="black" />
-                            </svg>
 
-                        </span>
-                    </button>
-                    <div class="accordion-body max-h-0  overflow-hidden transition-all duration-300 ease-in-out ">
-                        <p class="text-[14px] font-IRANYekan300 pb-6 text-back-gray">
-                            صنعت نماسازی همزمان با رشد فناوری. دست به ساخت مصالحی جدید که تا پیش از این وجود خارجی
-                            نداشته اند زده است که یکی از متداول ترین آنها قطعاتی ترکیبی از جنس آلومینیوم و ...
 
-                        </p>
-                    </div>
-                </div>
-                <div class="accordion-item border-b border-b-main mb-3">
-                    <button style="padding: 12px 23px;"
-                        class="accordion-header w-full text-right py-4  bg-gray-50 text-[16px] text-black font-IRANYekan500 flex justify-between items-center focus:outline-none">
-                        نمای کامپوزیت
-                        <span class="icon">
-                            <svg width="22" height="23" viewBox="0 0 22 23" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M21.1603 10.6221H11.8397V0.877863C11.8397 0.351145 11.5038 0 11 0C10.4962 0 10.1603 0.351145 10.1603 0.877863V10.6221H0.839695C0.335878 10.6221 0 10.9733 0 11.5C0 12.0267 0.335878 12.3779 0.839695 12.3779H10.1603V22.1221C10.1603 22.6489 10.4962 23 11 23C11.5038 23 11.8397 22.6489 11.8397 22.1221V12.3779H21.1603C21.6641 12.3779 22 12.0267 22 11.5C22 10.9733 21.6641 10.6221 21.1603 10.6221Z"
-                                    fill="black" />
-                            </svg>
+                <basis core="print" datamembername="db.article">
+                    <face filter="TypeID=250">
+                        <div class="accordion-item border-b border-b-main mb-3">
+                            <button style="padding: 12px 23px;"
+                                class="accordion-header w-full text-right bg-gray-50 py-4 text-[16px] text-black font-IRANYekan500 flex justify-between items-center focus:outline-none">
+                                @text
+                                <span class="icon">
+                                    <svg width="22" height="23" viewBox="0 0 22 23" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M21.1603 10.6221H11.8397V0.877863C11.8397 0.351145 11.5038 0 11 0C10.4962 0 10.1603 0.351145 10.1603 0.877863V10.6221H0.839695C0.335878 10.6221 0 10.9733 0 11.5C0 12.0267 0.335878 12.3779 0.839695 12.3779H10.1603V22.1221C10.1603 22.6489 10.4962 23 11 23C11.5038 23 11.8397 22.6489 11.8397 22.1221V12.3779H21.1603C21.6641 12.3779 22 12.0267 22 11.5C22 10.9733 21.6641 10.6221 21.1603 10.6221Z"
+                                            fill="black" />
+                                    </svg>
 
-                        </span>
-                    </button>
-                    <div class="accordion-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out ">
-                        <p class="text-[14px] font-IRANYekan300 pb-6 text-back-gray">
-                            صنعت نماسازی همزمان با رشد فناوری. دست به ساخت مصالحی جدید که تا پیش از این وجود خارجی
-                            نداشته اند زده است که یکی از متداول ترین آنها قطعاتی ترکیبی از جنس آلومینیوم و ...
+                                </span>
+                            </button>
+                            <div
+                                class="accordion-body max-h-0  overflow-hidden transition-all duration-300 ease-in-out ">
+                                <div class="text-[14px] font-IRANYekan300 pb-6 text-back-gray">
+                                    @largetext
+                                </div>
+                            </div>
+                        </div>
+                    </face>
+                </basis>
 
-                        </p>
-                    </div>
-                </div>
-                <div class="accordion-item border-b border-b-main mb-3">
-                    <button style="padding: 12px 23px;"
-                        class="accordion-header w-full text-right py-4  bg-gray-50 text-[16px] text-black font-IRANYekan500 flex justify-between items-center focus:outline-none">
-                        معرفی سیستم های نما
-                        <span class="icon">
-                            <svg width="22" height="23" viewBox="0 0 22 23" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M21.1603 10.6221H11.8397V0.877863C11.8397 0.351145 11.5038 0 11 0C10.4962 0 10.1603 0.351145 10.1603 0.877863V10.6221H0.839695C0.335878 10.6221 0 10.9733 0 11.5C0 12.0267 0.335878 12.3779 0.839695 12.3779H10.1603V22.1221C10.1603 22.6489 10.4962 23 11 23C11.5038 23 11.8397 22.6489 11.8397 22.1221V12.3779H21.1603C21.6641 12.3779 22 12.0267 22 11.5C22 10.9733 21.6641 10.6221 21.1603 10.6221Z"
-                                    fill="black" />
-                            </svg>
-
-                        </span>
-                    </button>
-                    <div class="accordion-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out ">
-                        <p class="text-[14px] font-IRANYekan300 pb-6 text-back-gray">
-                            صنعت نماسازی همزمان با رشد فناوری. دست به ساخت مصالحی جدید که تا پیش از این وجود خارجی
-                            نداشته اند زده است که یکی از متداول ترین آنها قطعاتی ترکیبی از جنس آلومینیوم و ...
-
-                        </p>
-                    </div>
-                </div>
-                <div class="accordion-item border-b border-b-main mb-3">
-                    <button style="padding: 12px 23px;"
-                        class="accordion-header w-full text-right py-4  bg-gray-50 text-[16px] text-black font-IRANYekan500 flex justify-between items-center focus:outline-none">
-                        نرده شیشه ای
-                        <span class="icon">
-                            <svg width="22" height="23" viewBox="0 0 22 23" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M21.1603 10.6221H11.8397V0.877863C11.8397 0.351145 11.5038 0 11 0C10.4962 0 10.1603 0.351145 10.1603 0.877863V10.6221H0.839695C0.335878 10.6221 0 10.9733 0 11.5C0 12.0267 0.335878 12.3779 0.839695 12.3779H10.1603V22.1221C10.1603 22.6489 10.4962 23 11 23C11.5038 23 11.8397 22.6489 11.8397 22.1221V12.3779H21.1603C21.6641 12.3779 22 12.0267 22 11.5C22 10.9733 21.6641 10.6221 21.1603 10.6221Z"
-                                    fill="black" />
-                            </svg>
-
-                        </span>
-                    </button>
-                    <div class="accordion-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out ">
-                        <p class="text-[14px] font-IRANYekan300 pb-6 text-back-gray">
-                            صنعت نماسازی همزمان با رشد فناوری. دست به ساخت مصالحی جدید که تا پیش از این وجود خارجی
-                            نداشته اند زده است که یکی از متداول ترین آنها قطعاتی ترکیبی از جنس آلومینیوم و ...
-
-                        </p>
-                    </div>
-                </div>
 
             </div>
 
@@ -263,28 +204,36 @@
                 </div>
                 <div class="swiper scrollProjectList-2 relative bg-gray-50">
                     <div class="swiper-wrapper w-full">
-                        <div class="swiper-slide !w-full h-[367px]">
+                             <basis core="print" datamembername="db.commentlist">
+
+                                        <else-layout>
+                                                <div class="swiper-slide !w-full h-[367px]">
                             <div class="w-full flex flex-col justify-center items-start pt-[20px] pb-[100px] px-[15px]">
-                                <h4 class="text-[16px] text-start  text-back-gray font-IRANYekan500 mb-[15px]">علی کریمی
-                                </h4>
-                                <p class="text-[14px] text-justify font-IRANYekan300 text-back-gray">لورم ایپسوم متن
-                                    ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
-                                    چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
-                                    فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
-                                    کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، </p>
+                              
+                                <p class="text-[14px] text-justify font-IRANYekan300 text-back-gray">
+                                    هنوز کامنتی ثبت نشده است.
+                                                <br>
+                                                شما اولین نفر باشید
+                                            
+                                            </p>
                             </div>
                         </div>
-                        <div class="swiper-slide !w-full h-[367px]">
-                            <div class="w-full flex flex-col justify-center items-start pt-[20px] pb-[100px] px-[15px]">
-                                <h4 class="text-[16px] text-start  text-back-gray font-IRANYekan500 mb-[15px]">علی کریمی
-                                </h4>
-                                <p class="text-[14px] text-justify font-IRANYekan300 text-back-gray">لورم ایپسوم متن
-                                    ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
-                                    چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
-                                    فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
-                                    کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، </p>
-                            </div>
-                        </div>
+                                                </else-layout>
+                                        <face>
+                                            <div class="swiper-slide !w-full h-[367px]">
+                                                <div class="w-full flex flex-col justify-center items-start pt-[20px] pb-[100px] px-[15px]">
+                                                    <h4 class="text-[16px] text-start  text-back-gray font-IRANYekan500 mb-[15px]">
+                                                          @username
+                                                    </h4>
+                                                    <p class="text-[14px] text-justify font-IRANYekan300 text-back-gray">
+                                                        @comment
+                                                    
+                                                    </p>
+                                                </div>
+                                            </div>
+                                               </face>
+                                    </basis>
+                    
                     </div>
                     <div
                         class="swiper-buttons absolute bottom-[18px] gap-x-2 flex justify-center items-center gap-0 z-10 mt-[50px] mx-auto left-[25%] right-[25%]">
@@ -314,7 +263,7 @@
                 <div>
                     <h5 class="text-[18px] text-back-gray font-IRANYekan500 mb-[24px]">نظراتتان برای ما ارزشمند هست</h5>
                 </div>
-                 <form action="" class="commentP">
+                <form action="" class="commentP">
                     <div class="flex flex-col mt-[24px] gap-3">
                         <div class="nameInput flex flex-col justify-start gap-[5px] mb-[12px]">
                             <div class="text-[14px] font-IRANYekan300 text-back-gray mb-1.5">نام و نام خانوادگی</div>
@@ -398,5 +347,6 @@
 <script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
 <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]" />
 <script src="[##cms.cms.cdn##]/js/landingMobile.js"></script>
+<script src="[##cms.cms.cdn##]/js/newLanding.js"></script>
 
 </html>

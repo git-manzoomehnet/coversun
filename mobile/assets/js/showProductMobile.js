@@ -60,25 +60,26 @@ document.addEventListener('DOMContentLoaded', function () {
     const headers = document.querySelectorAll('.accordion-header');
 
     headers.forEach(header => {
-        header.addEventListener('click', function () {
-            const body = this.nextElementSibling;
+            header.addEventListener('click', function () {
+                const body = this.nextElementSibling;
+                const icon = this.querySelector('.icon');
 
-            if (body.style.maxHeight) {
-                body.style.maxHeight = null;
-                this.querySelector('.icon').innerHTML = '<svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 1.25L6.5 6.75L1 1.25" stroke="black"/></svg>';
-            } else {
+                const isOpen = body.style.maxHeight;
+
                 document.querySelectorAll('.accordion-body').forEach(b => {
                     b.style.maxHeight = null;
                 });
-                document.querySelectorAll('.icon').forEach(icon => {
-                    icon.innerHTML = '<svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 1.25L6.5 6.75L1 1.25" stroke="black"/></svg>';
+                document.querySelectorAll('.icon').forEach(i => {
+                    i.classList.remove('rotate');
                 });
 
-                body.style.maxHeight = body.scrollHeight + 'px';
-                this.querySelector('.icon').textContent = '−';
-            }
+                if (!isOpen) {
+                    body.style.maxHeight = body.scrollHeight + 'px';
+                    icon.classList.add('rotate');
+                }
+            });
         });
-    });
+
 });
 
 let messageSend = document.querySelector(".messageSend")
@@ -130,4 +131,6 @@ document.querySelector('.submitComment').addEventListener('click', (event) => {
 
 
 })
+
+
 

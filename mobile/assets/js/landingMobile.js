@@ -28,14 +28,6 @@ const headers = document.querySelectorAll('.accordion-header');
             prevEl: '.swiper-button-prev-project-2',
             spaceBetween: 10,
             slidesPerView: 1,
-        },
-        {
-            container: '.scrollProjectList-4',
-            pagination: '.swiper-pagination-Project-4',
-            nextEl: '.swiper-button-next-project-4',
-            prevEl: '.swiper-button-prev-project-4',
-            spaceBetween: 10,
-            slidesPerView: 1.1,
         }
     ];
 
@@ -58,3 +50,56 @@ const headers = document.querySelectorAll('.accordion-header');
             // speed: 800
         });
     });
+
+
+
+let messageSend = document.querySelector(".messageSend")
+let commentP = document.querySelector(".commentP")
+
+function renderCommentFn(args) {
+
+}
+document.querySelector('.submitComment').addEventListener('click', (event) => {
+    //  let input1  = document.querySelector('.namee')
+    event.preventDefault();
+    let textar = document.querySelectorAll('.commentP input')
+    let emptyFlag = false;
+    textar.forEach(element => {
+        if (element.value == "") {
+            emptyFlag = true
+        }
+    });
+    if (!emptyFlag) {
+
+        let val = document.querySelector(".commentP textarea").value;
+        let userName = document.querySelector(".commentP .userName").value;
+
+        $bc.setSource('db.send', true)
+        $bc.setSource('db.senduserName', userName)
+        $bc.setSource('db.sendcomment', val)
+        $bc.setSource('db.run', true)
+        let sendbox = document.querySelector('.messageSend')
+        let text = sendbox.querySelector('p')
+        text.innerHTML = 'درخواست شما با موفقیت ثبت شد'
+        commentP.reset()
+        messageSend.style.display = "block"
+
+        document.querySelector(".commentP").reset();
+        setTimeout(() => {
+            messageSend.style.display = "none"
+        }, 3500)
+    } else {
+        let sendbox = document.querySelector('.messageSend')
+        let text = sendbox.querySelector('p')
+        text.innerHTML = 'فیلدهای الزامی را پر کنید'
+        messageSend.style.display = "block"
+
+        setTimeout(() => {
+            messageSend.style.display = "none"
+        }, 3500)
+
+    }
+
+
+})
+

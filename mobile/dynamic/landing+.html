@@ -44,7 +44,8 @@
     <member name="Sun-vibe" type="view" />
 </basis>
 <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2376699">
-    <member name="image-Sun-vibe" type="list" format="4" />
+    <member name="image-Sun-vibelogo" type="list" format="4" preview=""
+        postsql="select * from [db.image-Sun-vibelogo] where ord = 1000" />
 </basis>
 
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2376684">
@@ -111,6 +112,7 @@
     <member name="image-Sun-vibe" type="list" format="4" />
 </basis>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -118,23 +120,26 @@
     <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
     <title>لندینگ</title>
 </head>
-<body>
+
+
+<body id="coversunplusm">
     <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
     <main>
         <div class="relative">
             <div class="pt-[80px] px-5">
                 <ul class="flex flex-row gap-1.5">
                     <li class="text-[12px] font-IRANYekan300 text-gray-700"><a href="/">صفحه نخست</a></li>
-                    <li class="text-[12px] font-IRANYekan300 text-gray-700"><span href="">.</span></li>                  
-                    <li class="text-[12px] font-IRANYekan300 text-gray-700"><span>لندینگ</span></li>
+                    <li class="text-[12px] font-IRANYekan300 text-gray-700"><span href="">.</span></li>
+                    <li class="text-[12px] font-IRANYekan300 text-gray-700"><span>کاورسان پلاس</span></li>
                 </ul>
             </div>
 
         </div>
-        <section class="bg-gray-50 py-4">
-            <div class="w-full flex flex-col">
+        <section class="bg-gray-50 py-4 mt-3">
+            <div id="first-section" class="w-full flex flex-col">
                 <div>
-                    <h3 class="text-[18px] text-black font-IRANYekan500 px-5 pb-2.5">پروژه های شاخص</h3>
+                    <h3 class="scroll-btnG text-[18px] text-black font-IRANYekan500 px-5 pb-2.5"
+                        data-target="#section3">پروژه های شاخص</h3>
                 </div>
                 <div class="flex flex-col gap-2.5">
                     <basis core="print" datamembername="db.list-projectO">
@@ -167,7 +172,8 @@
             </div>
             <div class="w-full flex flex-col mt-[10px]">
                 <div>
-                    <h3 class="text-[18px] text-black pb-2.5 font-IRANYekan500 px-5"> کو برندینگ</h3>
+                    <h3 class="scroll-btnG text-[18px] text-black pb-2.5 font-IRANYekan500 px-5"
+                        data-target="#section4"> کو برندینگ</h3>
                 </div>
                 <div class="flex flex-col gap-2.5">
                     <basis core="print" datamembername="db.list-project2">
@@ -208,7 +214,7 @@
                     </ul>
                 </div>
         </section>
-        <section class="px-5">
+        <section class="px-5" id="section3">
             <div class="flex flex-col">
                 <basis core="print" datamembername="db.list2-project">
                     <layout>
@@ -221,7 +227,8 @@
                         <div class="pt-[51px] border-b border-b-black">
                             <div>
                                 <h3 class="text-[18px] font-IRANYekan300 text-black scrollTop">@title</h3>
-                                <p class="text-[14px] my-4 text-justify text-gray-600 leading-[26px] scrollTop">@prp_17877</p>
+                                <p class="text-[14px] my-4 text-justify text-gray-600 leading-[26px] scrollTop">
+                                    @prp_17877</p>
                             </div>
                             <a class="flex flex-row justify-start items-center font-IRANYekan300 gap-[5px] scrollTop text-[14px] text-gray-700 pt-[15px]"
                                 href="@link">
@@ -232,19 +239,19 @@
                                         fill="#3F3F46" />
                                 </svg>
                                 مشاهده گالری</a>
-                                <div class="w-full h-[260px] my-7 overflow-hidden">
-                                    <a class="w-full h-full" href="@link">
-                                        <img class="imageShow" src="[##cms.cms.cdn##]/@00400X00300prp" alt="@title">
-                                    </a>
-                                </div>
-                            
+                            <div class="w-full h-[260px] my-7 overflow-hidden">
+                                <a class="w-full h-full" href="@link">
+                                    <img class="imageShow" src="[##cms.cms.cdn##]/@00400X00300prp" alt="@title">
+                                </a>
+                            </div>
+
                         </div>
 
                     </face>
                 </basis>
-                        </div>
+            </div>
         </section>
-        <section>
+        <section id="section4">
             <div>
                 <h3 class="text-[18px] font-IRANYekan500 px-5 mt-4 text-black"> کو برندینگ </h3>
                 <div class="marquee-wrapperText text-black my-4">
@@ -679,7 +686,7 @@
                             <!-- ################## -->
 
 
-                            <div class="relative w-[173px] h-[48px] my-4 openPopGallery mr-2.5">
+                            <div class="relative w-[173px] h-[48px] my-4 openPopGallery mr-2.5" data-popid="2376696">
                                 <div
                                     class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-white z-0">
                                 </div>
@@ -775,7 +782,7 @@
 
                                 </face>
                             </basis>
-                            <div class="relative w-[173px] h-[48px] my-4 openPopGallery mr-2.5">
+                            <div class="relative w-[173px] h-[48px] my-4 openPopGallery mr-2.5" data-popid="2376695">
                                 <div
                                     class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-white z-0">
                                 </div>
@@ -871,7 +878,7 @@
 
                                 </face>
                             </basis>
-                            <div class="relative w-[173px] h-[48px] my-4 openPopGallery mr-2.5">
+                            <div class="relative w-[173px] h-[48px] my-4 openPopGallery mr-2.5" data-popid="2376691">
                                 <div
                                     class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-white z-0">
                                 </div>
@@ -913,8 +920,8 @@
             <div class="marquee" id="marquee2">
                 <div class="marquee__inner-wrap">
                     <div class="marquee__inner marquee__inner--right">
-                        <basis core="print" datamembername="db.image-Sun-vibe">
-                            <face filter="ord=1000">
+                        <basis core="print" datamembername="db.image-Sun-vibelogo">
+                            <face filter="rownumber < 5">
                                 <div class="marquee__img w-[75px] grayscale h-[75px]"
                                     style="background-image: url([##cms.cms.cdn##]/@largeIMG)"></div>
                             </face>
@@ -925,8 +932,8 @@
             <div class="marquee" id="marquee1">
                 <div class="marquee__inner-wrap">
                     <div class="marquee__inner marquee__inner--left">
-                        <basis core="print" datamembername="db.image-Sun-vibe">
-                            <face filter="ord=1000">
+                        <basis core="print" datamembername="db.image-Sun-vibelogo">
+                            <face filter="rownumber > 5">
                                 <div class="marquee__img w-[75px] grayscale h-[75px]"
                                     style="background-image: url([##cms.cms.cdn##]/@largeIMG)"></div>
                             </face>
@@ -939,114 +946,31 @@
     <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
 
     <div id="showPopupGallry"
-        class="fixed h-[100%] bg- z-50 p-5 top-0 flex-col justify-between items-center bottom-0 left-0 right-0 bg-[#FFFFFFE5] pupUp hidden">
-        <div class="w-full flex flex-row justify-between icon h-[55px]">
-            <button id="closepopupItem">
-                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M10.1337 30.0837L7.91699 27.867L16.7837 19.0003L7.91699 10.1337L10.1337 7.91699L19.0003 16.7837L27.867 7.91699L30.0837 10.1337L21.217 19.0003L30.0837 27.867L27.867 30.0837L19.0003 21.217L10.1337 30.0837Z"
-                        fill="black" />
-                </svg>
-            </button>
-        </div>
-        <div id="showItemList" class="flex flex-col items-center justify-center gap-6">
-            <basis core="print" datamembername="db.pop-gallery">
-                <face filter="ord=1000">
-                    <div class="boxImg">
-                        <img class="w-full max-w-[350px] h-[200px]" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
-                    </div>
-                </face>
-            </basis>
-        </div>
-        <div id="showImgItem"
-            class="fixed bg-[#FFFFFFE5] p-5 h-[100vh] w-full flex-col justify-between items-start top-[0] bottom-[0] my-auto flex opacity-0 invisible">
-            <button id="closepopupgallry">
-                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M10.1337 30.0837L7.91699 27.867L16.7837 19.0003L7.91699 10.1337L10.1337 7.91699L19.0003 16.7837L27.867 7.91699L30.0837 10.1337L21.217 19.0003L30.0837 27.867L27.867 30.0837L19.0003 21.217L10.1337 30.0837Z"
-                        fill="black" />
-                </svg>
-            </button>
-            <div class="w-full h-[200pv]">
-                <div class="swiper galleryPopSlider w-full relative h-[200px]">
-                    <!-- Additional required wrapper -->
-                    <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        <basis core="print" datamembername="db.pop-gallery">
-                            <face filter="ord=1000">
-                                <div class="swiper-slide">
-                                    <div class="imgS flex items-center justify-center overflow-hidden">
-                                        <img class="h-[200px] w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
-                                    </div>
-                                </div>
-                            </face>
-                        </basis>
+        class="galleryPop fixed h-[100%] bg- z-50 p-5 top-0 flex-col justify-between items-center bottom-0 left-0 right-0 bg-[#FFFFFFE5] pupUp hidden" style="z-index: 1111111111111111;">
 
-                    </div>
-                </div>
-                <div class="w-full flex flex-row justify-between mt-6">
-                    <div class="nextGallery cursor-pointer z-10  left-0 top-0">
-                        <svg width="22" height="27" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22 13.5L0.25 0.942631V26.0574L22 13.5Z" fill="black" />
-                        </svg>
-                    </div>
-                    <div class="tools flex gap-x-5">
-                        <div class="zoomIn cursor-pointer">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M3.3684e-08 9C0.000155699 7.56238 0.344701 6.14571 1.00479 4.86859C1.66489 3.59146 2.62132 2.49105 3.79402 1.65947C4.96672 0.827885 6.32158 0.28933 7.74516 0.0888866C9.16874 -0.111557 10.6196 0.0319443 11.9764 0.507377C13.3331 0.982809 14.5562 1.77634 15.5433 2.82154C16.5304 3.86673 17.2527 5.13318 17.6498 6.51487C18.0469 7.89656 18.1073 9.35328 17.8258 10.7631C17.5443 12.1729 16.9292 13.4947 16.032 14.618L19.707 18.293C19.8892 18.4816 19.99 18.7342 19.9877 18.9964C19.9854 19.2586 19.8802 19.5094 19.6948 19.6948C19.5094 19.8802 19.2586 19.9854 18.9964 19.9877C18.7342 19.99 18.4816 19.8892 18.293 19.707L14.618 16.032C13.2939 17.09 11.6979 17.7526 10.0138 17.9435C8.32966 18.1344 6.62586 17.8459 5.0985 17.1112C3.57113 16.3764 2.28228 15.2253 1.38029 13.7904C0.478308 12.3554 -0.000146577 10.6949 3.3684e-08 9ZM9 5C9.26522 5 9.51957 5.10536 9.70711 5.2929C9.89464 5.48043 10 5.73479 10 6V8H12C12.2652 8 12.5196 8.10536 12.7071 8.2929C12.8946 8.48043 13 8.73479 13 9C13 9.26522 12.8946 9.51957 12.7071 9.70711C12.5196 9.89465 12.2652 10 12 10H10V12C10 12.2652 9.89464 12.5196 9.70711 12.7071C9.51957 12.8946 9.26522 13 9 13C8.73478 13 8.48043 12.8946 8.29289 12.7071C8.10536 12.5196 8 12.2652 8 12V10H6C5.73478 10 5.48043 9.89465 5.29289 9.70711C5.10536 9.51957 5 9.26522 5 9C5 8.73479 5.10536 8.48043 5.29289 8.2929C5.48043 8.10536 5.73478 8 6 8H8V6C8 5.73479 8.10536 5.48043 8.29289 5.2929C8.48043 5.10536 8.73478 5 9 5Z"
-                                    fill="black" />
-                            </svg>
-
-                        </div>
-                        <div class="zoomOut cursor-pointer">
-                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M16.031 14.617L20.314 18.899L18.899 20.314L14.617 16.031C13.0237 17.3082 11.042 18.0029 9 18C4.032 18 0 13.968 0 9C0 4.032 4.032 0 9 0C13.968 0 18 4.032 18 9C18.0029 11.042 17.3082 13.0237 16.031 14.617ZM5 8V10H13V8H5Z"
-                                    fill="black" />
-                            </svg>
-
-
-                        </div>
-                        <div class="rotateLeft cursor-pointer">
-                            <svg width="19" height="22" viewBox="0 0 19 22" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.99861 8.59625L2.41236 6.99875C1.39986 8.30375 0.769863 9.81125 0.578613 11.375H2.85111C3.00861 10.3962 3.40236 9.44 3.99861 8.59625ZM2.85111 13.625H0.578613C0.769863 15.1888 1.38861 16.6962 2.40111 18.0012L3.98736 16.4037C3.40236 15.56 3.00861 14.615 2.85111 13.625ZM3.98736 19.61C5.29236 20.6225 6.81111 21.23 8.37486 21.4212V19.1375C7.39611 18.9688 6.45111 18.5863 5.60736 17.9788L3.98736 19.61ZM10.6249 3.57875V0.125L5.50611 5.24375L10.6249 10.25V5.85125C13.8199 6.39125 16.2499 9.15875 16.2499 12.5C16.2499 15.8413 13.8199 18.6087 10.6249 19.1488V21.4212C15.0686 20.87 18.4999 17.09 18.4999 12.5C18.4999 7.91 15.0686 4.13 10.6249 3.57875Z"
-                                    fill="black" />
-                            </svg>
-
-                        </div>
-
-                        <div class="rotateRitght cursor-pointer">
-                            <svg width="19" height="22" viewBox="0 0 19 22" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M15.0009 8.59625L16.5871 6.99875C17.5996 8.30375 18.2296 9.81125 18.4209 11.375H16.1484C15.9909 10.3962 15.5971 9.44 15.0009 8.59625ZM16.1484 13.625H18.4209C18.2296 15.1888 17.6109 16.6962 16.5984 18.0012L15.0121 16.4037C15.5971 15.56 15.9909 14.615 16.1484 13.625ZM15.0121 19.61C13.7071 20.6225 12.1884 21.23 10.6246 21.4212V19.1375C11.6034 18.9688 12.5484 18.5863 13.3921 17.9788L15.0121 19.61ZM8.37465 3.57875V0.125L13.4934 5.24375L8.37465 10.25V5.85125C5.17965 6.39125 2.74965 9.15875 2.74965 12.5C2.74965 15.8413 5.17965 18.6087 8.37465 19.1488V21.4212C3.9309 20.87 0.499649 17.09 0.499649 12.5C0.499649 7.91 3.9309 4.13 8.37465 3.57875Z"
-                                    fill="black" />
-                            </svg>
-
-                        </div>
-                    </div>
-                    <div class="prevGallery cursor-pointer z-10  right-0 top-0">
-                        <svg width="22" height="27" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 13.5L21.75 0.942631V26.0574L0 13.5Z" fill="black" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <div></div>
-
-
-
-
-
-        </div>
-        <div></div>
 
     </div>
+    <div>
+        <button id="my-btn" class="scroll-btn">
+            <div class="scroll-btn-content">
+                <span class="arrow"><svg width="15" height="23" viewBox="0 0 15 23" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1028_6682)">
+                            <path
+                                d="M14.029 7.91719L14.6467 7.29796L7.4996 0.132572L0.352539 7.29796L0.970187 7.91719L7.05842 1.81334L7.05842 22.8672H7.94077L7.94077 1.81334L14.029 7.91719Z"
+                                fill="black" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_1028_6682">
+                                <rect width="23" height="15" fill="white" transform="matrix(0 -1 1 0 0 23)" />
+                            </clipPath>
+                        </defs>
+                    </svg></span>
+                <span class="label">back</span>
+            </div>
+        </button>
+    </div>
+
 
 </body>
 <script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
@@ -1054,5 +978,26 @@
 <script src="[##cms.cms.cdn##]/_js/gsap.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="[##cms.cms.cdn##]/js/landingplusMobile.js"></script>
+<script>
+    const btn = document.getElementById('my-btn');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            btn.classList.add('show');
+        } else {
+            btn.classList.remove('show');
+        }
+    });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+
+
+
+
+</script>
 <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]" />
+
 </html>

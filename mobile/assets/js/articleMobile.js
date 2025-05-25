@@ -45,10 +45,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 nextEl: config.nextEl,
                 prevEl: config.prevEl
             },
-            // autoplay: {
-            //     delay: 3000 + (index * 500),
-            //     disableOnInteraction: false
-            // },
+            autoplay: {
+                delay: 3000 + (index * 500),
+                disableOnInteraction: false
+            },
             loop: true,
             // speed: 800
         });
@@ -126,7 +126,7 @@ document.querySelector('.submitComment').addEventListener('click', (event) => {
     });
     if (!emptyFlag) {
 
-        let val = document.querySelector(".commentP _textarea").value;
+        let val = document.querySelector(".commentP textarea").value;
         let userName = document.querySelector(".commentP .userName").value;
 
         $bc.setSource('db.send', true)
@@ -157,3 +157,5 @@ document.querySelector('.submitComment').addEventListener('click', (event) => {
 
 
 })
+
+

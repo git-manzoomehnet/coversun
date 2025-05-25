@@ -34,6 +34,7 @@
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" usedforid="[##cms.query.id##]">
     <member name="product" type="view" />
 </basis>
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="20" usedforid="[##cms.query.id##]"> <member name="producten" type="view" postsql="select * from [db.producten] where TypeID in (150)"/> </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" usedforid="[##cms.query.id##]">
     <member name="product" type="view" />
 </basis>
@@ -87,11 +88,43 @@
             <div class="absolute z-20 top-0 pt-[80px] px-5 mt-2">
                 <ul class="flex flex-row gap-1.5">
                     <li class="text-[12px] font-IRANYekan300 text-gray-700"><a href="/">صفحه نخست</a></li>
+                    <li class="flex"> <a href="/product-cat.bc" class="text-[12px] font-IRANYekan300 text-gray-700" title="home">
+                                   محصولات
+                                </a>
+                    </li>
+
                     <basis core="print" datamembername="db.nav">
-                        <face>
-                            <li class="text-[12px] font-IRANYekan300 text-gray-700"><span href="">.</span></li>
-                            <li class="text-[12px] font-IRANYekan300 text-gray-700"><a
-                                    href="/product-list.bc?catid=@parentcatid" title="@title">@title</a></li>
+
+                        <face filter="Parentcatid=Catid">
+
+                            <li>
+                                <span class="text-[12px] font-IRANYekan300 text-gray-700">
+                                    .
+                                </span>
+                            </li>
+                            <li class="flex">
+                                <a href="/product-list.bc?catid=@Parentcatid"
+                                    class="text-[12px] font-IRANYekan300 text-gray-700" title="home">
+                                    @Title
+                                </a>
+                            </li>
+                        </face>
+                    </basis>
+
+
+                    <basis core="print" datamembername="db.product">
+                        <face filter="TypeID=150">
+                            <li>
+                                <span class="text-[12px] font-IRANYekan300 text-gray-700">
+                                    .
+                                </span>
+                            </li>
+                            <li class="flex">
+                                <span class="text-[12px] font-IRANYekan300 text-gray-700">
+                                    @Answer
+                                </span>
+                            </li>
+
                         </face>
                     </basis>
                 </ul>
@@ -107,15 +140,15 @@
                 </basis>
 
 
-                <basis core="print" datamembername="db.parent">
-                    <face filter="RowNumber=1">
+                <basis core="print" datamembername="db.product">
+                    <face filter="typeid=150">
                         <div
                             class="w-full h-full relative z-10 px-5 text-white text-3xl flex justify-start items-center">
                             <div>
-                                <img class="scrollTop" src="[##cms.cms.cdn##]/images/icone-Def-@catid.png" alt="" />
+                                <img class="scrollTop" src="[##cms.cms.cdn##]/images/icone-Def-[##db.parent.catid##].png" alt="" />
                                 <h4 class="text-[24px] pt-5 pb-2.5 font-IRANYekan500 text-white">
-                                    @title</h4>
-                                <p class="text-[14px] text-white font-PxGrotesk400">@urltitle</p>
+                                    @Answer</h4>
+                                <p class="text-[14px] text-white font-PxGrotesk400">[##db.producten.Answer##]</p>
                             </div>
 
                         </div>

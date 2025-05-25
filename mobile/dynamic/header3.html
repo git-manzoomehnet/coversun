@@ -9,46 +9,42 @@
 
     <header>
         <!-- Header -->
-        <div id="headersitem" class="fixed z-50 w-full flex px-5 pt-2.5 flex-row justify-between items-center h-[70px] mb-2.5">
+        <div class="absolute z-50 w-full flex px-5 pt-2.5 flex-row justify-between items-center  mb-2.5">
             <div class="flex flex-col h-full justify-center items-start ">
                 <div class="flex flex-row">
                     <button id="openmenu" class="cursor-pointer">
-                        <svg width="29" height="20" viewBox="0 0 29 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <line x1="1.02781e-07" y1="2" x2="29" y2="2" stroke="#FAFAFA" stroke-width="3"/>
-                            <line x1="1.02781e-07" y1="10" x2="29" y2="10" stroke="#FAFAFA" stroke-width="3"/>
-                            <line x1="1.02781e-07" y1="18" x2="29" y2="18" stroke="#FAFAFA" stroke-width="3"/>
+<svg width="26" height="11" viewBox="0 0 26 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="7" y1="1.5" x2="26" y2="1.5" stroke="#27272A" stroke-width="3"/>
+<line x1="9.21483e-08" y1="9.5" x2="26" y2="9.5" stroke="#27272A" stroke-width="3"/>
+</svg>
+                  
+                    </button>
+
+                    <div class="flex flex-row gap-3.5" style="margin-right: 15px;">
+                        <button id="opensearch">
+                        <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.19369 0.599609C3.23639 0.599609 0.015625 3.95711 0.015625 8.0824C0.015625 12.2077 3.23639 15.5652 7.19369 15.5652C11.151 15.5652 14.3717 12.2077 14.3717 8.0824C14.3717 3.95458 11.151 0.599609 7.19369 0.599609ZM7.19369 14.5491C3.77116 14.5491 0.987933 11.6477 0.987933 8.07987C0.987933 4.51205 3.77116 1.61066 7.19369 1.61066C10.6162 1.61066 13.3994 4.51205 13.3994 8.07987C13.3994 11.6477 10.6138 14.5491 7.19369 14.5491Z" fill="#27272A"/>
+                            <path d="M13.8416 14.4255C13.6544 14.2253 13.3457 14.2228 13.1537 14.4179C12.9617 14.613 12.9592 14.9348 13.1464 15.135L15.1226 17.2433C15.2174 17.3446 15.3438 17.3953 15.4702 17.3953C15.5917 17.3953 15.7157 17.3472 15.8105 17.2509C16.0025 17.0558 16.005 16.7339 15.8178 16.5338L13.8416 14.4255Z" fill="#27272A"/>
                         </svg>                            
                     </button>
-
-                    <a href="/landing-coversun.bc">
-                        <img class="w-[135px] px-1.5" src="[##cms.cms.cdn##]/images/coversun-logo-light.png" alt="">
-                        
-                    </a>
+                    <a class="text-[14px] font-IRANYekan300 text-gray-700" href="/">EN</a>
+                    <button id="openForm" class="text-[14px] cursor-pointer font-IRANYekan300 text-gray-700">ثبت سفارش</button>
+                    
                 </div>
-                <div class="flex flex-row gap-3.5 mt-2.5">
-                    <button id="openForm" class="text-[14px] cursor-pointer font-IRANYekan300 text-gray-50">ثبت سفارش</button>
-                    <a class="text-[14px] font-IRANYekan300 text-gray-50" href="/">EN</a>
-                    <button id="opensearch">
-                        <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.19369 0.599609C3.23639 0.599609 0.015625 3.95711 0.015625 8.0824C0.015625 12.2077 3.23639 15.5652 7.19369 15.5652C11.151 15.5652 14.3717 12.2077 14.3717 8.0824C14.3717 3.95458 11.151 0.599609 7.19369 0.599609ZM7.19369 14.5491C3.77116 14.5491 0.987933 11.6477 0.987933 8.07987C0.987933 4.51205 3.77116 1.61066 7.19369 1.61066C10.6162 1.61066 13.3994 4.51205 13.3994 8.07987C13.3994 11.6477 10.6138 14.5491 7.19369 14.5491Z" fill="#FAFAFA"/>
-                            <path d="M13.8416 14.4255C13.6544 14.2253 13.3457 14.2228 13.1537 14.4179C12.9617 14.613 12.9592 14.9348 13.1464 15.135L15.1226 17.2433C15.2174 17.3446 15.3438 17.3953 15.4702 17.3953C15.5917 17.3953 15.7157 17.3472 15.8105 17.2509C16.0025 17.0558 16.005 16.7339 15.8178 16.5338L13.8416 14.4255Z" fill="#FAFAFA"/>
-                        </svg>
-                            
-
-                    </button>
                 </div>
+                
 
             </div>
             <div class="h-full flex">
                 <a href="/">
-                    <img class="w-[74px] h-[31px]" src="[##cms.cms.cdn##]/images/logo-light.png" alt="">
+                    <img class="w-[74px] h-[31px]" src="[##cms.cms.cdn##]/images/logo-menu.png" alt="">
                     
                 </a>
             </div>
         </div>
         <!-- Menu -->
         <div id="menuBar"
-            class="fixed h-[100vh] z-[100] p-5 top-0 flex flex-col justify-between items-center bottom-0 left-0 right-0 bg-main pupUp z-[1000]">
+            class="absolute h-[100vh] z-[100] p-5 top-0 flex flex-col justify-between items-center bottom-0 left-0 right-0 bg-main pupUp ">
             <div class="w-full flex flex-col justify-between icon h-[55px]">
                 <div class="flex flex-row justify-between items-center">
                     <button id="closepopup">

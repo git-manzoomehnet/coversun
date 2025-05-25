@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
     <title>درباره ما</title>
+    <meta name="description" content="درباره کاروسان">
 </head>
 
 <body>
@@ -38,7 +39,7 @@
 
             </div>
             <div id="scrollBtn" class="w-[74px] h-[82px] flex flex-col justify-center items-center mb-[8px] mt-11">
-                <h5 class="font-PxGrotesk400 text-[14px] text-nowrap flex-nowrap text-gray-400">Scroll Down </h5>
+                <h5 class="font-PxGrotesk400 text-[14px] text-nowrap flex-nowrap text-gray-400">scroll down</h5>
                 <div class="c-scrolldown bg-main" style="background-color: #FFCB08;">
                     <div class="c-line"></div>
                 </div>
@@ -148,10 +149,10 @@
                         <div></div>
                     </div>
                 </div>
-            </div>            
+            </div>
             <div class="h-auto  flex justify-center items-end flex-col pb-12 mb-8 border-b border-back m-5">
                 <basis core="print" datamembername="db.about-us">
-                    <face filter="valueID=4138422">
+                    <face filter="valueID=4138421">
                         <div class="flex flex-col gap-3 text-left">
                             <p class="text-[48px] text-gray-700 font-PxGrotesk400 scrollTop"  style="font-family: 'PxGrotesk400';font-size: 48px;">05</p>
                             <h3 class="text-[24px] text-gray-800 font-PxGrotesk400 ltr scrollTop" style="text-transform: capitalize;">@text</h3>
@@ -162,15 +163,29 @@
                         </div>
                     </face>
                 </basis>
+            </div>            
+            <div class="h-auto  flex justify-center items-end flex-col pb-12 mb-8 border-b border-back m-5">
+                <basis core="print" datamembername="db.about-us">
+                    <face filter="valueID=4138422">
+                        <div class="flex flex-col gap-3 text-left">
+                            <p class="text-[48px] text-gray-700 font-PxGrotesk400 scrollTop"  style="font-family: 'PxGrotesk400';font-size: 48px;">06</p>
+                            <h3 class="text-[24px] text-gray-800 font-PxGrotesk400 ltr scrollTop" style="text-transform: capitalize;">@text</h3>
+                            <div
+                                class="aboutusen [&>p]:text-[14px] [&>p]:text-justify [&>p]:leading-5 [&>p]:text-gray-800 scrollTop [&>p]:font-PxGrotesk300">
+                                @largetext
+                            </div>
+                        </div>
+                    </face>
+                </basis>
             </div>
-            <div class="h-auto flex justify-center items-start flex-col pb-12 border-b m-5 border-back">
+            <div class="h-auto  flex justify-center items-end flex-col pb-12 mb-8 border-b border-back m-5">
                 <basis core="print" datamembername="db.about-us">
                     <face filter="valueID=4138423">
                         <div class="flex flex-col gap-3 text-left">
-                            <p class="text-[48px] text-gray-700 font-PxGrotesk400 text-right"  style="font-family: 'PxGrotesk400';font-size: 48px;">06</p>
-                            <h3 class="text-[24px] text-gray-800 font-IRANYekan500 scrollTop text-right">@text</h3>
+                            <p class="text-[48px] text-gray-700 font-PxGrotesk400 scrollTop"  style="font-family: 'PxGrotesk400';font-size: 48px;">07</p>
+                            <h3 class="text-[24px] text-gray-800 font-PxGrotesk400 ltr scrollTop" style="text-transform: capitalize;">@text</h3>
                             <div
-                                class="aboutusen [&>p]:text-[14px] [&>p]:leading-5 [&>p]:text-justify [&>p]:text-gray-800 scrollTop [&>p]:font-PxGrotesk300">
+                                class="aboutusen [&>p]:text-[14px] [&>p]:text-justify [&>p]:leading-5 [&>p]:text-gray-800 scrollTop [&>p]:font-PxGrotesk300">
                                 @largetext
                             </div>
                         </div>

@@ -32,3 +32,4 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 elements.forEach(el => observer.observe(el));
+

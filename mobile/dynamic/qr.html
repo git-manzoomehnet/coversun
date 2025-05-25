@@ -12,12 +12,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
-     <!-- <link rel="stylesheet" href="./../assets/css/outputMobile.css"> -->
     <title>qr</title>
 </head>
 
-<body>
-    <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
+<body id="pageqr">
+    <basis core="call" file="header3.inc" pageindex="[##cms.cms.pageindex##]" />
     <main>
         <section class="w-full h-[60%] px-5 flex pt-[80px] flex-col justify-between items-center">
             <div class="flex flex-col py-28 px-5">
@@ -190,13 +189,13 @@
                 </basis>
             </div>            
         </section>
-        <section class="w-full h-[40%] bg-main flex flex-col justify-center items-center gap-[50px] pt-[30px] pb-[38px]">
+        <section id="showqr" class="w-full h-[40%] bg-main flex flex-col justify-center items-center gap-[50px] pt-[30px] pb-[38px]">
             <img class="w-[108px] h-[108px]" src="[##cms.cms.cdn##]/images/QR.png" alt="">
                 <div class="relative w-[173px] h-[48px] mx-auto">
                     <div class="absolute -top-2 -left-2 w-[160px] h-[28px] border-t border-l border-black z-0"></div>
                     <div class="absolute -bottom-2 -right-2 w-[160px] h-[28px] border-b border-r border-black z-0"></div>
                   
-                    <a href="#" class="relative z-10 font-IRANYekan500 text-[14px] w-full h-full flex items-center justify-center border border-black text-black text-lg font-bold no-underline">
+                    <a href="/" class="relative z-10 font-IRANYekan500 text-[14px] w-full h-full flex items-center justify-center border border-black text-black text-lg font-bold no-underline">
                         بازگشت به صفحه نخست
                     </a>
                   </div>
@@ -204,8 +203,7 @@
 
         </section>
     </main>
-    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
-
+    <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]" />
 </body>
 
 </html>
