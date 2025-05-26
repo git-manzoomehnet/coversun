@@ -980,9 +980,13 @@
 <script src="[##cms.cms.cdn##]/js/landingplusMobile.js"></script>
 <script>
     const btn = document.getElementById('my-btn');
+    const footer = document.querySelector('footer');
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
+        const footerRect = footer.getBoundingClientRect();
+        const isFooterVisible = footerRect.top < window.innerHeight && footerRect.bottom >= 0;
+
+        if (window.scrollY > 100 && !isFooterVisible) {
             btn.classList.add('show');
         } else {
             btn.classList.remove('show');
@@ -992,12 +996,13 @@
     btn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-
-
-
-
-
 </script>
+
+
+
+
+
+
 <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]" />
 
 </html>
